@@ -1,0 +1,133 @@
+// @import "props";
+@import "typography";
+@import "colours";
+@import "header";
+@import "footer";
+@import "buttons";
+@import "blog";
+@import "forms";
+@import "blocks/blocks";
+// @import "case_study";
+
+
+body {
+    background-color: var(--col-light);
+    color: var(--col-dark);
+}
+
+a {
+    color: var(--col-red);
+    text-decoration: none;
+    transition: color var(--transition);
+    &:hover {
+        color: var(--col-dark);
+    }
+}
+a.noline {
+    text-decoration: none;
+}
+a.anchor {
+    display: block;
+    position: relative;
+    top: -150px;
+    visibility: hidden;
+}
+
+@media (min-width:992px) {
+    .cols-lg-2 {
+        columns: 2;
+    }
+    .cols-lg-3 {
+        columns: 3;
+    }
+    .cols-lg-4 {
+        columns: 4;
+    }
+}
+
+.mw-md-75 {
+    @media (min-width:992px) {
+        max-width: 75%;
+        margin: auto;
+    }
+}
+
+// @media (max-width:768px) {
+//     .wp-block-image {
+//         figure.alignright {
+//             float: none !important;
+//             margin: auto !important;
+//         }
+//     }
+// }
+
+.share-icons {
+    padding-top: 1rem;
+    a:not(:last-of-type) {
+        margin-right: 0.5rem;
+    }
+}
+
+.social-share {
+    a {
+        font-size: var(--fs-450);
+        &:hover {
+            color: var(--col-primary-400);
+        }
+    }
+}
+
+// :not(.share-icons,.social-icons,figure,.cb,.rplg-biz-name) > a[target="_blank"]:not(.btn)::after {
+//     content: "\f08e";
+//     font-family: "Font Awesome 6 Free";
+//     font-weight: 600;
+//     margin-left: 0.5rem;
+//     display: inline-block;
+// }
+// :not(.share-icons,.social-icons,figure,.cb,.rplg-biz-name) > a[target="_blank"]:not(.btn)::after {
+//     font-weight: 600;
+// }
+
+
+#breadcrumbs {
+    font-size: 0.889rem;
+}
+
+
+.reading {
+    font-size: 0.889rem;
+    font-style: italic;
+}
+
+
+rp-based {
+    color: var(--col-light-400) !important;
+}
+rp-review-inner {
+    background-color: var(--col-light-400);
+    color: var(--col-primary-400);
+}
+
+// show stuff that overflows horizontally
+// * {
+//     outline: 1px solid #f00 !important;
+// }
+// show stuff that overflows horizontally via console JS
+/*
+var all = document.getElementsByTagName("*"), i = 0, rect, docWidth = document.documentElement.offsetWidth;
+for (; i < all.length; i++) {
+    rect = all[i].getBoundingClientRect();
+    if (rect.right > docWidth || rect.left < 0){
+        console.log(all[i]);
+        all[i].style.borderTop = '1px solid red';
+    }
+}
+*/
+
+// @mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
+// 	$factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
+// 	$calc-value: unquote('#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }');
+
+// 	font-size: $min-value; // Fallback for older browsers
+// 	font-size: clamp(#{if($min-value > $max-value, $max-value, $min-value)}, #{$calc-value}, #{if($min-value > $max-value, $min-value, $max-value)});
+// }

@@ -1,0 +1,86 @@
+.hero-search {
+    margin-top: var(--h-top);
+    @media (min-width:768px) {
+        margin-top: var(--h-top-desktop);
+    }
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+
+    background-color: var(--col-blue-200);
+
+    &__grid {
+        display: grid;
+        place-content: center;
+        height: 100%;
+    }
+
+    &__inner {
+        width: min(100%,90vw);
+        margin-inline: auto;
+    }
+
+    &__title {
+        font-weight: var(--fw-400);
+        color: var(--col-light);
+        font-size: var(--fs-600);
+        line-height: 1.1;
+        text-wrap: balance;
+    }
+
+    .form {
+        margin-bottom: 1rem;
+        display: grid;
+        @media (min-width:576px) {
+            display: flex;
+        }
+    }
+    
+    
+}
+
+.btn-search {
+    background-color: var(--col-red-400);
+    color: var(--col-light);
+    appearance: none;
+    border: none;
+    padding: 0.25rem 2rem;
+    font-weight: var(--fw-600);
+    position: relative;
+    transition: background-color var(--transition);
+    &::after {
+        content: "\f002";
+        font-family: "font awesome 6 free";
+        margin-left: 0.5rem;
+    }
+    &:hover {
+        background-color: var(--col-red-300);
+    }
+}
+
+.ui-menu-item {
+    font-size: 0.9rem;
+    color: #808080;
+    strong {
+        color: var(--col-red-400);
+    }
+}
+
+.ui-autocomplete-category {
+    font-weight: bold;
+    padding: 5px;
+  }
+
+.ui-autocomplete-term {
+    margin-left: 10px;
+}
+
+.ui-autocomplete-category {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.ui-autocomplete-term {
+    margin-left: 10px;
+}

@@ -1,0 +1,19 @@
+.text--white {
+    color: #fff;
+}
+
+.bg-blue {
+    background-color: var(--col-blue);
+}
+.text-blue {
+    color: var(--col-blue);
+}
+
+.bg-dark {
+    background-color: var(--col-dark);
+}
+
+.bg-grey,
+.has-grey-background-color {
+    background-color: var(--col-grey);
+}

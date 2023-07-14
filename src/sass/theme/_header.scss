@@ -1,0 +1,128 @@
+#wrapper-navbar {
+    --stripe: 45px;
+    background-color: var(--col-blue-400);
+    @media (min-width:992px) {
+        background: linear-gradient(to right,var(--col-blue-400) 50%, transparent 50%),
+                    linear-gradient(0deg, var(--col-red-400) var(--stripe), var(--col-blue-400) var(--stripe));
+    }
+
+    .navbar-brand {
+        background-image: url(../img/gtma-logo.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top left;
+        aspect-ratio: 9 / 4;
+        width: 120px;
+        @media (min-width:1200px) {
+            width: 187px;
+        }
+        margin-right: 0;
+        margin-block: 1rem;
+    }
+
+    .navbar > .container-xl {
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+    #theNav {
+        @media (min-width:992px) {
+            grid-template-rows: auto var(--stripe);
+        }
+    }
+
+    #topNav {
+        display: flex;
+        justify-content: space-between;
+        color: var(--col-light);
+        margin-left: var(--stripe);
+        .topNav__social {
+            display: flex;
+            gap: 1rem;
+            font-size: var(--fs-400);
+            a {
+                color: var(--col-light);
+            }
+        }
+    }
+
+    #primaryNav {
+        background-color: var(--col-red-400);
+        text-transform: uppercase;
+        font-weight: var(--fw-600);
+        font-size: var(--fs-200);
+        a {
+            color: var(--col-light);
+            line-height: 1;
+        }
+
+        &::before {
+            content: "";
+            width: var(--stripe);
+            height: var(--stripe);
+            background: linear-gradient(-45deg, var(--col-red-400) 50%, var(--col-blue-400) 50%);
+        }
+    }
+}
+
+// #wrapper-navbar {
+//     // padding-right: 0px !important;
+//     .navbar {
+//         background-color: var(--col-light);
+//         // box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+//         a {
+//             color: var(--col-dark);
+//         }
+//     }
+
+//     .navbar-grid {
+//         display: grid;
+//         grid-template-columns: 1fr 2fr 100px;
+//         gap: 1rem;
+//     }
+
+//     .nav-item {
+//         &.current-menu-parent > a {
+//             color: var(--col-red);
+//         }
+//         &.current-menu-item,
+//         &.current_page_item  {
+//             a {
+//                 color: var(--col-red);
+//             }
+//         }
+//     }
+//     .navbar-collapse a {
+//         color: var(--col-dark);
+//         text-decoration: none;
+//         font-size: 1rem;
+//         font-weight: var(--fw-900);
+//         background-image: linear-gradient(var(--col-red), var(--col-red)), linear-gradient(transparent, transparent);
+//         background-size: 0 5px, auto;
+//         background-repeat: no-repeat;
+//         background-position: center bottom;
+//         transition: all var(--transition);
+//         width: max-content;
+
+//         &:hover {
+//             color: var(--col-red);
+//             background-size: 100% 5px, auto;
+//         }
+//     }
+//     .dropdown-menu {
+//         a {
+//             color: var(--col-dark);
+//             &:active {
+//                 color: var(--col-red);
+//             }
+//         }
+//     }
+
+//     .sidenav-container .navbar-toggler {
+//         display: block;
+//         &:focus {
+//             // box-shadow: none !important;
+//             box-shadow: 0 0 0 0.25rem rgba(54,54,53,.25);
+//         }
+//     }
+// }

@@ -1,0 +1,59 @@
+// $col-primary: hsl(345, 6%, 13%);
+$col-primary: hsl(198, 100%, 29%);
+$col-secondary: hsl(353, 76%, 47%);
+$col-grey: hsl(0, 0%, 93%);
+
+:root {
+
+    --hsl-col-dark: 345 6% 13%;
+    --hsl-col-light: 0 0% 100%;
+    --hsl-col-grey: 0 0% 93%;
+
+    --hsl-col-blue-100: 198  41% 79%;
+    --hsl-col-blue-200: 198  41% 65%;
+    --hsl-col-blue-300: 198  42% 50%;
+    --hsl-col-blue-400: 198 100% 29%;
+
+    --hsl-col-red-100: 353 68% 84%;
+    --hsl-col-red-200: 353 69% 74%;
+    --hsl-col-red-300: 353 69% 63%;
+    --hsl-col-red-400: 353 76% 47%;
+    
+    --col-dark: hsl(var(--hsl-col-dark));
+    --col-light: hsl(var(--hsl-col-light));
+    --col-grey: hsl(var(--hsl-col-grey));
+
+    --col-blue: hsl(var(--hsl-col-blue-400));
+    --col-blue-400: hsl(var(--hsl-col-blue-400));
+    --col-blue-100: hsl(var(--hsl-col-blue-100));
+    --col-blue-200: hsl(var(--hsl-col-blue-200));
+    --col-blue-300: hsl(var(--hsl-col-blue-300));
+
+    --col-red: hsl(var(--hsl-col-red-400));
+    --col-red-400: hsl(var(--hsl-col-red-400));
+    --col-red-100: hsl(var(--hsl-col-red-100));
+    --col-red-200: hsl(var(--hsl-col-red-200));
+    --col-red-300: hsl(var(--hsl-col-red-300));
+
+    --h-top: 90px;
+    --h-top-desktop: 115px;
+
+    --fw-400: 400;
+    --fw-600: 600;
+    --fw-900: 800;
+
+
+    --fs-200: clamp(0.80rem, calc(0.77rem + 0.17vw), 0.90rem);
+    --fs-400: clamp(1.00rem, calc(0.96rem + 0.22vw), 1.13rem);
+    --fs-450: clamp(1.25rem, calc(1.20rem + 0.27vw), 1.41rem);
+    --fs-500: clamp(1.56rem, calc(1.49rem + 0.34vw), 1.76rem);
+    --fs-600: clamp(1.95rem, calc(1.87rem + 0.42vw), 2.20rem);
+    --fs-700: clamp(2.44rem, calc(2.33rem + 0.53vw), 2.75rem);
+    --fs-800: clamp(3.05rem, calc(2.92rem + 0.66vw), 3.43rem);
+    --fs-900: clamp(3.82rem, calc(3.65rem + 0.83vw), 4.29rem);
+
+    --transition: 200ms ease-out;
+
+    --border1: 0.5rem;
+    --border2: 1rem;
+}
