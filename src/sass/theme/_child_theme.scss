@@ -34,15 +34,29 @@ a.anchor {
     visibility: hidden;
 }
 
+@media (min-width:768px) {
+    .cols-lg-3 {
+        columns: 2;
+        gap: 2rem;
+    }
+    .cols-lg-4 {
+        columns: 3;
+        gap: 2rem;
+    }
+}
+
 @media (min-width:992px) {
     .cols-lg-2 {
         columns: 2;
+        gap: 2rem;
     }
     .cols-lg-3 {
         columns: 3;
+        gap: 2rem;
     }
     .cols-lg-4 {
         columns: 4;
+        gap: 2rem;
     }
 }
 
