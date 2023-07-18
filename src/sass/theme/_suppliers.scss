@@ -1,0 +1,26 @@
+.supplier {
+    margin-top: calc(var(--h-top) + 2rem);
+    &__sidebar {
+        position: sticky;
+        top: var(--h-top);
+        background-color: var(--col-blue-400);
+        color: var(--col-light);
+        padding: 1rem;
+    }
+
+
+    .modal-dialog {
+        max-width: unset;
+        width: min(800px,90vw);
+        margin-inline: auto;
+    }
+    .modal-content {
+        background-color: transparent;
+        border: none;
+    }
+    .modal-body {
+        padding: 0
+    }
+
+}
+

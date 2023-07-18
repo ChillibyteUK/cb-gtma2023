@@ -1,0 +1,78 @@
+<section class="assets py-5">
+<?php
+$type = get_field('type');
+
+echo '<h2>' . $type . '</h2>';
+
+if ($type == 'Plant/Equipment') {
+    ?>
+<div><?=get_field('content')?></div>
+    <?php
+}
+
+if ($type == 'Video Gallery') {
+    ?>
+    <div class="assets__video_grid">
+    <?php
+    while (have_rows('video_ids')) {
+        the_row();
+        $modal = random_str(8);
+        $vid = get_sub_field('video_id');
+        // $stripped = strstr($vid, '&', true) ?: $vid;
+        $parts = explode('&', $vid);
+        $vidID = $parts[0];
+        $start = '';
+        if (isset($parts[1])) {
+            $start = str_replace(['t=', 's'], '', $parts[1]);
+            $start = 'start=' . $start . '&';
+        }
+        ?>
+        <div class="assets__video_card">
+            <img class="video-btn" type="button" src="https://img.youtube.com/vi/<?=$vidID?>/hqdefault.jpg"
+                data-bs-toggle="modal"
+                data-bs-target="#videoModal"
+                data-src="https://www.youtube-nocookie.com/embed/<?=$vidID?>"
+                data-start="<?=$start?>">
+        </div>
+        <?php
+    }
+    ?>
+    </div>
+    <div class="modal fade" id="videoModal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="videoPlayer"  allowscriptaccess="always" allow="autoplay;fullscreen"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    add_action('wp_footer',function(){
+        ?>
+<script>
+(function($){
+    var $videoSrc;
+    var $videoStart;
+    $('.video-btn').click(function() {
+        $videoSrc = $(this).data( "src" );
+        $videoStart = $(this).data( "start" );
+    });
+    $('#videoModal').on('shown.bs.modal', function (e) {
+        $src = $videoSrc + "?" + $videoStart + "autoplay=1&amp;modestbranding=1&amp;showinfo=0";
+        $("#videoPlayer").attr('src', $src );
+    });
+    $('#videoModal').on('hide.bs.modal', function (e) {
+        $("#videoPlayer").attr('src',$videoSrc); 
+    });
+})(jQuery);
+</script>
+        <?php
+    },9999);
+}
+
+?>
+</section>

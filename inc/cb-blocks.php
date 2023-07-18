@@ -11,24 +11,24 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_hero_single',
-        //     'title'				=> __('CB Hero'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_hero_single.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_text_nav',
-        //     'title'				=> __('CB Text Nav'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_text_nav.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_supplier_assets',
+            'title'				=> __('CB Supplier Assets'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_supplier_assets.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_youtube',
+            'title'				=> __('CB YouTube'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_youtube.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
         // acf_register_block_type(array(
         //     'name'				=> 'cb_three_col_nav',
         //     'title'				=> __('CB Three Col Nav'),

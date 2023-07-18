@@ -3,12 +3,12 @@
 function cb_register_post_types()
 {
     $labels = [
-        "name" => __("Projects", "cb-gtma2023"),
-        "singular_name" => __("Project", "cb-gtma2023"),
+        "name" => __("Suppliers", "cb-gtma2023"),
+        "singular_name" => __("Supplier", "cb-gtma2023"),
     ];
 
     $args = [
-        "label" => __("Projects", "cb-gtma2023"),
+        "label" => __("supplier", "cb-gtma2023"),
         "labels" => $labels,
         "description" => "",
         "public" => true,
@@ -26,14 +26,14 @@ function cb_register_post_types()
         "capability_type" => "post",
         "map_meta_cap" => true,
         "hierarchical" => false,
-        "rewrite" => [ "slug" => "projects", "with_front" => false ],
+        "rewrite" => [ "slug" => "suppliers", "with_front" => false ],
         "query_var" => true,
-        "supports" => [ "title",  "thumbnail", "editor" ],
+        "supports" => [ "title",  "editor" ],
         "show_in_graphql" => false,
         "exclude_from_search" => true
     ];
 
-    register_post_type("projects", $args);
+    register_post_type("suppliers", $args);
 }
 add_action('init', 'cb_register_post_types');
 

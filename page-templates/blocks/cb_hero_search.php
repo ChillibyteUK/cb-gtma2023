@@ -1,5 +1,5 @@
 <?php
-$img = '';
+$img = get_stylesheet_directory_uri() . '/img/search-hero.jpg';
 ?>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="preload" as="image" href="<?=$img?>">
