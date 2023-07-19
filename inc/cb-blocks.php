@@ -30,14 +30,23 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         // acf_register_block_type(array(
-        //     'name'				=> 'cb_three_col_nav',
-        //     'title'				=> __('CB Three Col Nav'),
+        //     'name'				=> 'cb_suppliers_by_category',
+        //     'title'				=> __('CB Suppliers By Category'),
         //     'category'			=> 'layout',
         //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_three_col_nav.php',
+        //     'render_template'	=> 'page-templates/blocks/cb_suppliers_by_category.php',
         //     'mode'	=> 'edit',
         //     'supports' => array('mode' => false),
         // ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_supplier_categories',
+            'title'				=> __('CB Supplier Categories'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_supplier_categories.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
         // acf_register_block_type(array(
         //     'name'				=> 'cb_image_offset',
         //     'title'				=> __('CB Image Offset'),

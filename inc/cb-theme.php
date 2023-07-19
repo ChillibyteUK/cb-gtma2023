@@ -2,8 +2,8 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
+require_once CB_THEME_DIR . '/inc/cb-taxonomies.php'; // taxonomies registered first to allow correct permalink structure
 require_once CB_THEME_DIR . '/inc/cb-posttypes.php';
-require_once CB_THEME_DIR . '/inc/cb-taxonomies.php';
 require_once CB_THEME_DIR . '/inc/cb-utility.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
 // require_once CB_THEME_DIR . '/inc/cb-news.php';

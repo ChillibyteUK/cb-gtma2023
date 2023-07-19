@@ -29,14 +29,21 @@
   --fw-400: 400;
   --fw-600: 600;
   --fw-900: 800;
-  --fs-200: clamp(0.80rem, calc(0.77rem + 0.17vw), 0.90rem);
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.067,1240,18,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  /* Step -1: 15.00px → 14.40px */
+  --fs-200: clamp(0.90rem, calc(0.95rem + -0.07vw), 0.94rem);
+  /* Step 0: 16.00px → 18.00px */
   --fs-400: clamp(1.00rem, calc(0.96rem + 0.22vw), 1.13rem);
-  --fs-450: clamp(1.25rem, calc(1.20rem + 0.27vw), 1.41rem);
-  --fs-500: clamp(1.56rem, calc(1.49rem + 0.34vw), 1.76rem);
-  --fs-600: clamp(1.95rem, calc(1.87rem + 0.42vw), 2.20rem);
-  --fs-700: clamp(2.44rem, calc(2.33rem + 0.53vw), 2.75rem);
-  --fs-800: clamp(3.05rem, calc(2.92rem + 0.66vw), 3.43rem);
-  --fs-900: clamp(3.82rem, calc(3.65rem + 0.83vw), 4.29rem);
+  /* Step 1: 17.07px → 22.50px */
+  --fs-500: clamp(1.07rem, calc(0.95rem + 0.59vw), 1.41rem);
+  /* Step 2: 18.22px → 28.13px */
+  --fs-600: clamp(1.14rem, calc(0.92rem + 1.08vw), 1.76rem);
+  /* Step 3: 19.44px → 35.16px */
+  --fs-700: clamp(1.22rem, calc(0.87rem + 1.71vw), 2.20rem);
+  /* Step 4: 20.74px → 43.95px */
+  --fs-800: clamp(1.30rem, calc(0.79rem + 2.52vw), 2.75rem);
+  /* Step 5: 22.13px → 54.93px */
+  --fs-900: clamp(1.38rem, calc(0.67rem + 3.57vw), 3.43rem);
   --transition: 200ms ease-out;
   --border1: 0.5rem;
   --border2: 1rem;

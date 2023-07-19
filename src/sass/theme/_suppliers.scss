@@ -27,3 +27,15 @@
     }
 }
 
+// cards and stuff
+.suppliers {
+    &__card {
+        display: block;
+        border-bottom: 1px solid steelblue;
+        padding: 1rem;
+        transition: background-color var(--transition);
+        &:hover {
+            background-color: var(--col-grey);
+        }
+    }
+}
