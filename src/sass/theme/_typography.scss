@@ -37,6 +37,7 @@ body {
     font-size: 1rem;
     // font-size: clamp(1.00rem, calc(0.91rem + 0.43vw), 1.25rem);
     line-height: 1.556;
+    letter-spacing: .016rem;
     font-style: normal;
     color: var(--col-dark);
     -webkit-font-smoothing: antialiased;
@@ -48,7 +49,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, .h99 {
     font-family: 'Raleway', sans-serif;
     font-style: normal;
     margin-bottom: 0.5rem;
-    font-weight: var(--fw-400);
+    font-weight: var(--fw-600);
+    span, strong {
+        font-weight: var(--fw-900);
+        color: var(--col-blue-400);
+    }
     text-wrap: balance;
 }
 
@@ -60,6 +65,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, .h99 {
 
 h1, .h1 {
     font-size: var(--fs-800);
+    font-weight: var(--fw-400);
 }
 h2, .h2 {
     font-size: var(--fs-700);

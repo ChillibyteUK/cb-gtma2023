@@ -2,11 +2,17 @@
     color: #fff;
 }
 
-.bg-blue {
-    background-color: var(--col-blue);
+.bg-blue,
+.has-blue-background-color {
+    background-color: var(--col-blue-400) !important;
 }
-.text-blue {
-    color: var(--col-blue);
+.text-blue,
+.has-blue-color {
+    color: var(--col-blue-400) !important;
+}
+.text-red,
+.has-red-color {
+    color: var(--col-red-400);
 }
 
 .bg-dark {

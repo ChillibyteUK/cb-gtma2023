@@ -93,22 +93,17 @@ function widgets_init()
             array(
                 'name'  => 'Blue',
                 'slug'  => 'blue',
-                'color' => '#0196D5',
+                'color' => '#006894',
             ),
             array(
                 'name'  => 'Red',
                 'slug'  => 'red',
-                'color' => '#C41230',
-            ),
-            array(
-                'name'  => 'Dark',
-                'slug'  => 'dark',
-                'color' => '#231F20',
+                'color' => '#d31d32',
             ),
             array(
                 'name'  => 'Grey',
                 'slug'  => 'grey',
-                'color' => '#E7E7E9',
+                'color' => '#EDEDED',
             ),
             array(
                 'name'  => 'White',

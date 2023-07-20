@@ -9,8 +9,10 @@ $cat_id = get_queried_object()->term_id;
     <section class="suppliers py-5">
         <div class="container-xl">
             <h1><?=$cat_name?></h1>
-            <?=term_description()?>
             <?php
+if (null !== term_description()) {
+    echo term_description();
+}
 $q = new WP_Query(array(
     'post_type' => 'suppliers',
     'posts_per_page' => -1,

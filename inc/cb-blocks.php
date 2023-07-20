@@ -29,15 +29,15 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_suppliers_by_category',
-        //     'title'				=> __('CB Suppliers By Category'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_suppliers_by_category.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_services',
+            'title'				=> __('CB Services'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_services.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
         acf_register_block_type(array(
             'name'				=> 'cb_supplier_categories',
             'title'				=> __('CB Supplier Categories'),
@@ -47,15 +47,15 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_image_offset',
-        //     'title'				=> __('CB Image Offset'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_image_offset.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_join_cta',
+            'title'				=> __('CB Join CTA'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_join_cta.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
         // acf_register_block_type(array(
         //     'name'				=> 'cb_text_full_image',
         //     'title'				=> __('CB Text / Full Bleed Image'),

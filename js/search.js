@@ -9,6 +9,7 @@ $(document).ready(function() {
         .replace(/[\u0300-\u036f]/g, '') // remove all the accents, which happen to be all in the \u03xx UNICODE block.
         .trim() // trim leading or trailing whitespace
         .toLowerCase() // convert to lowercase
+        .replace(/&amp;/g,'')
         .replace(/[^a-z0-9 -]/g, '') // remove non-alphanumeric characters
         .replace(/\s+/g, '-') // replace spaces with hyphens
         .replace(/-+/g, '-'); // remove consecutive hyphens
@@ -44,7 +45,8 @@ $(document).ready(function() {
           response(limitedTerms.map(item => ({ value: item.term, source: item.source })));
         },
         select: function(event, ui) {
-          term = ui.item.value; // Update term
+          term = ui.item.value.replace(/&amp;/g,'&'); // Update term
+          // term = ui.item.value; // Update term
           source = ui.item.source; // Update source
           $('#searchInput').val(term);
           $('#sourceInput').val(source);
@@ -54,7 +56,9 @@ $(document).ready(function() {
         focus: function(event, ui) {
           const term = ui.item.value;
           const source = ui.item.source;
-          $('#searchInput').val(term);
+          var strippedTerm = term.replace(/&amp;/g, '&');
+
+          $('#searchInput').val(strippedTerm);
           $('#sourceInput').val(source);
           return false; // Prevent the default behavior
         }
@@ -86,6 +90,7 @@ $(document).ready(function() {
       // category: /supplier/additive-manufacturing/
       // tag: /tags/2d-3d/
       // supplier: /suppliers/robev-engineering-ltd/
+      console.log(term);
       if (source !== '' && source === 'tag') {
         var url = '/tags/' + slugify(term) + '/';
       }
