@@ -3,8 +3,20 @@ $(document).ready(function() {
     let source = ''; // Initialize source
     const termList = [];
   
+    function slugify(str) {
+      return String(str)
+        .normalize('NFKD') // split accented characters into their base characters and diacritical marks
+        .replace(/[\u0300-\u036f]/g, '') // remove all the accents, which happen to be all in the \u03xx UNICODE block.
+        .trim() // trim leading or trailing whitespace
+        .toLowerCase() // convert to lowercase
+        .replace(/[^a-z0-9 -]/g, '') // remove non-alphanumeric characters
+        .replace(/\s+/g, '-') // replace spaces with hyphens
+        .replace(/-+/g, '-'); // remove consecutive hyphens
+    }
+
     // Load the data.json file
-    $.getJSON('/wp-content/themes/cb-gtma2023/js/test-data.json', function(data) {
+    // $.getJSON('/wp-content/themes/cb-gtma2023/js/test-data.json', function(data) {
+    $.getJSON('/wp-content/themes/cb-gtma2023/search-data.php', function(data) {
       data.forEach(item => {
         const categories = item.category;
         const suppliers = item.supplier;
@@ -68,9 +80,23 @@ $(document).ready(function() {
     });
   
     function executeSearch(source, term) {
-      const query = source !== '' ? `${source}: ${term}` : term;
-      $('#query').text(query);
-      console.log('Query:', query);
+      // const query = source !== '' ? `${source}: ${term}` : term;
+      // $('#query').text(query);
+      // console.log('Query:', query);
+      // category: /supplier/additive-manufacturing/
+      // tag: /tags/2d-3d/
+      // supplier: /suppliers/robev-engineering-ltd/
+      if (source !== '' && source === 'tag') {
+        var url = '/tags/' + slugify(term) + '/';
+      }
+      else if (source !== '' && source === 'category') {
+        var url = '/supplier/' + slugify(term) + '/';
+      }
+      else {
+        var url = '/suppliers/' + slugify(term) + '/';
+      }
+      // console.log('URL: ' + url);
+      window.location.href = url;
     }
   
     // Handle input in the search field
@@ -79,4 +105,5 @@ $(document).ready(function() {
       source = ''; // Unset source
     });
   });
+  
   

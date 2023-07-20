@@ -12,7 +12,6 @@ $img = get_stylesheet_directory_uri() . '/img/search-hero.jpg';
                 <button id="go" class="btn-search">Search</button>
                 <input type="hidden" name="source" id="sourceInput">
             </div>
-            <div>Will search for: <span id="query"></span></div>
         </div>
     </div>
 </header>
