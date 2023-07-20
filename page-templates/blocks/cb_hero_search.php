@@ -22,5 +22,5 @@ add_action('wp_footer', function () {
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="<?=get_stylesheet_directory_uri()?>/js/search.js"></script>
 <?php
-});
+}, 9999);
 ?>
