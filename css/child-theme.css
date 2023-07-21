@@ -22753,6 +22753,17 @@ footer .footer__logo {
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
+.assets__photo_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.assets__photo_grid .gallery__image img {
+  aspect-ratio: 6/4;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
 
 .services {
   padding-top: 5rem;

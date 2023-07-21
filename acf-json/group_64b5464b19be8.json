@@ -133,6 +133,42 @@
                     "parent_repeater": "field_64b54b3a7b382"
                 }
             ]
+        },
+        {
+            "key": "field_64ba4c1486b35",
+            "label": "Photos",
+            "name": "photos",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64b5465e34c84",
+                        "operator": "==",
+                        "value": "Photo Gallery"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -153,5 +189,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689604132
+    "modified": 1689930800
 }

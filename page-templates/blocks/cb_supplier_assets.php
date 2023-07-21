@@ -74,5 +74,40 @@ if ($type == 'Video Gallery') {
     },9999);
 }
 
+if ($type == 'Photo Gallery') {
+    ?>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+/>
+    <div class="assets__photo_grid" id="lightslider">
+    <?php
+    foreach (get_field('photos') as $p) {
+        ?>
+        <div data-thumb="<?=wp_get_attachment_image_url( $p, 'large' )?>" class="gallery__image">
+            <a href="<?=wp_get_attachment_image_url( $p, 'full' )?>" data-fancybox="gallery">
+                <img src="<?=wp_get_attachment_image_url( $p, 'full' )?>">
+            </a>
+        </div>
+        <?php
+    }
+    ?>
+    </div>
+    <?php
+    add_action('wp_footer',function(){
+        ?>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        caption: function (_fancybox, slide) {
+        const figurecaption = slide.triggerEl?.querySelector("figcaption");
+        return figurecaption ? figurecaption.innerHTML : slide.caption || "";
+      },
+    });
+    </script>
+        <?php
+    });
+}
+
 ?>
 </section>

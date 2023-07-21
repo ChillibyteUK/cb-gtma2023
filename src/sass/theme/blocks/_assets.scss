@@ -26,4 +26,17 @@
         }
     }
 
+
+    &__photo_grid {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 1rem;
+        .gallery__image img {
+            aspect-ratio: 6 / 4;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+
 }
