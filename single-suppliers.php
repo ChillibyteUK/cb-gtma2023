@@ -17,7 +17,8 @@ $after;
                 <div class="row">
                     <div class="col-md-8 order-2 order-md-1">
                         <h1 class="supplier__title">
-                            <?=get_the_title()?></h1>
+                            <?=get_the_title()?>
+                        </h1>
                     </div>
                     <div class="col-md-4 order-1 order-md-2">
                         <img src="<?=wp_get_attachment_image_url(get_field('supplier_logo'), 'full')?>"
@@ -25,7 +26,6 @@ $after;
                     </div>
                 </div>
                 <?php
-
 foreach ($blocks as $block) {
     echo render_block($block);
 }
@@ -83,3 +83,4 @@ while(have_rows('contacts')) {
 </main>
 <?php
 get_footer();
+?>
