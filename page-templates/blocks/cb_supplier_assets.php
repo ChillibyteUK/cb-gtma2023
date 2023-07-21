@@ -122,7 +122,7 @@ $type = get_field('type');
         <?=$img?>
         <div class="assets__dl_title">
             <div class="fw-600"><?=$fname?></div>
-            <div class="fs-200">(<?=$fsize?>)</div>
+            <div class="fs-200">(PDF - <?=$fsize?>)</div>
         </div>
     </a>
     <?php
