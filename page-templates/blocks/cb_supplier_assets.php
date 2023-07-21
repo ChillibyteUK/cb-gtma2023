@@ -110,7 +110,7 @@ $type = get_field('type');
         });
     }
 
-    if ($type == 'Brochures' || $type == 'Case Studies' || $type == 'Catalogues' || $type == 'New/Enhanced Products' || $type == 'Press Releases' || $type == 'Technical Papers') {
+    if ($type == 'Accreditations' || $type == 'Brochures' || $type == 'Case Studies' || $type == 'Catalogues' || $type == 'New/Enhanced Products' || $type == 'Press Releases' || $type == 'Technical Papers') {
         echo '<div class="assets__dl_grid">';
         foreach (get_field('documents') as $p) {
             $link = wp_get_attachment_url($p);
