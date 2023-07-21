@@ -63,18 +63,21 @@ echo '</ul>';
                         </dd>
                         <dt>Contacts</dt>
                         <?php
-while(have_rows('contacts')) {
-    the_row();
-    echo '<dd>' . get_sub_field('contact_name');
-    if (get_sub_field('contact_role')) {
-        echo ' - ' . get_sub_field('contact_role');
-    }
-    echo '</dd>';
-}
+                        while(have_rows('contacts')) {
+                            the_row();
+                            echo '<dd>' . get_sub_field('contact_name');
+                            if (get_sub_field('contact_role')) {
+                                echo ' - ' . get_sub_field('contact_role');
+                            }
+                            echo '</dd>';
+                        }
+                        if (get_field('supplier_website')) {
+                            ?>
+                        <dt><a href="<?=get_field('supplier_website')?>"
+                                target="_blank">Visit Website</a></dt>
+                        <?php
+                        }
 ?>
-                        <dt>Website</dt>
-                        <dd><?=get_field('supplier_website')?>
-                        </dd>
                     </dl>
                 </div>
             </div>
