@@ -111,15 +111,19 @@ $type = get_field('type');
     }
 
     if ($type == 'Brochures' || $type == 'Case Studies' || $type == 'Catalogues' || $type == 'New/Enhanced Products' || $type == 'Press Releases' || $type == 'Technical Papers') {
+        echo '<div class="assets__dl_grid">';
         foreach (get_field('documents') as $p) {
-            echo $p;
             $link = wp_get_attachment_url($p);
             $fname = basename(get_attached_file($p));
-            $img = wp_get_attachment_image($p, 'medium', "", ['class'=>'dl_card__image',]) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="dl_card__image">';
+            $fsize = size_format(filesize(get_attached_file($p)));
+            $img = wp_get_attachment_image($p, 'medium', "", ['class'=>'assets__dl_image',]) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="assets__dl_image">';
             ?>
-    <a class="dl_card" href="<?=$link?>" download>
+    <a class="assets__dl_card" href="<?=$link?>" download>
         <?=$img?>
-        <div class="dl_card__title"><?=$fname?></div>
+        <div class="assets__dl_title">
+            <div class="fw-600"><?=$fname?></div>
+            <div class="fs-200">(<?=$fsize?>)</div>
+        </div>
     </a>
     <?php
         }
