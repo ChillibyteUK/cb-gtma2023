@@ -54,7 +54,27 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64ba7138b73ca",
+            "label": "Contact Phone 2",
+            "name": "contact_phone_2",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -74,7 +94,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -271,5 +291,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689586057
+    "modified": 1689940307
 }
