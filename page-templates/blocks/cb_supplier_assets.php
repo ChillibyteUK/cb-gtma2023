@@ -114,7 +114,7 @@ $type = get_field('type');
         echo '<div class="assets__dl_grid">';
         foreach (get_field('documents') as $p) {
             $link = wp_get_attachment_url($p);
-            $fname = basename(get_attached_file($p));
+            $fname = get_the_title($p) ?: basename(get_attached_file($p));
             $fsize = size_format(filesize(get_attached_file($p)));
             $img = wp_get_attachment_image($p, 'medium', "", ['class'=>'assets__dl_image',]) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="assets__dl_image">';
             ?>
