@@ -22971,6 +22971,10 @@ footer .footer__logo {
   gap: 1rem;
 }
 
+.clear {
+  clear: both;
+}
+
 .supplier {
   margin-top: calc(var(--h-top) + 2rem);
 }
