@@ -23002,6 +23002,28 @@ footer .footer__logo {
 .supplier__tags {
   font-size: var(--fs-200);
 }
+.supplier__website, .supplier__contact {
+  color: white;
+}
+.supplier__website::after, .supplier__contact::after {
+  content: "\f061";
+  font-family: "font awesome 6 free";
+  font-weight: 600;
+  padding-left: 0.5rem;
+  transition: padding var(--transition);
+}
+.supplier__website:hover::after, .supplier__contact:hover::after {
+  padding-left: 1rem;
+}
+.supplier__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: var(--fs-500);
+}
+.supplier__socials a {
+  color: white;
+}
 
 .suppliers__card {
   display: block;

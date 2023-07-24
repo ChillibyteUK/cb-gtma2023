@@ -73,12 +73,42 @@ echo '</ul>';
                         }
                         if (get_field('supplier_website')) {
                             ?>
-                        <dt><a href="<?=get_field('supplier_website')?>"
+                        <dt><a href="<?=get_field('supplier_website')?>" class="supplier__website"
                                 target="_blank">Visit Website</a></dt>
                         <?php
                         }
-?>
+                        ?>
+                        <dt><a href="#contact" class="supplier__contact">Contact Supplier</a></dt>
                     </dl>
+                        <?php
+
+                        if (get_field('supplier_socials')) {
+                            echo '<div class="supplier__socials">';
+                            $socials = get_field('supplier_socials');
+                            if ($socials['vimeo_url'] ?? null) {
+                                echo '<a href="' . $socials['vimeo_url'] . '" target="_blank"><i class="fa-brands fa-vimeo"></i></a>';
+                            }
+                            if ($socials['instagram_url'] ?? null) {
+                                echo '<a href="' . $socials['instagram_url'] . '" target="_blank"><i class="fa-brands fa-instagram"></i></a>';
+                            }
+                            if ($socials['pinterest_url'] ?? null) {
+                                echo '<a href="' . $socials['pinterest_url'] . '" target="_blank"><i class="fa-brands fa-pinterest"></i></a>';
+                            }
+                            if ($socials['youtube_url'] ?? null) {
+                                echo '<a href="' . $socials['youtube_url'] . '" target="_blank"><i class="fa-brands fa-youtube"></i></a>';
+                            }
+                            if ($socials['facebook_url'] ?? null) {
+                                echo '<a href="' . $socials['facebook_url'] . '" target="_blank"><i class="fa-brands fa-facebook"></i></a>';
+                            }
+                            if ($socials['twitter_url'] ?? null) {
+                                echo '<a href="' . $socials['twitter_url'] . '" target="_blank"><i class="fa-brands fa-twitter"></i></a>';
+                            }
+                            if ($socials['linkedin_url'] ?? null) {
+                                echo '<a href="' . $socials['linkedin_url'] . '" target="_blank"><i class="fa-brands fa-linkedin"></i></a>';
+                            }
+                            echo '</div>';
+                        }
+?>
                 </div>
             </div>
         </div>

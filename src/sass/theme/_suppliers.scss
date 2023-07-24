@@ -25,6 +25,31 @@
     &__tags {
         font-size: var(--fs-200);
     }
+
+    &__website,
+    &__contact {
+        color: white;
+        &::after {
+            content: "\f061";
+            font-family: "font awesome 6 free";
+            font-weight: 600;
+            padding-left: 0.5rem;
+            transition: padding var(--transition);
+        }
+        &:hover::after {
+            padding-left: 1rem;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        font-size: var(--fs-500);
+        a {
+            color: white;
+        }
+    }
 }
 
 // cards and stuff
