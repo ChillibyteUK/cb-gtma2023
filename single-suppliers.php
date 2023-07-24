@@ -31,7 +31,7 @@ foreach ($blocks as $block) {
 }
 
 $category = get_the_terms(get_the_ID(), 'tags');
-echo '<h2>Products &amp; Services</h2><ul class="supplier__tags cols-lg-3">';
+echo '<h2 class="clear">Products &amp; Services</h2><ul class="supplier__tags cols-lg-3">';
 foreach ($category as $c) {
     echo '<li>' . $c->name . '</li>';
 }
