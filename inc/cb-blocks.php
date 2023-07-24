@@ -190,17 +190,20 @@ add_action('acf/init', 'acf_blocks');
 add_filter('register_block_type_args', 'core_image_block_type_args', 10, 3);
 function core_image_block_type_args($args, $name)
 {
-    if ($name == 'core/paragraph') {
-        $args['render_callback'] = 'modify_core_add_container';
-    }
-    if ($name == 'core/list') {
-        $args['render_callback'] = 'modify_core_add_container';
-    }
-    if ($name == 'core/columns') {
-        // $args['render_callback'] = 'modify_core_add_container';
-    }
-    if ($name == 'core/heading') {
-        $args['render_callback'] = 'modify_core_heading';
+    if (is_single() && 'suppliers' != get_post_type()) {
+
+        if ($name == 'core/paragraph') {
+            $args['render_callback'] = 'modify_core_add_container';
+        }
+        if ($name == 'core/list') {
+            $args['render_callback'] = 'modify_core_add_container';
+        }
+        if ($name == 'core/columns') {
+            // $args['render_callback'] = 'modify_core_add_container';
+        }
+        if ($name == 'core/heading') {
+            $args['render_callback'] = 'modify_core_heading';
+        }
     }
     // if ( $name == 'core/button' ) {
     //     $args['render_callback'] = 'modify_core_buttons';

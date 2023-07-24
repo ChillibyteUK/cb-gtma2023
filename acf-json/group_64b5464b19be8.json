@@ -135,9 +135,9 @@
             ]
         },
         {
-            "key": "field_64ba4c1486b35",
-            "label": "Photos",
-            "name": "photos",
+            "key": "field_64ba87e8d9d49",
+            "label": "Documents",
+            "name": "documents",
             "aria-label": "",
             "type": "gallery",
             "instructions": "",
@@ -147,7 +147,49 @@
                     {
                         "field": "field_64b5465e34c84",
                         "operator": "==",
-                        "value": "Photo Gallery"
+                        "value": "Brochures"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64b5465e34c84",
+                        "operator": "==",
+                        "value": "Case Studies"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64b5465e34c84",
+                        "operator": "==",
+                        "value": "Catalogues"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64b5465e34c84",
+                        "operator": "==",
+                        "value": "New\/Enhanced Products"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64b5465e34c84",
+                        "operator": "==",
+                        "value": "Press Releases"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64b5465e34c84",
+                        "operator": "==",
+                        "value": "Technical Papers"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64b5465e34c84",
+                        "operator": "==",
+                        "value": "Accreditations"
                     }
                 ]
             ],
@@ -166,7 +208,7 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": "",
+            "mime_types": "pdf",
             "insert": "append",
             "preview_size": "medium"
         }
@@ -189,5 +231,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689930800
+    "modified": 1689949732
 }

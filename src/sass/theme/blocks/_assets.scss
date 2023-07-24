@@ -39,4 +39,22 @@
     }
 
 
+    &__dl_grid {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 1rem;
+    }
+    &__dl_card {
+        display: block;
+        background-color: var(--col-grey);
+        padding: 0.5rem;
+    }
+    &__dl_image {
+        aspect-ratio: 1 / 1.41;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 0.5rem;
+    }
+
 }
