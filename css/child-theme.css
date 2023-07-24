@@ -22320,6 +22320,7 @@ strong, b {
   font-size: var(--fs-400);
 }
 
+.has-medium-font-size,
 .fs-500 {
   font-size: var(--fs-500);
 }
