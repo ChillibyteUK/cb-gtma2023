@@ -19,10 +19,10 @@ get_header();
                 $file = get_field('pdf',get_the_ID());
                 $img = wp_get_attachment_image_url( $file, 'large'); // , "", ['class'=>'scs__image',] ) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="dl_card__image">';
                 ?>
-                <div class="scs__card">
+                <a class="scs__card" href="<?=get_the_permalink()?>">
                     <img src="<?=$img?>" class="scs__cover">
                     <div class="scs__title"><?=get_the_title()?></div>
-                </div>
+                </a>
                 <?php
             }
             ?>
