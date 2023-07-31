@@ -62,7 +62,7 @@ function cb_register_post_types()
         "hierarchical" => false,
         "rewrite" => [ "slug" => "scs", "with_front" => false ],
         "query_var" => true,
-        "supports" => [ "title" ],
+        "supports" => [ "title", "editor" ],
         "show_in_graphql" => false,
         "exclude_from_search" => true
     ];
