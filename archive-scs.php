@@ -17,8 +17,7 @@ get_header();
             while ($q->have_posts()) {
                 $q->the_post();
                 $file = get_field('pdf',get_the_ID());
-                echo $file;
-                $img = wp_get_attachment_image_url( $file, 'medium'); // , "", ['class'=>'scs__image',] ) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="dl_card__image">';
+                $img = wp_get_attachment_image_url( $file, 'large'); // , "", ['class'=>'scs__image',] ) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="dl_card__image">';
                 ?>
                 <div class="scs__card">
                     <img src="<?=$img?>" class="scs__cover">
