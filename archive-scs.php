@@ -8,7 +8,7 @@ get_header();
     <section class="scs">
         <div class="container-xl">
             <h1>Supply Chain Solutions</h1>
-            <div class="scs__grid">
+            <div class="scs__grid py-5">
             <?php
             $q = new WP_Query(array(
                 'post_type' => 'scs',
