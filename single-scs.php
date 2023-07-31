@@ -13,7 +13,7 @@ $img = get_the_post_thumbnail_url(get_the_ID(),'full');
     ?>
     </section>
     <div class="container-xl">
-        MAG HERE
+        <?=do_shortcode('[dearpdf id="303"][/dearpdf]')?>
     </div>
 </main>
 <?php
