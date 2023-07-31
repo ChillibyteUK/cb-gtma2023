@@ -3,6 +3,12 @@
 defined('ABSPATH') || exit;
 get_header();
 $img = get_the_post_thumbnail_url(get_the_ID(),'full');
+
+$file = get_field('pdf',get_the_ID());
+$fs = filesize( get_attached_file( $file ) );
+
+$fname = "GTMA Supply Chain Solutions - " . get_the_title();
+
 ?>
 <main id="main" class="scs-single">
     <section class="breadcrumbs container-xl">
@@ -14,18 +20,9 @@ $img = get_the_post_thumbnail_url(get_the_ID(),'full');
     </section>
     <div class="container-xl">
         <?=do_shortcode('[dearpdf id="303"][/dearpdf]')?>
-
-        Download
-        <?php
-
-$file = get_field('pdf',get_the_ID());
-$fs = filesize( get_attached_file( $file ) );
-
-echo $fs;
-
-
-
-        ?>
+        <div class="my-5">
+        <a href="<?=get_the_permalink(get_the_ID())?>" download="<?=$fname?> class="btn btn-primary">Download PDF (<?=formatBytes($fs)?>)</a>
+        </div>
     </div>
 </main>
 <?php
