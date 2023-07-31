@@ -8,6 +8,7 @@ get_header();
     <section class="scs">
         <div class="container-xl">
             <h1>Supply Chain Solutions</h1>
+            <div class="scs__grid">
             <?php
             $q = new WP_Query(array(
                 'post_type' => 'scs',
@@ -18,10 +19,15 @@ get_header();
                 $file = get_field('pdf',get_the_ID());
                 echo $file;
                 $img = wp_get_attachment_image_url( $file, 'medium'); // , "", ['class'=>'scs__image',] ) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="dl_card__image">';
-                echo $img;
-                echo get_the_title();
+                ?>
+                <div class="scs__card">
+                    <img src="<?=$img?>" class="scs__cover">
+                    <div class="scs__title"><?=get_the_title()?></div>
+                </div>
+                <?php
             }
             ?>
+            </div>
         </div>
     </section>
 </main>

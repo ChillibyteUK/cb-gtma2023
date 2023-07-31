@@ -23035,6 +23035,27 @@ footer .footer__logo {
   background-color: var(--col-grey);
 }
 
+.scs-archive .scs__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.scs-archive .scs__card {
+  border: 1px solid var(--col-blue-400);
+}
+.scs-archive .scs__cover {
+  width: 100%;
+  aspect-ratio: 1/1.41;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+.scs-archive .scs__title {
+  background-color: var(--col-blue-400);
+  padding: 0.5rem 1rem;
+}
+
 body {
   background-color: var(--col-light);
   color: var(--col-dark);

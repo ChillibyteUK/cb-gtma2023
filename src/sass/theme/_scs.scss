@@ -1,0 +1,26 @@
+.scs-archive {
+
+
+    .scs {
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 1rem;
+        }
+        &__card {
+            border: 1px solid var(--col-blue-400);
+        }
+        &__cover {
+            width: 100%;
+            aspect-ratio: 1 / 1.41;
+            object-fit: cover;
+            object-position: center;
+        }
+        &__title {
+            background-color: var(--col-blue-400);
+            padding: 0.5rem 1rem;
+        }
+    }
+
+
+}
