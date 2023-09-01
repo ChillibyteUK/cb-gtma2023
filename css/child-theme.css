@@ -23069,6 +23069,27 @@ footer .footer__logo {
   background-color: var(--col-grey);
 }
 
+.partner {
+  margin-top: calc(var(--h-top) + 2rem);
+}
+.partner__sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--h-top);
+  background-color: var(--col-blue-400);
+  color: var(--col-light);
+  padding: 1rem;
+}
+.partner__sidebar a {
+  color: var(--col-light);
+}
+.partner__sidebar a:hover {
+  color: var(--col-red-400);
+}
+.partner__sidebar a.active {
+  font-weight: var(--fw-600);
+}
+
 .scs-archive .scs__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
