@@ -8,6 +8,7 @@ get_header();
 ?>
 <main id="main" class="partner">
     <div class="container-xl">
+        <h1><?=get_the_title()?></h1>
         <div class="row">
             <div class="col-md-8">
                 <?php
