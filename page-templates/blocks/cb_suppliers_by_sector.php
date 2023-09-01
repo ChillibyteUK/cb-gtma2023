@@ -23,12 +23,12 @@ if ($q->have_posts()) {
         while($q->have_posts()) {
             $q->the_post();
             $type = get_the_terms(get_the_ID(), 'types');
-            $type = $type[0]->name;
+            $types = implode(', ', wp_list_pluck($type, 'name'));
             ?>
         <a class="supplier_list__card"
             href="<?=get_the_permalink()?>">
             <h3><?=get_the_title()?></h3>
-            <?=$type?>
+            <?=$types?>
         </a>
         <?php
         }
