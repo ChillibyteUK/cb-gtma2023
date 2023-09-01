@@ -26,3 +26,36 @@
         }
     }
 }
+
+.partners {
+    &__grid {
+        display: grid;
+        gap: 2rem;
+        @media (min-width:576px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width:992px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &__card {
+        img {
+            aspect-ratio: 2 / 1;
+            object-fit: contain;
+            object-position: center;
+        }
+        &:hover {
+            .partners__title {
+                background-color: var(--col-red-400);
+            }
+        }
+    }
+    &__title {
+        background-color: var(--col-blue-400);
+        color: var(--col-light);
+        padding: 0.5rem 1rem;
+        font-size: var(--fs-400);
+        font-weight: var(--fw-600);
+        transition: background-color var(--transition);
+    }
+}
