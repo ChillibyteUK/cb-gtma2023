@@ -11,6 +11,8 @@ get_header();
         <h1><?=get_the_title()?></h1>
         <div class="row">
             <div class="col-md-8">
+                <img class="partner__logo"
+                    src="<?=get_the_post_thumbnail_url(get_the_ID(), 'large')?>">
                 <?php
                 the_content();
 ?>
