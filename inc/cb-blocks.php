@@ -74,6 +74,15 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_news_by_sector',
+            'title'				=> __('CB News by Sector'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_news_by_sector.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
         // acf_register_block_type(array(
         //     'name'				=> 'cb_text_full_image',
         //     'title'				=> __('CB Text / Full Bleed Image'),

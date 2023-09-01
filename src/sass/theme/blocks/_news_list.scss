@@ -1,0 +1,8 @@
+.news_list {
+    &__card {
+        display: block;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-bottom: 1px solid var(--col-blue-400);
+    }
+}

@@ -23037,6 +23037,13 @@ footer .footer__logo {
   min-height: 73px;
 }
 
+.news_list__card {
+  display: block;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--col-blue-400);
+}
+
 .container-xl .container-xl {
   padding-left: 0;
   padding-right: 0;
