@@ -1,3 +1,23 @@
+.hero {
+    margin-top: var(--h-top);
+    @media (min-width:768px) {
+        margin-top: var(--h-top-desktop);
+    }
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+
+    display: grid;
+    place-content: center;
+
+    &__title {
+        color: var(--col-light);
+        padding-inline: 1rem;
+        background-color: hsl(var(--hsl-blue-400) / 0.6);
+    }
+}
+
 .hero-search {
     margin-top: var(--h-top);
     @media (min-width:768px) {

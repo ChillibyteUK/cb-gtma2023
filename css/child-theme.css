@@ -1,29 +1,29 @@
 @charset "UTF-8";
 :root {
-  --hsl-col-dark: 345 6% 13%;
-  --hsl-col-light: 0 0% 100%;
-  --hsl-col-grey: 0 0% 93%;
-  --hsl-col-blue-100: 198 41% 79%;
-  --hsl-col-blue-200: 198 41% 65%;
-  --hsl-col-blue-300: 198 42% 50%;
-  --hsl-col-blue-400: 198 100% 29%;
-  --hsl-col-red-100: 353 68% 84%;
-  --hsl-col-red-200: 353 69% 74%;
-  --hsl-col-red-300: 353 69% 63%;
-  --hsl-col-red-400: 353 76% 47%;
-  --col-dark: hsl(var(--hsl-col-dark));
-  --col-light: hsl(var(--hsl-col-light));
-  --col-grey: hsl(var(--hsl-col-grey));
-  --col-blue: hsl(var(--hsl-col-blue-400));
-  --col-blue-400: hsl(var(--hsl-col-blue-400));
-  --col-blue-100: hsl(var(--hsl-col-blue-100));
-  --col-blue-200: hsl(var(--hsl-col-blue-200));
-  --col-blue-300: hsl(var(--hsl-col-blue-300));
-  --col-red: hsl(var(--hsl-col-red-400));
-  --col-red-400: hsl(var(--hsl-col-red-400));
-  --col-red-100: hsl(var(--hsl-col-red-100));
-  --col-red-200: hsl(var(--hsl-col-red-200));
-  --col-red-300: hsl(var(--hsl-col-red-300));
+  --hsl-dark: 345 6% 13%;
+  --hsl-light: 0 0% 100%;
+  --hsl-grey: 0 0% 93%;
+  --hsl-blue-100: 198 41% 79%;
+  --hsl-blue-200: 198 41% 65%;
+  --hsl-blue-300: 198 42% 50%;
+  --hsl-blue-400: 198 100% 29%;
+  --hsl-red-100: 353 68% 84%;
+  --hsl-red-200: 353 69% 74%;
+  --hsl-red-300: 353 69% 63%;
+  --hsl-red-400: 353 76% 47%;
+  --col-dark: hsl(var(--hsl-dark));
+  --col-light: hsl(var(--hsl-light));
+  --col-grey: hsl(var(--hsl-grey));
+  --col-blue: hsl(var(--hsl-blue-400));
+  --col-blue-400: hsl(var(--hsl-blue-400));
+  --col-blue-100: hsl(var(--hsl-blue-100));
+  --col-blue-200: hsl(var(--hsl-blue-200));
+  --col-blue-300: hsl(var(--hsl-blue-300));
+  --col-red: hsl(var(--hsl-red-400));
+  --col-red-400: hsl(var(--hsl-red-400));
+  --col-red-100: hsl(var(--hsl-red-100));
+  --col-red-200: hsl(var(--hsl-red-200));
+  --col-red-300: hsl(var(--hsl-red-300));
   --h-top: 90px;
   --h-top-desktop: 115px;
   --fw-400: 400;
@@ -22713,6 +22713,26 @@ footer .footer__logo {
   font-weight: 300;
   font-size: 0.889rem;
   border-radius: 0;
+}
+
+.hero {
+  margin-top: var(--h-top);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  display: grid;
+  place-content: center;
+}
+@media (min-width: 768px) {
+  .hero {
+    margin-top: var(--h-top-desktop);
+  }
+}
+.hero__title {
+  color: var(--col-light);
+  padding-inline: 1rem;
+  background-color: hsl(var(--hsl-blue-400)/0.6);
 }
 
 .hero-search {
