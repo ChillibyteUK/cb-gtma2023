@@ -37,7 +37,7 @@ if ($class == 'partner') {
 ?>
             </div>
             <div class="col-md-4">
-                <div class="partner__sidebar">
+                <div class="partner__sidebar mb-4">
                     <h3><?=get_field('sidebar_title')?>
                     </h3>
                     <?php
