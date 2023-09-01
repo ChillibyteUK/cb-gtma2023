@@ -23115,10 +23115,12 @@ footer .footer__logo {
 }
 .partners__card img {
   aspect-ratio: 2/1;
+  width: 100%;
   -o-object-fit: contain;
   object-fit: contain;
   -o-object-position: center;
   object-position: center;
+  margin: 0 1rem 1rem 1rem;
 }
 .partners__card:hover .partners__title {
   background-color: var(--col-red-400);
