@@ -23110,7 +23110,7 @@ footer .footer__logo {
 }
 @media (min-width: 992px) {
   .partners__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .partners__card img {
