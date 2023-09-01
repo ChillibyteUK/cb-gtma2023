@@ -1,32 +1,3 @@
-.partner {
-    margin-top: calc(var(--h-top) + 2rem);
-
-    &__logo {
-        object-fit: contain;
-        object-position: center left;
-        width: 100%;
-        height: 10rem;
-        margin-bottom: 1rem;
-    }
-
-    &__sidebar {
-        position: sticky;
-        top: var(--h-top);
-        background-color: var(--col-blue-400);
-        color: var(--col-light);
-        padding: 1rem;
-        a {
-            color: var(--col-light);
-            &:hover {
-                color: var(--col-red-400);
-            }
-            &.active {
-                font-weight: var(--fw-600);
-            }
-        }
-    }
-}
-
 .partners {
     &__grid {
         display: grid;
