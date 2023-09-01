@@ -22444,6 +22444,19 @@ strong, b {
   height: var(--stripe);
   background: linear-gradient(-45deg, var(--col-red-400) 50%, var(--col-blue-400) 50%);
 }
+#wrapper-navbar .dropdown-menu {
+  background-color: var(--col-red-400);
+  border-radius: 0;
+  border: none;
+  margin-top: -0.05rem;
+}
+#wrapper-navbar .dropdown-menu a {
+  text-transform: initial;
+  padding-block: 0.5rem;
+}
+#wrapper-navbar .dropdown-menu a:hover {
+  color: var(--col-red-400) !important;
+}
 
 footer {
   background-color: var(--col-grey);

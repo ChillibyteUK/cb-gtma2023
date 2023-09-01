@@ -63,6 +63,20 @@
             background: linear-gradient(-45deg, var(--col-red-400) 50%, var(--col-blue-400) 50%);
         }
     }
+
+    .dropdown-menu {
+        background-color: var(--col-red-400);
+        border-radius: 0;
+        border: none;
+        margin-top: -0.05rem;
+        a {
+            text-transform: initial;
+            padding-block: 0.5rem;
+            &:hover {
+                color: var(--col-red-400) !important;
+            }
+        }
+    }
 }
 
 // #wrapper-navbar {
