@@ -224,7 +224,6 @@ function core_image_block_type_args($args, $name)
     }
     if ($name == 'core/heading') {
         $args['render_callback'] = 'modify_core_heading';
-        echo '<pre>' . $name . '</pre>';
     }
     // if ( $name == 'core/button' ) {
     //     $args['render_callback'] = 'modify_core_buttons';
