@@ -23113,6 +23113,10 @@ footer .footer__logo {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.partners__card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
 .partners__card img {
   aspect-ratio: 2/1;
   width: 100%;
@@ -23132,6 +23136,7 @@ footer .footer__logo {
   font-size: var(--fs-400);
   font-weight: var(--fw-600);
   transition: background-color var(--transition);
+  min-height: 73px;
 }
 
 .scs-archive .scs__grid {
