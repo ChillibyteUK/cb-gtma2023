@@ -46,7 +46,7 @@ $sibs = new WP_Query(array(
     'posts_per_page' => -1,
     'post_parent'    => $parent,
     'order'          => 'ASC',
-    'orderby'        => 'menu_order'
+    'orderby'        => 'title'
 ));
 if ($sibs->have_posts()) {
     echo '<ul>';
