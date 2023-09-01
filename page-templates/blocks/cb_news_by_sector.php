@@ -16,7 +16,7 @@ if ($q->have_posts()) {
     ?>
 <section class="news_list py-5">
     <div class="container-xl">
-        <h2><?=$sector->name?> News</h2>
+        <h2 class="mb-4"><?=$sector->name?> News</h2>
         <?php
         while($q->have_posts()) {
             $q->the_post();
