@@ -9,9 +9,14 @@
         margin-bottom: 1rem;
     }
 
-    &__sidebar {
+}
+
+.sidebar {
+    &__inner {
         position: sticky;
         top: var(--h-top);
+    }
+    &__siblings {
         background-color: var(--col-blue-400);
         color: var(--col-light);
         padding: 1rem;
@@ -22,6 +27,17 @@
             }
             &.active {
                 font-weight: var(--fw-600);
+            }
+        }
+    }
+    &__search {
+        background-color: var(--col-red-400);
+        color: var(--col-light);
+        padding: 1rem;
+        .form {
+            display: flex;
+            .btn-search {
+                background-color: var(--col-blue-400);
             }
         }
     }
