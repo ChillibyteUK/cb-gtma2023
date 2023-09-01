@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Business Parter
+Template Name: Sidebar with Siblings
 */
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
@@ -19,7 +19,8 @@ get_header();
             </div>
             <div class="col-md-4">
                 <div class="partner__sidebar">
-                    <h3>GTMA Business Partners</h3>
+                    <h3><?=get_field('sidebar_title')?>
+                    </h3>
                     <?php
                 $me = get_the_ID();
 $parent = wp_get_post_parent_id($me);
