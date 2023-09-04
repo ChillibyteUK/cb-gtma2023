@@ -34,9 +34,13 @@ $suppliers = new WP_Query(array(
 if ($suppliers->have_posts()) {
     $buttons .= '<a href="#suppliers" class="btn btn-secondary">Suppliers</a>';
 }
+
+if ($buttons != '') {
 ?>
 <section class="sector_subnav">
     <div class="container-xl mb-4">
         <?=$buttons?>
     </div>
 </section>
+<?php
+}
