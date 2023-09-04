@@ -2,14 +2,20 @@
     <div class="container-xl">
         <div class="row">
             <div class="col-md-6">
-                Address
-                <?=get_field('contact_address','options')?>
+                <h3>Address</h3>
+                <ul class="fa-ul">
+                    <li><span class="fa-li"><i class="fa-solid fa-map-marker-alt"></i></span> <?=str_replace(',', ',<br>', get_field('contact_address','options'))?></li>
+                </ul>
 
-                Telephone
-                <?=get_field('contact_phone','options')?>
+                <h3>Telephone</h3>
+                <ul class="fa-ul">
+                    <li><span class="fa-li"><i class="fa-solid fa-map-marker-alt"></i></span> <a href="tel:<?=parse_phone(get_field('contact_phone','options'))?>"><?=get_field('contact_phone','options')?></a></li>
+                </ul>
 
-                Email
-                <?=get_field('contact_email','options')?>
+                <h3>Email</h3>
+                <ul class="fa-ul">
+                    <li><span class="fa-li"><i class="fa-solid fa-envelope"></i></span> <a href="mailto:<?=get_field('contact_email','options')?>"><?=get_field('contact_email','options')?></a></li>
+                </ul>
 
                 <p>If you have any comments or suggestions regarding any part of our web site or have a general enquiry for the Association please leave your contact details in the form.</p>
             </div>
