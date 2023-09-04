@@ -16,6 +16,7 @@ $q = new WP_Query(array(
 ));
 if ($q->have_posts()) {
     ?>
+<a class="anchor" id="suppliers"></a>
 <section class="supplier_list py-5">
     <div class="container-xl">
         <h2 class="mb-4"><?=$sector->name?> Sector Suppliers</h2>
