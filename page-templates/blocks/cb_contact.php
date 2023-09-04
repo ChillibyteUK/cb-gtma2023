@@ -20,10 +20,9 @@
                 <p>If you have any comments or suggestions regarding any part of our web site or have a general enquiry for the Association please leave your contact details in the form.</p>
             </div>
             <div class="col-md-6">
-                FORM ID: <?=get_field('contact_form_id','options')?>
                 <?=do_shortcode('[gravityform id="' . get_field('contact_form_id','options') . '" title="false"]')?>
             </div>
         </div>
-        <iframe src="<?=get_field('google_maps_src','options')?>" width="100%" height="400" frameborder="0"></iframe>
+        <iframe src="<?=get_field('google_maps_src','options')?>" width="100%" height="450" frameborder="0"></iframe>
     </div>
 </section>
