@@ -20,7 +20,7 @@
                 <p>If you have any comments or suggestions regarding any part of our web site or have a general enquiry for the Association please leave your contact details in the form.</p>
             </div>
             <div class="col-md-6">
-                <?=get_field('contact_form_id','options')?>
+                ID: <?=get_field('contact_form_id','options')?>
                 <?=do_shortcode('[gravityform id="' . get_field('contact_form_id','options') . '" title="false"]')?>
             </div>
         </div>
