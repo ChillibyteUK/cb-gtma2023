@@ -19,7 +19,7 @@ $fname = "GTMA Supply Chain Solutions - " . get_the_title() . ".pdf";
     ?>
     </section>
     <div class="container-xl">
-        <?=do_shortcode('[dearpdf id="303"][/dearpdf]')?>
+        <?=do_shortcode('[dearpdf id="' . get_field('dearpdf_id') . '"][/dearpdf]')?>
         <div class="my-5">
             
             <?php the_content(); ?>
