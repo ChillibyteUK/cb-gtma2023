@@ -244,7 +244,7 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": "",
+            "mime_types": "png, jpg, jpeg",
             "insert": "append",
             "preview_size": "medium"
         }
@@ -267,5 +267,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694012175
+    "modified": 1694012250
 }
