@@ -10,6 +10,9 @@ $img = get_the_post_thumbnail_url(get_the_ID(), 'full');
 $blocks = parse_blocks($content);
 $sidebar = array();
 $after;
+
+$navitems = array();
+
 ?>
     <div class="stickynav"></div>
     <div class="container-xl">
@@ -28,9 +31,14 @@ $after;
                 </div>
                 <?php
 foreach ($blocks as $block) {
-    cbdump($block);
+    if ($block['blockName'] == 'acf/cb-supplier-assets') {
+        $blockTitle = $block['blockName']['attrs']['data']['type'];
+        $navitems[] = $blockTitle;
+    }
     echo render_block($block);
 }
+
+cbdump($navitems);
 
 $category = get_the_terms(get_the_ID(), 'tags');
 echo '<h2 class="clear">Products &amp; Services</h2><ul class="supplier__tags cols-lg-3">';
