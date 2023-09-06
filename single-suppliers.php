@@ -28,9 +28,11 @@ $navitems = array();
 .stickynav a {
     font-size: var(--fs-200);
     color: #fff;
+    display: inline-block;
 }
 .stickynav a:not(:last-of-type) {
     border-right: 1px solid white;
+    padding-right: 0.5rem;
 }
 </style>
 
