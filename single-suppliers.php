@@ -14,7 +14,7 @@ $after;
 $navitems = array();
 
 ?>
-    <div class="stickynav" id="navholder"></div>
+
     <div class="container-xl">
         <div class="row g-4 pb-4">
             <div class="col-lg-9 supplier__content">
@@ -29,6 +29,7 @@ $navitems = array();
                             alt="">
                     </div>
                 </div>
+                <div class="stickynav" id="navholder"></div>
                 <?php
 foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
@@ -136,6 +137,26 @@ const navholder = document.getElementById('navholder');
 const navitems = <?=$j?>;
 
 navholder.innerHTML = navitems;
+
+for (var i = 0; i < navitems.length; i++) {
+    var name = navitems[i];
+    var slug = slugify(name);
+
+    // Create <a> element
+    var aElement = document.createElement('a');
+    aElement.setAttribute('href', '#'+slug);
+    aElement.className = 'btn btn-red mb-2';
+    aElement.textContent = name;
+
+    // Append the <a> element to the container
+    navholder.appendChild(aElement);
+
+    // Add a space for separation
+    if (i < navitems.length - 1) {
+        var space = document.createTextNode(' ');
+        navholder.appendChild(space);
+    }
+}
 
 </script>
     <?php
