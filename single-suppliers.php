@@ -32,7 +32,7 @@ $navitems = array();
                 <?php
 foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
-        $blockTitle = $block['blockName']['attrs']['data']['type'];
+        $blockTitle = $block['attrs']['data']['type'];
         $navitems[] = $blockTitle;
     }
     echo render_block($block);
