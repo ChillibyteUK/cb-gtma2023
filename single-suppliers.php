@@ -35,7 +35,6 @@ foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
         $blockTitle = $block['attrs']['data']['type'];
         $navitems[] = $blockTitle;
-        $blockTitle = str_replace('/', '-', $blockTitle);
         $id = acf_slugify($blockTitle);
         echo '<a id="' . $id . '" class="anchor"></a>';
     }
@@ -138,7 +137,7 @@ const navholder = document.getElementById('navholder');
 const navitems = <?=$j?>;
 
 function slugify(str) {
-    return str.toLowerCase().replace(/\s+/g, '-');
+    return str.toLowerCase().replace(/\s+/g, '-').replace(/&+/g, '');
 }
 
 for (var i = 0; i < navitems.length; i++) {
