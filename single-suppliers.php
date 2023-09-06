@@ -35,7 +35,7 @@ foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
         $blockTitle = $block['attrs']['data']['type'];
         $navitems[] = $blockTitle;
-        preg_replace('/\\/','-', $blockTitle);
+        $blockTitle = preg_replace('/\\/','-', $blockTitle);
         $id = acf_slugify($blockTitle);
         echo '<a id="' . $id . '" class="anchor"></a>';
     }
