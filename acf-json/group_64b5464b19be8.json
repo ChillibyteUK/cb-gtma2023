@@ -39,9 +39,9 @@
                 "Brochures": "Brochures",
                 "Case Studies": "Case Studies",
                 "Catalogues": "Catalogues",
-                "New\/Enhanced Products": "New\/Enhanced Products",
+                "New & Enhanced Products": "New & Enhanced Products",
                 "Photo Gallery": "Photo Gallery",
-                "Plant\/Equipment": "Plant\/Equipment",
+                "Plant & Equipment": "Plant & Equipment",
                 "Press Releases": "Press Releases",
                 "Technical Papers": "Technical Papers",
                 "Video Gallery": "Video Gallery"
@@ -231,5 +231,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689949732
+    "modified": 1694011953
 }
