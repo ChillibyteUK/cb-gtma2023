@@ -34,13 +34,16 @@ foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
         $blockTitle = $block['attrs']['data']['type'];
         $navitems[] = $blockTitle;
+        $id = acf_slugify($blockTitle);
+        echo '<a id="' . $id . '" class="anchor"></a>';
     }
     echo render_block($block);
 }
 
-cbdump($navitems);
 
 $category = get_the_terms(get_the_ID(), 'tags');
+echo '<a id="products-services" class="anchor"></a>';
+$navitems[] = 'Products &amp; Services';
 echo '<h2 class="clear">Products &amp; Services</h2><ul class="supplier__tags cols-lg-3">';
 foreach ($category as $c) {
     echo '<li>' . $c->name . '</li>';
@@ -125,5 +128,12 @@ echo '</ul>';
     </div>
 </main>
 <?php
+add_action('wp_footer', function() use ($navitems) {
+
+    $j = json_encode($navitems);
+    echo $j;
+
+});
+
 get_footer();
 ?>
