@@ -24,6 +24,7 @@ $navitems = array();
     top: var(--h-top-desktop);
     padding: 0.5rem;
     margin-bottom: 1rem;
+    z-index: 1000;
 }
 .stickynav a {
     font-size: var(--fs-200);
