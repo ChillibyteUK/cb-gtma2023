@@ -11,6 +11,7 @@ $blocks = parse_blocks($content);
 $sidebar = array();
 $after;
 ?>
+    <div class="stickynav"></div>
     <div class="container-xl">
         <div class="row g-4 pb-4">
             <div class="col-lg-9 supplier__content">
@@ -27,6 +28,7 @@ $after;
                 </div>
                 <?php
 foreach ($blocks as $block) {
+    cbdump($block);
     echo render_block($block);
 }
 
