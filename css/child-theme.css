@@ -23092,11 +23092,11 @@ footer .footer__logo {
   clear: both;
 }
 
-.supplier {
+.supplier__content {
   margin-top: calc(var(--h-top) + 2rem);
 }
 @media (min-width: 992px) {
-  .supplier {
+  .supplier__content {
     margin-top: var(--h-top-desktop)2rem;
   }
 }
