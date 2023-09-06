@@ -21,10 +21,16 @@ $navitems = array();
     gap: 0.5rem;
     flex-wrap: wrap;
     position: sticky;
+    top: var(--h-top);
     top: var(--h-top-desktop);
     padding: 0.5rem;
     margin-bottom: 1rem;
     z-index: 1000;
+}
+@media (min-width:992px) {
+    .stickynav {
+        top: var(--h-top-desktop);
+    }
 }
 .stickynav a {
     font-size: var(--fs-200);
