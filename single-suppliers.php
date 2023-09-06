@@ -35,6 +35,7 @@ foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
         $blockTitle = $block['attrs']['data']['type'];
         $navitems[] = $blockTitle;
+        preg_replace('/\\/','-', $blockTitle);
         $id = acf_slugify($blockTitle);
         echo '<a id="' . $id . '" class="anchor"></a>';
     }
@@ -44,7 +45,7 @@ foreach ($blocks as $block) {
 
 $category = get_the_terms(get_the_ID(), 'tags');
 echo '<a id="products-services" class="anchor"></a>';
-$navitems[] = 'Products &amp; Services';
+$navitems[] = 'Products & Services';
 echo '<h2 class="clear">Products &amp; Services</h2><ul class="supplier__tags cols-lg-3">';
 foreach ($category as $c) {
     echo '<li>' . $c->name . '</li>';
