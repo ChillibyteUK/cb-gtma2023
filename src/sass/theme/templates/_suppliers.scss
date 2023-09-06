@@ -1,8 +1,8 @@
 .supplier {
     &__content {
-        margin-top: calc(var(--h-top) + 2rem);
+        margin-top: 3rem;
         @media (min-width: 992px) {
-            margin-top: calc(var(--h-top-desktop) + 2rem);
+            margin-top: 3rem;
         }
     }
 

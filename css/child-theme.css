@@ -23093,11 +23093,11 @@ footer .footer__logo {
 }
 
 .supplier__content {
-  margin-top: calc(var(--h-top) + 2rem);
+  margin-top: 3rem;
 }
 @media (min-width: 992px) {
   .supplier__content {
-    margin-top: calc(var(--h-top-desktop) + 2rem);
+    margin-top: 3rem;
   }
 }
 .supplier__sidebar {
