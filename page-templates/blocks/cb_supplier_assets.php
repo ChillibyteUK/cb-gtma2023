@@ -4,9 +4,15 @@ $type = get_field('type');
 
     echo '<h2>' . $type . '</h2>';
 
-    if ($type == 'Plant/Equipment') {
+    if ($type == 'Plant & Equipment') {
         ?>
     <div><?=get_field('content')?></div>
+    <?php
+    }
+
+    if ($type == 'Photo Gallery') {
+        ?>
+    <div><?=var_dump(get_field('images'))?></div>
     <?php
     }
 
@@ -110,7 +116,7 @@ $type = get_field('type');
         });
     }
 
-    if ($type == 'Accreditations' || $type == 'Brochures' || $type == 'Case Studies' || $type == 'Catalogues' || $type == 'New/Enhanced Products' || $type == 'Press Releases' || $type == 'Technical Papers') {
+    if ($type == 'Accreditations' || $type == 'Brochures' || $type == 'Case Studies' || $type == 'Catalogues' || $type == 'New & Enhanced Products' || $type == 'Press Releases' || $type == 'Technical Papers') {
         echo '<div class="assets__dl_grid">';
         foreach (get_field('documents') as $p) {
             $link = wp_get_attachment_url($p);
