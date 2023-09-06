@@ -14,6 +14,20 @@ $after;
 $navitems = array();
 
 ?>
+<style>
+.stickynav {
+    background-color: var(--col-blue-400);
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.stickynav a {
+    font-size: var(--fs-200);
+    border: 1px solid #fff;
+    padding: 0.25rem 0.5rem;
+    color: #fff;
+}
+</style>
 
     <div class="container-xl">
         <div class="row g-4 pb-4">
@@ -147,17 +161,17 @@ for (var i = 0; i < navitems.length; i++) {
     // Create <a> element
     var aElement = document.createElement('a');
     aElement.setAttribute('href', '#'+slug);
-    aElement.className = 'btn btn-red mb-2';
+    aElement.className = 'navbtn';
     aElement.textContent = name;
 
     // Append the <a> element to the container
     navholder.appendChild(aElement);
 
     // Add a space for separation
-    if (i < navitems.length - 1) {
-        var space = document.createTextNode(' ');
-        navholder.appendChild(space);
-    }
+    // if (i < navitems.length - 1) {
+    //     var space = document.createTextNode(' ');
+    //     navholder.appendChild(space);
+    // }
 }
 
 </script>
