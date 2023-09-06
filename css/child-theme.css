@@ -23095,6 +23095,11 @@ footer .footer__logo {
 .supplier {
   margin-top: calc(var(--h-top) + 2rem);
 }
+@media (min-width: 992px) {
+  .supplier {
+    margin-top: var(--h-top-desktop)2rem;
+  }
+}
 .supplier__sidebar {
   position: -webkit-sticky;
   position: sticky;
@@ -23102,6 +23107,11 @@ footer .footer__logo {
   background-color: var(--col-blue-400);
   color: var(--col-light);
   padding: 1rem;
+}
+@media (min-width: 992px) {
+  .supplier__sidebar {
+    top: var(--h-top-desktop);
+  }
 }
 .supplier .modal-dialog {
   max-width: unset;
