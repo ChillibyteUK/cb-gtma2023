@@ -14,7 +14,7 @@ $after;
 $navitems = array();
 
 ?>
-    <div class="stickynav"></div>
+    <div class="stickynav" id="navholder"></div>
     <div class="container-xl">
         <div class="row g-4 pb-4">
             <div class="col-lg-9 supplier__content">
@@ -129,10 +129,16 @@ echo '</ul>';
 </main>
 <?php
 add_action('wp_footer', function() use ($navitems) {
-
     $j = json_encode($navitems);
-    echo $j;
+    ?>
+<script>
+const navholder = document.getElementById('navholder');
+const navitems = <?=$j?>;
 
+navholder.innerHTML = navitems;
+
+</script>
+    <?php
 });
 
 get_footer();
