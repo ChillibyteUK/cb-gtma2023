@@ -20,10 +20,17 @@ $navitems = array();
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    position: sticky;
+    top: var(--h-top-desktop);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
 }
 .stickynav a {
     font-size: var(--fs-200);
     color: #fff;
+}
+.stickynav a:not(:last-of-type) {
+    border-right: 1px solid white;
 }
 </style>
 
