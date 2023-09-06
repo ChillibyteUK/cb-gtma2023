@@ -23,8 +23,6 @@ $navitems = array();
 }
 .stickynav a {
     font-size: var(--fs-200);
-    border: 1px solid #fff;
-    padding: 0.25rem 0.5rem;
     color: #fff;
 }
 </style>
