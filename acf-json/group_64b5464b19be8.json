@@ -168,7 +168,7 @@
                     {
                         "field": "field_64b5465e34c84",
                         "operator": "==",
-                        "value": "New\/Enhanced Products"
+                        "value": "Accreditations"
                     }
                 ],
                 [
@@ -189,7 +189,14 @@
                     {
                         "field": "field_64b5465e34c84",
                         "operator": "==",
-                        "value": "Accreditations"
+                        "value": "Plant & Equipment"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_64b5465e34c84",
+                        "operator": "==",
+                        "value": "New & Enhanced Products"
                     }
                 ]
             ],
@@ -231,5 +238,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694011953
+    "modified": 1694012070
 }
