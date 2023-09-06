@@ -136,7 +136,9 @@ add_action('wp_footer', function() use ($navitems) {
 const navholder = document.getElementById('navholder');
 const navitems = <?=$j?>;
 
-navholder.innerHTML = navitems;
+function slugify(str) {
+    return str.toLowerCase().replace(/\s+/g, '-');
+}
 
 for (var i = 0; i < navitems.length; i++) {
     var name = navitems[i];
