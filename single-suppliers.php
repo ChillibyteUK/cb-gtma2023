@@ -22,7 +22,6 @@ $navitems = array();
     flex-wrap: wrap;
     position: sticky;
     top: var(--h-top);
-    top: var(--h-top-desktop);
     padding: 0.5rem;
     margin-bottom: 1rem;
     z-index: 1000;
