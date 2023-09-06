@@ -43,7 +43,7 @@ foreach ($blocks as $block) {
 
 
 $category = get_the_terms(get_the_ID(), 'tags');
-echo '<a id="products-services" class="anchor"></a>';
+echo '<a id="products--services" class="anchor"></a>';
 $navitems[] = 'Products & Services';
 echo '<h2 class="clear">Products &amp; Services</h2><ul class="supplier__tags cols-lg-3">';
 foreach ($category as $c) {
