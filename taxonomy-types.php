@@ -22,6 +22,7 @@ $cat_id = get_queried_object()->term_id;
 $q = new WP_Query(array(
     'post_type' => 'suppliers',
     'posts_per_page' => -1,
+    'orderby' => 'title',
     'tax_query' => array(
     array(
         'taxonomy' => 'types',
