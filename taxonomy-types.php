@@ -83,8 +83,8 @@ add_action('wp_footer',function() {
 <script>
 (function($) {
     var $grid = $('#suppliers').isotope({
-        itemSelector: '.supplier__card',
-        layoutMode: 'masonry'
+        itemSelector: '.suppliers__card',
+        layoutMode: 'vertical'
     });
     $('#counties').on('change', function () {
         var filterValue = this.value;
