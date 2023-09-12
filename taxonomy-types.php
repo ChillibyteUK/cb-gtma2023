@@ -11,10 +11,10 @@ $cat_id = get_queried_object()->term_id;
             <h1><?=$cat_name?></h1>
             <?=term_description()?>
 
-            <div class="filters">
+            <div class="filters py-5">
                 <label for="counties">Filter by county:</label>
                 <select name="counties" id="counties" class="form-select">
-                    <option name="*">All</option>
+                    <option value="*">All</option>
                 </select>
             </div>
             <div id="suppliers">

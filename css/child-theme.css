@@ -23347,6 +23347,17 @@ rp-review-inner {
   color: var(--col-primary-400);
 }
 
+.filters {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .filters {
+    grid-template-columns: auto 1fr;
+  }
+}
+
 /*
 var all = document.getElementsByTagName("*"), i = 0, rect, docWidth = document.documentElement.offsetWidth;
 for (; i < all.length; i++) {
