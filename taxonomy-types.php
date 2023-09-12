@@ -13,7 +13,7 @@ $cat_id = get_queried_object()->term_id;
 
             <div class="filters">
                 <select name="counties" id="counties" class="form-select">
-                    <option disabled>Filter by county</option>
+                    <option>Filter by county</option>
                 </select>
             </div>
 
