@@ -11,7 +11,7 @@ $cat_id = get_queried_object()->term_id;
             <h1><?=$cat_name?></h1>
             <?=term_description()?>
 
-            <div class="filters py-5">
+            <div class="filters py-4">
                 <label for="counties">Filter by county:</label>
                 <select name="counties" id="counties" class="form-select">
                     <option value="*">All</option>
