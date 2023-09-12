@@ -17,7 +17,7 @@ get_header();
             $first = true;
             while ($q->have_posts()) {
                 $q->the_post();
-                if ($first) {
+                if ($first === true) {
                     echo do_shortcode('[dearpdf id="' . get_field('dearpdf_id',get_the_ID()) . '"][/dearpdf]');
                     $first = false;
                     echo '<div class="scs__grid py-5">';
