@@ -20,6 +20,7 @@ get_header();
                 if ($first === true) {
                     echo do_shortcode('[dearpdf id="' . get_field('dearpdf_id',get_the_ID()) . '"][/dearpdf]');
                     $first = false;
+                    echo '<h2>Previous Editions</h2>';
                     echo '<div class="scs__grid py-5">';
                 }
                 else {
