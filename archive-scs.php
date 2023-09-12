@@ -22,14 +22,16 @@ get_header();
                     $first = false;
                     echo '<div class="scs__grid py-5">';
                 }
-                $file = get_field('pdf',get_the_ID());
-                $img = wp_get_attachment_image_url( $file, 'large'); // , "", ['class'=>'scs__image',] ) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="dl_card__image">';
-                ?>
-                <a class="scs__card" href="<?=get_the_permalink()?>">
-                    <img src="<?=$img?>" class="scs__cover">
-                    <div class="scs__title"><?=get_the_title()?></div>
-                </a>
-                <?php
+                else {
+                    $file = get_field('pdf',get_the_ID());
+                    $img = wp_get_attachment_image_url( $file, 'large'); // , "", ['class'=>'scs__image',] ) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="dl_card__image">';
+                    ?>
+                    <a class="scs__card" href="<?=get_the_permalink()?>">
+                        <img src="<?=$img?>" class="scs__cover">
+                        <div class="scs__title"><?=get_the_title()?></div>
+                    </a>
+                    <?php
+                }
             }
             echo '</div>'; // end scs__grid
             ?>
