@@ -60,13 +60,15 @@ const selectElement = document.getElementById("counties");
 
 const options = <?=$json?>;
 
-options.forEach((option) => {
-  const [value, text] = option; // Destructure the array into value and text
-  const optionElement = document.createElement("option");
-  optionElement.value = value;
-  optionElement.text = text;
-  selectElement.appendChild(optionElement);
-});
+for (const value in options) {
+  if (options.hasOwnProperty(value)) {
+    const text = options[value];
+    const optionElement = document.createElement("option");
+    optionElement.value = value;
+    optionElement.text = text;
+    selectElement.appendChild(optionElement);
+  }
+}
 </script>
 <?php
 get_footer();
