@@ -23349,6 +23349,7 @@ rp-review-inner {
 }
 
 .filters {
+  width: min(400px, 90vw);
   display: grid;
   gap: 1rem;
   align-items: center;
