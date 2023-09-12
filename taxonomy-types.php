@@ -35,6 +35,7 @@ $counties = array();
 while ($q->have_posts()) {
     $q->the_post();
     $county = get_field('county',get_the_ID()) ?: '';
+    $county_class = '';
     if ($county) {
         $counties[acf_slugify($county)] = $county;
         $county_class = acf_slugify($county)
