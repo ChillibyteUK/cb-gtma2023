@@ -29,6 +29,11 @@ while ($q->have_posts()) {
             <a class="suppliers__card"
                 href="<?=get_the_permalink()?>">
                 <?=get_the_title()?>
+                <?php
+                if (get_field('county',get_the_ID())) {
+                    echo ' - ' . get_field('county',get_the_ID());
+                }
+                ?>
             </a>
             <?php
 }
