@@ -8,14 +8,20 @@ get_header();
     <section class="scs">
         <div class="container-xl">
             <h1>Supply Chain Solutions</h1>
-            <div class="scs__grid py-5">
+            
             <?php
             $q = new WP_Query(array(
                 'post_type' => 'scs',
-                'posts_per_page' => -1
+                'posts_per_page' => 4
             ));
+            $first = true;
             while ($q->have_posts()) {
                 $q->the_post();
+                if ($first) {
+                    echo do_shortcode('[dearpdf id="' . get_field('dearpdf_id',get_the_ID()) . '"][/dearpdf]');
+                    $first = false;
+                    echo '<div class="scs__grid py-5">';
+                }
                 $file = get_field('pdf',get_the_ID());
                 $img = wp_get_attachment_image_url( $file, 'large'); // , "", ['class'=>'scs__image',] ) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="dl_card__image">';
                 ?>
@@ -25,6 +31,7 @@ get_header();
                 </a>
                 <?php
             }
+            echo '</div>'; // end scs__grid
             ?>
             </div>
         </div>
