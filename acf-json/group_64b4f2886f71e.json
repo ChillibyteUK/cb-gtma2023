@@ -124,6 +124,26 @@
             "new_lines": "br"
         },
         {
+            "key": "field_65005c5b9d99e",
+            "label": "County",
+            "name": "county",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_64b4f2c6dc8e3",
             "label": "Post Code",
             "name": "post_code",
@@ -133,7 +153,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -428,5 +448,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690199571
+    "modified": 1694522496
 }
