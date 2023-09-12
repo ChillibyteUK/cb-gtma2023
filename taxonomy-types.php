@@ -23,7 +23,7 @@ $q = new WP_Query(array(
     'post_type' => 'suppliers',
     'posts_per_page' => -1,
     'orderby' => 'title',
-    'order' => 'DESC',
+    'order' => 'ASC',
     'tax_query' => array(
     array(
         'taxonomy' => 'types',
