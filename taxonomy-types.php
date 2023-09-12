@@ -12,11 +12,12 @@ $cat_id = get_queried_object()->term_id;
             <?=term_description()?>
 
             <div class="filters">
+                <label for="counties">Filter by county:</label>
                 <select name="counties" id="counties" class="form-select">
-                    <option name="*">Filter by county</option>
+                    <option name="*">All</option>
                 </select>
             </div>
-
+            <div id="suppliers">
             <?php
 $q = new WP_Query(array(
     'post_type' => 'suppliers',
@@ -50,6 +51,7 @@ while ($q->have_posts()) {
             <?php
 }
 ?>
+            </div>
         </div>
     </section>
 </main>
@@ -66,12 +68,32 @@ for (const value in options) {
   if (options.hasOwnProperty(value)) {
     const text = options[value];
     const optionElement = document.createElement("option");
-    optionElement.value = value;
+    optionElement.value = '.' + value;
     optionElement.text = text;
     selectElement.appendChild(optionElement);
   }
 }
 </script>
 <?php
+add_action('wp_footer',function() {
+    ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+    integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+(function($) {
+    var $grid = $('#suppliers').isotope({
+        itemSelector: '.supplier__card',
+        layoutMode: 'masonry'
+    });
+    $('#counties').on('change', function () {
+        var filterValue = this.value;
+        $grid.isotope({ filter: filterValue });
+    });
+})(jQuery);
+</script>
+    <?php
+},9999);
+
 get_footer();
 ?>
