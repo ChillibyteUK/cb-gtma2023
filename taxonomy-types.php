@@ -38,7 +38,7 @@ while ($q->have_posts()) {
     $county_class = '';
     if ($county) {
         $counties[acf_slugify($county)] = $county;
-        $county_class = acf_slugify($county)
+        $county_class = acf_slugify($county);
     }
     ?>
             <a class="suppliers__card <?=$county_class?>"
