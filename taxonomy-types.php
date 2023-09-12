@@ -37,9 +37,10 @@ while ($q->have_posts()) {
     $county = get_field('county',get_the_ID()) ?: '';
     if ($county) {
         $counties[acf_slugify($county)] = $county;
+        $county_class = acf_slugify($county)
     }
     ?>
-            <a class="suppliers__card <?=acf_slugify($county)?>"
+            <a class="suppliers__card <?=$county_class?>"
                 href="<?=get_the_permalink()?>">
                 <?=get_the_title()?>
                 <?php
