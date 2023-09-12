@@ -12,7 +12,9 @@ $cat_id = get_queried_object()->term_id;
             <?=term_description()?>
 
             <div class="filters">
-                <select name="counties" id="counties"></select>
+                <select name="counties" id="counties" class="form-select">
+                    <option disabled>Filter by county</option>
+                </select>
             </div>
 
             <?php
@@ -53,7 +55,7 @@ while ($q->have_posts()) {
 </main>
 <?php
 
-$json = json_encode($counties);
+$json = json_encode(asort($counties));
 ?>
 <script>
 const selectElement = document.getElementById("counties");
