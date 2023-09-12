@@ -51,20 +51,20 @@ while ($q->have_posts()) {
         </div>
     </section>
 </main>
-<?=cbdump($counties)?>
+<?php
+
+$json = json_encode($counties);
+?>
 <script>
 const selectElement = document.getElementById("counties");
 
-const options = [
-  { value: "option1", text: "Option 1" },
-  { value: "option2", text: "Option 2" },
-  { value: "option3", text: "Option 3" },
-];
+const options = <?=$json?>;
 
 options.forEach((option) => {
+  const [value, text] = option; // Destructure the array into value and text
   const optionElement = document.createElement("option");
-  optionElement.value = option.value;
-  optionElement.text = option.text;
+  optionElement.value = value;
+  optionElement.text = text;
   selectElement.appendChild(optionElement);
 });
 </script>
