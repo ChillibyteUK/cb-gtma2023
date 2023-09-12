@@ -18,6 +18,7 @@ get_header();
             while ($q->have_posts()) {
                 $q->the_post();
                 if ($first === true) {
+                    the_content();
                     echo do_shortcode('[dearpdf id="' . get_field('dearpdf_id',get_the_ID()) . '"][/dearpdf]');
                     $first = false;
                     echo '<h2>Previous Editions</h2>';
