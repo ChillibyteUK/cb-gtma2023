@@ -102,6 +102,6 @@ function remove_draft_widget(){
 */
 
 add_action('after_switch_theme', function () {
-    cb_register_post_types();
+    // cb_register_post_types();
     flush_rewrite_rules();
 });

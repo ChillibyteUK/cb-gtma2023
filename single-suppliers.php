@@ -40,11 +40,27 @@ $navitems = array();
     border-right: 1px solid white;
     padding-right: 0.5rem;
 }
+
+.supplier__featured {
+    background-color: var(--col-red-400);
+    color: var(--col-light);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
 </style>
 
     <div class="container-xl">
         <div class="row g-4 pb-4">
             <div class="col-lg-9 supplier__content">
+                <?php
+                if (get_field('is_featured')) {
+                    ?>
+                <div class="supplier__featured">
+                    FEATURED SUPPLIER
+                </div>
+                    <?php
+                }
+                ?>
                 <div class="row">
                     <div class="col-md-8 order-2 order-md-1">
                         <h1 class="supplier__title">

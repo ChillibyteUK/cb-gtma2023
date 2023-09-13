@@ -20,19 +20,20 @@ $type = get_field('type');
         ?>
     <div class="assets__video_grid">
         <?php
-        while (have_rows('video_ids')) {
-            the_row();
-            $modal = random_str(8);
-            $vid = get_sub_field('video_id');
-            // $stripped = strstr($vid, '&', true) ?: $vid;
-            $parts = explode('&', $vid);
-            $vidID = $parts[0];
-            $start = '';
-            if (isset($parts[1])) {
-                $start = str_replace(['t=', 's'], '', $parts[1]);
-                $start = 'start=' . $start . '&';
-            }
-            ?>
+        if (have_rows('video_ids')) {
+            while (have_rows('video_ids')) {
+                the_row();
+                $modal = random_str(8);
+                $vid = get_sub_field('video_id');
+                // $stripped = strstr($vid, '&', true) ?: $vid;
+                $parts = explode('&', $vid);
+                $vidID = $parts[0];
+                $start = '';
+                if (isset($parts[1])) {
+                    $start = str_replace(['t=', 's'], '', $parts[1]);
+                    $start = 'start=' . $start . '&';
+                }
+                ?>
         <div class="assets__video_card">
             <img class="video-btn" type="button"
                 src="https://img.youtube.com/vi/<?=$vidID?>/hqdefault.jpg"
@@ -40,7 +41,8 @@ $type = get_field('type');
                 data-src="https://www.youtube-nocookie.com/embed/<?=$vidID?>"
                 data-start="<?=$start?>">
         </div>
-        <?php
+                <?php
+            }
         }
         ?>
     </div>
@@ -118,12 +120,13 @@ $type = get_field('type');
 
     if ($type == 'Accreditations' || $type == 'Brochures' || $type == 'Case Studies' || $type == 'Catalogues' || $type == 'New & Enhanced Products' || $type == 'Press Releases' || $type == 'Technical Papers') {
         echo '<div class="assets__dl_grid">';
-        foreach (get_field('documents') as $p) {
-            $link = wp_get_attachment_url($p);
-            $fname = get_the_title($p) ?: basename(get_attached_file($p));
-            $fsize = size_format(filesize(get_attached_file($p)));
-            $img = wp_get_attachment_image($p, 'medium', "", ['class'=>'assets__dl_image',]) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="assets__dl_image">';
-            ?>
+        if (get_field('documents')) {
+            foreach (get_field('documents') as $p) {
+                $link = wp_get_attachment_url($p);
+                $fname = get_the_title($p) ?: basename(get_attached_file($p));
+                $fsize = size_format(filesize(get_attached_file($p)));
+                $img = wp_get_attachment_image($p, 'medium', "", ['class'=>'assets__dl_image',]) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="assets__dl_image">';
+                ?>
     <a class="assets__dl_card" href="<?=$link?>" download>
         <?=$img?>
         <div class="assets__dl_title">
@@ -131,7 +134,8 @@ $type = get_field('type');
             <div class="fs-200">(PDF - <?=$fsize?>)</div>
         </div>
     </a>
-    <?php
+              <?php
+            }
         }
     }
     ?>
