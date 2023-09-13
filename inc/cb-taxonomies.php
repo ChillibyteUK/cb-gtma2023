@@ -3,10 +3,10 @@
 function cb_register_taxes()
 {
     $args = [
-        "label" => __("Supplier Types", "cb-gtma2023"),
+        "label" => "Supplier Types",
         "labels" => [
-            "name" => __("Supplier Types", "cb-gtma2023"),
-            "singular_name" => __("Supplier Type", "cb-gtma2023"),
+            "name" => "Supplier Types",
+            "singular_name" => "Supplier Type",
         ],
         "public" => true,
         "publicly_queryable" => true,
@@ -25,10 +25,10 @@ function cb_register_taxes()
     register_taxonomy("types", [ "suppliers" ], $args);
 
     $args = [
-        "label" => __("Supplier Tags", "cb-gtma2023"),
+        "label" => "Supplier Tags",
         "labels" => [
-            "name" => __("Supplier Tags", "cb-gtma2023"),
-            "singular_name" => __("Supplier Tag", "cb-gtma2023"),
+            "name" => "Supplier Tags",
+            "singular_name" => "Supplier Tag",
         ],
         "public" => true,
         "publicly_queryable" => true,
@@ -48,10 +48,10 @@ function cb_register_taxes()
     register_taxonomy("tags", [ "suppliers" ], $args);
 
     $args = [
-        "label" => __("Sectors", "cb-gtma2023"),
+        "label" => "Sectors",
         "labels" => [
-            "name" => __("Sectors", "cb-gtma2023"),
-            "singular_name" => __("Sector", "cb-gtma2023"),
+            "name" => "Sectors",
+            "singular_name" => "Sector",
         ],
         "public" => true,
         "publicly_queryable" => true,
@@ -61,7 +61,7 @@ function cb_register_taxes()
         "show_in_menu" => true,
         "show_in_nav_menus" => true,
         "query_var" => true,
-        "rewrite" => array('slug' => 'tags', 'with_front' => false),
+        "rewrite" => array('slug' => 'sector', 'with_front' => false),
         "show_admin_column" => true,
         "show_in_rest" => true,
         "show_tagcloud" => false,
