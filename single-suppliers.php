@@ -90,7 +90,7 @@ echo '<a id="products--services" class="anchor"></a>';
 $navitems[] = 'Products & Services';
 echo '<h2 class="clear">Products &amp; Services</h2><ul class="supplier__tags cols-lg-3">';
 foreach ($category as $c) {
-    echo '<li>' . $c->name . '</li>';
+    echo '<li><a href="/tags/' . $c->slug . '/">' . $c->name . '</a></li>';
 }
 echo '</ul>';
 ?>

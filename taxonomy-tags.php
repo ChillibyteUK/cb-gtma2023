@@ -8,6 +8,7 @@ $cat_id = get_queried_object()->term_id;
 <main id="main" class="supplier-archive">
     <section class="suppliers py-5">
         <div class="container-xl">
+            <div>Suppliers tagged with:</div>
             <h1><?=$cat_name?></h1>
             <?php
 if (null !== term_description()) {
