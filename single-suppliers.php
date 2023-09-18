@@ -47,6 +47,13 @@ $navitems = array();
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
 }
+.accordion-button {
+    color: black !important;
+    background-color: white !important;
+}
+.accordion-collapse {
+    padding: 1rem 2rem;
+}
 </style>
 
     <div class="container-xl">
@@ -76,24 +83,53 @@ $navitems = array();
                 <?php
 foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
+        continue;
+    }
+    echo render_block($block);
+}
+?>
+<div class="accordion" id="assets">
+<?php
+foreach ($blocks as $block) {
+    if ($block['blockName'] == 'acf/cb-supplier-assets') {
         $blockTitle = $block['attrs']['data']['type'];
         $navitems[] = $blockTitle;
         $id = acf_slugify($blockTitle);
-        echo '<a id="' . $id . '" class="anchor"></a>';
+        echo '<a id="' . $id . '" class="anchor"></a>'
+        ?>
+        <div class="accordion-item" id="a_<?=$id?>" class="anchor">
+            <h3 class="accordion-header" id="h_<?=$id?>">
+                <button class="accordion-button collapsed" id="b_<?=$id?>" type="button" data-bs-toggle="collapse" data-bs-target="#c_<?=$id?>"><?=$blockTitle?></button>
+            </h3>
+            <div class="accordion-collapse collapse" id="c_<?=$id?>" data-bs-parent="#assets">
+                <?=render_block($block)?>
+            </div>
+        </div>
+        <?php
     }
-    echo render_block($block);
 }
 
 
 $category = get_the_terms(get_the_ID(), 'tags');
 echo '<a id="products--services" class="anchor"></a>';
 $navitems[] = 'Products & Services';
-echo '<h2 class="clear">Products &amp; Services</h2><ul class="supplier__tags cols-lg-3">';
-foreach ($category as $c) {
-    echo '<li><a href="/tags/' . $c->slug . '/">' . $c->name . '</a></li>';
-}
-echo '</ul>';
 ?>
+<div class="accordion-item">
+    <h3 class="accordion-header" id="h_products--services">
+        <button class="accordion-button collapsed" type="button" id="b_products--services" data-bs-toggle="collapse" data-bs-target="#c_products--services">Products &amp; Services</button>
+    </h3>
+    <div class="accordion-collapse collapse" id="c_products--services" data-bs-parent="#assets">
+        <ul class="supplier__tags cols-lg-3">
+            <?php
+            foreach ($category as $c) {
+                echo '<li><a href="/tags/' . $c->slug . '/">' . $c->name . '</a></li>';
+            }
+            ?>
+        </ul>
+    </div>
+</div>
+
+        </div>
 
             </div>
             <div class="col-lg-3">
@@ -202,6 +238,37 @@ for (var i = 0; i < navitems.length; i++) {
     //     navholder.appendChild(space);
     // }
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var navButtons = document.querySelectorAll(".navbtn");
+
+    navButtons.forEach(function(btn) {
+        btn.addEventListener("click",function(e) {
+            e.preventDefault();
+            var targetID = this.getAttribute("href").substring(1);
+            var targetAnchor = document.getElementById(targetID);
+            var targetSection = document.getElementById('c_'+targetID);
+            var targetTitle = document.getElementById('b_'+targetID);
+            if (targetAnchor) {
+                targetAnchor.scrollIntoView({
+                    behavior: "smooth",
+                });
+                targetSection.classList.add("show");
+                targetTitle.classList.remove("collapsed");
+                var allSections = document.querySelectorAll('.accordion-collapse');
+                allSections.forEach(function (section) {
+                    if (section.id !== 'c_' + targetID) {
+                        section.classList.remove("show");
+                    }
+                    // if (section.id !== 'b_' + targetID) {
+                    //     section.classList.add("collapsed");
+                    // }
+                })
+            }
+        })
+    })
+});
 
 </script>
     <?php

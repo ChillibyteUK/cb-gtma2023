@@ -2,7 +2,7 @@
     <?php
 $type = get_field('type');
 
-    echo '<h2>' . $type . '</h2>';
+    // echo '<h2>' . $type . '</h2>';
 
     if ($type == 'Plant & Equipment') {
         ?>
