@@ -98,9 +98,9 @@ foreach ($blocks as $block) {
         echo '<a id="' . $id . '" class="anchor"></a>'
         ?>
         <div class="accordion-item" id="a_<?=$id?>" class="anchor">
-            <h3 class="accordion-header" id="h_<?=$id?>">
+            <h2 class="accordion-header" id="h_<?=$id?>">
                 <button class="accordion-button collapsed" id="b_<?=$id?>" type="button" data-bs-toggle="collapse" data-bs-target="#c_<?=$id?>"><?=$blockTitle?></button>
-            </h3>
+            </h2>
             <div class="accordion-collapse collapse" id="c_<?=$id?>" data-bs-parent="#assets">
                 <?=render_block($block)?>
             </div>
@@ -115,9 +115,9 @@ echo '<a id="products--services" class="anchor"></a>';
 $navitems[] = 'Products & Services';
 ?>
 <div class="accordion-item">
-    <h3 class="accordion-header" id="h_products--services">
+    <h2 class="accordion-header" id="h_products--services">
         <button class="accordion-button collapsed" type="button" id="b_products--services" data-bs-toggle="collapse" data-bs-target="#c_products--services">Products &amp; Services</button>
-    </h3>
+    </h2>
     <div class="accordion-collapse collapse" id="c_products--services" data-bs-parent="#assets">
         <ul class="supplier__tags cols-lg-3">
             <?php
