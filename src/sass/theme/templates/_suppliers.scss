@@ -12,11 +12,60 @@
         @media (min-width: 992px) {
             top: calc( var(--h-top-desktop) + 2rem );
         }
-        background-color: var(--col-blue-400);
-        color: var(--col-light);
+    }
+    
+    &__detail {
+        background-color: var(--col-grey);
+        color: var(--col-dark);
         padding: 1rem;
+        h3 {
+            font-size: var(--fs-500);
+            font-weight: var(--fw-900);
+        }
+
+        dt {
+            text-transform: uppercase;
+            color: var(--col-blue-400);
+            font-size: var(--fs-200);
+            margin-top: 1rem;
+        }
+
+        .contact_role {
+            font-size: var(--fs-200);
+        }
     }
 
+    &__website, &__contact {
+        display: block;
+        color: white;
+        padding: 0.5rem 1rem;
+        transition: background-color var(--transition);
+        text-transform: uppercase;
+        font-size: var(--fs-200);
+        font-weight: var(--fw-600);
+        display: grid;
+        grid-template-columns: 30px auto;
+        align-items: center;
+        column-gap: 0.25rem;
+        &::after {
+            content: "";
+        }
+    }
+
+    &__website {
+        background-color: var(--col-red-400);
+        &:hover {
+            color: white;
+            background-color: color-mix(in srgb, var(--col-red-400), #000 20%) ;
+        }
+    }
+    &__contact {
+        background-color: var(--col-blue-400);
+        &:hover {
+            color: white;
+            background-color: color-mix(in srgb, var(--col-blue-400), #000 20%) ;
+        }
+    }
 
     .modal-dialog {
         max-width: unset;
@@ -35,28 +84,33 @@
         font-size: var(--fs-200);
     }
 
-    &__website,
-    &__contact {
-        color: white;
-        &::after {
-            content: "\f061";
-            font-family: "font awesome 6 free";
-            font-weight: 600;
-            padding-left: 0.5rem;
-            transition: padding var(--transition);
-        }
-        &:hover::after {
-            padding-left: 1rem;
-        }
-    }
+    // &__website,
+    // &__contact {
+    //     color: white;
+    //     &::after {
+    //         content: "\f061";
+    //         font-family: "font awesome 6 free";
+    //         font-weight: 600;
+    //         padding-left: 0.5rem;
+    //         transition: padding var(--transition);
+    //     }
+    //     &:hover::after {
+    //         padding-left: 1rem;
+    //     }
+    // }
 
     &__socials {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.75rem;
+        justify-content: center;
+        gap: 1rem;
         font-size: var(--fs-500);
+        background-color: var(--col-grey);
         a {
-            color: white;
+            color: color-mix(in srgb, var(--col-grey), #000 30%);
+            &:hover {
+                color: color-mix(in srgb, var(--col-grey), #000 60%);
+            }
         }
     }
 }

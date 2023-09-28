@@ -30,6 +30,8 @@
   --fw-600: 600;
   --fw-900: 800;
   /* @link https://utopia.fyi/type/calculator?c=320,16,1.067,1240,18,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  /* Step -2: 14.00px → 12.40px */
+  --fs-100: clamp(0.72rem, 0.9331rem + -0.275vw, 0.8781rem);
   /* Step -1: 15.00px → 14.40px */
   --fs-200: clamp(0.90rem, calc(0.95rem + -0.07vw), 0.94rem);
   /* Step 0: 16.00px → 18.00px */
@@ -22193,34 +22195,34 @@ readers do not read off random characters that represent icons */
   display: block;
 }
 
-/* raleway-regular - latin */
+/* montserrat-regular - latin */
 @font-face {
   font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Raleway";
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/raleway-v28-latin-regular.woff2") format("woff2");
+  src: url("../fonts/montserrat-v26-latin-regular.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* raleway-600 - latin */
+/* montserrat-600 - latin */
 @font-face {
   font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Raleway";
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/raleway-v28-latin-600.woff2") format("woff2");
+  src: url("../fonts/montserrat-v26-latin-600.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* raleway-800 - latin */
+/* montserrat-800 - latin */
 @font-face {
   font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Raleway";
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 800;
-  src: url("../fonts/raleway-v28-latin-800.woff2") format("woff2");
+  src: url("../fonts/montserrat-v26-latin-800.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 :root {
@@ -22232,7 +22234,7 @@ html {
 }
 
 body {
-  font-family: "Raleway", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Montserrat", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: var(--fw-400);
   font-size: 1rem;
   line-height: 1.556;
@@ -22244,7 +22246,7 @@ body {
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, .h99 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   margin-bottom: 0.5rem;
   font-weight: var(--fw-600);
@@ -23104,14 +23106,60 @@ footer .footer__logo {
   position: -webkit-sticky;
   position: sticky;
   top: calc(var(--h-top) + 2rem);
-  background-color: var(--col-blue-400);
-  color: var(--col-light);
-  padding: 1rem;
 }
 @media (min-width: 992px) {
   .supplier__sidebar {
     top: calc(var(--h-top-desktop) + 2rem);
   }
+}
+.supplier__detail {
+  background-color: var(--col-grey);
+  color: var(--col-dark);
+  padding: 1rem;
+}
+.supplier__detail h3, .supplier__detail .h3 {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-900);
+}
+.supplier__detail dt {
+  text-transform: uppercase;
+  color: var(--col-blue-400);
+  font-size: var(--fs-200);
+  margin-top: 1rem;
+}
+.supplier__detail .contact_role {
+  font-size: var(--fs-200);
+}
+.supplier__website, .supplier__contact {
+  display: block;
+  color: white;
+  padding: 0.5rem 1rem;
+  transition: background-color var(--transition);
+  text-transform: uppercase;
+  font-size: var(--fs-200);
+  font-weight: var(--fw-600);
+  display: grid;
+  grid-template-columns: 30px auto;
+  align-items: center;
+  -moz-column-gap: 0.25rem;
+  column-gap: 0.25rem;
+}
+.supplier__website::after, .supplier__contact::after {
+  content: "";
+}
+.supplier__website {
+  background-color: var(--col-red-400);
+}
+.supplier__website:hover {
+  color: white;
+  background-color: color-mix(in srgb, var(--col-red-400), #000 20%);
+}
+.supplier__contact {
+  background-color: var(--col-blue-400);
+}
+.supplier__contact:hover {
+  color: white;
+  background-color: color-mix(in srgb, var(--col-blue-400), #000 20%);
 }
 .supplier .modal-dialog {
   max-width: unset;
@@ -23128,27 +23176,19 @@ footer .footer__logo {
 .supplier__tags {
   font-size: var(--fs-200);
 }
-.supplier__website, .supplier__contact {
-  color: white;
-}
-.supplier__website::after, .supplier__contact::after {
-  content: "\f061";
-  font-family: "font awesome 6 free";
-  font-weight: 600;
-  padding-left: 0.5rem;
-  transition: padding var(--transition);
-}
-.supplier__website:hover::after, .supplier__contact:hover::after {
-  padding-left: 1rem;
-}
 .supplier__socials {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  justify-content: center;
+  gap: 1rem;
   font-size: var(--fs-500);
+  background-color: var(--col-grey);
 }
 .supplier__socials a {
-  color: white;
+  color: color-mix(in srgb, var(--col-grey), #000 30%);
+}
+.supplier__socials a:hover {
+  color: color-mix(in srgb, var(--col-grey), #000 60%);
 }
 
 .suppliers__card {

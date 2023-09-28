@@ -16,13 +16,14 @@ $navitems = array();
 ?>
 <style>
 .stickynav {
-    background-color: var(--col-blue-400);
+    background-color: var(--col-grey);
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    justify-content: center;
     position: sticky;
     top: var(--h-top);
-    padding: 0.5rem;
+    padding: 1rem;
     margin-bottom: 1rem;
     z-index: 1000;
 }
@@ -32,12 +33,21 @@ $navitems = array();
     }
 }
 .stickynav a {
-    font-size: var(--fs-200);
-    color: #fff;
+    font-size: var(--fs-100);
+    font-weight: var(--fw-600);
+    text-transform: uppercase;
+    color: var(--col-dark);
     display: inline-block;
+    border: 1px solid var(--col-dark);
+    padding: 0.25rem 0.5rem;
+    transition: var(--transition);
+}
+.stickynav a:hover {
+    background-color: var(--col-blue-200);
+    color: white;
 }
 .stickynav a:not(:last-of-type) {
-    border-right: 1px solid white;
+    border-right: 1px solid var(--col-dark);
     padding-right: 0.5rem;
 }
 
@@ -133,50 +143,56 @@ $navitems[] = 'Products & Services';
 
             </div>
             <div class="col-lg-3">
-                <div class="supplier__sidebar">
-                    <h3>Contact Details</h3>
-                    <dl>
-                        <?php
-                        if (get_field('contact_phone')) {
-                            ?>
-                        <dt>Telephone</dt>
-                        <dd><?=get_field('contact_phone')?>
-                        </dd>
-                        <?php
-                            if (get_field('contact_phone_2')) {
+                <aside class="supplier__sidebar">
+
+                    <section class="supplier__detail mb-2">
+                        <h3>Contact Details</h3>
+                        <dl>
+                            <?php
+                            if (get_field('contact_phone')) {
                                 ?>
-                        <dd><?=get_field('contact_phone_2')?>
-                        </dd>
-                        <?php
+                            <dt>Telephone</dt>
+                            <dd><a href="tel:<?=parse_phone(get_field('contact_phone'))?>"><?=get_field('contact_phone')?></a>
+                            
+                            <?php
+                                if (get_field('contact_phone_2')) {
+                                    ?>
+                            <br><a href="tel:<?=parse_phone(get_field('contact_phone_2'))?>"><?=get_field('contact_phone_2')?></a>
+                            <?php
+                                }
+                                ?>
+                                </dd>
+                                <?php
                             }
-                        }
-?>
-                        <dt>Address</dt>
-                        <dd><?=get_field('address')?>
-                        </dd>
-                        <dt>Contacts</dt>
-                        <?php
-                        while(have_rows('contacts')) {
-                            the_row();
-                            echo '<dd>' . get_sub_field('contact_name');
-                            if (get_sub_field('contact_role')) {
-                                echo ' - ' . get_sub_field('contact_role');
+                            ?>
+                            <dt>Address</dt>
+                            <dd><?=get_field('address')?>
+                            </dd>
+                            <dt>Contacts</dt>
+                            <?php
+                            while(have_rows('contacts')) {
+                                the_row();
+                                echo '<dd>' . get_sub_field('contact_name');
+                                if (get_sub_field('contact_role')) {
+                                    echo '<br><span class="contact_role"> - ' . get_sub_field('contact_role') . '</span>';
+                                }
+                                echo '</dd>';
                             }
-                            echo '</dd>';
-                        }
+                            ?>
+                        </dl>
+                    </section>
+                        <?php
                         if (get_field('supplier_website')) {
                             ?>
-                        <dt><a href="<?=get_field('supplier_website')?>" class="supplier__website"
-                                target="_blank">Visit Website</a></dt>
+                        <a href="<?=get_field('supplier_website')?>" class="supplier__website mb-2"
+                                target="_blank"><i class="fa-solid fa-link"></i> <span>Visit Website</span></a>
                         <?php
                         }
                         ?>
-                        <dt><a href="#contact" class="supplier__contact">Contact Supplier</a></dt>
-                    </dl>
+                        <a href="#contact" class="supplier__contact mb-2"><i class="fa-solid fa-angles-right"></i> <span>Contact Supplier</span></a>
                         <?php
-
                         if (get_field('supplier_socials')) {
-                            echo '<div class="supplier__socials">';
+                            echo '<section class="supplier__socials">';
                             $socials = get_field('supplier_socials');
                             if ($socials['vimeo_url'] ?? null) {
                                 echo '<a href="' . $socials['vimeo_url'] . '" target="_blank"><i class="fa-brands fa-vimeo"></i></a>';
@@ -199,10 +215,10 @@ $navitems[] = 'Products & Services';
                             if ($socials['linkedin_url'] ?? null) {
                                 echo '<a href="' . $socials['linkedin_url'] . '" target="_blank"><i class="fa-brands fa-linkedin"></i></a>';
                             }
-                            echo '</div>';
+                            echo '</section>';
                         }
 ?>
-                </div>
+                </aside>
             </div>
         </div>
     </div>
