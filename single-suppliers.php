@@ -61,7 +61,7 @@ $navitems = array();
     color: black !important;
     background-color: white !important;
 }
-.accordion-collapse div {
+.accordion-collapse > div {
     padding-inline: 2rem;
 }
 </style>
