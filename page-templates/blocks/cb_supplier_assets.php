@@ -10,12 +10,6 @@ $type = get_field('type');
     <?php
     }
 
-    if ($type == 'Photo Gallery') {
-        ?>
-    <div><?=var_dump(get_field('images'))?></div>
-    <?php
-    }
-
     if ($type == 'Video Gallery') {
         ?>
     <div class="assets__video_grid">
@@ -88,17 +82,19 @@ $type = get_field('type');
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <div class="assets__photo_grid" id="lightslider">
         <?php
-        foreach (get_field('photos') as $p) {
-            ?>
-        <div data-thumb="<?=wp_get_attachment_image_url($p, 'large')?>"
-            class="gallery__image">
-            <a href="<?=wp_get_attachment_image_url($p, 'full')?>"
-                data-fancybox="gallery">
-                <img
-                    src="<?=wp_get_attachment_image_url($p, 'full')?>">
-            </a>
-        </div>
-        <?php
+        if (get_field('images')) {
+            foreach (get_field('images') as $p) {
+                ?>
+            <div data-thumb="<?=wp_get_attachment_image_url($p, 'large')?>"
+                class="gallery__image">
+                <a href="<?=wp_get_attachment_image_url($p, 'full')?>"
+                    data-fancybox="gallery">
+                    <img
+                        src="<?=wp_get_attachment_image_url($p, 'full')?>">
+                </a>
+            </div>
+            <?php
+            }
         }
         ?>
     </div>
