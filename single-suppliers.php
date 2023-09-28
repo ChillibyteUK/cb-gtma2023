@@ -72,6 +72,7 @@ $navitems = array();
         <div class="row g-4 pb-4">
             <div class="col-lg-9 supplier__content">
                 <?php
+                cbdump(get_field('is_featured'));
                 if (get_field('is_featured')) {
                     ?>
                 <div class="supplier__featured">
