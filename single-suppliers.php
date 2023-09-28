@@ -61,8 +61,8 @@ $navitems = array();
     color: black !important;
     background-color: white !important;
 }
-.accordion-collapse {
-    padding: 1rem 2rem;
+.accordion-collapse div {
+    padding-inline: 2rem;
 }
 </style>
 
@@ -112,7 +112,7 @@ foreach ($blocks as $block) {
                 <button class="accordion-button collapsed" id="b_<?=$id?>" type="button" data-bs-toggle="collapse" data-bs-target="#c_<?=$id?>"><?=$blockTitle?></button>
             </h2>
             <div class="accordion-collapse collapse" id="c_<?=$id?>" data-bs-parent="#assets">
-                <?=render_block($block)?>
+                <div><?=render_block($block)?></div>
             </div>
         </div>
         <?php
@@ -129,13 +129,15 @@ $navitems[] = 'Products & Services';
         <button class="accordion-button collapsed" type="button" id="b_products--services" data-bs-toggle="collapse" data-bs-target="#c_products--services">Products &amp; Services</button>
     </h2>
     <div class="accordion-collapse collapse" id="c_products--services" data-bs-parent="#assets">
-        <ul class="supplier__tags cols-lg-3">
-            <?php
-            foreach ($category as $c) {
-                echo '<li><a href="/tags/' . $c->slug . '/">' . $c->name . '</a></li>';
-            }
-            ?>
-        </ul>
+        <div class="p-4">
+            <ul class="supplier__tags cols-lg-3">
+                <?php
+                foreach ($category as $c) {
+                    echo '<li><a href="/tags/' . $c->slug . '/">' . $c->name . '</a></li>';
+                }
+                ?>
+            </ul>
+        </div>
     </div>
 </div>
 
