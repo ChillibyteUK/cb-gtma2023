@@ -26,6 +26,8 @@ $navitems = array();
     padding: 1rem;
     margin-bottom: 1rem;
     z-index: 1000;
+    border: 1px solid white;
+    border-bottom: 0;
 }
 @media (min-width:992px) {
     .stickynav {
