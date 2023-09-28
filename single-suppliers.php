@@ -284,9 +284,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (section.id !== 'c_' + targetID) {
                         section.classList.remove("show");
                     }
-                    // if (section.id !== 'b_' + targetID) {
-                    //     section.classList.add("collapsed");
-                    // }
                 })
             }
         })
