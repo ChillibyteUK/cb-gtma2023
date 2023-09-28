@@ -123,26 +123,29 @@ foreach ($blocks as $block) {
 
 
 $category = get_the_terms(get_the_ID(), 'tags');
-echo '<a id="products--services" class="anchor"></a>';
-$navitems[] = 'Products & Services';
-?>
-<div class="accordion-item">
-    <h2 class="accordion-header" id="h_products--services">
-        <button class="accordion-button collapsed" type="button" id="b_products--services" data-bs-toggle="collapse" data-bs-target="#c_products--services">Products &amp; Services</button>
-    </h2>
-    <div class="accordion-collapse collapse" id="c_products--services" data-bs-parent="#assets">
-        <div class="p-4">
-            <ul class="supplier__tags cols-lg-3">
-                <?php
-                foreach ($category as $c) {
-                    echo '<li><a href="/tags/' . $c->slug . '/">' . $c->name . '</a></li>';
-                }
-                ?>
-            </ul>
+if ($category) {
+    echo '<a id="products--services" class="anchor"></a>';
+    $navitems[] = 'Products & Services';
+    ?>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="h_products--services">
+            <button class="accordion-button collapsed" type="button" id="b_products--services" data-bs-toggle="collapse" data-bs-target="#c_products--services">Products &amp; Services</button>
+        </h2>
+        <div class="accordion-collapse collapse" id="c_products--services" data-bs-parent="#assets">
+            <div class="p-4">
+                <ul class="supplier__tags cols-lg-3">
+                    <?php
+                    foreach ($category as $c) {
+                        echo '<li><a href="/tags/' . $c->slug . '/">' . $c->name . '</a></li>';
+                    }
+                    ?>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
-
+<?php
+}
+?>
         </div>
 
             </div>
