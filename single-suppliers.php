@@ -88,7 +88,7 @@ $navitems = array();
                     <?php
                 }
                 ?>
-                <div class="row">
+                <div class="row mb-4">
                     <div class="col-md-8 order-2 order-md-1">
                         <h1 class="supplier__title">
                             <?=get_the_title()?>
