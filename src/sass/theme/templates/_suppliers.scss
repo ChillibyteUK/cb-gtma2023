@@ -12,6 +12,28 @@
         @media (min-width: 992px) {
             top: calc( var(--h-top-desktop) + 2rem );
         }
+
+        .form {
+            display: flex;
+            background-color: var(--col-grey-200);
+            .form-control {
+                border: none;
+                background-color: var(--col-grey-200);
+                &:focus {
+                    outline: 1px solid var(--col-grey);
+                    box-shadow: none;
+                }
+            }
+            .btn-search {
+                background-color: var(--col-grey);
+                color: var(--col-dark);
+                padding-inline: 1rem;
+                &::after {
+                    margin-left: 0;
+                }
+            }
+        }
+
     }
     
     &__detail {

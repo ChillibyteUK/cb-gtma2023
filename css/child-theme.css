@@ -23116,6 +23116,30 @@ footer .footer__logo {
     top: calc(var(--h-top-desktop) + 2rem);
   }
 }
+.supplier__sidebar .form {
+  display: flex;
+  background-color: var(--col-grey-200);
+}
+.supplier__sidebar .form .form-control, .supplier__sidebar .form .widget_categories select, .widget_categories .supplier__sidebar .form select,
+.supplier__sidebar .form .widget_archive select,
+.widget_archive .supplier__sidebar .form select {
+  border: none;
+  background-color: var(--col-grey-200);
+}
+.supplier__sidebar .form .form-control:focus, .supplier__sidebar .form .widget_categories select:focus, .widget_categories .supplier__sidebar .form select:focus,
+.supplier__sidebar .form .widget_archive select:focus,
+.widget_archive .supplier__sidebar .form select:focus {
+  outline: 1px solid var(--col-grey);
+  box-shadow: none;
+}
+.supplier__sidebar .form .btn-search {
+  background-color: var(--col-grey);
+  color: var(--col-dark);
+  padding-inline: 1rem;
+}
+.supplier__sidebar .form .btn-search::after {
+  margin-left: 0;
+}
 .supplier__detail {
   background-color: var(--col-grey);
   color: var(--col-dark);

@@ -1,6 +1,14 @@
 <?php
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
+
+add_action('wp_head', function () {
+    ?>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<?php
+});
+
+
 get_header();
 $img = get_the_post_thumbnail_url(get_the_ID(), 'full');
 ?>
@@ -151,7 +159,11 @@ if ($category) {
             </div>
             <div class="col-lg-3">
                 <aside class="supplier__sidebar">
-
+                    <div class="form mb-2">
+                            <input class="form-control" type="text" id="searchInput" autocomplete="off">
+                            <button id="go" class="btn-search"></button>
+                            <input type="hidden" name="source" id="sourceInput">
+                        </div>
                     <section class="supplier__detail mb-2">
                         <h3>Contact Details</h3>
                         <dl>
@@ -234,6 +246,9 @@ if ($category) {
 add_action('wp_footer', function() use ($navitems) {
     $j = json_encode($navitems);
     ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="<?=get_stylesheet_directory_uri()?>/js/search.js"></script>
 <script>
 const navholder = document.getElementById('navholder');
 const navitems = <?=$j?>;
