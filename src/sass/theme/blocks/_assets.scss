@@ -38,7 +38,9 @@
         }
     }
 
-
+    &__dl_title {
+        overflow-wrap: anywhere;
+    }
     &__dl_grid {
         display: grid;
         grid-template-columns: repeat(5,1fr);

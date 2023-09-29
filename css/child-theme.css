@@ -22865,6 +22865,9 @@ footer .footer__logo {
   object-fit: cover;
   width: 100%;
 }
+.assets__dl_title {
+  overflow-wrap: anywhere;
+}
 .assets__dl_grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
