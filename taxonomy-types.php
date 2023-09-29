@@ -56,6 +56,7 @@ while ($q->have_posts()) {
             <a class="suppliers__card <?=$county_class?>"
                 href="<?=get_the_permalink()?>">
                 <?php
+                echo '<pre>' . get_field('is_featured') . '</pre>';
                 if (get_field('is_featured') == 'Yes') {
                     ?>
                 <i class="fa-solid fa-star"></i>
