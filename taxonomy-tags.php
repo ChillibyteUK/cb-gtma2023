@@ -10,6 +10,14 @@ $cat_id = get_queried_object()->term_id;
         <div class="container-xl">
             <div>Suppliers tagged with:</div>
             <h1><?=$cat_name?></h1>
+
+            <div class="filters py-4">
+                <label for="counties">Filter by county:</label>
+                <select name="counties" id="counties" class="form-select">
+                    <option value="*">All</option>
+                </select>
+            </div>
+            
             <?php
 if (null !== term_description()) {
     echo term_description();
@@ -26,19 +34,71 @@ $q = new WP_Query(array(
     )
     )
 ));
+
+$counties = array();
 while ($q->have_posts()) {
     $q->the_post();
+    $county = get_field('county',get_the_ID()) ?: '';
+    $county_class = '';
+    if ($county) {
+        $counties[acf_slugify($county)] = $county;
+        $county_class = acf_slugify($county);
+    }
     ?>
-            <a class="suppliers__card"
+            <a class="suppliers__card <?=$county_class?>"
                 href="<?=get_the_permalink()?>">
                 <?=get_the_title()?>
+                <?php
+                if ($county) {
+                    echo ' - ' . $county;
+                }
+                ?>
             </a>
             <?php
 }
 ?>
+
         </div>
     </section>
 </main>
 <?php
+ksort($counties);
+$json = json_encode($counties);
+?>
+<script>
+const selectElement = document.getElementById("counties");
+
+const options = <?=$json?>;
+
+for (const value in options) {
+  if (options.hasOwnProperty(value)) {
+    const text = options[value];
+    const optionElement = document.createElement("option");
+    optionElement.value = '.' + value;
+    optionElement.text = text;
+    selectElement.appendChild(optionElement);
+  }
+}
+</script>
+<?php
+add_action('wp_footer',function() {
+    ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+    integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+(function($) {
+    var $grid = $('#suppliers').isotope({
+        itemSelector: '.suppliers__card',
+        layoutMode: 'vertical'
+    });
+    $('#counties').on('change', function () {
+        var filterValue = this.value;
+        $grid.isotope({ filter: filterValue });
+    });
+})(jQuery);
+</script>
+    <?php
+},9999);
 get_footer();
 ?>
