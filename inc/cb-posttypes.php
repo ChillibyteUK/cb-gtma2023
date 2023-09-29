@@ -101,6 +101,37 @@ function remove_draft_widget(){
 
 */
 
+
+// ADD NEW COLUMN
+function suppliers_featured_head($defaults) {
+	$column_name = 'featured';//column slug
+	$column_heading = 'Featured';//column heading
+	$defaults[$column_name] = $column_heading;
+	return $defaults;
+}
+ 
+// SHOW THE COLUMN CONTENT
+function suppliers_featured_content($name, $post_ID) {
+    $column_name = 'featured';//column slug	
+    $column_field = 'is_featured';//field slug	
+    if ($name == $column_name) {
+        $post_meta = get_post_meta($post_ID,$column_field,true);
+        if ($post_meta) {
+            echo $post_meta;
+        }
+    }
+}
+
+// ADD STYLING FOR COLUMN
+function suppliers_featured_style(){
+	$column_name = 'featured';//column slug	
+	echo "<style>.column-$column_name{width:10%;}</style>";
+}
+
+add_filter('manage_suppliers_posts_columns', 'suppliers_featured_head');
+add_action('manage_suppliers_posts_custom_column', 'suppliers_featured_content', 10, 2);
+add_filter('admin_head', 'suppliers_featured_style');
+
 add_action('after_switch_theme', function () {
     // cb_register_post_types();
     flush_rewrite_rules();
