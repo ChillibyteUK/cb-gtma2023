@@ -26,7 +26,7 @@ function cb_register_post_types()
         "capability_type" => "post",
         "map_meta_cap" => true,
         "hierarchical" => false,
-        "rewrite" => [ "slug" => "suppliers", "with_front" => false ],
+        "rewrite" => [ "slug" => "supplier", "with_front" => false ],
         "query_var" => true,
         "supports" => [ "title",  "editor" ],
         "show_in_graphql" => false,
