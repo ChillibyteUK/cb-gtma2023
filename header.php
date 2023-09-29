@@ -19,13 +19,13 @@ session_start();
         charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1">
     <link rel="preload"
-        href="<?=get_stylesheet_directory_uri()?>/fonts/raleway-v28-latin-regular.woff2"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/montserrat-v26-latin-regular.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload"
-        href="<?=get_stylesheet_directory_uri()?>/fonts/raleway-v28-latin-600.woff2"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/montserrat-v26-latin-600.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload"
-        href="<?=get_stylesheet_directory_uri()?>/fonts/raleway-v28-latin-800.woff2"
+        href="<?=get_stylesheet_directory_uri()?>/fonts/montserrat-v26-latin-800.woff2"
         as="font" type="font/woff2" crossorigin="anonymous">
     <?php
 if (get_field('ga_property', 'options')) {
