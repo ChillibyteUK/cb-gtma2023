@@ -10,6 +10,11 @@ $cat_id = get_queried_object()->term_id;
         <div class="container-xl">
             <div>Suppliers tagged with:</div>
             <h1><?=$cat_name?></h1>
+            <?php
+            if (null !== term_description()) {
+                echo term_description();
+            }
+            ?>
 
             <div class="filters py-4">
                 <label for="counties">Filter by county:</label>
@@ -17,11 +22,10 @@ $cat_id = get_queried_object()->term_id;
                     <option value="*">All</option>
                 </select>
             </div>
-            
+            <div id="suppliers">
+
             <?php
-if (null !== term_description()) {
-    echo term_description();
-}
+
 $q = new WP_Query(array(
     'post_type' => 'suppliers',
     'posts_per_page' => -1,
@@ -58,6 +62,7 @@ while ($q->have_posts()) {
 }
 ?>
 
+        </div>
         </div>
     </section>
 </main>
