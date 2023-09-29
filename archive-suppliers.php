@@ -10,7 +10,7 @@ get_header();
             <h1>Supplier Specialities</h1>
             <p>The GTMA supplier directory contains the profiles of companies dedicated to supplying countless industries with the very best services from the manufacturing and engineering sectors. From aerospace and medical, to chemical, defence, and everything in between, the GTMA supplier directory will connect you to the company best suited to your needs.</p>
             <?php
-            require get_template_directory() . '/page-templates/blocks/cb_supplier_categories.php';
+            require get_stylesheet_directory() . '/page-templates/blocks/cb_supplier_categories.php';
             ?>
         </div>
     </section>
