@@ -94,7 +94,7 @@ $navitems = array();
                             <?=get_the_title()?>
                         </h1>
                     </div>
-                    <div class="col-md-4 order-1 order-md-2">
+                    <div class="col-md-4 order-1 order-md-2 d-flex justify-content-center align-items-center">
                         <img src="<?=wp_get_attachment_image_url(get_field('supplier_logo'), 'full')?>"
                             alt="">
                     </div>
