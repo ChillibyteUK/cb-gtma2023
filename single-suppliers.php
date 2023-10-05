@@ -94,9 +94,9 @@ $navitems = array();
                             <?=get_the_title()?>
                         </h1>
                         <?php
-                        if (get_field('subtitle')) {
+                        if (get_field('strapline')) {
                             ?>
-                        <p><?=get_field('subtitle')?></p>
+                        <p><?=get_field('strapline')?></p>
                             <?php
                         }
                         ?>
