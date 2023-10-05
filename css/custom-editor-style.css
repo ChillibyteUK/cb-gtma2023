@@ -51,6 +51,7 @@
   /* Step 5: 22.13px → 54.93px */
   --fs-900: clamp(1.38rem, calc(0.67rem + 3.57vw), 3.43rem);
   --transition: 200ms ease-out;
+  --border0: 0.25rem;
   --border1: 0.5rem;
   --border2: 1rem;
 }
