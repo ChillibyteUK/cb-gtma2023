@@ -39,7 +39,7 @@ $q = new WP_Query(array(
     'orderby' => 'rand',
     'tax_query' => array(
         array(
-            'taxonomy' => 'types',
+            'taxonomy' => 'tags',
             'field' => 'term_id',
             'terms' => $cat_id,
             'include_children' => false
@@ -83,7 +83,7 @@ $q = new WP_Query(array(
     'orderby' => 'rand',
     'tax_query' => array(
         array(
-            'taxonomy' => 'types',
+            'taxonomy' => 'tags',
             'field' => 'term_id',
             'terms' => $cat_id,
             'include_children' => false
