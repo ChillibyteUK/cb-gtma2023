@@ -30,8 +30,7 @@ $q = new WP_Query(array(
             'compare' => '='
         ),
     ),
-    'orderby' => 'title',
-    'order' => 'ASC',
+    'orderby' => 'rand',
     'tax_query' => array(
         array(
             'taxonomy' => 'types',
@@ -76,8 +75,7 @@ $q = new WP_Query(array(
             'compare' => '!='
         ),
     ),
-    'orderby' => 'title',
-    'order' => 'ASC',
+    'orderby' => 'rand',
     'tax_query' => array(
         array(
             'taxonomy' => 'types',
