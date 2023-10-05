@@ -60,14 +60,16 @@ while ($q->have_posts()) {
             <a class="suppliers__card <?=$county_class?>"
                 href="<?=get_the_permalink()?>">
                 <div class="d-flex justify-content-between">
-                    <h2 class="fs-5 d-inline"><?=get_the_title()?></h2>
+                    <div>
+                        <h2 class="fs-5 d-inline"><?=get_the_title()?></h2>
+                        <?php
+                        if ($county) {
+                            echo ' - ' . $county;
+                        }
+                        ?>
+                    </div>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <?php
-                if ($county) {
-                    echo ' - ' . $county;
-                }
-                ?>
                 <p class="mt-2 fs-200"><?=wp_trim_words(get_the_content(),30)?></p>
             </a>
             <?php
