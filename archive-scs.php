@@ -8,7 +8,7 @@ get_header();
     <section class="scs">
         <div class="container-xl">
             <h1>Supply Chain Solutions</h1>
-            
+            <div><?=get_field('scs_intro','options')?></div>
             <?php
             $q = new WP_Query(array(
                 'post_type' => 'scs',
@@ -18,7 +18,10 @@ get_header();
             while ($q->have_posts()) {
                 $q->the_post();
                 if ($first === true) {
-                    the_content();
+                    ?>
+                    <h2><?=get_the_title(get_the_ID())?></h2>
+                    <div><?php the_content() ?></div>
+                    <?php
                     echo do_shortcode('[dearpdf id="' . get_field('dearpdf_id',get_the_ID()) . '"][/dearpdf]');
                     $first = false;
                     echo '<h2>Previous Editions</h2>';
