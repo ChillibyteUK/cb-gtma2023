@@ -29,17 +29,67 @@ $cat_id = get_queried_object()->term_id;
 $q = new WP_Query(array(
     'post_type' => 'suppliers',
     'posts_per_page' => -1,
+    'meta_query' => array(
+        array(
+            'key' => 'is_featured',
+            'value' => 'Yes',
+            'compare' => '='
+        ),
+    ),
+    'orderby' => 'rand',
     'tax_query' => array(
-    array(
-        'taxonomy' => 'tags',
-        'field' => 'term_id',
-        'terms' => $cat_id,
-        'include_children' => false
-    )
+        array(
+            'taxonomy' => 'types',
+            'field' => 'term_id',
+            'terms' => $cat_id,
+            'include_children' => false
+        )
     )
 ));
 
 $counties = array();
+while ($q->have_posts()) {
+    $q->the_post();
+    $county = get_field('county',get_the_ID()) ?: '';
+    $county_class = '';
+    if ($county) {
+        $counties[acf_slugify($county)] = $county;
+        $county_class = acf_slugify($county);
+    }
+    ?>
+            <a class="suppliers__card <?=$county_class?>"
+                href="<?=get_the_permalink()?>">
+                <?=get_the_title()?>
+                <?php
+                if ($county) {
+                    echo ' - ' . $county;
+                }
+                ?>
+            </a>
+            <?php
+}
+
+$q = new WP_Query(array(
+    'post_type' => 'suppliers',
+    'posts_per_page' => -1,
+    'meta_query' => array(
+        array(
+            'key' => 'is_featured',
+            'value' => 'Yes',
+            'compare' => '!='
+        ),
+    ),
+    'orderby' => 'rand',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'types',
+            'field' => 'term_id',
+            'terms' => $cat_id,
+            'include_children' => false
+        )
+    )
+));
+
 while ($q->have_posts()) {
     $q->the_post();
     $county = get_field('county',get_the_ID()) ?: '';
