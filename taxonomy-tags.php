@@ -66,7 +66,7 @@ while ($q->have_posts()) {
                     echo ' - ' . $county;
                 }
                 ?>
-                <p><?=wp_trim_words(get_the_content(),30)?></p>
+                <p class="mt-2 fs-200"><?=wp_trim_words(get_the_content(),30)?></p>
             </a>
             <?php
 }
