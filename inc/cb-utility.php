@@ -34,7 +34,7 @@ add_shortcode('contact_email', function(){
 });
 add_shortcode('contact_email_icon', function(){
     if (get_field('contact_email','options')) {
-        return '<a href="mailto:' . get_field('contact_email','options') . '"><i class="fas fa-envelope"></i></a>';
+        return '<a href="mailto:' . get_field('contact_email','options') . '"><i class="fa-solid fa-envelope"></i></a>';
     }
     return;
 });
@@ -42,7 +42,7 @@ add_shortcode('social_fb_icon', function () {
     $social = get_field('social', 'options');
     $fburl = $social['facebook_url'] ?? null;
     if ($fburl != '') {
-        return '<a href="' . $fburl . '" target="_blank"><i class="fab fa-facebook"></i></a>';
+        return '<a href="' . $fburl . '" target="_blank"><i class="fa-brands fa-facebook"></i></a>';
     }
     return;
 });
@@ -50,7 +50,7 @@ add_shortcode('social_ig_icon', function () {
     $social = get_field('social', 'options');
     $igurl = $social['instagram_url'] ?? null;
     if ($igurl != '') {
-        return '<a href="' . $igurl . '" target="_blank"><i class="fab fa-instagram"></i></a>';
+        return '<a href="' . $igurl . '" target="_blank"><i class="fa-brands fa-instagram"></i></a>';
     }
     return;
 });
@@ -58,7 +58,7 @@ add_shortcode('social_tw_icon', function () {
     $social = get_field('social', 'options');
     $twurl = $social['twitter_url'] ?? null;
     if ($twurl != '') {
-        return '<a href="' . $twurl . '" target="_blank"><i class="fab fa-twitter"></i></a>';
+        return '<a href="' . $twurl . '" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>';
     }
     return;
 });
@@ -66,7 +66,7 @@ add_shortcode('social_pt_icon', function () {
     $social = get_field('social', 'options');
     $pturl = $social['pinterest_url'];
     if ($pturl != '') {
-        return '<a href="' . $pturl . '" target="_blank"><i class="fab fa-pinterest"></i></a>';
+        return '<a href="' . $pturl . '" target="_blank"><i class="fa-brands fa-pinterest"></i></a>';
     }
     return;
 });
@@ -74,7 +74,7 @@ add_shortcode('social_yt_icon', function () {
     $social = get_field('social', 'options');
     $yturl = $social['youtube_url'];
     if ($yturl != '') {
-        return '<a href="' . $yturl . '" target="_blank"><i class="fab fa-youtube"></i></a>';
+        return '<a href="' . $yturl . '" target="_blank"><i class="fa-brands fa-youtube"></i></a>';
     }
     return;
 });
@@ -82,7 +82,7 @@ add_shortcode('social_in_icon', function () {
     $social = get_field('social', 'options');
     $inurl = $social['linkedin_url'];
     if ($inurl != '') {
-        return '<a href="' . $inurl . '" target="_blank"><i class="fab fa-linkedin"></i></a>';
+        return '<a href="' . $inurl . '" target="_blank"><i class="fa-brands fa-linkedin"></i></a>';
     }
     return;
 });
@@ -90,7 +90,7 @@ add_shortcode('social_gp_icon', function () {
     $social = get_field('social', 'options');
     $gpurl = $social['google_url'];
     if ($gpurl != '') {
-        return '<a href="' . $gpurl . '" target="_blank"><i class="fas fa-globe-americas"></i></a>';
+        return '<a href="' . $gpurl . '" target="_blank"><i class="fa-solid fa-globe-americas"></i></a>';
     }
     return;
 });
@@ -102,7 +102,7 @@ add_shortcode('social_icons', function(){
     if ($social['twitter_url'] ?? null) {
         ?>
 <a href="<?=$social['twitter_url']?>"
-    target="_blank"><i class="fa-brands fa-twitter"></i></a>
+    target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
 <?php
     }
     if ($social['facebook_url'] ?? null) {
@@ -278,7 +278,7 @@ function cb_social_share($id) {
     ?>
     <div class="social-share border-top border-bottom py-2 my-4">
         <span class="h5 fw-bold">Share:</span>
-        <a target='_blank' href='https://twitter.com/share?url=<?=$url?>' class="px-2"><i class='fa-brands fa-twitter'></i></a>
+        <a target='_blank' href='https://twitter.com/share?url=<?=$url?>' class="px-2"><i class='fa-brands fa-x-twitter'></i></a>
         <a target='_blank' href='http://www.linkedin.com/shareArticle?url=<?=$url?>' class="px-2"><i class='fa-brands fa-linkedin-in'></i></a>
         <a target='_blank' href='http://www.facebook.com/sharer.php?u=<?=$url?>' class="px-2"><i class='fa-brands fa-facebook-f'></i></a>
     </div>

@@ -229,7 +229,7 @@ if ($category) {
                                 echo '<a href="' . $socials['facebook_url'] . '" target="_blank"><i class="fa-brands fa-facebook"></i></a>';
                             }
                             if ($socials['twitter_url'] ?? null) {
-                                echo '<a href="' . $socials['twitter_url'] . '" target="_blank"><i class="fa-brands fa-twitter"></i></a>';
+                                echo '<a href="' . $socials['twitter_url'] . '" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>';
                             }
                             if ($socials['linkedin_url'] ?? null) {
                                 echo '<a href="' . $socials['linkedin_url'] . '" target="_blank"><i class="fa-brands fa-linkedin"></i></a>';
