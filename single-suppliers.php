@@ -93,6 +93,13 @@ $navitems = array();
                         <h1 class="supplier__title">
                             <?=get_the_title()?>
                         </h1>
+                        <?php
+                        if (get_field('subtitle')) {
+                            ?>
+                        <p><?=get_field('subtitle')?></p>
+                            <?php
+                        }
+                        ?>
                     </div>
                     <div class="col-md-4 order-1 order-md-2 d-flex justify-content-center align-items-center">
                         <img src="<?=wp_get_attachment_image_url(get_field('supplier_logo'), 'full')?>"
