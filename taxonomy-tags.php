@@ -59,6 +59,7 @@ while ($q->have_posts()) {
     ?>
             <a class="suppliers__card <?=$county_class?>"
                 href="<?=get_the_permalink()?>">
+                <i class="fa-solid fa-star"></i>
                 <?=get_the_title()?>
                 <?php
                 if ($county) {
