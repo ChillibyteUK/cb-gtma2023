@@ -106,7 +106,7 @@ $navitems = array();
                             alt="">
                     </div>
                 </div>
-                <div class="stickynav d-none" id="navholder"></div>
+                <div class="stickynav" id="navholder"></div>
                 <?php
 foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
@@ -284,14 +284,12 @@ for (var i = 0; i < navitems.length; i++) {
     // }
 }
 
-if (navitems.length > 0) {
-    navholder.classList.remove('d-none');
-    var contact = document.createElement('a');
-    contact.setAttribute('href', '#contact');
-    contact.className = 'navbtn';
-    contact.textContent = 'Contact';
-    navholder.appendChild(contact);
-}
+var contact = document.createElement('a');
+contact.setAttribute('href', '#contact');
+contact.className = 'navbtn';
+contact.textContent = 'Contact';
+navholder.appendChild(contact);
+
 
 document.addEventListener("DOMContentLoaded", function() {
     var navButtons = document.querySelectorAll(".navbtn");
