@@ -59,8 +59,10 @@ while ($q->have_posts()) {
     ?>
             <a class="suppliers__card <?=$county_class?>"
                 href="<?=get_the_permalink()?>">
-                <i class="fa-solid fa-star"></i>
-                <h2 class="fs-5 d-inline"><?=get_the_title()?></h2>
+                <div class="d-flex justify-content-between">
+                    <h2 class="fs-5 d-inline"><?=get_the_title()?></h2>
+                    <i class="fa-solid fa-star"></i>
+                </div>
                 <?php
                 if ($county) {
                     echo ' - ' . $county;
