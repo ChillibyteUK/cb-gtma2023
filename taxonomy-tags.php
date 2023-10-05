@@ -66,6 +66,7 @@ while ($q->have_posts()) {
                     echo ' - ' . $county;
                 }
                 ?>
+                <p><?=wp_trim_words(get_the_content(),30)?></p>
             </a>
             <?php
 }
