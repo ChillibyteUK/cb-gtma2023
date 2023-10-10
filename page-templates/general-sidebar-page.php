@@ -40,6 +40,29 @@ get_header();
                             ?>
                         </ul>
                     </div>
+                    <div class="sidebar__red">
+                        <h3>Membership</h3>
+                        <?php
+                        $parent = 362;
+                        $sibs = new WP_Query(array(
+                            'post_type'      => 'page',
+                            'posts_per_page' => -1,
+                            'post_parent'    => $parent,
+                            'order'          => 'ASC',
+                            'orderby'        => 'title'
+                        ));
+                        ?>
+                        <ul>
+                            <?php
+                            while($sibs->have_posts()) {
+                                $sibs->the_post();
+                                ?>
+                            <li><a href="<?=get_the_permalink()?>"><?=get_the_title()?></a></li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
