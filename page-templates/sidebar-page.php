@@ -44,10 +44,10 @@ if ($class == 'partner') {
 ?>
             </div>
             <div class="col-md-4">
-                <div class="gsidebar pb-4">
-                    <div class="gsidebar__blue mb-2">
+                <div class="sidebar pb-4">
+                    <div class="sidebar__blue mb-2">
                         <div class="h4"><?=get_field('sidebar_title')?></div>
-                        <div class="gsidebar__inner">
+                        <div class="sidebar__inner">
                             <?php
                             $sibs = new WP_Query(array(
                                 'post_type'      => 'page',
@@ -62,10 +62,10 @@ if ($class == 'partner') {
                                     $sibs->the_post();
                                     $active = get_the_ID() == $me ? 'active' : '';
                                     ?>
-                                                    <li><a class="<?=$active?>"
-                                                            href="<?=get_the_permalink()?>"><?=get_the_title()?></a>
-                                                    </li>
-                                                    <?php
+                                    <li><a class="<?=$active?>"
+                                            href="<?=get_the_permalink()?>"><?=get_the_title()?></a>
+                                    </li>
+                                    <?php
                                 }
                                 echo '</ul>';
                             }
@@ -73,9 +73,9 @@ if ($class == 'partner') {
                             ?>
                         </div>
                     </div>
-                    <div class="gsidebar__red mb-2">
+                    <div class="sidebar__red mb-2">
                         <div class="h4">Search for Products &amp; Services</div>
-                        <div class="gsidebar__inner">
+                        <div class="sidebar__inner">
                             <div class="form">
                                 <input class="form-control" type="text" id="searchInput" autocomplete="off">
                                 <button id="go" class="btn-search">Search</button>

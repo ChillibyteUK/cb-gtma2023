@@ -19,10 +19,10 @@ $current_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
                 <?=get_the_content()?>
             </div>
             <div class="col-md-4">
-                <div class="gsidebar pb-4">
-                    <div class="gsidebar__red mb-2">
+                <div class="sidebar pb-4">
+                    <div class="sidebar__red mb-2">
                         <div class="h4">Membership</div>
-                        <div class="gsidebar__inner">
+                        <div class="sidebar__inner">
                             <?php
                             $parent = 362;
                             $sibs = new WP_Query(array(
@@ -47,9 +47,9 @@ $current_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
                             </ul>
                         </div>
                     </div>
-                    <div class="gsidebar__blue mb-2">
+                    <div class="sidebar__blue mb-2">
                         <div class="h4">GTMA Member Services</div>
-                        <div class="gsidebar__inner">
+                        <div class="sidebar__inner">
                             <p class="mb-2">Here are some of the services available to members</p>
                             <?php
                             $parent = 134;
@@ -76,7 +76,7 @@ $current_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
                     </div>
                     <div class="sidebar__search">
                         <div class="h4 mb-3">Search for Products &amp; Services</div>
-                        <div class="gsidebar__inner">
+                        <div class="sidebar__inner">
                             <div class="form">
                                 <input class="form-control" type="text" id="searchInput" autocomplete="off">
                                 <button id="go" class="btn-search">Search</button>

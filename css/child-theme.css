@@ -23301,102 +23301,54 @@ footer .footer__logo {
   border-radius: var(--border0);
 }
 
-.partner {
-  margin-top: calc(var(--h-top) + 2rem);
-}
-@media (min-width: 992px) {
-  .partner {
-    margin-top: calc(var(--h-top-desktop) + 2rem);
-  }
-}
-.partner__logo {
-  -o-object-fit: contain;
-  object-fit: contain;
-  -o-object-position: center left;
-  object-position: center left;
-  width: 100%;
-  height: 10rem;
-  margin-bottom: 1rem;
-}
-
-.sidebar__inner {
+.sidebar {
   position: -webkit-sticky;
   position: sticky;
   top: var(--h-top);
+  color: white;
 }
 @media (min-width: 992px) {
-  .sidebar__inner {
+  .sidebar {
     top: var(--h-top-desktop);
   }
 }
-.sidebar__siblings {
+.sidebar a {
+  color: white;
+}
+.sidebar .h4 {
+  padding: 0.5rem 1rem;
+}
+.sidebar__blue {
+  background-color: var(--col-blue-300);
+}
+.sidebar__blue .h4 {
   background-color: var(--col-blue-400);
-  color: var(--col-light);
-  padding: 1rem;
 }
-.sidebar__siblings a {
-  color: var(--col-light);
+.sidebar__red {
+  background-color: var(--col-red-300);
 }
-.sidebar__siblings a:hover {
-  color: var(--col-red-400);
+.sidebar__red .h4 {
+  background-color: var(--col-red-400);
 }
-.sidebar__siblings a.active {
+.sidebar__inner {
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+.sidebar__inner ul {
+  margin-bottom: 0;
+}
+.sidebar__inner ul li a.active {
   font-weight: var(--fw-600);
 }
 .sidebar__search {
   background-color: var(--col-red-300);
-  color: var(--col-light);
 }
-.sidebar__search .form {
-  display: flex;
-}
-.sidebar__search .form .btn-search {
-  background-color: var(--col-blue-400);
-}
-
-.gsidebar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: var(--h-top);
-  color: white;
-}
-.gsidebar a {
-  color: white;
-}
-.gsidebar .h4 {
-  padding: 0.5rem 1rem;
-}
-.gsidebar__blue {
-  background-color: var(--col-blue-300);
-}
-.gsidebar__blue .h4 {
-  background-color: var(--col-blue-400);
-}
-.gsidebar__red {
-  background-color: var(--col-red-300);
-}
-.gsidebar__red .h4 {
+.sidebar__search .h4 {
   background-color: var(--col-red-400);
 }
-.gsidebar .gsidebar__inner {
-  padding: 0.5rem 1rem 1rem 1rem;
-}
-.gsidebar .gsidebar__inner ul {
-  margin-bottom: 0;
-}
-.gsidebar .gsidebar__inner ul li a.active {
-  font-weight: var(--fw-600);
-}
-.gsidebar .sidebar__search {
-  background-color: var(--col-red-300);
-}
-.gsidebar .sidebar__search .h4 {
-  background-color: var(--col-red-400);
-}
-.gsidebar .form {
+.sidebar .form {
   display: flex;
 }
-.gsidebar .form .btn-search {
+.sidebar .form .btn-search {
   background-color: var(--col-blue-400);
 }
 
