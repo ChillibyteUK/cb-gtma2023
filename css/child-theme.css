@@ -22962,7 +22962,7 @@ footer .footer__logo {
 }
 .services__grid {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
 }
 @media (min-width: 576px) {
   .services__grid {
@@ -22971,7 +22971,7 @@ footer .footer__logo {
 }
 @media (min-width: 992px) {
   .services__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .services__card {
@@ -22979,7 +22979,7 @@ footer .footer__logo {
 }
 .services__card img {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 9/6;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
