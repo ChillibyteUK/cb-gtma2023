@@ -1,0 +1,22 @@
+.sponsor {
+    &__card {
+        background-color: var(--col-blue-100);
+        padding: 1rem !important;
+        display: block;
+    }
+    &__title {
+        border-bottom: 1px solid var(--col-blue-400);
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: var(--fs-100);
+    }
+    &__inner {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+    &__logo {
+        align-self: center;
+        justify-self: center;
+    }
+}

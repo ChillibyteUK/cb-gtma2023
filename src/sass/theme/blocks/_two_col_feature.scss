@@ -1,0 +1,71 @@
+.two_col_feature {
+    &__card {
+        position: relative;
+        height: 100%;
+        isolation: isolate;
+        overflow: hidden;
+    }
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        mix-blend-mode: multiply;
+    }
+    &__bg {
+        position: absolute;
+        inset: 0;
+        background-image: var(--background);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: grayscale(1) brightness(0.7) blur(2px);
+        z-index: -2;
+    }
+    &__inner {
+        padding: 1rem;
+        font-size: var(--fs-200);
+    }
+    .h4 {
+        padding: 0.5rem 1rem;
+    }
+    &__cta {
+        padding: 0.5rem 1rem;
+        a {
+            color: white;
+            font-weight: var(--fw-600);
+            &::after {
+                content: "\f105";
+                font-family: "font awesome 6 free";
+                padding-left: 0.5rem;
+                transition: padding-left var(--transition);
+            }
+            &:hover {
+                color: white;
+                &::after {
+                    padding-left: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.bg--red {
+    background-color: var(--col-red-300);
+    color: white;
+    .two_col_feature__overlay {
+        background-color: var(--col-red-300);
+    }
+    .h4 {
+        background-color: var(--col-red-400);
+    }
+}
+.bg--blue {
+    background-color: var(--col-blue-300);
+    color: white;
+    .two_col_feature__overlay {
+        background-color: var(--col-blue-300);
+    }
+    .h4 {
+        background-color: var(--col-blue-400);
+    }
+}

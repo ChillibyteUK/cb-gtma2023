@@ -16,7 +16,7 @@ $current_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
         <div class="row">
             <div class="col-md-8">
                 <h1><?=get_the_title()?></h1>
-                <?=get_the_content()?>
+                <?=apply_filters('the_content',get_the_content())?>
             </div>
             <div class="col-md-4">
                 <div class="sidebar pb-4">
@@ -24,17 +24,19 @@ $current_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
                         <div class="h4">Membership</div>
                         <div class="sidebar__inner">
                             <?php
-                            $parent = 362;
+                            // $parent = 362;
+                            $parent = get_page_by_path( 'membership' );
                             $sibs = new WP_Query(array(
                                 'post_type'      => 'page',
                                 'posts_per_page' => -1,
-                                'post_parent'    => $parent,
+                                'post_parent'    => $parent->ID,
                                 'order'          => 'ASC',
                                 'orderby'        => 'title'
                             ));
-                            $active = '';
+                            $active = get_the_permalink($parent) == $current_url ? 'active' : '';
                             ?>
                             <ul>
+                                <li><a class="<?=$active?>" href="<?=get_the_permalink($parent)?>"><?=get_the_title($parent)?></a></li>
                                 <?php
                                 while($sibs->have_posts()) {
                                     $sibs->the_post();

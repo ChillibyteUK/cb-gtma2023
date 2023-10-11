@@ -128,132 +128,24 @@ function acf_blocks()
             'mode'	=> 'edit',
             'supports' => array('mode' => false),
         ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_text_full_image',
-        //     'title'				=> __('CB Text / Full Bleed Image'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_text_full_image.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_text_text_full_image',
-        //     'title'				=> __('CB Text / Text / Full Bleed Image'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_text_text_full_image.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_two_col_text',
-        //     'title'				=> __('CB Two Col Text'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_two_col_text.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_our_clients',
-        //     'title'				=> __('CB Our Clients'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_our_clients.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_accreditations',
-        //     'title'				=> __('CB Accreditations'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_accreditations.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_badge_flow',
-        //     'title'				=> __('CB Badge Flow'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_badge_flow.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_latest_case_studies',
-        //     'title'				=> __('CB Latest Case Studies'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_latest_case_studies.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_latest_news',
-        //     'title'				=> __('CB Latest News'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_latest_news.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_contact_form',
-        //     'title'				=> __('CB Contact Form'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_contact_form.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_quote',
-        //     'title'				=> __('CB Quote'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_quote.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_full_bleed_image',
-        //     'title'				=> __('CB Full Bleed Image'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_full_bleed_image.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_all_projects',
-        //     'title'				=> __('CB All Projects'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_all_projects.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_all_services',
-        //     'title'				=> __('CB All Services'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_all_services.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
-        // acf_register_block_type(array(
-        //     'name'				=> 'cb_team',
-        //     'title'				=> __('CB Team'),
-        //     'category'			=> 'layout',
-        //     'icon'				=> 'cover-image',
-        //     'render_template'	=> 'page-templates/blocks/cb_team.php',
-        //     'mode'	=> 'edit',
-        //     'supports' => array('mode' => false),
-        // ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_sponsor_banner',
+            'title'				=> __('CB Sponsor Banner'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_sponsor_banner.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'				=> 'cb_two_col_feature',
+            'title'				=> __('CB Two Col Feature'),
+            'category'			=> 'layout',
+            'icon'				=> 'cover-image',
+            'render_template'	=> 'page-templates/blocks/cb_two_col_feature.php',
+            'mode'	=> 'edit',
+            'supports' => array('mode' => false),
+        ));
     }
 }
 add_action('acf/init', 'acf_blocks');
