@@ -234,6 +234,13 @@ function cb_theme_enqueue()
 add_action('wp_enqueue_scripts', 'cb_theme_enqueue');
 
 
+add_shortcode('mrc_phone', function(){
+    if (get_field('mrc_phone','options')) {
+        return '<a href="tel:' . parse_phone(get_field('mrc_phone','options')) . '">' . get_field('mrc_phone','options') . '</a>';
+    }
+    return;
+});
+
 // black thumbnails - fix alpha channel
 /**
  * Patch to prevent black PDF backgrounds.
