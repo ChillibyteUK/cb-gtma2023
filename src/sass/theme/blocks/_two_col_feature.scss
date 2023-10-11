@@ -4,6 +4,8 @@
         height: 100%;
         isolation: isolate;
         overflow: hidden;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
     }
     &__overlay {
         position: absolute;
