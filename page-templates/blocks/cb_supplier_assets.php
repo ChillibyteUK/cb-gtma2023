@@ -84,13 +84,21 @@ $type = get_field('type');
         <?php
         if (get_field('images')) {
             foreach (get_field('images') as $p) {
+                $caption = wp_get_attachment_caption($p) ?: null;
                 ?>
             <div data-thumb="<?=wp_get_attachment_image_url($p, 'large')?>"
                 class="gallery__image">
                 <a href="<?=wp_get_attachment_image_url($p, 'full')?>"
-                    data-fancybox="gallery">
+                    data-fancybox="gallery" data-caption="<?=$caption?>">
                     <img
                         src="<?=wp_get_attachment_image_url($p, 'full')?>">
+                    <?php
+                    if ($caption) {
+                        ?>
+                    <p class="text-center"><?=$caption?></p>
+                        <?php
+                    }
+                    ?>
                 </a>
             </div>
             <?php
