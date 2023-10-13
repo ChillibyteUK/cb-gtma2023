@@ -6,6 +6,10 @@
         }
     }
 
+    &__logo {
+        max-height: 100px;
+    }
+
     &__sidebar {
         position: sticky;
         top: calc( var(--h-top) + 2rem );

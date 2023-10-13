@@ -23244,6 +23244,9 @@ footer .footer__logo {
     margin-top: 3rem;
   }
 }
+.supplier__logo {
+  max-height: 100px;
+}
 .supplier__sidebar {
   position: -webkit-sticky;
   position: sticky;
