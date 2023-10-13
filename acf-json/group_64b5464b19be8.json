@@ -39,9 +39,9 @@
                 "Brochures": "Brochures",
                 "Case Studies": "Case Studies",
                 "Catalogues": "Catalogues",
-                "New & Enhanced Products": "New & Enhanced Products",
+                "New\/Enhanced Products": "New\/Enhanced Products",
                 "Photo Gallery": "Photo Gallery",
-                "Plant & Equipment": "Plant & Equipment",
+                "Plant\/Equipment": "Plant\/Equipment",
                 "Press Releases": "Press Releases",
                 "Technical Papers": "Technical Papers",
                 "Video Gallery": "Video Gallery"
@@ -66,7 +66,7 @@
                     {
                         "field": "field_64b5465e34c84",
                         "operator": "==",
-                        "value": "Plant & Equipment"
+                        "value": "Plant\/Equipment"
                     }
                 ]
             ],
@@ -131,6 +131,32 @@
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_64b54b3a7b382"
+                },
+                {
+                    "key": "field_65295519a44d2",
+                    "label": "Provider",
+                    "name": "provider",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "YouTube": "YouTube",
+                        "Vimeo": "Vimeo"
+                    },
+                    "default_value": "YouTube",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "layout": "horizontal",
+                    "save_other_choice": 0,
+                    "parent_repeater": "field_64b54b3a7b382"
                 }
             ]
         },
@@ -168,7 +194,7 @@
                     {
                         "field": "field_64b5465e34c84",
                         "operator": "==",
-                        "value": "Accreditations"
+                        "value": "New\/Enhanced Products"
                     }
                 ],
                 [
@@ -189,7 +215,7 @@
                     {
                         "field": "field_64b5465e34c84",
                         "operator": "==",
-                        "value": "New & Enhanced Products"
+                        "value": "Accreditations"
                     }
                 ]
             ],
@@ -209,42 +235,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "pdf",
-            "insert": "append",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_64f892fb5c3fa",
-            "label": "Images",
-            "name": "images",
-            "aria-label": "",
-            "type": "gallery",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_64b5465e34c84",
-                        "operator": "==",
-                        "value": "Photo Gallery"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "png, jpg, jpeg",
             "insert": "append",
             "preview_size": "medium"
         }
@@ -267,5 +257,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694012250
+    "modified": 1697207597
 }

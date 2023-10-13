@@ -19,15 +19,19 @@ $type = get_field('type');
                 the_row();
                 $modal = random_str(8);
                 $vid = get_sub_field('video_id');
-                // $stripped = strstr($vid, '&', true) ?: $vid;
-                $parts = explode('&', $vid);
-                $vidID = $parts[0];
-                $start = '';
-                if (isset($parts[1])) {
-                    $start = str_replace(['t=', 's'], '', $parts[1]);
-                    $start = 'start=' . $start . '&';
-                }
-                ?>
+
+                $type = get_sub_field('provider');
+                if ($type == 'YouTube') {
+
+                    // $stripped = strstr($vid, '&', true) ?: $vid;
+                    $parts = explode('&', $vid);
+                    $vidID = $parts[0];
+                    $start = '';
+                    if (isset($parts[1])) {
+                        $start = str_replace(['t=', 's'], '', $parts[1]);
+                        $start = 'start=' . $start . '&';
+                    }
+                    ?>
         <div class="assets__video_card">
             <img class="video-btn" type="button"
                 src="https://img.youtube.com/vi/<?=$vidID?>/hqdefault.jpg"
@@ -35,8 +39,22 @@ $type = get_field('type');
                 data-src="https://www.youtube-nocookie.com/embed/<?=$vidID?>"
                 data-start="<?=$start?>">
         </div>
-                <?php
+                  <?php
+                }
+                if ($type == 'Vimeo') {
+                    $data = get_vimeo_data_from_id($vid,'thumbnail_url');
+                    ?>
+        <div class="assets__video_card">
+            <img class="video-btn--vim" type="button"
+                src="<?=$data?>"
+                data-bs-toggle="modal" data-bs-target="#videoModalVim"
+                data-src="https://player.vimeo.com/video/<?=$vid?>?byline=0&autoplay=1&portrait=0&app_id=58479">
+        </div>
+                    <?php
+                }
             }
+
+            // <script src="https://player.vimeo.com/api/player.js"></script>
         }
         ?>
     </div>
@@ -47,6 +65,19 @@ $type = get_field('type');
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="ratio ratio-16x9">
                         <iframe class="embed-responsive-item" src="" id="videoPlayer" allowscriptaccess="always"
+                            allow="autoplay;fullscreen"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="videoModalVim" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="videoPlayerVim" allowscriptaccess="always"
                             allow="autoplay;fullscreen"></iframe>
                     </div>
                 </div>
@@ -69,7 +100,19 @@ $type = get_field('type');
                 $("#videoPlayer").attr('src', $src);
             });
             $('#videoModal').on('hide.bs.modal', function(e) {
-                $("#videoPlayer").attr('src', $videoSrc);
+                $("#videoPlayer").attr('src', '');
+            });
+            
+            $('.video-btn--vim').click(function(){
+                $videoSrc = $(this).data("src");
+                console.log($videoSrc);
+            });
+            $('#videoModalVim').on('shown.bs.modal', function(e) {
+                $src = $videoSrc;
+                $("#videoPlayerVim").attr('src', $src);
+            });
+            $('#videoModalVim').on('hide.bs.modal', function(e) {
+                $("#videoPlayerVim").attr('src', '');
             });
         })(jQuery);
     </script>
