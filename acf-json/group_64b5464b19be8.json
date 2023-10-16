@@ -237,6 +237,42 @@
             "mime_types": "pdf",
             "insert": "append",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_64f892fb5c3fa",
+            "label": "Images",
+            "name": "images",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64b5465e34c84",
+                        "operator": "==",
+                        "value": "Photo Gallery"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "png, jpg, jpeg",
+            "insert": "append",
+            "preview_size": "medium"
         }
     ],
     "location": [
