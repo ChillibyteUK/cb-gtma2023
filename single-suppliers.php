@@ -121,8 +121,8 @@ foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
         $blockTitle = $block['attrs']['data']['type'];
         $navitems[] = $blockTitle;
-        $id = acf_slugify($blockTitle);
-        $id = preg_replace('/\\/','-',$id);
+        $id = preg_replace('/\\/','-',$blockTitle);
+        $id = acf_slugify($id);
         echo '<a id="' . $id . '" class="anchor"></a>'
         ?>
         <div class="accordion-item" id="a_<?=$id?>" class="anchor">
