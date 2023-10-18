@@ -262,7 +262,7 @@ const navholder = document.getElementById('navholder');
 const navitems = <?=$j?>;
 
 function slugify(str) {
-    return str.toLowerCase().replace(/\s+/g, '-').replace(/&+/g, '');
+    return str.toLowerCase().replace(/\s+/g, '-').replace(/&+/g, '').replace(/\\/g, '-');
 }
 
 for (var i = 0; i < navitems.length; i++) {
