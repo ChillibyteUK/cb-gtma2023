@@ -4,7 +4,7 @@ $type = get_field('type');
 
     // echo '<h2>' . $type . '</h2>';
 
-    if ($type == 'Plant & Equipment') {
+    if ($type == 'Plant/Equipment') {
         ?>
     <div><?=get_field('content')?></div>
     <?php
