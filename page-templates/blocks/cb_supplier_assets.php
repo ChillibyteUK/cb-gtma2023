@@ -2,6 +2,8 @@
     <?php
 $type = get_field('type');
 
+$addJs = false;
+
     // echo '<h2>' . $type . '</h2>';
 
     if ($type == 'Plant/Equipment') {
@@ -121,8 +123,8 @@ $type = get_field('type');
     }
 
     if ($type == 'Photo Gallery') {
+        $addJs = true;
         ?>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <div class="assets__photo_grid" id="lightslider">
         <?php
         if (get_field('images')) {
@@ -150,29 +152,24 @@ $type = get_field('type');
         ?>
     </div>
     <?php
-        add_action('wp_footer', function () {
-            ?>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script>
-        Fancybox.bind('[data-fancybox="gallery"]', {
-            caption: function(_fancybox, slide) {
-                const figurecaption = slide.triggerEl?.querySelector("figcaption");
-                return figurecaption ? figurecaption.innerHTML : slide.caption || "";
-            },
-        });
-    </script>
-    <?php
-        });
+
     }
 
     if ($type == 'Accreditations' || $type == 'Brochures' || $type == 'Case Studies' || $type == 'Catalogues' || $type == 'New & Enhanced Products' || $type == 'Press Releases' || $type == 'Technical Papers') {
         echo '<div class="assets__dl_grid">';
         if (get_field('documents')) {
+            $addJs = true;
             foreach (get_field('documents') as $p) {
                 $link = wp_get_attachment_url($p);
                 $fname = get_the_title($p) ?: basename(get_attached_file($p));
-                $fsize = size_format(filesize(get_attached_file($p)));
                 $img = wp_get_attachment_image($p, 'medium', "", ['class'=>'assets__dl_image',]) ?: '<img src="/wp-content/themes/cb-gtma2023/img/missing-image.png" class="assets__dl_image">';
+
+                $mime = get_post_mime_type($p);
+                // cbdump($mime);
+                
+                if ($mime == 'application/pdf') {
+
+                $fsize = size_format(filesize(get_attached_file($p)));
                 ?>
     <a class="assets__dl_card" href="<?=$link?>" download>
         <?=$img?>
@@ -182,8 +179,56 @@ $type = get_field('type');
         </div>
     </a>
               <?php
+                }
+                else {
+                    $caption = wp_get_attachment_caption($p) ?: null;
+                    ?>
+            <div data-thumb="<?=wp_get_attachment_image_url($p, 'large')?>"
+                class="assets__dl_card">
+                <a href="<?=wp_get_attachment_image_url($p, 'full')?>"
+                    data-fancybox="gallery" data-caption="<?=$caption?>">
+                    <img
+                        class="assets__dl_image"
+                        src="<?=wp_get_attachment_image_url($p, 'full')?>">
+                    <?php
+                    if ($caption) {
+                        ?>
+                    <p class="text-center"><?=$caption?></p>
+                        <?php
+                    }
+                    ?>
+                </a>
+            </div>
+                    <?php
+                }
             }
         }
+
+    }
+    if ($type == 'Accreditations (TAX)') {
+        foreach (get_field('accreditation_tax') as $t) {
+            echo '<li><a href="/accreditations/' . $t->slug . '/">' . $t->name . '</a></li>';
+        }
+
     }
     ?>
 </section>
+<?php
+if ($addJs == true) {
+    ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <?php
+    add_action('wp_footer', function () {
+        ?>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script>
+Fancybox.bind('[data-fancybox="gallery"]', {
+    caption: function(_fancybox, slide) {
+        const figurecaption = slide.triggerEl?.querySelector("figcaption");
+        return figurecaption ? figurecaption.innerHTML : slide.caption || "";
+    },
+});
+</script>
+        <?php
+    });
+}

@@ -120,6 +120,12 @@ foreach ($blocks as $block) {
 foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
         $blockTitle = $block['attrs']['data']['type'];
+        if ($blockTitle == 'Accreditations') {
+            $blockTitle = 'Accreditation Certificates';
+        }
+        if ($blockTitle == 'Accreditations (TAX)') {
+            $blockTitle = 'Accreditations';
+        }
         $navitems[] = $blockTitle;
         // $id = preg_replace('/\\/','-',$blockTitle);
         $id = cbslugify($blockTitle);

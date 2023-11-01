@@ -12,7 +12,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -25,27 +25,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "thumbnail"
-        },
-        {
-            "key": "field_651e7a7979f85",
-            "label": "Strapline",
-            "name": "strapline",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "preview_size": "medium"
         },
         {
             "key": "field_64b4f2a3dc8e1",
@@ -109,8 +89,8 @@
             "label": "Contact Email",
             "name": "contact_email",
             "aria-label": "",
-            "type": "email",
-            "instructions": "",
+            "type": "text",
+            "instructions": "Separate multiple addresses with a comma.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -119,6 +99,7 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -144,26 +125,6 @@
             "new_lines": "br"
         },
         {
-            "key": "field_65005c5b9d99e",
-            "label": "County",
-            "name": "county",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_64b4f2c6dc8e3",
             "label": "Post Code",
             "name": "post_code",
@@ -173,7 +134,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -228,7 +189,7 @@
             "label": "Is Featured?",
             "name": "is_featured",
             "aria-label": "",
-            "type": "radio",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -237,16 +198,14 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "No": "No",
-                "Yes": "Yes"
-            },
-            "default_value": "No",
+            "choices": [],
+            "default_value": [],
             "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "layout": "horizontal",
-            "save_other_choice": 0
+            "allow_custom": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         },
         {
             "key": "field_64b4f2f9dc8e7",
@@ -470,5 +429,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696496265
+    "modified": 1698844774
 }

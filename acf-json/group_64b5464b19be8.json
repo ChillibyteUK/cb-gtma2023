@@ -36,6 +36,7 @@
             },
             "choices": {
                 "Accreditations": "Accreditations",
+                "Accreditations (TAX)": "Accreditations (TAX)",
                 "Brochures": "Brochures",
                 "Case Studies": "Case Studies",
                 "Catalogues": "Catalogues",
@@ -234,16 +235,16 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": "pdf",
+            "mime_types": "pdf, png, jpg, jpeg",
             "insert": "append",
             "preview_size": "medium"
         },
         {
-            "key": "field_64f892fb5c3fa",
-            "label": "Images",
-            "name": "images",
+            "key": "field_654255424363b",
+            "label": "Accreditation (TAX)",
+            "name": "accreditation_tax",
             "aria-label": "",
-            "type": "gallery",
+            "type": "taxonomy",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -251,7 +252,7 @@
                     {
                         "field": "field_64b5465e34c84",
                         "operator": "==",
-                        "value": "Photo Gallery"
+                        "value": "Accreditations (TAX)"
                     }
                 ]
             ],
@@ -260,19 +261,16 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "png, jpg, jpeg",
-            "insert": "append",
-            "preview_size": "medium"
+            "taxonomy": "accreditations",
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -293,5 +291,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697207597
+    "modified": 1698847649
 }
