@@ -19,6 +19,7 @@ defined('ABSPATH') || exit;
         </div>
         <div class="footer__menu pb-4">
             <h4 class="footer__menu_title">Certifications</h4>
+            <a href="<?=get_field('qas_iso','options')?>" target="_blank"><img src="<?=get_stylesheet_directory_uri()?>/img/qas-logo.jpg" alt=""></a>
         </div>
         <div class="footer__menu pb-4">
             <h4 class="footer__menu_title">Supported By</h4>

@@ -218,7 +218,9 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
+            "choices": {
+                "Yes": "Yes"
+            },
             "default_value": [],
             "return_format": "value",
             "allow_custom": 0,
@@ -449,5 +451,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698924911
+    "modified": 1698925142
 }
