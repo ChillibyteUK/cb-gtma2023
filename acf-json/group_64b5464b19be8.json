@@ -238,39 +238,6 @@
             "mime_types": "pdf, png, jpg, jpeg",
             "insert": "append",
             "preview_size": "medium"
-        },
-        {
-            "key": "field_654255424363b",
-            "label": "Accreditation (TAX)",
-            "name": "accreditation_tax",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_64b5465e34c84",
-                        "operator": "==",
-                        "value": "Accreditations (TAX)"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "accreditations",
-            "add_term": 1,
-            "save_terms": 1,
-            "load_terms": 1,
-            "return_format": "object",
-            "field_type": "checkbox",
-            "bidirectional": 0,
-            "multiple": 0,
-            "allow_null": 0,
-            "bidirectional_target": []
         }
     ],
     "location": [
@@ -291,5 +258,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698847649
+    "modified": 1698917343
 }

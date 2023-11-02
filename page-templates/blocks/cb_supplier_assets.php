@@ -169,8 +169,8 @@ $addJs = false;
                 
                 if ($mime == 'application/pdf') {
 
-                $fsize = size_format(filesize(get_attached_file($p)));
-                ?>
+                    $fsize = size_format(filesize(get_attached_file($p)));
+                    ?>
     <a class="assets__dl_card" href="<?=$link?>" download>
         <?=$img?>
         <div class="assets__dl_title">
@@ -178,7 +178,7 @@ $addJs = false;
             <div class="fs-200">(PDF - <?=$fsize?>)</div>
         </div>
     </a>
-              <?php
+                    <?php
                 }
                 else {
                     $caption = wp_get_attachment_caption($p) ?: null;
