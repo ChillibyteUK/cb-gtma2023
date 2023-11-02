@@ -6,7 +6,7 @@ require_once CB_THEME_DIR . '/inc/cb-taxonomies.php'; // taxonomies registered f
 require_once CB_THEME_DIR . '/inc/cb-posttypes.php';
 require_once CB_THEME_DIR . '/inc/cb-utility.php';
 require_once CB_THEME_DIR . '/inc/cb-blocks.php';
-// require_once CB_THEME_DIR . '/inc/cb-news.php';
+require_once CB_THEME_DIR . '/inc/cb-news.php';
 // require_once CB_THEME_DIR . '/inc/cb-careers.php';
 
 
