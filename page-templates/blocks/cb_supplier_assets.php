@@ -4,7 +4,7 @@ $type = get_field('type');
 
 $addJs = false;
 
-    // echo '<h2>' . $type . '</h2>';
+    echo '<div class="py-5" style="background-color:limegreen"><h2>' . $type . '</h2></div>';
 
     if ($type == 'Plant/Equipment') {
         ?>
@@ -155,7 +155,7 @@ $addJs = false;
 
     }
 
-    if ($type == 'Accreditations' || $type == 'Brochures' || $type == 'Case Studies' || $type == 'Catalogues' || $type == 'New & Enhanced Products' || $type == 'Press Releases' || $type == 'Technical Papers') {
+    if ($type == 'Accreditations' || $type == 'Brochures' || $type == 'Case Studies' || $type == 'Catalogues' || $type == 'New/Enhanced Products' || $type == 'Press Releases' || $type == 'Technical Papers') {
         echo '<div class="assets__dl_grid">';
         if (get_field('documents')) {
             $addJs = true;
