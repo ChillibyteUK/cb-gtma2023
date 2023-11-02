@@ -37,7 +37,7 @@ foreach ($cats as $cat) {
         the_post();
         $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
         if (!$img) {
-            $img = get_stylesheet_directory_uri() . '/img/default-blog.jpg';
+            $img = get_stylesheet_directory_uri() . '/img/default-blog.png';
         }
         $cats = get_the_category();
         $category = wp_list_pluck($cats, 'name');
