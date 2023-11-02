@@ -36,7 +36,6 @@
             },
             "choices": {
                 "Accreditations": "Accreditations",
-                "Accreditations (TAX)": "Accreditations (TAX)",
                 "Brochures": "Brochures",
                 "Case Studies": "Case Studies",
                 "Catalogues": "Catalogues",
@@ -258,5 +257,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698917343
+    "modified": 1698917506
 }
