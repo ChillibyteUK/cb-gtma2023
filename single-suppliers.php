@@ -143,6 +143,31 @@ foreach ($blocks as $block) {
     }
 }
 
+$acc = get_the_terms(get_the_ID(), 'accreditations');
+
+if ($acc) {
+    echo '<a id="accreditations" class="anchor"></a>';
+    $navitems[] = 'Accreditations';
+    ?>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="h_accreditations">
+            <button class="accordion-button collapsed" type="button" id="b_accreditations" data-bs-toggle="collapse" data-bs-target="#c_accreditations">Accreditations</button>
+        </h2>
+        <div class="accordion-collapse collapse" id="c_accreditations" data-bs-parent="#assets">
+            <div class="p-4">
+                <ul class="supplier__tags cols-lg-3">
+                    <?php
+                    foreach ($acc as $a) {
+                        echo '<li><a href="/accreditations/' . $a->slug . '/">' . $a->name . '</a></li>';
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+<?php
+}
+
 
 $category = get_the_terms(get_the_ID(), 'tags');
 if ($category) {

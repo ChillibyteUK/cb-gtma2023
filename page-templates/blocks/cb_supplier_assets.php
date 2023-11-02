@@ -205,12 +205,6 @@ $addJs = false;
         }
 
     }
-    if ($type == 'Accreditations (TAX)') {
-        foreach (get_field('accreditation_tax') as $t) {
-            echo '<li><a href="/accreditations/' . $t->slug . '/">' . $t->name . '</a></li>';
-        }
-
-    }
     ?>
 </section>
 <?php
