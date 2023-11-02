@@ -22927,6 +22927,7 @@ footer .footer__logo {
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
+  width: 100%;
 }
 .news__card {
   margin: 1rem 0.5rem;
