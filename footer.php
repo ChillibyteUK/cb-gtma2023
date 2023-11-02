@@ -23,6 +23,7 @@ defined('ABSPATH') || exit;
         </div>
         <div class="footer__menu pb-4">
             <h4 class="footer__menu_title">Supported By</h4>
+            <a href="<?=get_field('lloyds','options')?>" target="_blank"><img src="<?=get_stylesheet_directory_uri()?>/img/LB_Stacked_Neg_Colour_RGB_PNG_00.png" alt="" class="w-75"></a>
         </div>
 
     </div>
