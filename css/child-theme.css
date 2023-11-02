@@ -33,6 +33,7 @@
   --fw-400: 400;
   --fw-600: 600;
   --fw-900: 800;
+  --ff-fa: "Font Awesome 6 Free";
   /* @link https://utopia.fyi/type/calculator?c=320,16,1.067,1240,18,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   /* Step -2: 14.00px → 12.40px */
   --fs-100: clamp(0.72rem, 0.9331rem + -0.275vw, 0.8781rem);
@@ -40,6 +41,7 @@
   --fs-200: clamp(0.90rem, calc(0.95rem + -0.07vw), 0.94rem);
   /* Step 0: 16.00px → 18.00px */
   --fs-400: clamp(1.00rem, calc(0.96rem + 0.22vw), 1.13rem);
+  --fs-450: clamp(1.10rem, calc(0.96rem + 0.22vw), 1.2rem);
   /* Step 1: 17.07px → 22.50px */
   --fs-500: clamp(1.07rem, calc(0.95rem + 0.59vw), 1.41rem);
   /* Step 2: 18.22px → 28.13px */
@@ -22691,7 +22693,7 @@ footer .footer__logo {
 }
 .blog .sidebar li::marker {
   content: "\f105";
-  font-family: "Font Awesome 6 Free";
+  font-family: var(--ff-fa);
   font-weight: 600;
 }
 .blog h2, .blog .h2 {
@@ -22835,7 +22837,7 @@ footer .footer__logo {
 }
 .btn-search::after {
   content: "\f002";
-  font-family: "font awesome 6 free";
+  font-family: var(--ff-fa);
   margin-left: 0.5rem;
 }
 .btn-search:hover {
@@ -23190,7 +23192,7 @@ footer .footer__logo {
 }
 .two_col_feature__cta a::after {
   content: "\f105";
-  font-family: "font awesome 6 free";
+  font-family: var(--ff-fa);
   padding-left: 0.5rem;
   transition: padding-left var(--transition);
 }
@@ -23221,6 +23223,39 @@ footer .footer__logo {
 }
 .bg--blue .h4 {
   background-color: var(--col-blue-400);
+}
+
+.single_testimonial {
+  padding: 1rem;
+  background-color: var(--col-blue-100);
+}
+.single_testimonial__content {
+  font-size: var(--fs-400);
+  position: relative;
+}
+.single_testimonial__content::before, .single_testimonial__content::after {
+  font-family: var(--ff-fa);
+  font-weight: 600;
+  color: var(--col-dark);
+}
+.single_testimonial__content::before {
+  content: "\f10d";
+}
+.single_testimonial__content::after {
+  content: "\f10e";
+}
+.single_testimonial__attribution {
+  font-weight: var(--fw-600);
+}
+.single_testimonial__attribution p {
+  margin-bottom: 0;
+}
+.single_testimonial img {
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 1rem;
 }
 
 .container-xl .container-xl {

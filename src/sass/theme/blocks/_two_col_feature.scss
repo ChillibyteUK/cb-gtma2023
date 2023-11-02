@@ -37,7 +37,7 @@
             font-weight: var(--fw-600);
             &::after {
                 content: "\f105";
-                font-family: "font awesome 6 free";
+                font-family: var(--ff-fa);
                 padding-left: 0.5rem;
                 transition: padding-left var(--transition);
             }

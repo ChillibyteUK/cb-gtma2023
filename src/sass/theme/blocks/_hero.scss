@@ -71,7 +71,7 @@
     transition: background-color var(--transition);
     &::after {
         content: "\f002";
-        font-family: "font awesome 6 free";
+        font-family: var(--ff-fa);
         margin-left: 0.5rem;
     }
     &:hover {

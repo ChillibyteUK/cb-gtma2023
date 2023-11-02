@@ -16,7 +16,7 @@
 // #main ul:not(.contact_list) li {
 //     &::marker {
 //         content: "\f105\0020";
-//         font-family: "Font Awesome 6 Free";
+//         font-family: var(--ff-fa);
 //         font-weight: 600;
 //     }
 // }

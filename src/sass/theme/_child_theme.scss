@@ -106,7 +106,7 @@ a.anchor {
 
 // :not(.share-icons,.social-icons,figure,.cb,.rplg-biz-name) > a[target="_blank"]:not(.btn)::after {
 //     content: "\f08e";
-//     font-family: "Font Awesome 6 Free";
+//     font-family: var(--ff-fa);
 //     font-weight: 600;
 //     margin-left: 0.5rem;
 //     display: inline-block;

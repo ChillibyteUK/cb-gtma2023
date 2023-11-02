@@ -1,0 +1,33 @@
+.single_testimonial {
+    padding: 1rem;
+    background-color: var(--col-blue-100);
+    &__content {
+        font-size: var(--fs-400);
+        position: relative;
+        &::before, &::after {
+            font-family: var(--ff-fa);
+            font-weight: 600;
+            color: var(--col-dark);
+        }
+        &::before {
+            content: '\f10d';
+        }
+        &::after {
+            content: '\f10e';
+        }
+    }
+    &__attribution {
+        font-weight: var(--fw-600);
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    img {
+        width: 100%;
+        max-width: 200px;
+        display: block;
+        margin-inline: auto;
+        margin-bottom: 1rem;
+    }
+}
