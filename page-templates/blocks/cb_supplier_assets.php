@@ -4,7 +4,7 @@ $type = get_field('type');
 
 $addJs = false;
 
-    echo '<div class="py-5" style="background-color:limegreen"><h2>' . $type . '</h2></div>';
+    // echo '<div class="py-5" style="background-color:limegreen"><h2>' . $type . '</h2></div>';
 
     if ($type == 'Plant/Equipment') {
         ?>
