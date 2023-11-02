@@ -81,7 +81,7 @@ foreach ($cats as $cat) {
         </div>
         <!--        <div class="mt-5">
         <?php
-        // numeric_posts_nav();
+        numeric_posts_nav();
 ?>
     </div>
     -->
