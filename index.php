@@ -17,7 +17,12 @@ get_header();
         </div>
         <?php
         // $cats = get_categories(array('exclude' => array(32)));
-        $cats = get_categories();
+        $cats = get_terms(array('taxonomy'=>'sectors', 'hide_empty' => false));
+echo '<a class="me-2 mb-2 filter-button active" href="/news/">All News</a>';
+foreach($cats as $c) {
+    echo '<a class="me-2 mb-2 filter-button" href="/sector/' . $c->slug . '/">' . $c->name . '</a>';
+}
+
 /*
 ?>
 <div class="filters mb-4">
@@ -61,8 +66,7 @@ foreach ($cats as $cat) {
                                 class="news__flash news__flash--<?=$flashcat?>">
                                 <?=$category?>
                             </div>
-                            <img class="news__image"
-                                src="<?=$img?>">
+                            <img class="news__image" src="<?=$img?>">
                         </div>
                         <div class="news__inner">
                             <h3 class="news__title mb-0">
@@ -80,9 +84,9 @@ foreach ($cats as $cat) {
 ?>
         </div>
         <div class="mt-5">
-        <?php
+            <?php
         numeric_posts_nav();
-        ?>
+?>
         </div>
 
     </div>

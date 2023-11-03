@@ -22895,6 +22895,19 @@ footer .footer__logo {
   transform: scalex(1);
 }
 
+.filter-button {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--col-dark);
+  background-color: var(--col-light);
+  color: var(--col-dark);
+  font-size: var(--fs-200);
+}
+.filter-button.active {
+  border: 1px solid var(--col-dark);
+  background-color: var(--col-dark);
+  color: var(--col-light);
+}
+
 .news__item a {
   text-decoration: none;
   color: initial;
