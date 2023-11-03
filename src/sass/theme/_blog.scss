@@ -63,21 +63,30 @@
     .sidebar {
         position: sticky;
         top: var(--h-top);
-        background-color: var(--col-red);
-        color: white;
-        font-size: var(--fs-200);
-        padding: 1rem;
-        a {
-            text-decoration: none;
+        .quicklinks {
+            background-color: var(--col-red);
             color: white;
-        }
-        li {
-            margin-bottom: 0.5rem;
-            &::marker {
-                content: "\f105 ";
-                font-family: var(--ff-fa);
-                font-weight: 600;
+            font-size: var(--fs-200);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            a {
+                text-decoration: none;
+                color: white;
             }
+            li {
+                margin-bottom: 0.5rem;
+                &::marker {
+                    content: "\f105 ";
+                    font-family: var(--ff-fa);
+                    font-weight: 600;
+                }
+            }
+        }
+        &__cta {
+            background-color: var(--col-blue);
+            color: white;
+            font-size: var(--fs-200);
+            padding: 1rem;
         }
     }
 

@@ -22954,22 +22954,31 @@ footer .footer__logo {
   position: -webkit-sticky;
   position: sticky;
   top: var(--h-top);
+}
+.blog .sidebar .quicklinks {
   background-color: var(--col-red);
   color: white;
   font-size: var(--fs-200);
   padding: 1rem;
+  margin-bottom: 1rem;
 }
-.blog .sidebar a {
+.blog .sidebar .quicklinks a {
   text-decoration: none;
   color: white;
 }
-.blog .sidebar li {
+.blog .sidebar .quicklinks li {
   margin-bottom: 0.5rem;
 }
-.blog .sidebar li::marker {
+.blog .sidebar .quicklinks li::marker {
   content: "\f105";
   font-family: var(--ff-fa);
   font-weight: 600;
+}
+.blog .sidebar__cta {
+  background-color: var(--col-blue);
+  color: white;
+  font-size: var(--fs-200);
+  padding: 1rem;
 }
 .blog h2, .blog .h2 {
   text-wrap: wrap;
