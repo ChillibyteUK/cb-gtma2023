@@ -62,7 +62,7 @@
 
     .sidebar {
         position: sticky;
-        top: var(--h-top);
+        top: calc(var(--h-top) + 1rem);
         .quicklinks {
             background-color: var(--col-red);
             color: white;
@@ -99,12 +99,25 @@
             aspect-ratio: 16 / 9;
             object-fit: cover;
             object-position: center;
-            margin-bottom: 0.5rem;
+        }
+        &__content {
+            padding: 0.5rem;
+            background-color: var(--col-red-400);
+            color: white;
         }
         h3 {
-            font-size: var(--fs-450);
+            font-size: var(--fs-300);
+            text-wrap: wrap;
         }
     }
+
+
+    .related {
+        border-top: 1px solid var(--col-grey);
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+
 }
 
 

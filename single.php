@@ -21,9 +21,10 @@ if (function_exists('yoast_breadcrumb')) {
     <div class="container-xl">
         <div class="row g-4 pb-4">
             <div class="col-lg-9 order-2 blog__content">
-                <h1 class="blog__title"><?=get_the_title()?></h1>
-                <img src="<?=$img?>" alt="" class="blog__image">
-                <?php
+                <article>
+                    <h1 class="blog__title"><?=get_the_title()?></h1>
+                    <img src="<?=$img?>" alt="" class="blog__image">
+                    <?php
         $count = estimate_reading_time_in_minutes(get_the_content(), 200, true, true);
 echo $count;
 
@@ -39,9 +40,10 @@ foreach ($blocks as $block) {
     echo render_block($block);
 }
 ?>
+                </article>
             </div>
             <div class="col-lg-3 order-1">
-                <div class="sidebar">
+                <aside class="sidebar">
                     <?php
     if ($sidebar) {
         ?>
@@ -69,11 +71,11 @@ foreach ($blocks as $block) {
                         <p>Not only is it a good spot to upsell, it'll fill in this space when there are no
                             quicklinks/headings</p>
                     </div>
-                </div>
+                </aside>
             </div>
         </div>
         <section class="related pb-5">
-            <h3><span>Related</span> News</h3>
+            <h3>Related News</h3>
             <div class="row g-4">
                 <?php
         $cats = get_the_category();

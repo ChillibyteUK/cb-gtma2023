@@ -39,6 +39,7 @@
   --fs-100: clamp(0.72rem, 0.9331rem + -0.275vw, 0.8781rem);
   /* Step -1: 15.00px → 14.40px */
   --fs-200: clamp(0.90rem, calc(0.95rem + -0.07vw), 0.94rem);
+  --fs-200: clamp(0.95rem, calc(0.95rem + -0.07vw), 1rem);
   /* Step 0: 16.00px → 18.00px */
   --fs-400: clamp(1.00rem, calc(0.96rem + 0.22vw), 1.13rem);
   --fs-450: clamp(1.10rem, calc(0.96rem + 0.22vw), 1.2rem);
@@ -22953,7 +22954,7 @@ footer .footer__logo {
 .blog .sidebar {
   position: -webkit-sticky;
   position: sticky;
-  top: var(--h-top);
+  top: calc(var(--h-top) + 1rem);
 }
 .blog .sidebar .quicklinks {
   background-color: var(--col-red);
@@ -22989,10 +22990,20 @@ footer .footer__logo {
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
-  margin-bottom: 0.5rem;
+}
+.blog_card__content {
+  padding: 0.5rem;
+  background-color: var(--col-red-400);
+  color: white;
 }
 .blog_card h3, .blog_card .h3 {
-  font-size: var(--fs-450);
+  font-size: var(--fs-300);
+  text-wrap: wrap;
+}
+.blog .related {
+  border-top: 1px solid var(--col-grey);
+  margin-top: 1rem;
+  padding-top: 1rem;
 }
 
 .navigation {
