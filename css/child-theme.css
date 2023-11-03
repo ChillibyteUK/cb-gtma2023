@@ -22899,9 +22899,19 @@ footer .footer__logo {
   text-decoration: none;
   color: initial;
 }
+.news__item a:hover .news__image {
+  transform: scale(1.1);
+}
+.news__inner {
+  background-color: var(--col-red-400);
+  padding: 0.5rem;
+  color: white;
+  min-height: 100px;
+}
 .news__title {
   margin-bottom: 0;
-  font-size: var(--fs-450);
+  font-size: var(--fs-300);
+  text-wrap: wrap;
 }
 .news__date {
   font-size: 0.8rem;
@@ -22910,7 +22920,7 @@ footer .footer__logo {
 .news__image_container {
   position: relative;
   z-index: 0;
-  margin-bottom: 0.5rem;
+  overflow: hidden;
 }
 .news__image_container .news__flash {
   position: absolute;
@@ -22929,6 +22939,7 @@ footer .footer__logo {
   -o-object-position: center;
   object-position: center;
   width: 100%;
+  transition: transform var(--transition);
 }
 .news__card {
   margin: 1rem 0.5rem;
