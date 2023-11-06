@@ -2,7 +2,7 @@
     <?php
 $type = get_field('type');
 
-$addJs = false;
+    $addJs = false;
 
     // echo '<div class="py-5" style="background-color:limegreen"><h2>' . $type . '</h2></div>';
 
@@ -41,18 +41,18 @@ $addJs = false;
                 data-src="https://www.youtube-nocookie.com/embed/<?=$vidID?>"
                 data-start="<?=$start?>">
         </div>
-                  <?php
+        <?php
                 }
                 if ($type == 'Vimeo') {
-                    $data = get_vimeo_data_from_id($vid,'thumbnail_url');
+                    $data = get_vimeo_data_from_id($vid, 'thumbnail_url');
                     ?>
         <div class="assets__video_card">
             <img class="video-btn--vim" type="button"
-                src="<?=$data?>"
-                data-bs-toggle="modal" data-bs-target="#videoModalVim"
+                src="<?=$data?>" data-bs-toggle="modal"
+                data-bs-target="#videoModalVim"
                 data-src="https://player.vimeo.com/video/<?=$vid?>?byline=0&autoplay=1&portrait=0&app_id=58479">
         </div>
-                    <?php
+        <?php
                 }
             }
 
@@ -104,8 +104,8 @@ $addJs = false;
             $('#videoModal').on('hide.bs.modal', function(e) {
                 $("#videoPlayer").attr('src', '');
             });
-            
-            $('.video-btn--vim').click(function(){
+
+            $('.video-btn--vim').click(function() {
                 $videoSrc = $(this).data("src");
                 console.log($videoSrc);
             });
@@ -131,22 +131,22 @@ $addJs = false;
             foreach (get_field('images') as $p) {
                 $caption = wp_get_attachment_caption($p) ?: null;
                 ?>
-            <div data-thumb="<?=wp_get_attachment_image_url($p, 'large')?>"
-                class="gallery__image">
-                <a href="<?=wp_get_attachment_image_url($p, 'full')?>"
-                    data-fancybox="gallery" data-caption="<?=$caption?>">
-                    <img
-                        src="<?=wp_get_attachment_image_url($p, 'full')?>">
-                    <?php
+        <div data-thumb="<?=wp_get_attachment_image_url($p, 'large')?>"
+            class="gallery__image">
+            <a href="<?=wp_get_attachment_image_url($p, 'full')?>"
+                data-fancybox="gallery" data-caption="<?=$caption?>">
+                <img
+                    src="<?=wp_get_attachment_image_url($p, 'full')?>">
+                <?php
                     if ($caption) {
                         ?>
-                    <p class="text-center"><?=$caption?></p>
-                        <?php
+                <p class="text-center"><?=$caption?></p>
+                <?php
                     }
-                    ?>
-                </a>
-            </div>
-            <?php
+                ?>
+            </a>
+        </div>
+        <?php
             }
         }
         ?>
@@ -178,30 +178,32 @@ $addJs = false;
             <div class="fs-200">(PDF - <?=$fsize?>)</div>
         </div>
     </a>
-                    <?php
-                }
-                else {
+    <?php
+                } else {
                     $caption = wp_get_attachment_caption($p) ?: null;
                     ?>
-            <div data-thumb="<?=wp_get_attachment_image_url($p, 'large')?>"
-                class="assets__dl_card">
-                <a href="<?=wp_get_attachment_image_url($p, 'full')?>"
-                    data-fancybox="gallery" data-caption="<?=$caption?>">
-                    <img
-                        class="assets__dl_image"
-                        src="<?=wp_get_attachment_image_url($p, 'full')?>">
-                    <?php
+    <div data-thumb="<?=wp_get_attachment_image_url($p, 'large')?>"
+        class="assets__dl_card">
+        <a href="<?=wp_get_attachment_image_url($p, 'full')?>"
+            data-fancybox="gallery" data-caption="<?=$caption?>">
+            <img class="assets__dl_image"
+                src="<?=wp_get_attachment_image_url($p, 'full')?>">
+            <?php
                     if ($caption) {
                         ?>
-                    <p class="text-center"><?=$caption?></p>
-                        <?php
+            <p class="text-center"><?=$caption?></p>
+            <?php
                     }
                     ?>
-                </a>
-            </div>
-                    <?php
+        </a>
+    </div>
+    <?php
                 }
             }
+        }
+        if (get_field('link')) {
+            $l = get_field('link');
+            echo '<a href="' . $l['url'] . '" target="_blank">' . $l['title'] . ' <i class="fa-solid fa-arrow-up-right-from-square"></i></a>';
         }
 
     }
@@ -211,18 +213,19 @@ $addJs = false;
 if ($addJs == true) {
     ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
-    <?php
+<?php
     add_action('wp_footer', function () {
         ?>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script>
-Fancybox.bind('[data-fancybox="gallery"]', {
-    caption: function(_fancybox, slide) {
-        const figurecaption = slide.triggerEl?.querySelector("figcaption");
-        return figurecaption ? figurecaption.innerHTML : slide.caption || "";
-    },
-});
+    Fancybox.bind('[data-fancybox="gallery"]', {
+        caption: function(_fancybox, slide) {
+            const figurecaption = slide.triggerEl?.querySelector("figcaption");
+            return figurecaption ? figurecaption.innerHTML : slide.caption || "";
+        },
+    });
 </script>
-        <?php
+<?php
     });
 }
+    ?>

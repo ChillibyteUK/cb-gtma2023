@@ -273,6 +273,30 @@
             "mime_types": "",
             "insert": "append",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_65490034e4cfa",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64b5465e34c84",
+                        "operator": "==",
+                        "value": "Catalogues"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
@@ -293,5 +317,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699006632
+    "modified": 1699283018
 }
