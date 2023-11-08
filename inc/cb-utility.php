@@ -123,6 +123,12 @@ add_shortcode('social_icons', function(){
     target="_blank"><i class="fa-brands fa-instagram"></i></a>
 <?php
     }
+    if ($social['youtube_url'] ?? null) {
+        ?>
+<a href="<?=$social['youtube_url']?>"
+    target="_blank"><i class="fa-brands fa-youtube"></i></a>
+<?php
+    }
     $ob_str = ob_get_contents();
     ob_end_clean();
     return $ob_str;
