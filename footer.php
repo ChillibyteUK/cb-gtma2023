@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
             <h4 class="footer__menu_title">Certifications</h4>
             <a href="<?=get_field('qas_iso', 'options')?>"
                 target="_blank"><img
-                    src="<?=get_stylesheet_directory_uri()?>/img/ISO-Logo-9001-2015-002.jpg"
+                    src="<?=wp_get_attachment_image_url(get_field('qas_iso_img','options'),'large')?>"
                     alt="" class="w-75"></a>
         </div>
         <div class="footer__menu pb-4">
