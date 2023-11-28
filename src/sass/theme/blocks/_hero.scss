@@ -9,12 +9,22 @@
     height: 300px;
 
     display: grid;
-    place-content: center;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+    isolation: isolate;
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(0, hsl(var(--hsl-blue-400)) 2rem, transparent);
+        z-index: -1;
+    }
 
     &__title {
         color: var(--col-light);
         padding-inline: 1rem;
-        background-color: hsl(var(--hsl-blue-400) / 0.6);
+        padding-bottom: 1rem;
     }
 }
 

@@ -1,5 +1,5 @@
 <!-- children -->
-<section class="child_pages py-4 mb-4">
+<section class="child_pages py-4">
     <div class="container-xl">
         <?php
         if (get_field('page_children__title')) {

@@ -1,9 +1,26 @@
 .sector_subnav {
+    background-color: var(--col-blue-400);
     .container-xl {
         display: flex;
         justify-content: center;
-        align-items: center;
-        gap: 1rem;
+        align-items: stretch;
         flex-wrap: wrap;
+        width: 100%;
+
+        a {
+            flex: 1;
+            text-align: center;
+            background-color: var(--col-red-400);
+            color: white;
+            text-decoration: none;
+            padding-block: 0.5rem;
+            transition: background-color var(--transition);
+            &:not(:last-of-type) {
+                border-right: 1px solid white;
+            }
+            &:hover {
+                background-color: var(--col-red-900);
+            }
+        }
     }
 }

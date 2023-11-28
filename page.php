@@ -2,6 +2,9 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 get_header();
+
+// $url = $_SERVER["REQUEST_URI"];
+
 ?>
 <main id="main">
     <?php

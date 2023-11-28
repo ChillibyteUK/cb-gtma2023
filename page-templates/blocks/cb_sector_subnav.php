@@ -16,7 +16,7 @@ $news = new WP_Query(array(
     )
 ));
 if ($news->have_posts()) {
-    $buttons .= '<a href="#news" class="btn btn-secondary">News</a>';
+    $buttons .= '<a href="#news" class="btn-wide">News</a>';
 }
 $suppliers = new WP_Query(array(
     'post_type' => 'suppliers',
@@ -32,13 +32,13 @@ $suppliers = new WP_Query(array(
     )
 ));
 if ($suppliers->have_posts()) {
-    $buttons .= '<a href="#suppliers" class="btn btn-secondary">Suppliers</a>';
+    $buttons .= '<a href="#suppliers" class="btn-wide">Suppliers</a>';
 }
 
 if ($buttons != '') {
 ?>
-<section class="sector_subnav">
-    <div class="container-xl mb-4">
+<section class="sector_subnav mb-4">
+    <div class="container-xl">
         <?=$buttons?>
     </div>
 </section>

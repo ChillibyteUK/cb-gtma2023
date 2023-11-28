@@ -13,6 +13,7 @@
   --hsl-red-200: 353 69% 74%;
   --hsl-red-300: 353 69% 63%;
   --hsl-red-400: 353 76% 47%;
+  --hsl-red-900: 353 76% 37%;
   --col-dark: hsl(var(--hsl-dark));
   --col-light: hsl(var(--hsl-light));
   --col-grey: hsl(var(--hsl-grey));
@@ -24,6 +25,7 @@
   --col-blue-200: hsl(var(--hsl-blue-200));
   --col-blue-300: hsl(var(--hsl-blue-300));
   --col-red: hsl(var(--hsl-red-400));
+  --col-red-900: hsl(var(--hsl-red-900));
   --col-red-400: hsl(var(--hsl-red-400));
   --col-red-100: hsl(var(--hsl-red-100));
   --col-red-200: hsl(var(--hsl-red-200));
@@ -22705,6 +22707,10 @@ strong, b {
   background-color: var(--col-grey);
 }
 
+.bg-grey-200 {
+  background-color: var(--col-grey-200);
+}
+
 #wrapper-navbar {
   --stripe: 45px;
   background-color: var(--col-blue-400);
@@ -23152,17 +23158,26 @@ footer .footer__logo {
   background-repeat: no-repeat;
   height: 300px;
   display: grid;
-  place-content: center;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  isolation: isolate;
 }
 @media (min-width: 768px) {
   .hero {
     margin-top: var(--h-top-desktop);
   }
 }
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(0, hsl(var(--hsl-blue-400)) 2rem, transparent);
+  z-index: -1;
+}
 .hero__title {
   color: var(--col-light);
   padding-inline: 1rem;
-  background-color: hsl(var(--hsl-blue-400)/0.6);
+  padding-bottom: 1rem;
 }
 
 .hero-search {
@@ -23491,25 +23506,45 @@ footer .footer__logo {
 }
 
 .news_list__card {
+  background-color: var(--col-grey-100);
   display: block;
   padding-bottom: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid var(--col-blue-400);
+  border-bottom: 1px solid white;
+  padding: 1rem 2rem;
 }
 
-.suppliers_list__card {
+.supplier_list__card {
+  background-color: var(--col-grey-100);
   display: block;
   padding-bottom: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid var(--col-blue-400);
+  border-bottom: 1px solid white;
+  padding: 1rem 2rem;
 }
 
+.sector_subnav {
+  background-color: var(--col-blue-400);
+}
 .sector_subnav .container-xl {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  align-items: stretch;
   flex-wrap: wrap;
+  width: 100%;
+}
+.sector_subnav .container-xl a {
+  flex: 1;
+  text-align: center;
+  background-color: var(--col-red-400);
+  color: white;
+  text-decoration: none;
+  padding-block: 0.5rem;
+  transition: background-color var(--transition);
+}
+.sector_subnav .container-xl a:not(:last-of-type) {
+  border-right: 1px solid white;
+}
+.sector_subnav .container-xl a:hover {
+  background-color: var(--col-red-900);
 }
 
 .sponsor__card {
