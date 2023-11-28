@@ -24,6 +24,8 @@ defined('ABSPATH') || exit;
                     src="<?=wp_get_attachment_image_url(get_field('qas_iso_img','options'),'large')?>"
                     alt="" class="w-75"></a>
         </div>
+        <?php
+        /*
         <div class="footer__menu pb-4">
             <h4 class="footer__menu_title">Supported By</h4>
             <a href="<?=get_field('lloyds', 'options')?>"
@@ -31,7 +33,8 @@ defined('ABSPATH') || exit;
                     src="<?=get_stylesheet_directory_uri()?>/img/lb_digital_stacked_pos_colour_rgb_png_0000.png"
                     alt="" class="w-75"></a>
         </div>
-
+        */
+        ?>
     </div>
 </footer>
 <div class="colophon py-3">
