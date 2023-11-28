@@ -8,26 +8,26 @@
     a {
         color: white;
     }
-    .h4 {
+    .h5 {
         padding: 0.5rem 1rem;
     }
     &__blue {
         background-color: var(--col-blue-300);
-        .h4 {
+        .h5 {
             background-color: var(--col-blue-400);
         }
     }
     &__red {
         background-color: var(--col-red-300);
-        .h4 {
+        .h5 {
             background-color: var(--col-red-400);
         }
     }
     &__inner {
         padding: 0.5rem 1rem 1rem 1rem;
         ul {
-            // list-style: none;
-            // padding-inline-start: 0;
+            list-style: square;
+            padding-inline-start: 1rem;
             margin-bottom: 0;
             li a.active {
                 font-weight: var(--fw-600);
@@ -36,7 +36,7 @@
     }
     &__search {
         background-color: var(--col-red-300);
-        .h4 {
+        .h5 {
             background-color: var(--col-red-400);
         }
     }

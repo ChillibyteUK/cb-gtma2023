@@ -14,14 +14,14 @@ $current_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
 <main id="main" class="<?=$class?>">
     <div class="container-xl">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <h1><?=get_the_title()?></h1>
                 <?=apply_filters('the_content',get_the_content())?>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="sidebar pb-4">
                     <div class="sidebar__red mb-2">
-                        <div class="h4">Membership</div>
+                        <div class="h5">Membership</div>
                         <div class="sidebar__inner">
                             <?php
                             // $parent = 362;
@@ -50,7 +50,7 @@ $current_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
                         </div>
                     </div>
                     <div class="sidebar__blue mb-2">
-                        <div class="h4">GTMA Member Services</div>
+                        <div class="h5">Member Services</div>
                         <div class="sidebar__inner">
                             <p class="mb-2">Here are some of the services available to members</p>
                             <?php
@@ -77,11 +77,11 @@ $current_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
                         </div>
                     </div>
                     <div class="sidebar__search">
-                        <div class="h4 mb-3">Search for Products &amp; Services</div>
+                        <div class="h5 mb-3">Search Products &amp; Services</div>
                         <div class="sidebar__inner">
                             <div class="form">
                                 <input class="form-control" type="text" id="searchInput" autocomplete="off">
-                                <button id="go" class="btn-search">Search</button>
+                                <button id="go" class="btn-search"></button>
                                 <input type="hidden" name="source" id="sourceInput">
                             </div>
                         </div>
