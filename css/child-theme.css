@@ -23674,6 +23674,29 @@ footer .footer__logo {
   margin-bottom: 1rem;
 }
 
+.quote {
+  background-color: var(--col-blue-400);
+  color: white;
+  position: relative;
+  padding: 1.5rem 3rem;
+}
+.quote:before, .quote:after {
+  content: "";
+  width: 25px;
+  height: 14px;
+  position: absolute;
+}
+.quote:before {
+  top: 0;
+  left: 1rem;
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 14'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='12.5 0 5.5 0 0 14 7 14 12.5 0'/%3E%3Cpolygon class='cls-1' points='25 0 18 0 12.5 14 19.5 14 25 0'/%3E%3C/g%3E%3C/svg%3E");
+}
+.quote:after {
+  bottom: 0;
+  right: 1rem;
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 14'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='12.5 0 5.5 0 0 14 7 14 12.5 0'/%3E%3Cpolygon class='cls-1' points='25 0 18 0 12.5 14 19.5 14 25 0'/%3E%3C/g%3E%3C/svg%3E");
+}
+
 .container-xl .container-xl {
   padding-left: 0;
   padding-right: 0;
