@@ -6,7 +6,7 @@
         border-bottom: 1px solid white;
         padding: 1rem 2rem;
         display: grid;
-        gap: 0.5rem;
+        gap: 1rem;
         @media (min-width:768px) {
             grid-template-columns: 200px auto;
         }
@@ -15,9 +15,11 @@
             width: auto;
             object-fit: contain;
         }
-        h3 {
-            margin-bottom: 0;
+        .detail {
             align-self: center;
+            h3 {
+                margin-bottom: 0;
+            }
         }
     }
 }
