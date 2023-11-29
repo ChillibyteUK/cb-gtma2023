@@ -15,8 +15,15 @@
             text-decoration: none;
             padding-block: 0.5rem;
             transition: background-color var(--transition);
+            min-width: 300px;
             &:not(:last-of-type) {
-                border-right: 1px solid white;
+                border-bottom: 1px solid white;
+            }
+            @media (min-width:640px) {
+                &:not(:last-of-type) {
+                    border-right: 1px solid white;
+                    border-bottom: none;
+                }
             }
             &:hover {
                 background-color: var(--col-red-900);
