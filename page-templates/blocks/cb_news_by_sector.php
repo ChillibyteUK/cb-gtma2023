@@ -23,7 +23,7 @@ if ($q->have_posts()) {
             $q->the_post();
             ?>
         <a class="news_list__card" href="<?=get_the_permalink()?>">
-            <h3><?=get_the_title()?></h3>
+            <h3 class="fs-400 fw-bold"><?=get_the_title()?></h3>
             <div><?=wp_trim_words(get_the_content())?></div>
         </a>
         <?php
