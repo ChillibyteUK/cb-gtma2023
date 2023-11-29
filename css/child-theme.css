@@ -23507,7 +23507,7 @@ footer .footer__logo {
   background-color: var(--col-grey-100);
   display: block;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid white;
+  border-bottom: 6px solid white;
   padding: 1rem 2rem;
   display: grid;
   gap: 1rem;
