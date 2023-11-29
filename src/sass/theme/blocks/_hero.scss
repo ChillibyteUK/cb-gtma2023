@@ -1,8 +1,9 @@
 .hero {
-    margin-top: var(--h-top);
-    @media (min-width:768px) {
-        margin-top: var(--h-top-desktop);
-    }
+    margin-top: -2rem;
+    // margin-top: var(--h-top);
+    // @media (min-width:768px) {
+    //     margin-top: var(--h-top-desktop);
+    // }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,10 +30,11 @@
 }
 
 .hero-search {
-    margin-top: var(--h-top);
-    @media (min-width:768px) {
-        margin-top: var(--h-top-desktop);
-    }
+    margin-top: -2rem;
+    // margin-top: var(--h-top);
+    // @media (min-width:768px) {
+    //     // margin-top: var(--h-top-desktop);
+    // }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

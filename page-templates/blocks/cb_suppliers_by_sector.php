@@ -28,6 +28,7 @@ if ($q->have_posts()) {
             ?>
         <a class="supplier_list__card"
             href="<?=get_the_permalink()?>">
+            <img src="<?=wp_get_attachment_image_url(get_field('supplier_logo',get_the_ID()),'medium')?>" alt="">
             <h3><?=get_the_title()?></h3>
             <?=$types?>
         </a>
