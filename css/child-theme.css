@@ -23521,6 +23521,12 @@ footer .footer__logo {
   padding: 1rem 2rem;
 }
 
+.suppliers ul {
+  -webkit-padding-start: 1rem;
+  padding-inline-start: 1rem;
+  list-style-type: square;
+}
+
 .sector_subnav {
   background-color: var(--col-blue-400);
 }
