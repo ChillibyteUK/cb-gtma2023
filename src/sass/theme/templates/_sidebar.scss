@@ -2,7 +2,7 @@
     position: sticky;
     top: var(--h-top);
     @media (min-width: 992px) {
-        top: var(--h-top-desktop);
+        top: calc( var(--h-top-desktop) + 1rem);
     }
     color: white;
     a {
