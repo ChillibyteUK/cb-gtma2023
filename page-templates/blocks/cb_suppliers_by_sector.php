@@ -30,7 +30,7 @@ if ($q->have_posts()) {
             href="<?=get_the_permalink()?>">
             <img src="<?=wp_get_attachment_image_url(get_field('supplier_logo',get_the_ID()),'medium')?>" alt="">
             <div class="detail">
-                <h3><?=get_the_title()?></h3>
+                <h3 class="fs-400 fw-bold"><?=get_the_title()?></h3>
                 <?=$types?>
             </div>
         </a>
