@@ -68,6 +68,39 @@ function cb_register_post_types()
     ];
 
     register_post_type("scs", $args);
+
+    $labels = [
+        "name" => __("Events", "cb-gtma2023"),
+        "singular_name" => __("Event", "cb-gtma2023"),
+    ];
+
+    $args = [
+        "label" => __("Events", "cb-gtma2023"),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "menu_icon" => "dashicons-open-folder",
+        "delete_with_user" => false,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "rewrite" => [ "slug" => "events", "with_front" => false ],
+        "query_var" => true,
+        "supports" => [ "title", "editor", "thumbnail" ],
+        "show_in_graphql" => false,
+        "exclude_from_search" => true
+    ];
+
+    register_post_type("event", $args);
 }
 add_action('init', 'cb_register_post_types');
 
@@ -101,6 +134,8 @@ function remove_draft_widget(){
 
 */
 
+// SUPPLIERS
+
 
 // ADD NEW COLUMN
 function suppliers_featured_head($defaults) {
@@ -131,6 +166,80 @@ function suppliers_featured_style(){
 add_filter('manage_suppliers_posts_columns', 'suppliers_featured_head');
 add_action('manage_suppliers_posts_custom_column', 'suppliers_featured_content', 10, 2);
 add_filter('admin_head', 'suppliers_featured_style');
+
+add_action('after_switch_theme', function () {
+    // cb_register_post_types();
+    flush_rewrite_rules();
+});
+
+// EVENTS
+
+// ADD NEW COLUMN
+function event_start_head($defaults) {
+	$column_name = 'start';//column slug
+	$column_heading = 'Start Date';//column heading
+	$defaults[$column_name] = $column_heading;
+	return $defaults;
+}
+ 
+// SHOW THE COLUMN CONTENT
+function event_start_content($name, $post_ID) {
+    $column_name = 'start';//column slug	
+    $column_field = 'start_date';//field slug	
+    if ($name == $column_name) {
+        $post_meta = get_post_meta($post_ID,$column_field,true);
+        if ($post_meta) {
+            $start = datetime::createfromformat('Ymd',$post_meta);
+            echo date_format($start,"d/m/Y");
+        }
+    }
+}
+
+// ADD STYLING FOR COLUMN
+function event_start_style(){
+	$column_name = 'start';//column slug	
+	echo "<style>.column-$column_name{width:10%;}</style>";
+}
+
+add_filter('manage_event_posts_columns', 'event_start_head');
+add_action('manage_event_posts_custom_column', 'event_start_content', 10, 2);
+add_filter('admin_head', 'event_start_style');
+
+add_action('after_switch_theme', function () {
+    // cb_register_post_types();
+    flush_rewrite_rules();
+});
+
+// ADD NEW COLUMN
+function event_end_head($defaults) {
+	$column_name = 'end';//column slug
+	$column_heading = 'End Date';//column heading
+	$defaults[$column_name] = $column_heading;
+	return $defaults;
+}
+ 
+// SHOW THE COLUMN CONTENT
+function event_end_content($name, $post_ID) {
+    $column_name = 'end';//column slug	
+    $column_field = 'end_date';//field slug	
+    if ($name == $column_name) {
+        $post_meta = get_post_meta($post_ID,$column_field,true);
+        if ($post_meta) {
+            $end = datetime::createfromformat('Ymd',$post_meta);
+            echo date_format($end,"d/m/Y");
+        }
+    }
+}
+
+// ADD STYLING FOR COLUMN
+function event_end_style(){
+	$column_name = 'end';//column slug	
+	echo "<style>.column-$column_name{width:10%;}</style>";
+}
+
+add_filter('manage_event_posts_columns', 'event_end_head');
+add_action('manage_event_posts_custom_column', 'event_end_content', 10, 2);
+add_filter('admin_head', 'event_end_style');
 
 add_action('after_switch_theme', function () {
     // cb_register_post_types();

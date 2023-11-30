@@ -57,6 +57,13 @@
     }
 }
 
+.btn-sm {
+    padding: 0.5rem 0.75rem;
+    min-width: 200px;
+    font-weight: var(--fw-600);
+    font-size: var(--fs-200);
+}
+
 // .btn-outline {
 //     border: 2py solid var(--col-blue);
 //     transition: background-color var(--transition);

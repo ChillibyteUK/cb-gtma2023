@@ -50,25 +50,15 @@ $col-grey: hsl(0, 0%, 93%);
 
     --ff-fa: "Font Awesome 6 Free";
 
-    /* @link https://utopia.fyi/type/calculator?c=320,16,1.067,1240,18,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-    /* Step -2: 14.00px → 12.40px */
-    --fs-100: clamp(0.72rem, 0.9331rem + -0.275vw, 0.8781rem);
-    /* Step -1: 15.00px → 14.40px */
-    --fs-200: clamp(0.90rem, calc(0.95rem + -0.07vw), 0.94rem);
-    --fs-200: clamp(0.95rem, calc(0.95rem + -0.07vw), 1rem);
-    /* Step 0: 16.00px → 18.00px */
-    --fs-400: clamp(1.00rem, calc(0.96rem + 0.22vw), 1.13rem);
-    --fs-450: clamp(1.10rem, calc(0.96rem + 0.22vw), 1.2rem);
-    /* Step 1: 17.07px → 22.50px */
-    --fs-500: clamp(1.07rem, calc(0.95rem + 0.59vw), 1.41rem);
-    /* Step 2: 18.22px → 28.13px */
-    --fs-600: clamp(1.14rem, calc(0.92rem + 1.08vw), 1.76rem);
-    /* Step 3: 19.44px → 35.16px */
-    --fs-700: clamp(1.22rem, calc(0.87rem + 1.71vw), 2.20rem);
-    /* Step 4: 20.74px → 43.95px */
-    --fs-800: clamp(1.30rem, calc(0.79rem + 2.52vw), 2.75rem);
-    /* Step 5: 22.13px → 54.93px */
-    --fs-900: clamp(1.38rem, calc(0.67rem + 3.57vw), 3.43rem);
+    --fs-100: 0.649rem;
+    --fs-200: 0.833rem;
+    --fs-400: 1rem;
+    --fs-450: 1.2rem;
+    --fs-500: 1.44rem;
+    --fs-600: 1.728rem;
+    --fs-700: 2.074rem;
+    --fs-800: 2.488rem;
+    --fs-900: 2.986rem;
 
     --transition: 200ms ease-out;
 
