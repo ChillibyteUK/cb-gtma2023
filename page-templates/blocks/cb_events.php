@@ -4,6 +4,7 @@ if (get_field('range') == 'past') {
     $title = 'Past Events';
     $link_title = 'Upcoming Events';
     $link = '/events/';
+    $order = 'DESC';
     $meta_query = array(
         array(
             'key' => 'start_date',
@@ -17,6 +18,7 @@ else {
     $title = 'Upcoming Events';
     $link_title = 'Past Events';
     $link = '/past-events/';
+    $order = 'ASC';
     $meta_query = array(
         array(
             'key' => 'start_date',
@@ -36,7 +38,7 @@ else {
         $q = new WP_Query(array(
             'post_type' => 'event',
             'posts_per_page' => -1,
-            'order' => 'ASC',
+            'order' => $order,
             'orderby' => 'meta_value',
             'meta_key' => 'start_date',
             'meta_type' => 'DATETIME',
