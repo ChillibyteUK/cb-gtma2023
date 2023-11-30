@@ -78,6 +78,7 @@ foreach ($blocks as $block) {
                 <aside class="sidebar">
                     <div class="sidebar__cta">
                         <div class="h5">Upcoming Events</div>
+                        <div class="sidebar__inner">
                         <?php
                                 $q = new WP_Query(array(
                                     'post_type' => 'event',
@@ -101,6 +102,7 @@ foreach ($blocks as $block) {
                                 echo '<li><a href="'. get_the_permalink() . '">' . get_the_title() . '</a></li>';
                             }
                         ?>
+                        </div>
                     </div>
                 </aside>
             </div>

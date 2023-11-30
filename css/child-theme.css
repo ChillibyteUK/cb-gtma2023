@@ -24040,10 +24040,12 @@ footer .footer__logo {
   font-weight: 600;
 }
 .event .sidebar__cta {
-  background-color: var(--col-blue);
+  background-color: var(--col-blue-300);
   color: white;
   font-size: var(--fs-200);
-  padding: 1rem;
+}
+.event .sidebar__cta .h5 {
+  background-color: var(--col-blue-400);
 }
 
 .event-archive__card {

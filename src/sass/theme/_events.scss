@@ -44,10 +44,12 @@
             }
         }
         &__cta {
-            background-color: var(--col-blue);
+            background-color: var(--col-blue-300);
+            .h5 {
+                background-color: var(--col-blue-400);
+            }
             color: white;
             font-size: var(--fs-200);
-            padding: 1rem;
         }
     }
 }
