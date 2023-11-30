@@ -8,8 +8,6 @@ $img = get_the_post_thumbnail_url(get_the_ID(), 'full');
     <?php
     $content = get_the_content();
 $blocks = parse_blocks($content);
-$sidebar = array();
-$after;
 ?>
     <section class="breadcrumbs container-xl">
         <?php
@@ -78,32 +76,31 @@ foreach ($blocks as $block) {
             </div>
             <div class="col-lg-3 order-1">
                 <aside class="sidebar">
-                    <?php
-    if ($sidebar) {
-        ?>
-                    <div class="quicklinks">
-                        <div class="h5 d-none d-lg-block">Quick Links</div>
-                        <div class="h5 d-lg-none" data-bs-toggle="collapse" href="#links" role="button">Quick Links
-                        </div>
-                        <div class="collapse d-lg-block" id="links">
-                            <?php
-                foreach ($sidebar as $heading => $id) {
-                    ?>
-                            <li><a
-                                    href="#<?=$id?>"><?=$heading?></a>
-                            </li>
-                            <?php
-                }
-        ?>
-                        </div>
-                    </div>
-                    <?php
-    }
-?>
                     <div class="sidebar__cta">
-                        <div class="h5">Something here about joining GTMA?</div>
-                        <p>Not only is it a good spot to upsell, it'll fill in this space when there are no
-                            quicklinks/headings</p>
+                        <div class="h5">Upcoming Events</div>
+                        <?php
+                                $q = new WP_Query(array(
+                                    'post_type' => 'event',
+                                    'posts_per_page' => -1,
+                                    'order' => 'ASC',
+                                    'post__not_in' => array( get_the_ID() ),
+                                    'orderby' => 'meta_value',
+                                    'meta_key' => 'start_date',
+                                    'meta_type' => 'DATETIME',
+                                    'meta_query' => array(
+                                        array(
+                                            'key' => 'start_date',
+                                            'value' => date('Ymd'),
+                                            'type' => 'DATE',
+                                            'compare' => '>='
+                                        )
+                                    )
+                                ));
+                            while ($q->have_posts()) {
+                                $q->the_post();
+                                echo '<li><a href="'. get_the_permalink() . '">' . get_the_title() . '</a></li>';
+                            }
+                        ?>
                     </div>
                 </aside>
             </div>
