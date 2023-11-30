@@ -149,20 +149,20 @@ function cb_dashboard_widget_display()
 }
 
 
-// add_filter('wpseo_breadcrumb_links', function( $links ) {
-//     global $post;
-//     if ( is_singular( 'post' ) ) {
-//         $t = get_the_category($post->ID);
-//         $breadcrumb[] = array(
-//             'url' => '/guides/',
-//             'text' => 'Guides',
-//         );
+add_filter('wpseo_breadcrumb_links', function( $links ) {
+    global $post;
+    if ( is_singular( 'event' ) ) {
+        $t = get_the_category($post->ID);
+        $breadcrumb[] = array(
+            'url' => '/events/',
+            'text' => 'Events',
+        );
 
-//         array_splice( $links, 1, -2, $breadcrumb );
-//     }
-//     return $links;
-// }
-// );
+        array_splice( $links, 0, -2, $breadcrumb );
+    }
+    return $links;
+}
+);
 
 // remove discussion metabox
 function cc_gutenberg_register_files()
