@@ -55,7 +55,7 @@ while ($q->have_posts()) {
 
     $month = $start[1] .  ' ' . $start[2];
     if ($curr_month != $month) {
-        echo '<h2>' . $month . '</h2>';
+        echo '<h2 class="h3">' . $month . '</h2>';
         $curr_month = $month;
     }
 
