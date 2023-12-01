@@ -76,7 +76,7 @@ $(document).ready(function() {
   
     $.getJSON('/wp-content/themes/cb-gtma2023/search-slugs.php', function(data) {
       slugList = data;
-      // console.log(slugList);
+      console.log(slugList);
     });
 
 
@@ -119,14 +119,15 @@ function getSlugByKey(key) {
         var url = '/tags/' + slugify(term) + '/';
       }
       else if (source !== '' && source === 'category') {
-        var slug = getSlugByKey(term);
-        console.log('term is: '+term);
-        console.log('slug is: '+slug);
-        var url = '/supplier/' + slug + '/';
+        var url = '/supplier/' + slugify(term) + '/';
       }
       else {
         // this won't work after the SEO title changes
-        var url = '/suppliers/' + slugify(term) + '/';
+        // var url = '/suppliers/' + slugify(term) + '/';
+        var slug = getSlugByKey(term);
+        console.log('term is: '+term);
+        console.log('slug is: '+slug);
+        var url = '/suppliers/' + slug + '/';
       }
       // console.log('URL: ' + url);
       window.location.href = url;
