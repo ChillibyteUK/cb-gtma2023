@@ -135,12 +135,14 @@ $(document).ready(function() {
         // this won't work after the SEO title changes
         // var url = '/suppliers/' + slugify(term) + '/';
 
-        async function() {
+        async function slugIt() {
           var slug = await getSlugByKey(term);
           console.log(slug);
           var url = '/suppliers/' + slug + '/';
           window.location.href = url;
-      }
+        }
+
+        slugIt();
 
       }
       // console.log('URL: ' + url);
