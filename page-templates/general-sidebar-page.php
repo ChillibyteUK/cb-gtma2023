@@ -10,6 +10,7 @@ $class = $block['className'] ?? null;
 get_header();
 global $wp;
 $current_url = home_url(add_query_arg(array(), $wp->request)) . '/';
+$content = get_the_content();
 $blocks = parse_blocks($content);
 ?>
 <main id="main" class="<?=$class?>">
@@ -107,3 +108,4 @@ $sibs = new WP_Query(array(
 </main>
 <?php
 get_footer();
+?>
