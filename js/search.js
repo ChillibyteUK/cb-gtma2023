@@ -2,7 +2,6 @@ $(document).ready(function() {
     let term = ''; // Initialize term
     let source = ''; // Initialize source
     const termList = [];
-    let slugList = [];
   
     function slugify(str) {
       return String(str)
@@ -74,9 +73,14 @@ $(document).ready(function() {
       };
     });
   
-    $.getJSON('/wp-content/themes/cb-gtma2023/search-slugs.php', function(data) {
+
+    let slugList = [];
+
+    function processSlugList(data) {
       slugList = data;
-    });
+    }
+
+    $.getJSON('/wp-content/themes/cb-gtma2023/search-slugs.php', processSlugList);
 
     console.log('SLUGLIST:');
     console.log(slugList);
