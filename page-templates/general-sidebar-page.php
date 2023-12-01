@@ -20,7 +20,7 @@ $blocks = parse_blocks($content);
                 <?php
                 $hasHero = false;
 foreach ($blocks as $block) {
-    echo $block['blockName'];
+    // echo $block['blockName'];
     if ($block['blockName'] == 'acf/cb-hero') {
         $hasHero = true;
     }
