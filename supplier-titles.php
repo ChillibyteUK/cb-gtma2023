@@ -137,7 +137,7 @@ echo '<pre>';
 foreach ($urls as $u => $t) {
     $o = get_page_by_path($u, OBJECT, 'suppliers');
     if ($o != null) {
-        echo "update wp_posts set post_title = '" . $t . '" where id = ' .  $o->ID . " and post_status = 'publish';\n";
+        echo "update wp_posts set post_title = '" . $t . "' where id = " .  $o->ID . " and post_status = 'publish';\n";
     } else {
         echo '-- NOT FOUND ' . $u . "\n";
     }
