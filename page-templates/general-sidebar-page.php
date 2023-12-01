@@ -18,13 +18,17 @@ $blocks = parse_blocks($content);
         <div class="row">
             <div class="col-md-9">
                 <?php
-                foreach ($blocks as $block) {
-                    echo $block['blockName'];
-                    // if ($block['blockName'] == 'acf') {
-                    // }
-                }
+                $hasHero = false;
+foreach ($blocks as $block) {
+    echo $block['blockName'];
+    if ($block['blockName'] == 'acf/cb-hero') {
+        $hasHero = true;
+    }
+}
+if ($hasHero === false) {
+    echo '<h1>' . get_the_title() . '</h1>';
+}
 ?>
-                <h1><?=get_the_title()?></h1>
                 <?=apply_filters('the_content', get_the_content())?>
             </div>
             <div class="col-md-3">
