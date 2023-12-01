@@ -120,6 +120,8 @@ function getSlugByKey(key) {
       }
       else if (source !== '' && source === 'category') {
         var slug = getSlugByKey(term);
+        console.log('term is: '+term);
+        console.log('slug is: '+slug);
         var url = '/supplier/' + slug + '/';
       }
       else {
