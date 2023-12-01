@@ -1,4 +1,5 @@
 <?php
+$path = preg_replace('/wp-content(?!.*wp-content).*/', '', __DIR__);
 require_once($path . 'wp-load.php');
 
 $urls = array(
