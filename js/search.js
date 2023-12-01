@@ -75,9 +75,11 @@ $(document).ready(function() {
     });
   
     $.getJSON('/wp-content/themes/cb-gtma2023/search-slugs.php', function(data) {
-      slugList.push(data);
-      console.log(slugList);
+      slugList = data;
     });
+
+    console.log('SLUGLIST:');
+    console.log(slugList);
 
 
 // Function to get the value based on the key
