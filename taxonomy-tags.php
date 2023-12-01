@@ -62,7 +62,8 @@ while ($q->have_posts()) {
                     <div class="d-flex justify-content-between">
                         <div>
                             <h2 class="fs-5 d-inline">
-                                <?=strip_crud(get_the_title())?></h2>
+                                <?=strip_crud(get_the_title())?>
+                            </h2>
                             <?php
                         if ($county) {
                             echo ' - ' . $county;
@@ -72,7 +73,8 @@ while ($q->have_posts()) {
                         <div class="featured-badge">Featured</div>
                     </div>
                     <p class="mt-2 fs-200">
-                        <?=wp_trim_words(get_the_content(), 30)?></p>
+                        <?=wp_trim_words(get_the_content(), 30)?>
+                    </p>
                 </a>
                 <?php
 }
@@ -109,7 +111,8 @@ while ($q->have_posts()) {
     ?>
                 <a class="suppliers__card <?=$county_class?>"
                     href="<?=get_the_permalink()?>">
-                    <h2 class="fs-5 d-inline"><?=get_the_title()?>
+                    <h2 class="fs-5 d-inline">
+                        <?=strip_crud(get_the_title())?>
                     </h2>
                     <?php
                 if ($county) {
@@ -117,7 +120,8 @@ while ($q->have_posts()) {
                 }
     ?>
                     <p class="mt-2 fs-200">
-                        <?=wp_trim_words(get_the_content(), 30)?></p>
+                        <?=wp_trim_words(get_the_content(), 30)?>
+                    </p>
                 </a>
                 <?php
 }
