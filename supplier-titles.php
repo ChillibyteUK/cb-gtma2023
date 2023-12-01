@@ -1,6 +1,6 @@
 <?php
-$path = preg_replace('/wp-content(?!.*wp-content).*/', '', __DIR__);
-require_once($path . 'wp-load.php');
+
+require_once($_SERVER['DOCUMENT_ROOT'] . "/wp-load.php");
 
 $urls = array(
 'accura-tool-co',
