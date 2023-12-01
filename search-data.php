@@ -11,7 +11,8 @@ $supp = get_posts(array(
 $suppliers = array();
 
 foreach ($supp as $p) {
-    $suppliers[] = $p->post_title;
+    $t = strip_crud($p->post_title);
+    $suppliers[] = $t;
 }
 
 
