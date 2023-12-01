@@ -134,7 +134,7 @@ $urls = array(
 );
 
 foreach ($urls as $u) {
-    $o = get_page_by_path($u, OBJECT, 'supplier');
+    $o = get_page_by_path($u, OBJECT, 'suppliers');
     if ($o != null) {
         echo $u . ',' . $o->ID . '<br>';
     } else {
