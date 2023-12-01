@@ -2,6 +2,7 @@ $(document).ready(function() {
     let term = ''; // Initialize term
     let source = ''; // Initialize source
     const termList = [];
+
   
     function slugify(str) {
       return String(str)
@@ -73,37 +74,17 @@ $(document).ready(function() {
       };
     });
   
-  var slugList = [];
-  
-    function getSlugByKey(key) {
-      return new Promise(function(resolve, reject) {
-          if (slugList.length === 0) {
-              // If slugList is empty, fetch the data using $.getJSON
-              $.getJSON('/wp-content/themes/cb-gtma2023/search-slugs.php', function(data) {
-                  slugList = data;
-                  resolve(findSlug(key));
-              });
-          } else {
-              // If slugList is already populated, directly find the value
-              resolve(findSlug(key));
-          }
-      });
-  }
-  
-  function findSlug(key) {
-      // Iterate through the array to find the corresponding value
-      for (var i = 0; i < slugList.length; i++) {
-          var entry = slugList[i];
-          var entryKey = Object.keys(entry)[0]; // Assuming each entry has only one key-value pair
-  
-          if (entryKey === key) {
-              return entry[entryKey];
-          }
+// Function to get the value based on the key
+function getSlugByKey(companyName) {
+  for (var i = 0; i < slugList.length; i++) {
+      var companyObj = slugList[i];
+      if (companyObj.hasOwnProperty(companyName)) {
+          return companyObj[companyName];
       }
-  
-      // Return null if the key is not found
-      return null;
   }
+  // Return null or any other value if the company name is not found
+  return null;
+}
 
     // Handle the Go button click event
     $('#go').click(function() {
@@ -123,31 +104,23 @@ $(document).ready(function() {
       // category: /supplier/additive-manufacturing/
       // tag: /tags/2d-3d/
       // supplier: /suppliers/robev-engineering-ltd/
-      console.log(term);
+      // console.log(term);
       if (source !== '' && source === 'tag') {
         var url = '/tags/' + slugify(term) + '/';
-        window.location.href = url;
       }
       else if (source !== '' && source === 'category') {
         var url = '/supplier/' + slugify(term) + '/';
-        window.location.href = url;
       }
       else {
         // this won't work after the SEO title changes
         // var url = '/suppliers/' + slugify(term) + '/';
-
-        async function slugIt() {
-          var slug = await getSlugByKey(term);
-          console.log(slug);
-          var url = '/suppliers/' + slug + '/';
-          window.location.href = url;
-        }
-
-        slugIt();
-
+        var slug = getSlugByKey(term);
+        // console.log('term is: '+term);
+        // console.log('slug is: '+slug);
+        var url = '/suppliers/' + slug + '/';
       }
       // console.log('URL: ' + url);
-      
+      window.location.href = url;
     }
   
     // Handle input in the search field
