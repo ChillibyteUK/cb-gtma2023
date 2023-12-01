@@ -75,7 +75,7 @@ $(document).ready(function() {
     });
   
     $.getJSON('/wp-content/themes/cb-gtma2023/search-slugs.php', function(data) {
-      slugList = data;
+      slugList.push(data);
       console.log(slugList);
     });
 
