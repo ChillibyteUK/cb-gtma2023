@@ -2,6 +2,7 @@ $(document).ready(function() {
     let term = ''; // Initialize term
     let source = ''; // Initialize source
     const termList = [];
+    let slugList = [];
   
     function slugify(str) {
       return String(str)
@@ -28,6 +29,7 @@ $(document).ready(function() {
         termList.push(...tags.map(term => ({ term, source: 'tag' })));
       });
   
+
       // Initialize the autocomplete
       $('#searchInput').autocomplete({
         source: function(request, response) {
@@ -72,6 +74,28 @@ $(document).ready(function() {
       };
     });
   
+    $.getJSON('/wp-content/themes/cb-gtma2023/search-slugs.php', function(data) {
+      slugList = data;
+      // console.log(slugList);
+    });
+
+
+// Function to get the value based on the key
+function getSlugByKey(key) {
+  // Iterate through the array to find the corresponding value
+  for (var i = 0; i < supplierData.length; i++) {
+      var entry = supplierData[i];
+      var entryKey = Object.keys(entry)[0]; // Assuming each entry has only one key-value pair
+
+      if (entryKey === key) {
+          return entry[entryKey];
+      }
+  }
+
+  // Return a default value or handle the case where the key is not found
+  return null;
+}
+
     // Handle the Go button click event
     $('#go').click(function() {
       const inputTerm = $('#searchInput').val();
@@ -95,9 +119,11 @@ $(document).ready(function() {
         var url = '/tags/' + slugify(term) + '/';
       }
       else if (source !== '' && source === 'category') {
-        var url = '/supplier/' + slugify(term) + '/';
+        var slug = getSlugByKey(term);
+        var url = '/supplier/' + slug + '/';
       }
       else {
+        // this won't work after the SEO title changes
         var url = '/suppliers/' + slugify(term) + '/';
       }
       // console.log('URL: ' + url);

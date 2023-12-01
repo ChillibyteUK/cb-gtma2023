@@ -12,7 +12,7 @@ $suppliers = array();
 
 foreach ($supp as $p) {
     $t = strip_crud($p->post_title);
-    $suppliers[] = $t . '::' . $p->ID;
+    $suppliers[] = $t;
 }
 
 
