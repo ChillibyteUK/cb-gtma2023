@@ -83,8 +83,8 @@ $(document).ready(function() {
 // Function to get the value based on the key
 function getSlugByKey(key) {
   // Iterate through the array to find the corresponding value
-  for (var i = 0; i < supplierData.length; i++) {
-      var entry = supplierData[i];
+  for (var i = 0; i < slugList.length; i++) {
+      var entry = slugList[i];
       var entryKey = Object.keys(entry)[0]; // Assuming each entry has only one key-value pair
 
       if (entryKey === key) {
