@@ -73,7 +73,8 @@ $(document).ready(function() {
       };
     });
   
-
+  var slugList = [];
+  
     function getSlugByKey(key) {
       return new Promise(function(resolve, reject) {
           if (slugList.length === 0) {
