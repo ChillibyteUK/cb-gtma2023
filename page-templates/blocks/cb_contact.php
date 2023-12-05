@@ -21,7 +21,8 @@
                 <div class="row mb-4">
                     <div class="col-md-6">
                         <h4 class="h5 mb-2">Technical &amp; Supply Chain</h4>
-                        <img src="" alt="Alan Arthur" class="d-block mb-2">
+                        <img src="<?=get_stylesheet_directory_uri()?>/img/alan.jpg"
+                            alt="Alan Arthur" class="d-block mb-2 rounded-circle">
                         <p><strong>Alan Arthur, CEO</strong></p>
                         <a href="mailto:alan@gtma.co.uk"><i class="fa-solid fa-envelope fs-500 pe-2"></i></a>
                         <a href="https://www.linkedin.com/in/alan-arthur-41550426/" target="_blank"><i
@@ -29,7 +30,8 @@
                     </div>
                     <div class="col-md-6">
                         <h4 class="h5 mb-2">Membership &amp; Other Enquiries</h4>
-                        <img src="" alt="David Beattie" class="d-block mb-2">
+                        <img src="<?=get_stylesheet_directory_uri()?>/img/david.jpg"
+                            alt="David Beattie" class="d-block mb-2 rounded-circle">
                         <p><strong>David Beattie, General Manager</strong></p>
                         <a href="mailto:david@gtma.co.uk"><i class="fa-solid fa-envelope fs-500 pe-2"></i></a>
                         <a href="https://www.linkedin.com/in/david-beattie-1955a952/" target="_blank"><i
