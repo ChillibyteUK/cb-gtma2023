@@ -18,7 +18,7 @@
 
                 <h3>Email</h3>
 
-                <div class="row">
+                <div class="row mb-4">
                     <div class="col-md-6">
                         <h4 class="h5">Technical &amp; Supply Chain</h4>
                         <img src="" alt="Alan Arthur" class="d-block">
