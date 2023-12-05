@@ -20,7 +20,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <h4 class="h5">Technical &amp; Supply Chain Enquiries</h4>
+                        <h4 class="h5">Technical &amp; Supply Chain</h4>
                         <img src="" alt="Alan Arthur" class="d-block">
                         Alan Arthur, CEO
                         <a href="mailto:alan@gtma.co.uk"><i class="fa-solid fa-email"></i></a>
