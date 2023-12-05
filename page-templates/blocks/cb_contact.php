@@ -20,20 +20,20 @@
 
                 <div class="row mb-4">
                     <div class="col-md-6">
-                        <h4 class="h5">Technical &amp; Supply Chain</h4>
-                        <img src="" alt="Alan Arthur" class="d-block">
+                        <h4 class="h5 mb-2">Technical &amp; Supply Chain</h4>
+                        <img src="" alt="Alan Arthur" class="d-block mb-2">
                         <p><strong>Alan Arthur, CEO</strong></p>
-                        <a href="mailto:alan@gtma.co.uk"><i class="fa-solid fa-envelope fa-2x pe-2"></i></a>
+                        <a href="mailto:alan@gtma.co.uk"><i class="fa-solid fa-envelope fs-500 pe-2"></i></a>
                         <a href="https://www.linkedin.com/in/alan-arthur-41550426/" target="_blank"><i
-                                class="fa-brands fa-linkedin-in fa-2x"></i></a>
+                                class="fa-brands fa-linkedin-in fs-500"></i></a>
                     </div>
                     <div class="col-md-6">
-                        <h4 class="h5">Membership &amp; Other Enquiries</h4>
-                        <img src="" alt="David Beattie" class="d-block">
+                        <h4 class="h5 mb-2">Membership &amp; Other Enquiries</h4>
+                        <img src="" alt="David Beattie" class="d-block mb-2">
                         <p><strong>David Beattie, General Manager</strong></p>
-                        <a href="mailto:david@gtma.co.uk"><i class="fa-solid fa-envelope fa-2x pe-2"></i></a>
+                        <a href="mailto:david@gtma.co.uk"><i class="fa-solid fa-envelope fs-500 pe-2"></i></a>
                         <a href="https://www.linkedin.com/in/david-beattie-1955a952/" target="_blank"><i
-                                class="fa-brands fa-linkedin-in fa-2x"></i></a>
+                                class="fa-brands fa-linkedin-in fs-500"></i></a>
                     </div>
                 </div>
 
