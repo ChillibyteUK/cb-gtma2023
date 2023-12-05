@@ -20,7 +20,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <h4>Technical &amp; Supply-Chain Enquiries</h4>
+                        <h4 class="h5">Technical &amp; Supply Chain Enquiries</h4>
                         <img src="" alt="alan">
                         Alan Arthur, CEO
                         <a href="mailto:alan@gtma.co.uk"><i class="fa-solid fa-email"></i></a>
@@ -28,7 +28,7 @@
                                 class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-md-6">
-                        <h4>Membership &amp; Other Enquiries</h4>
+                        <h4 class="h5">Membership &amp; Other Enquiries</h4>
                         <img src="" alt="david">
                         David Beattie, General Manager
                         <a href="mailto:david@gtma.co.uk"><i class="fa-solid fa-email"></i></a>
@@ -36,12 +36,6 @@
                                 class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
-
-                <ul class="fa-ul">
-                    <li><span class="fa-li"><i class="fa-solid fa-envelope"></i></span> <a
-                            href="mailto:<?=get_field('contact_email', 'options')?>"><?=get_field('contact_email', 'options')?></a>
-                    </li>
-                </ul>
 
                 <p>If you have any comments or suggestions regarding any part of our web site or have a general enquiry
                     for the Association please leave your contact details in the form.</p>
