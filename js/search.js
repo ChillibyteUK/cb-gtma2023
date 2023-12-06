@@ -2,6 +2,7 @@ $(document).ready(function() {
     let term = ''; // Initialize term
     let source = ''; // Initialize source
     const termList = [];
+
   
     function slugify(str) {
       return String(str)
@@ -28,6 +29,7 @@ $(document).ready(function() {
         termList.push(...tags.map(term => ({ term, source: 'tag' })));
       });
   
+
       // Initialize the autocomplete
       $('#searchInput').autocomplete({
         source: function(request, response) {
@@ -72,6 +74,18 @@ $(document).ready(function() {
       };
     });
   
+// Function to get the value based on the key
+function getSlugByKey(companyName) {
+  for (var i = 0; i < slugList.length; i++) {
+      var companyObj = slugList[i];
+      if (companyObj.hasOwnProperty(companyName)) {
+          return companyObj[companyName];
+      }
+  }
+  // Return null or any other value if the company name is not found
+  return null;
+}
+
     // Handle the Go button click event
     $('#go').click(function() {
       const inputTerm = $('#searchInput').val();
@@ -90,7 +104,7 @@ $(document).ready(function() {
       // category: /supplier/additive-manufacturing/
       // tag: /tags/2d-3d/
       // supplier: /suppliers/robev-engineering-ltd/
-      console.log(term);
+      // console.log(term);
       if (source !== '' && source === 'tag') {
         var url = '/tags/' + slugify(term) + '/';
       }
@@ -98,7 +112,12 @@ $(document).ready(function() {
         var url = '/supplier/' + slugify(term) + '/';
       }
       else {
-        var url = '/suppliers/' + slugify(term) + '/';
+        // this won't work after the SEO title changes
+        // var url = '/suppliers/' + slugify(term) + '/';
+        var slug = getSlugByKey(term);
+        // console.log('term is: '+term);
+        // console.log('slug is: '+slug);
+        var url = '/suppliers/' + slug + '/';
       }
       // console.log('URL: ' + url);
       window.location.href = url;

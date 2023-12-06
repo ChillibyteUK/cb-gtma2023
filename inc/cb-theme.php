@@ -149,19 +149,21 @@ function cb_dashboard_widget_display()
 }
 
 
-add_filter('wpseo_breadcrumb_links', function( $links ) {
-    global $post;
-    if ( is_singular( 'event' ) ) {
-        $t = get_the_category($post->ID);
-        $breadcrumb[] = array(
-            'url' => '/events/',
-            'text' => 'Events',
-        );
+add_filter(
+    'wpseo_breadcrumb_links',
+    function ($links) {
+        global $post;
+        if (is_singular('event')) {
+            $t = get_the_category($post->ID);
+            $breadcrumb[] = array(
+                'url' => '/events/',
+                'text' => 'Events',
+            );
 
-        array_splice( $links, 0, -2, $breadcrumb );
+            array_splice($links, 0, -2, $breadcrumb);
+        }
+        return $links;
     }
-    return $links;
-}
 );
 
 // remove discussion metabox
@@ -234,12 +236,19 @@ function cb_theme_enqueue()
 add_action('wp_enqueue_scripts', 'cb_theme_enqueue');
 
 
-add_shortcode('mrc_phone', function(){
-    if (get_field('mrc_phone','options')) {
-        return '<a href="tel:' . parse_phone(get_field('mrc_phone','options')) . '">' . get_field('mrc_phone','options') . '</a>';
+add_shortcode('mrc_phone', function () {
+    if (get_field('mrc_phone', 'options')) {
+        return '<a href="tel:' . parse_phone(get_field('mrc_phone', 'options')) . '">' . get_field('mrc_phone', 'options') . '</a>';
     }
     return;
 });
+
+function strip_crud($title)
+{
+    $result = preg_replace('/\|.*$/', '', $title);
+    return $result;
+}
+
 
 // black thumbnails - fix alpha channel
 /**

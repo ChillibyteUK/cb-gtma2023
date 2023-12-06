@@ -18,7 +18,7 @@ $cat_id = get_queried_object()->term_id;
                 </select>
             </div>
             <div id="suppliers">
-            <?php
+                <?php
 
 $q = new WP_Query(array(
     'post_type' => 'suppliers',
@@ -45,29 +45,33 @@ $q = new WP_Query(array(
 $counties = array();
 while ($q->have_posts()) {
     $q->the_post();
-    $county = get_field('county',get_the_ID()) ?: '';
+    $county = get_field('county', get_the_ID()) ?: '';
     $county_class = '';
     if ($county) {
         $counties[acf_slugify($county)] = $county;
         $county_class = acf_slugify($county);
     }
     ?>
-            <a class="suppliers__card <?=$county_class?>"
-                href="<?=get_the_permalink()?>">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h2 class="fs-5 d-inline"><?=get_the_title()?></h2>
-                        <?php
+                <a class="suppliers__card <?=$county_class?>"
+                    href="<?=get_the_permalink()?>">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h2 class="fs-5 d-inline">
+                                <?=strip_crud(get_the_title())?>
+                            </h2>
+                            <?php
                         if ($county) {
                             echo ' - ' . $county;
                         }
-                        ?>
+    ?>
+                        </div>
+                        <div class="featured-badge">Featured</div>
                     </div>
-                    <div class="featured-badge">Featured</div>
-                </div>
-                <p class="mt-2 fs-200"><?=wp_trim_words(get_the_content(),30)?></p>
-            </a>
-            <?php
+                    <p class="mt-2 fs-200">
+                        <?=wp_trim_words(get_the_content(), 30)?>
+                    </p>
+                </a>
+                <?php
 }
 
 $q = new WP_Query(array(
@@ -93,24 +97,28 @@ $q = new WP_Query(array(
 
 while ($q->have_posts()) {
     $q->the_post();
-    $county = get_field('county',get_the_ID()) ?: '';
+    $county = get_field('county', get_the_ID()) ?: '';
     $county_class = '';
     if ($county) {
         $counties[acf_slugify($county)] = $county;
         $county_class = acf_slugify($county);
     }
     ?>
-            <a class="suppliers__card <?=$county_class?>"
-                href="<?=get_the_permalink()?>">
-                <h2 class="fs-5 d-inline"><?=get_the_title()?></h2>
-                <?php
+                <a class="suppliers__card <?=$county_class?>"
+                    href="<?=get_the_permalink()?>">
+                    <h2 class="fs-5 d-inline">
+                        <?=strip_crud(get_the_title())?>
+                    </h2>
+                    <?php
                 if ($county) {
                     echo ' - ' . $county;
                 }
-                ?>
-                <p class="mt-2 fs-200"><?=wp_trim_words(get_the_content(),30)?></p>
-            </a>
-            <?php
+    ?>
+                    <p class="mt-2 fs-200">
+                        <?=wp_trim_words(get_the_content(), 30)?>
+                    </p>
+                </a>
+                <?php
 }
 ?>
             </div>
@@ -122,40 +130,42 @@ ksort($counties);
 $json = json_encode($counties);
 ?>
 <script>
-const selectElement = document.getElementById("counties");
+    const selectElement = document.getElementById("counties");
 
-const options = <?=$json?>;
+    const options = <?=$json?> ;
 
-for (const value in options) {
-  if (options.hasOwnProperty(value)) {
-    const text = options[value];
-    const optionElement = document.createElement("option");
-    optionElement.value = '.' + value;
-    optionElement.text = text;
-    selectElement.appendChild(optionElement);
-  }
-}
+    for (const value in options) {
+        if (options.hasOwnProperty(value)) {
+            const text = options[value];
+            const optionElement = document.createElement("option");
+            optionElement.value = '.' + value;
+            optionElement.text = text;
+            selectElement.appendChild(optionElement);
+        }
+    }
 </script>
 <?php
-add_action('wp_footer',function() {
+add_action('wp_footer', function () {
     ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
     integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-(function($) {
-    var $grid = $('#suppliers').isotope({
-        itemSelector: '.suppliers__card',
-        layoutMode: 'vertical'
-    });
-    $('#counties').on('change', function () {
-        var filterValue = this.value;
-        $grid.isotope({ filter: filterValue });
-    });
-})(jQuery);
+    (function($) {
+        var $grid = $('#suppliers').isotope({
+            itemSelector: '.suppliers__card',
+            layoutMode: 'vertical'
+        });
+        $('#counties').on('change', function() {
+            var filterValue = this.value;
+            $grid.isotope({
+                filter: filterValue
+            });
+        });
+    })(jQuery);
 </script>
-    <?php
-},9999);
+<?php
+}, 9999);
 
 get_footer();
 ?>
