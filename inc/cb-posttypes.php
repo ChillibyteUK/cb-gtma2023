@@ -5,7 +5,7 @@ function cb_register_post_types()
     $labels = [
         "name" => "Suppliers",
         "singular_name" => "Supplier",
-        "add_new_item" => "Add New Supplier",
+        "add_new" => "Add New Supplier",
         "update_item" => "Update Supplier",
         "edit_item" => "Edit Supplier",
         "view_item" => "View Supplier",
@@ -19,8 +19,6 @@ function cb_register_post_types()
         "publicly_queryable" => true,
         "show_ui" => true,
         "show_in_rest" => true,
-        // "rest_base" => "",
-        // "rest_controller_class" => "WP_REST_Posts_Controller",
         "has_archive" => true,
         "show_in_menu" => true,
         "show_in_nav_menus" => true,
@@ -244,6 +242,8 @@ function event_end_style(){
 add_filter('manage_event_posts_columns', 'event_end_head');
 add_action('manage_event_posts_custom_column', 'event_end_content', 10, 2);
 add_filter('admin_head', 'event_end_style');
+
+
 
 add_action('after_switch_theme', function () {
     // cb_register_post_types();
