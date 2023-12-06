@@ -211,12 +211,10 @@ if ($category) {
                 </div>
 
                 <div class="" id="contact">
+                    <h2>Contact <?=strip_crud( get_the_title() )?></h2>
                     <?php
                     $supplier_email = str_replace(' ','',get_field('contact_email'));
                     $supplier_name = urlencode( strip_crud( get_the_title() ) );
-                    ?>
-                    <h2>Contact <?=$supplier_name?></h2>
-                    <?php
                     echo do_shortcode(
                         '[gravityform id="' . 
                         get_field( 'supplier_contact_form_id', 'options' ) .
