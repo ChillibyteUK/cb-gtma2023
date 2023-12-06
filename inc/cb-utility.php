@@ -355,6 +355,7 @@ function cb_featured_image($id) {
 
 // REMOVE TAG AND COMMENT SUPPORT
 
+/*
 // Disable Tags Dashboard WP
 add_action('admin_menu', 'my_remove_sub_menus');
 
@@ -366,6 +367,8 @@ function myprefix_unregister_tags() {
     unregister_taxonomy_for_object_type('post_tag', 'post');
 }
 add_action('init', 'myprefix_unregister_tags');
+
+*/
 
 add_action('admin_init', function () {
     // Redirect any user trying to access comments page
