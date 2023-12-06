@@ -179,8 +179,8 @@
                 },
                 {
                     "key": "field_64907e263be92",
-                    "label": "Instagram URL",
-                    "name": "instagram_url",
+                    "label": "YouTube URL",
+                    "name": "youtube_url",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -482,5 +482,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701174567
+    "modified": 1701869704
 }
