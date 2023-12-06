@@ -213,12 +213,20 @@ if ($category) {
                 <div class="" id="contact">
                 <?php
                 $supplier_email = get_field('contact_email');
-
-                echo do_shortcode('[gravityform id="' . get_field('supplier_contact_form_id','options') . '" field_values="email=' . $supplier_email . '&name=' . htmlspecialchars(strip_crud(get_the_title())) . '" title="false"]');
+                $supplier_name = htmlspecialchars( strip_crud( get_the_title() ) );
+                echo do_shortcode(
+                    '[gravityform id="' . 
+                    get_field( 'supplier_contact_form_id', 'options' ) .
+                    '" field_values="email=' .
+                    $supplier_email .
+                    '&name=' .
+                    $supplier_name .
+                    '" title="false"]'
+                );
                 
                 ?>
                 <script>
-console.log(<?=htmlspecialchars(strip_crud(get_the_title()))?>);
+console.log('Supplier:'+<?=$supplier_name?>);
                 </script>
 
                 </div>
