@@ -122,7 +122,7 @@ foreach ($blocks as $block) {
     echo render_block($block);
 }
 ?>
-                <div class="accordion" id="assets">
+                <div class="accordion mb-4" id="assets">
                     <?php
 foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
@@ -211,24 +211,23 @@ if ($category) {
                 </div>
 
                 <div class="" id="contact">
-                <?php
-                $supplier_email = str_replace(' ','',get_field('contact_email'));
-                $supplier_name = urlencode( strip_crud( get_the_title() ) );
-                echo do_shortcode(
-                    '[gravityform id="' . 
-                    get_field( 'supplier_contact_form_id', 'options' ) .
-                    '" field_values="email=' .
-                    $supplier_email .
-                    '&name=' .
-                    $supplier_name .
-                    '" title="false"]'
-                );
-                
-                ?>
-                <script>
-console.log('Supplier:'+'<?=$supplier_name?>');
-                </script>
-
+                    <?php
+                    $supplier_email = str_replace(' ','',get_field('contact_email'));
+                    $supplier_name = urlencode( strip_crud( get_the_title() ) );
+                    ?>
+                    <h2>Contact <?=$supplier_name?></h2>
+                    <?php
+                    echo do_shortcode(
+                        '[gravityform id="' . 
+                        get_field( 'supplier_contact_form_id', 'options' ) .
+                        '" field_values="email=' .
+                        $supplier_email .
+                        '&name=' .
+                        $supplier_name .
+                        '" title="false"]'
+                    );
+                    
+                    ?>
                 </div>
             </div>
             <div class="col-lg-3">
