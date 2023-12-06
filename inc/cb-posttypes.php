@@ -3,15 +3,16 @@
 function cb_register_post_types()
 {
     $labels = [
-        "name" => __("Suppliers", "cb-gtma2023"),
-        "singular_name" => __("Supplier", "cb-gtma2023"),
+        "name" => "Suppliers",
+        "singular_name" => "Supplier",
         "add_new_item" => "Add New Supplier",
         "update_item" => "Update Supplier",
         "edit_item" => "Edit Supplier",
+        "view_item" => "View Supplier",
     ];
 
     $args = [
-        "label" => __("supplier", "cb-gtma2023"),
+        "label" => "supplier",
         "labels" => $labels,
         "description" => "",
         "public" => true,
