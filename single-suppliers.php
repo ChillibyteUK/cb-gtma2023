@@ -210,6 +210,11 @@ if ($category) {
 ?>
                 </div>
 
+                <div class="" id="contact">
+
+                <?=do_shortcode('[gravityform id="' . get_field('supplier_contact_form_id','options') . '" title="false"]')?>
+
+                </div>
             </div>
             <div class="col-lg-3">
                 <aside class="supplier__sidebar">
