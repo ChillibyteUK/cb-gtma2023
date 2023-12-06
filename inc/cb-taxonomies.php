@@ -46,14 +46,14 @@ function cb_register_taxes()
         "show_in_menu" => true,
         "show_in_nav_menus" => true,
         "query_var" => true,
-        "rewrite" => array('with_front' => false),
+        "rewrite" => array('slug' => 'tags', 'with_front' => false),
         "show_admin_column" => true,
         "show_in_rest" => true,
         "show_tagcloud" => true,
         "show_in_quick_edit" => true,
         "show_in_graphql" => false,
     ];
-    register_taxonomy("tags", [ "suppliers" ], $args);
+    register_taxonomy("supplier-tags", [ "suppliers" ], $args);
 
     $args = [
         "label" => "Supplier Accreditations",
