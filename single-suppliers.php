@@ -89,7 +89,7 @@ $navitems = array();
                 if (get_field('is_featured') == 'Yes') {
                     ?>
                 <div class="supplier__featured">
-                    FEATURED SUPPLIER
+                    FEATURED SUPPLIER <i class="fa-solid fa-star"></i>
                 </div>
                 <?php
                 }
@@ -214,7 +214,7 @@ if ($category) {
                 <?php
                 $supplier_email = get_field('contact_email');
 
-                echo do_shortcode('[gravityform id="' . get_field('supplier_contact_form_id','options') . '" field_values="email=' . $supplier_email . '" title="false"]');
+                echo do_shortcode('[gravityform id="' . get_field('supplier_contact_form_id','options') . '" field_values="email=' . $supplier_email . '&name=' . strip_crud(get_the_title()) . '" title="false"]');
                 
                 ?>
 
