@@ -7,6 +7,10 @@ function cb_register_taxes()
         "labels" => [
             "name" => "Supplier Types",
             "singular_name" => "Supplier Type",
+            "add_new_item" => "Add Supplier Type",
+            "update_item" => "Update Supplier Type",
+            "new_item_name" => "New Supplier Type",
+            "edit_item" => "Edit Supplier Type",
         ],
         "public" => true,
         "publicly_queryable" => true,
@@ -29,6 +33,10 @@ function cb_register_taxes()
         "labels" => [
             "name" => "Supplier Tags",
             "singular_name" => "Supplier Tag",
+            "add_new_item" => "Add Supplier Tag",
+            "update_item" => "Update Supplier Tag",
+            "new_item_name" => "New Supplier Tag",
+            "edit_item" => "Edit Supplier Tag",
         ],
         "public" => true,
         "publicly_queryable" => true,
