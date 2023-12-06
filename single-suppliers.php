@@ -182,7 +182,7 @@ if ($acc) {
 }
 
 
-$category = get_the_terms(get_the_ID(), 'tags');
+$category = get_the_terms(get_the_ID(), 'supplier-tags');
 if ($category) {
     echo '<a id="products--services" class="anchor"></a>';
     $navitems[] = 'Products & Services';
