@@ -7,7 +7,7 @@ get_header();
 
     <section class="suppliers">
         <div class="container-xl">
-            taxonomy-categories.php
+            ARCHIVE
         </div>
     </section>
 </main>
