@@ -211,7 +211,7 @@ if ($category) {
                 </div>
 
                 <div class="" id="contact">
-                    <h2>Contact <?=strip_crud( get_the_title() )?></h2>
+                    <h3>Contact <?=strip_crud( get_the_title() )?></h3>
                     <?php
                     $supplier_email = str_replace(' ','',get_field('contact_email'));
                     $supplier_name = urlencode( strip_crud( get_the_title() ) );
