@@ -226,7 +226,7 @@ if ($category) {
                 
                 ?>
                 <script>
-console.log('Supplier:'+<?=$supplier_name?>);
+console.log('Supplier:'+'<?=$supplier_name?>');
                 </script>
 
                 </div>
