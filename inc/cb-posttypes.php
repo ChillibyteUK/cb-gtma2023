@@ -5,6 +5,9 @@ function cb_register_post_types()
     $labels = [
         "name" => __("Suppliers", "cb-gtma2023"),
         "singular_name" => __("Supplier", "cb-gtma2023"),
+        "add_new_item" => "Add New Supplier",
+        "update_item" => "Update Supplier",
+        "edit_item" => "Edit Supplier",
     ];
 
     $args = [
