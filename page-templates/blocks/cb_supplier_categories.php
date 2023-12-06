@@ -4,7 +4,6 @@
             <?php
         $terms = get_terms(array('taxonomy' => 'supplier-types', 'hide_empty' => true ));
             foreach ($terms as $t) {
-                var_dump($t);
                 ?>
             <li><a href="<?=get_term_link($t)?>"><?=$t->name?>
                     (<?=$t->count?>)</a>
