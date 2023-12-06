@@ -17,7 +17,7 @@ foreach ($supp as $p) {
 
 
 $tag = get_terms(array(
-    'taxonomy' => 'tags',
+    'taxonomy' => 'supplier-tags',
     'posts_per_page' => -1,
     'hide_empty' => true
 ));
@@ -29,7 +29,7 @@ foreach ($tag as $p) {
 }
 
 $type = get_terms(array(
-    'taxonomy' => 'types',
+    'taxonomy' => 'supplier-types',
     'posts_per_page' => -1,
     'hide_empty' => true
 ));
