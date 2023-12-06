@@ -214,7 +214,7 @@ if ($category) {
                 <?php
                 $supplier_email = get_field('contact_email');
 
-                echo do_shortcode('[gravityform id="' . get_field('supplier_contact_form_id','options') . '" field_values="email=' . $supplier_email . '&name=' . strip_crud(get_the_title()) . '" title="false"]');
+                echo do_shortcode('[gravityform id="' . get_field('supplier_contact_form_id','options') . '" field_values="email=' . $supplier_email . '&name=' . htmlspecialchars(strip_crud(get_the_title())) . '" title="false"]');
                 
                 ?>
 
