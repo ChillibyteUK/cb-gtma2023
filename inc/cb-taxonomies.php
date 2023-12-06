@@ -41,7 +41,7 @@ function cb_register_taxes()
         "rewrite" => array('slug' => 'tags', 'with_front' => false),
         "show_admin_column" => true,
         "show_in_rest" => true,
-        "show_tagcloud" => false,
+        "show_tagcloud" => true,
         "show_in_quick_edit" => true,
         "show_in_graphql" => false,
     ];
