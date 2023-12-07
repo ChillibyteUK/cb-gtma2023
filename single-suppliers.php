@@ -126,7 +126,7 @@ $navitems = array();
 $terms = wp_get_post_terms(get_the_ID(), 'supplier-types');
 foreach ($terms as $term) {
     // Output the term name and link (if needed)
-    echo '<a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a><br>';
+    echo '<li><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
 }
 ?>
 </ul>
