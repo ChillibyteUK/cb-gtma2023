@@ -1,7 +1,7 @@
 .partners {
     &__grid {
         display: grid;
-        gap: 2rem;
+        gap: 1rem;
         @media (min-width:576px) {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -12,26 +12,23 @@
     &__card {
         display: grid;
         grid-template-rows: auto 1fr;
+        background-color: var(--col-grey-200);
+        padding: 1rem;
+        transition: background-color var(--transition);
+        text-align: center;
         img {
             aspect-ratio: 2 / 1;
             width: 100%;
             object-fit: contain;
             object-position: center;
-            margin: 0 1rem 1rem 1rem;
+            margin-bottom: 1rem;
         }
         &:hover {
-            .partners__title {
-                background-color: var(--col-red-400);
-            }
+            background-color: var(--col-grey-100);
         }
     }
     &__title {
-        background-color: var(--col-blue-400);
-        color: var(--col-light);
-        padding: 0.5rem 1rem;
         font-size: var(--fs-400);
         font-weight: var(--fw-600);
-        transition: background-color var(--transition);
-        min-height: 73px;
     }
 }

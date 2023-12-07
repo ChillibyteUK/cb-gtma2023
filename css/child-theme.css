@@ -23458,7 +23458,7 @@ footer .footer__logo {
 
 .partners__grid {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
 }
 @media (min-width: 576px) {
   .partners__grid {
@@ -23473,6 +23473,10 @@ footer .footer__logo {
 .partners__card {
   display: grid;
   grid-template-rows: auto 1fr;
+  background-color: var(--col-grey-200);
+  padding: 1rem;
+  transition: background-color var(--transition);
+  text-align: center;
 }
 .partners__card img {
   aspect-ratio: 2/1;
@@ -23481,19 +23485,14 @@ footer .footer__logo {
   object-fit: contain;
   -o-object-position: center;
   object-position: center;
-  margin: 0 1rem 1rem 1rem;
+  margin-bottom: 1rem;
 }
-.partners__card:hover .partners__title {
-  background-color: var(--col-red-400);
+.partners__card:hover {
+  background-color: var(--col-grey-100);
 }
 .partners__title {
-  background-color: var(--col-blue-400);
-  color: var(--col-light);
-  padding: 0.5rem 1rem;
   font-size: var(--fs-400);
   font-weight: var(--fw-600);
-  transition: background-color var(--transition);
-  min-height: 73px;
 }
 
 .news_list__card {
