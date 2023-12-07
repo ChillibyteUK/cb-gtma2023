@@ -165,6 +165,25 @@ function suppliers_featured_style(){
 	echo "<style>.column-$column_name{width:10%;}</style>";
 }
 
+// make filterable
+add_filter( 'parse_query', 'prefix_parse_filter' );
+function  prefix_parse_filter($query) {
+   global $pagenow;
+   $current_page = isset( $_GET['post_type'] ) ? $_GET['post_type'] : '';
+   
+   if ( is_admin() && 
+     'suppliers' == $current_page &&
+     'edit.php' == $pagenow && 
+      isset( $_GET['is_featured'] ) && 
+      $_GET['is_featured'] != '' ) {
+   
+    $competition_name                  = $_GET['is_featured'];
+    $query->query_vars['meta_key']     = 'is_featured';
+    $query->query_vars['meta_value']   = $competition_name;
+    $query->query_vars['meta_compare'] = '=';
+  }
+}
+
 add_filter('manage_suppliers_posts_columns', 'suppliers_featured_head');
 add_action('manage_suppliers_posts_custom_column', 'suppliers_featured_content', 10, 2);
 add_filter('admin_head', 'suppliers_featured_style');
