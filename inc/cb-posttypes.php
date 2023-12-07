@@ -177,7 +177,7 @@ function is_featured_dropdown() {
       'Basic' => 'Basic '
     ];
 
-    echo'<select name="is_featured">';
+    echo'<select name="profile">';
         echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>' . 'Profile Level' . '</option>';
         foreach( $choices as $key => $value ) {
             echo '<option value="' . $key . '" '. (( $selected == $key ) ? 'selected="selected"' : "") . '>' . $value . '</option>';
