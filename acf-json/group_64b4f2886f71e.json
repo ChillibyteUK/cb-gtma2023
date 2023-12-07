@@ -3,6 +3,32 @@
     "title": "CPT Supplier",
     "fields": [
         {
+            "key": "field_6571c6d313e43",
+            "label": "Profile Level",
+            "name": "profile",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Featured": "Featured",
+                "Full Profile": "Full Profile",
+                "Basic": "Basic"
+            },
+            "default_value": "Full Profile",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_64b4f288dc8e0",
             "label": "Supplier Logo",
             "name": "supplier_logo",
@@ -223,32 +249,6 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_6571c6d313e43",
-            "label": "Profile Level",
-            "name": "profile",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Featured": "Featured",
-                "Full Profile": "Full Profile",
-                "Basic": "Basic"
-            },
-            "default_value": "Full Profile",
-            "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "layout": "horizontal",
-            "save_other_choice": 0
         },
         {
             "key": "field_64b4f2f9dc8e7",
@@ -472,5 +472,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701962119
+    "modified": 1701962250
 }
