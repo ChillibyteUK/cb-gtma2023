@@ -70,7 +70,7 @@ while ($q->have_posts()) {
                         }
     ?>
                         </div>
-                        <div class="featured-badge">Featured</div>
+                        <div class="featured-badge">Featured <i class="fa-solid fa-star"></i></div>
                     </div>
                     <p class="mt-2 fs-200">
                         <?=wp_trim_words(get_the_content(), 30)?>
