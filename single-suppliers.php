@@ -120,6 +120,7 @@ $navitems = array();
                     ?>
 <div class="mb-4">
 <h2 class="h3">Supplier Specialities</h2>
+<ul class="supplier__tags cols-lg-3">
 <?php
 $terms = wp_get_post_terms(get_the_ID(), 'supplier-types');
 foreach ($terms as $term) {
@@ -127,6 +128,7 @@ foreach ($terms as $term) {
     echo '<a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a><br>';
 }
 ?>
+</ul>
 </div>
                     <?php
                 }
