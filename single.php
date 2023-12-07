@@ -92,11 +92,12 @@ $r = new WP_Query(array(
 ));
 while ($r->have_posts()) {
     $r->the_post();
+    $img = get_the_post_thumbnail_url(get_the_ID(), 'large') ?? get_stylesheet_directory_uri() . '/img/default-blog.png';
     ?>
                 <div class="col-md-6 col-xl-3">
                     <a class="blog_card"
                         href="<?=get_the_permalink()?>">
-                        <img src="<?=get_the_post_thumbnail_url(get_the_ID(), 'large')?>"
+                        <img src="<?=$img?>"
                             alt="" class="blog_card__image">
                         <div class="blog_card__content">
                             <h3 class="blog_card__title">
