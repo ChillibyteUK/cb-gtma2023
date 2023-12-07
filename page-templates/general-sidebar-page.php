@@ -13,6 +13,7 @@ $current_url = home_url(add_query_arg(array(), $wp->request)) . '/';
 $content = get_the_content();
 $blocks = parse_blocks($content);
 ?>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <main id="main" class="<?=$class?>">
     <div class="container-xl">
         <div class="row">
