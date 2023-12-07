@@ -3,6 +3,7 @@
 defined('ABSPATH') || exit;
 get_header();
 ?>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <main id="main" class="supplier-archive">
 
     <section class="suppliers">
