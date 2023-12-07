@@ -17,7 +17,7 @@ get_header();
                     ?>
                 </div>
                 <div class="col-md-3">
-                    <div class="sidebar__search">
+                    <div class="sidebar sidebar__search">
                         <div class="h5 mb-3">Search Suppliers</div>
                         <div class="sidebar__inner">
                             <div class="form">
