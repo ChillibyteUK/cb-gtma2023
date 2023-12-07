@@ -165,24 +165,42 @@ function suppliers_featured_style(){
 	echo "<style>.column-$column_name{width:10%;}</style>";
 }
 
-// make filterable
-add_filter( 'parse_query', 'prefix_parse_filter' );
-function  prefix_parse_filter($query) {
-   global $pagenow;
-   $current_page = isset( $_GET['post_type'] ) ? $_GET['post_type'] : '';
-   
-   if ( is_admin() && 
-     'suppliers' == $current_page &&
-     'edit.php' == $pagenow && 
-      isset( $_GET['is_featured'] ) && 
-      $_GET['is_featured'] != '' ) {
-   
-    $competition_name                  = $_GET['is_featured'];
-    $query->query_vars['meta_key']     = 'is_featured';
-    $query->query_vars['meta_value']   = $competition_name;
-    $query->query_vars['meta_compare'] = '=';
-  }
+function is_featured_dropdown() {
+    $scr = get_current_screen();
+    if ( $scr->base !== 'edit' && $scr->post_type !== 'suppliers') return;
+
+    $selected = filter_input(INPUT_GET, 'is_featured', FILTER_SANITIZE_STRING );
+
+    $choices = [
+      'yes' => 'Yes',
+      'no' => 'No '
+    ];
+
+    echo'<select name="is_featured">';
+        echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>' . 'Is Featured' . '</option>';
+        foreach( $choices as $key => $value ) {
+            echo '<option value="' . $key . '" '. (( $selected == $key ) ? 'selected="selected"' : "") . '>' . $value . '</option>';
+        }
+    echo'</select>';
 }
+add_action('restrict_manage_posts', 'is_featured_dropdown');
+
+
+function is_featured_filter($query) {
+    if ( is_admin() && $query->is_main_query() ) {
+      $scr = get_current_screen();
+      if ( $scr->base !== 'edit' && $scr->post_type !== 'suppliers' ) return;
+
+      if (isset($_GET['is_featured']) && $_GET['is_featured'] != 'all') {
+        $query->set('meta_query', array( array(
+          'key' => 'is_featured',
+          'value' => sanitize_text_field($_GET['is_featured'])
+        ) ) );
+      }
+    }
+}
+
+add_action('pre_get_posts','is_featured_filter'); 
 
 add_filter('manage_suppliers_posts_columns', 'suppliers_featured_head');
 add_action('manage_suppliers_posts_custom_column', 'suppliers_featured_content', 10, 2);

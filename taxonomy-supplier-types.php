@@ -25,8 +25,8 @@ $q = new WP_Query(array(
     'posts_per_page' => -1,
     'meta_query' => array(
         array(
-            'key' => 'is_featured',
-            'value' => 'Yes',
+            'key' => 'profile',
+            'value' => 'Featured',
             'compare' => '='
         ),
     ),
@@ -79,8 +79,8 @@ $q = new WP_Query(array(
     'posts_per_page' => -1,
     'meta_query' => array(
         array(
-            'key' => 'is_featured',
-            'value' => 'Yes',
+            'key' => 'profile',
+            'value' => 'Featured',
             'compare' => '!='
         ),
     ),

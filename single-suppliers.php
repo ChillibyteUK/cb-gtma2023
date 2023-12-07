@@ -86,7 +86,7 @@ $navitems = array();
         <div class="row g-4 pb-4">
             <div class="col-lg-9 supplier__content">
                 <?php
-                if (get_field('is_featured') == 'Yes') {
+                if (get_field('profile') == 'Featured') {
                     ?>
                 <div class="supplier__featured">
                     FEATURED SUPPLIER <i class="fa-solid fa-star"></i>
