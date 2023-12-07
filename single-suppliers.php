@@ -118,8 +118,9 @@ $navitems = array();
                 if (get_field('profile') == 'Basic') {
                     echo apply_filters('the_content',get_field('basic_profile'));
                     ?>
-<div class="mb-4">
-<h2 class="h3">Supplier Specialities</h2>
+<div class="mb-4 bg-grey-200">
+<h2 class="fs-700">Supplier Specialities</h2>
+<div class="bg-grey-100">
 <ul class="supplier__tags cols-lg-3">
 <?php
 $terms = wp_get_post_terms(get_the_ID(), 'supplier-types');
@@ -129,6 +130,7 @@ foreach ($terms as $term) {
 }
 ?>
 </ul>
+</div>
 </div>
                     <?php
                 }

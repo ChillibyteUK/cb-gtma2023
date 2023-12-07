@@ -22697,6 +22697,10 @@ strong, b {
   background-color: var(--col-grey);
 }
 
+.bg-grey-100 {
+  background-color: var(--col-grey-100);
+}
+
 .bg-grey-200 {
   background-color: var(--col-grey-200);
 }
