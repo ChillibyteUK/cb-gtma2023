@@ -46,7 +46,7 @@ if ($class == 'partner') {
             <div class="col-md-3">
                 <div class="sidebar pb-4">
                     <div class="sidebar__blue mb-2">
-                        <div class="h4"><?=get_field('sidebar_title')?></div>
+                        <div class="h5"><?=get_field('sidebar_title')?></div>
                         <div class="sidebar__inner">
                             <?php
                             $sibs = new WP_Query(array(
