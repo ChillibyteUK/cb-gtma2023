@@ -268,7 +268,7 @@
                 "Full Profile": "Full Profile",
                 "Basic": "Basic"
             },
-            "default_value": "Full",
+            "default_value": "Full Profile",
             "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
@@ -497,5 +497,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701955339
+    "modified": 1701961109
 }
