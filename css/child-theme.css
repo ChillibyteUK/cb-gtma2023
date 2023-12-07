@@ -23495,6 +23495,13 @@ footer .footer__logo {
   font-weight: var(--fw-600);
 }
 
+.partner__logo {
+  max-height: 200px;
+  width: auto;
+  display: block;
+  margin-inline: auto;
+}
+
 .news_list__card {
   background-color: var(--col-grey-100);
   display: block;

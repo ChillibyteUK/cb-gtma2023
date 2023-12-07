@@ -36,7 +36,7 @@ if ($parent == $services->ID) {
                 <?php
 if ($class == 'partner') {
     ?>
-                <img class="partner__logo"
+                <img class="partner__logo mt-4 mb-5"
                     src="<?=get_the_post_thumbnail_url(get_the_ID(), 'large')?>">
                 <?php
 }

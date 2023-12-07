@@ -32,3 +32,12 @@
         font-weight: var(--fw-600);
     }
 }
+
+.partner {
+    &__logo {
+        max-height: 200px;
+        width: auto;
+        display: block;
+        margin-inline: auto;
+    }
+}
