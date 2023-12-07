@@ -141,16 +141,16 @@ function remove_draft_widget(){
 
 // ADD NEW COLUMN
 function suppliers_featured_head($defaults) {
-	$column_name = 'featured';//column slug
-	$column_heading = 'Featured';//column heading
+	$column_name = 'profile';//column slug
+	$column_heading = 'Profile Level';//column heading
 	$defaults[$column_name] = $column_heading;
 	return $defaults;
 }
  
 // SHOW THE COLUMN CONTENT
 function suppliers_featured_content($name, $post_ID) {
-    $column_name = 'featured';//column slug	
-    $column_field = 'is_featured';//field slug	
+    $column_name = 'profile';//column slug	
+    $column_field = 'profile';//field slug	
     if ($name == $column_name) {
         $post_meta = get_post_meta($post_ID,$column_field,true);
         if ($post_meta) {
@@ -161,7 +161,7 @@ function suppliers_featured_content($name, $post_ID) {
 
 // ADD STYLING FOR COLUMN
 function suppliers_featured_style(){
-	$column_name = 'featured';//column slug	
+	$column_name = 'profile';//column slug	
 	echo "<style>.column-$column_name{width:10%;}</style>";
 }
 
@@ -169,15 +169,16 @@ function is_featured_dropdown() {
     $scr = get_current_screen();
     if ( $scr->base !== 'edit' && $scr->post_type !== 'suppliers') return;
 
-    $selected = filter_input(INPUT_GET, 'is_featured', FILTER_SANITIZE_STRING );
+    $selected = filter_input(INPUT_GET, 'profile');
 
     $choices = [
-      'yes' => 'Yes',
-      'no' => 'No '
+      'Featured' => 'Featured',
+      'Full Profile' => 'Full Profile',
+      'Basic' => 'Basic '
     ];
 
     echo'<select name="is_featured">';
-        echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>' . 'Is Featured' . '</option>';
+        echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>' . 'Profile Level' . '</option>';
         foreach( $choices as $key => $value ) {
             echo '<option value="' . $key . '" '. (( $selected == $key ) ? 'selected="selected"' : "") . '>' . $value . '</option>';
         }
@@ -191,10 +192,10 @@ function is_featured_filter($query) {
       $scr = get_current_screen();
       if ( $scr->base !== 'edit' && $scr->post_type !== 'suppliers' ) return;
 
-      if (isset($_GET['is_featured']) && $_GET['is_featured'] != 'all') {
+      if (isset($_GET['profile']) && $_GET['profile'] != 'all') {
         $query->set('meta_query', array( array(
-          'key' => 'is_featured',
-          'value' => sanitize_text_field($_GET['is_featured'])
+          'key' => 'profile',
+          'value' => sanitize_text_field($_GET['profile'])
         ) ) );
       }
     }
