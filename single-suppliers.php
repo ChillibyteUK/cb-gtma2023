@@ -100,13 +100,13 @@ $navitems = array();
                             <?=strip_crud(get_the_title())?>
                         </h1>
                         <?php
-        if (get_field('strapline')) {
-            ?>
+                    if (get_field('strapline')) {
+                        ?>
                         <p><?=get_field('strapline')?>
                         </p>
                         <?php
-        }
-?>
+                    }
+                    ?>
                     </div>
                     <div class="col-md-4 order-1 order-md-2 d-flex justify-content-center align-items-center">
                         <img src="<?=wp_get_attachment_image_url(get_field('supplier_logo'), 'full')?>"
@@ -115,6 +115,22 @@ $navitems = array();
                 </div>
                 <div class="stickynav" id="navholder"></div>
                 <?php
+                if (get_field('profile') == 'Basic') {
+                    echo apply_filters('the_content',get_field('basic_profile'));
+                    ?>
+<div class="mb-4">
+<h2 class="h3">Supplier Specialities</h2>
+<?php
+$terms = wp_get_post_terms(get_the_ID(), 'supplier-types');
+foreach ($terms as $term) {
+    // Output the term name and link (if needed)
+    echo '<a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a><br>';
+}
+?>
+</div>
+                    <?php
+                }
+                else {
 foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-supplier-assets') {
         continue;
@@ -209,7 +225,9 @@ if ($category) {
 }
 ?>
                 </div>
-
+                <?php
+                } // end full profile (!basic) output
+?>
                 <div class="" id="contact">
                     <h3>Contact <?=strip_crud( get_the_title() )?></h3>
                     <?php

@@ -29,6 +29,34 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_6571e4949c9cd",
+            "label": "Basic Profile",
+            "name": "basic_profile",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Displayed instead of the rest of the content if Profile Level is set to 'Basic'",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6571c6d313e43",
+                        "operator": "==",
+                        "value": "Basic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_64b4f288dc8e0",
             "label": "Supplier Logo",
             "name": "supplier_logo",
@@ -472,5 +500,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701962250
+    "modified": 1701962991
 }
