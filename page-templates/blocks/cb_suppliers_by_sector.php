@@ -20,6 +20,7 @@ if ($q->have_posts()) {
 <section class="supplier_list py-5">
     <div class="container-xl">
         <h2 class="mb-4"><?=$sector->name?> Sector Suppliers</h2>
+        <div class="supplier_list__grid">
         <?php
         while($q->have_posts()) {
             $q->the_post();
@@ -37,6 +38,7 @@ if ($q->have_posts()) {
         <?php
         }
     ?>
+        </div>
     </div>
 </section>
 <?php
