@@ -225,31 +225,6 @@
             "append": ""
         },
         {
-            "key": "field_64b4f2ebdc8e6",
-            "label": "Is Featured?",
-            "name": "is_featured",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Yes": "Yes",
-                "No": "No"
-            },
-            "default_value": "No",
-            "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "layout": "vertical",
-            "save_other_choice": 0
-        },
-        {
             "key": "field_6571c6d313e43",
             "label": "Profile Level",
             "name": "profile",
@@ -272,7 +247,7 @@
             "return_format": "value",
             "allow_null": 0,
             "other_choice": 0,
-            "layout": "vertical",
+            "layout": "horizontal",
             "save_other_choice": 0
         },
         {
@@ -497,5 +472,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701961109
+    "modified": 1701962119
 }
