@@ -325,6 +325,21 @@ add_action('wp_footer', function () use ($navitems) {
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="<?=get_stylesheet_directory_uri()?>/js/search.js"></script>
 <script>
+    <?php
+$supp = get_posts(array(
+    'post_type' => 'suppliers',
+    'numberposts' => -1
+));
+
+    $suppliers = array();
+
+    foreach ($supp as $p) {
+        $t = strip_crud($p->post_title);
+        $suppliers[$t] = $p->post_name;
+    }
+    ?>
+    var slugList = [ <?=json_encode($suppliers)?> ];
+
     const navholder = document.getElementById('navholder');
     const navitems = <?=$j?> ;
 
