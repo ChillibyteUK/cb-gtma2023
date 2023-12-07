@@ -92,7 +92,7 @@ $r = new WP_Query(array(
 ));
 while ($r->have_posts()) {
     $r->the_post();
-    $img = get_the_post_thumbnail_url(get_the_ID(), 'large') ?? get_stylesheet_directory_uri() . '/img/default-blog.png';
+    $img = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: get_stylesheet_directory_uri() . '/img/default-blog.png';
     ?>
                 <div class="col-md-6 col-xl-3">
                     <a class="blog_card"
