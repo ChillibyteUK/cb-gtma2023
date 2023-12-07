@@ -96,7 +96,7 @@ $sibs = new WP_Query(array(
                         </div>
                     </div>
                     <div class="sidebar__search">
-                        <div class="h5 mb-3">Search Products &amp; Services</div>
+                        <div class="h5 mb-3">Search Suppliers</div>
                         <div class="sidebar__inner">
                             <div class="form">
                                 <input class="form-control" type="text" id="searchInput" autocomplete="off">
@@ -111,5 +111,28 @@ $sibs = new WP_Query(array(
     </div>
 </main>
 <?php
+add_action('wp_footer', function () {
+    ?>
+<script>
+    <?php
+$supp = get_posts(array(
+    'post_type' => 'suppliers',
+    'numberposts' => -1
+));
+
+    $suppliers = array();
+
+    foreach ($supp as $p) {
+        $t = strip_crud($p->post_title);
+        $suppliers[$t] = $p->post_name;
+    }
+    ?>
+    var slugList = [ <?=json_encode($suppliers)?> ];
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="<?=get_stylesheet_directory_uri()?>/js/search.js"></script>
+<?php
+}, 9999);
 get_footer();
 ?>
