@@ -80,7 +80,7 @@ foreach ($blocks as $block) {
             </div>
         </div>
         <section class="related pb-5">
-            <h3>Related News</h3>
+            <h3>Other News</h3>
             <div class="row g-4">
                 <?php
         $cats = get_the_category();
