@@ -23156,7 +23156,6 @@ footer .footer__logo {
 }
 
 .hero {
-  margin-top: -2rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -23180,7 +23179,7 @@ footer .footer__logo {
 }
 
 .hero-search {
-  margin-top: -2rem;
+  margin-top: 2rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -24085,7 +24084,7 @@ main {
 }
 @media (min-width: 992px) {
   main {
-    margin-top: calc(var(--h-top-desktop) + 2rem);
+    margin-top: var(--h-top-desktop);
   }
 }
 
