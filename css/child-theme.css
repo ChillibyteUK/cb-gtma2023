@@ -22908,6 +22908,9 @@ footer .footer__logo {
   background-color: var(--col-light);
   color: var(--col-dark);
   font-size: var(--fs-200);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
 }
 .filter-button.active {
   border: 1px solid var(--col-dark);
