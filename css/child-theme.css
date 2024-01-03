@@ -23167,11 +23167,6 @@ footer .footer__logo {
   position: relative;
   isolation: isolate;
 }
-@media (min-width: 768px) {
-  .hero {
-    margin-top: calc(var(--h-top-desktop) + 2rem);
-  }
-}
 .hero .overlay {
   position: absolute;
   inset: 0;
@@ -24090,7 +24085,7 @@ main {
 }
 @media (min-width: 992px) {
   main {
-    margin-top: var(--h-top-desktop);
+    margin-top: calc(var(--h-top-desktop) + 2rem);
   }
 }
 
