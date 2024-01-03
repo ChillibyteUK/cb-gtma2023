@@ -24083,7 +24083,18 @@ footer .footer__logo {
   padding-bottom: 0.5rem;
   border-bottom: 6px solid white;
   padding: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
 }
+.event-archive__gtma {
+  background-color: var(--col-red-400);
+  color: white;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-200);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border0);
+}
+
 body {
   background-color: var(--col-light);
   color: var(--col-dark);

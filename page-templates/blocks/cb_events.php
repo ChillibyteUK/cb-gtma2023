@@ -88,8 +88,21 @@ while ($q->have_posts()) {
     }
     ?>
 <a class="event-archive__card" href="<?=get_the_permalink()?>">
-    <h3 class="fs-400 fw-bold"><?=get_the_title()?></h3>
-    <div class="event-archive__date"><?=$dateString?></div>
+    <div>
+        <h3 class="fs-400 fw-bold"><?=get_the_title()?></h3>
+        <div class="event-archive__date"><?=$dateString?></div>
+    </div>
+    <div>
+        <?php
+        if (get_field('event_type') == 'GTMA Event') {
+            ?>
+        <div class="event-archive__gtma">
+            GTMA Event <i class="fa-solid fa-star"></i>
+        </div>
+            <?php
+        }
+        ?>
+    </div>
 </a>
     <?php
 }
