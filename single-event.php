@@ -24,7 +24,7 @@ if (function_exists('yoast_breadcrumb')) {
                     if (get_field('event_type') == 'GTMA Event') {
                     ?>
                     <div class="event__gtma">
-                        A GTMA EVENT <i class="fa-solid fa-star"></i>
+                        A GTMA Event <i class="fa-solid fa-star"></i>
                     </div>
                         <?php
                     }
