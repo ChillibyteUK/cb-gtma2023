@@ -24080,16 +24080,15 @@ body {
   color: var(--col-dark);
 }
 
+/*
 main {
-  margin-top: var(--h-top);
-  padding-top: 2rem;
+    margin-top: var(--h-top);
+    padding-top: 2rem;
+    @media (min-width:992px) {
+        margin-top: var(--h-top-desktop);
+    }
 }
-@media (min-width: 992px) {
-  main {
-    margin-top: var(--h-top-desktop);
-  }
-}
-
+*/
 a {
   color: var(--col-red);
   text-decoration: none;
