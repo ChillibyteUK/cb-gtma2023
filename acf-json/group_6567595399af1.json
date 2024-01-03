@@ -3,6 +3,31 @@
     "title": "CPT Event",
     "fields": [
         {
+            "key": "field_6595837a0749e",
+            "label": "Event Type",
+            "name": "event_type",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Industry Event": "Industry Event",
+                "GTMA Event": "GTMA Event"
+            },
+            "default_value": "Industry Event",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_6567595431000",
             "label": "Start Date",
             "name": "start_date",
@@ -12,7 +37,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -30,7 +55,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -57,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701274488
+    "modified": 1704297394
 }
