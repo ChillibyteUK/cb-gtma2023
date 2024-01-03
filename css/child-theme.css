@@ -23587,12 +23587,13 @@ footer .footer__logo {
 }
 
 .sponsor__card {
-  background-color: var(--col-blue-100);
+  background-color: var(--col-blue-400);
   padding: 1rem !important;
   display: block;
+  color: var(--col-light);
 }
 .sponsor__title {
-  border-bottom: 1px solid var(--col-blue-400);
+  border-bottom: 1px solid var(--col-light);
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: var(--fs-100);

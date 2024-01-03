@@ -1,10 +1,10 @@
 <?php
 $sponsor = get_field('supplier');
-$until = get_field('display_until');
+$until = get_field('display_until') ?: '20380119';
 $today = date('Ymd');
 if ($until >= $today) {
 ?>
-<section class="sponsor">
+<section class="sponsor mb-4">
     <div class="container-xl">
         <a href="<?=get_the_permalink($sponsor)?>" class="sponsor__card">
             <div class="sponsor__title">This content is sponsored by <strong><?=get_the_title($sponsor)?></strong>.</div>
