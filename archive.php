@@ -20,7 +20,7 @@ $term = get_queried_object();
                 <?=get_the_content(null, false, $page_for_posts)?>
             </div>
             <?php
-            $cats = get_terms(array('taxonomy'=>'category', 'hide_empty' => false));
+            $cats = get_terms(array('taxonomy'=>'category', 'hide_empty' => true));
 echo '<a class="me-2 mb-2 filter-button" href="/news/">All News</a>';
 foreach($cats as $c) {
     $active = $term->slug == $c->slug ? 'active' : '';
