@@ -1,5 +1,7 @@
 .event {
 
+    margin-top: calc(var(--h-top) + 2.5rem);
+
     &__image {
         margin-bottom: 1rem;
         max-height: 350px;
@@ -23,7 +25,7 @@
 
     .sidebar {
         position: sticky;
-        top: calc(var(--h-top) + 1rem);
+        top: calc(var(--h-top) + 3rem);
         .quicklinks {
             background-color: var(--col-red);
             color: white;

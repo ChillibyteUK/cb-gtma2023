@@ -24020,6 +24020,9 @@ footer .footer__logo {
   padding: 0.5rem 1rem;
 }
 
+.event {
+  margin-top: calc(var(--h-top) + 2.5rem);
+}
 .event__image {
   margin-bottom: 1rem;
   max-height: 350px;
@@ -24038,7 +24041,7 @@ footer .footer__logo {
 .event .sidebar {
   position: -webkit-sticky;
   position: sticky;
-  top: calc(var(--h-top) + 1rem);
+  top: calc(var(--h-top) + 3rem);
 }
 .event .sidebar .quicklinks {
   background-color: var(--col-red);
