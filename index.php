@@ -8,7 +8,7 @@ $img = get_the_post_thumbnail_url($page_for_posts, 'full');
 get_header();
 ?>
 <main id="main">
-    <div class="container-xl py-5">
+    <div class="container-xl pb-4">
         <div class="mb-4">
             <h1 class="mb-4">
                 <?=get_the_title($page_for_posts)?>
@@ -100,7 +100,7 @@ foreach ($cats as $cat) {
     }
 ?>
         </div>
-        <div class="mt-5">
+        <div class="mt-4">
             <?php
         numeric_posts_nav();
 ?>
