@@ -24,6 +24,9 @@ $sectorlist = get_terms(array('taxonomy' => 'sectors', 'hide_empty' => false));
 $sectors = wp_list_pluck($sectorlist, 'name');
 
 foreach($cats as $c) {
+    if ($c->name == 'GTMA News') {
+        continue;
+    }
     if (!in_array($c->name, $sectors)) {
         echo '<a class="filter-button" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
     }
