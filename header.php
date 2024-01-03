@@ -136,7 +136,7 @@ wp_head();
 'theme_location'  => 'primary_nav',
 'container_class' => 'px-0 p-lg-0 collapse navbar-collapse navbars',
 'container_id'    => 'primaryNav',
-'menu_class'      => 'navbar-nav justify-content-between w-100 px-4 px-lg-0 gap-1 gap-lg-0 pb-2 pb-lg-0',
+'menu_class'      => 'navbar-nav justify-content-between w-100 px-4 px-lg-0 gap-1 gap-lg-0 py-2 py-lg-0',
 'fallback_cb'     => '',
 'menu_id'         => 'main-menu',
 'depth'           => 2,
