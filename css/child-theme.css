@@ -24085,7 +24085,7 @@ main {
 }
 @media (min-width: 992px) {
   main {
-    margin-top: var(--h-top-desktop);
+    margin-top: calc(var(--h-top-desktop) + 2rem);
   }
 }
 
