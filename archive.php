@@ -21,12 +21,15 @@ $term = get_queried_object();
             </div>
             <?php
             $cats = get_terms(array('taxonomy'=>'category', 'hide_empty' => true));
-            
+
             echo '<a class="filter-button active" href="/news/">All News</a>';
             $sectorlist = get_terms(array('taxonomy' => 'sectors', 'hide_empty' => false));
             $sectors = wp_list_pluck($sectorlist, 'name');
             
             foreach($cats as $c) {
+                if ($c->slug == 'news') {
+                    continue;
+                }            
                 if (!in_array($c->name, $sectors)) {
                     echo '<a class="filter-button" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
                 }
