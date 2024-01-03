@@ -22969,7 +22969,7 @@ footer .footer__logo {
 }
 
 .blog {
-  margin-top: calc(var(--h-top) + 1rem);
+  margin-top: calc(var(--h-top) + 2.5rem);
 }
 .blog__image {
   margin-bottom: 1rem;
@@ -22988,7 +22988,7 @@ footer .footer__logo {
 .blog .sidebar {
   position: -webkit-sticky;
   position: sticky;
-  top: calc(var(--h-top) + 1rem);
+  top: calc(var(--h-top) + 3rem);
 }
 .blog .sidebar .quicklinks {
   background-color: var(--col-red);
