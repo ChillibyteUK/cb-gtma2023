@@ -18,9 +18,22 @@ get_header();
         <?php
         // $cats = get_categories(array('exclude' => array(32)));
         $cats = get_terms(array('taxonomy'=>'category', 'hide_empty' => true));
+
 echo '<a class="me-2 mb-2 filter-button active" href="/news/">All News</a>';
+$sectorlist = get_terms(array('taxonomy' => 'sectors', 'hide_empty' => false));
+$sectors = wp_list_pluck($sectorlist, 'name');
+
+echo '<p>SECTORS</p>';
 foreach($cats as $c) {
-    echo '<a class="me-2 mb-2 filter-button" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
+    if (in_array($c->name, $sectors)) {
+        echo '<a class="me-2 mb-2 filter-button" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
+    }
+}
+echo '<p>NOT SECTORS</p>';
+foreach($cats as $c) {
+    if (!in_array($c->name, $sectors)) {
+        echo '<a class="me-2 mb-2 filter-button" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
+    }
 }
 
 /*
