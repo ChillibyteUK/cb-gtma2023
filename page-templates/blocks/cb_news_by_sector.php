@@ -6,7 +6,7 @@ $q = new WP_Query(array(
     'posts_per_page' => -1,
     'tax_query' => array(
         array(
-        'taxonomy' => 'sectors',
+        'taxonomy' => 'category',
         'field' => 'slug',
         'terms' => array($sector->slug)
         )
