@@ -17,10 +17,10 @@ get_header();
         </div>
         <?php
         // $cats = get_categories(array('exclude' => array(32)));
-        $cats = get_terms(array('taxonomy'=>'sectors', 'hide_empty' => false));
+        $cats = get_terms(array('taxonomy'=>'categories', 'hide_empty' => false));
 echo '<a class="me-2 mb-2 filter-button active" href="/news/">All News</a>';
 foreach($cats as $c) {
-    echo '<a class="me-2 mb-2 filter-button" href="/sector/' . $c->slug . '/">' . $c->name . '</a>';
+    echo '<a class="me-2 mb-2 filter-button" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
 }
 
 /*
