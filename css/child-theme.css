@@ -23951,7 +23951,7 @@ footer .footer__logo {
 }
 @media (min-width: 992px) {
   .sidebar {
-    top: calc(var(--h-top-desktop) + 1rem);
+    top: calc(var(--h-top-desktop) + 1.5rem);
   }
 }
 .sidebar a {
