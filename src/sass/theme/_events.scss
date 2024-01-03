@@ -22,6 +22,12 @@
         }
     }
 
+    &__gtma {
+        background-color: var(--col-red-400);
+        color: var(--col-light);
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+    }
 
     .sidebar {
         position: sticky;
