@@ -8,7 +8,9 @@
     a {
         color: white;
     }
-    .h5 {
+    &__search .h5,
+    &__blue .h5,
+    &__red .h5 {
         padding: 0.5rem 1rem;
     }
     &__blue {

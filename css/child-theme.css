@@ -23957,7 +23957,7 @@ footer .footer__logo {
 .sidebar a {
   color: white;
 }
-.sidebar .h5 {
+.sidebar__search .h5, .sidebar__blue .h5, .sidebar__red .h5 {
   padding: 0.5rem 1rem;
 }
 .sidebar__blue {
