@@ -1,9 +1,9 @@
 .hero {
-    // margin-top: -2rem;
+    margin-top: -2rem;
     // margin-top: var(--h-top);
-    // @media (min-width:768px) {
-    //     margin-top: var(--h-top-desktop);
-    // }
+    @media (min-width:768px) {
+        margin-top: calc(var(--h-top-desktop) + 2rem);
+    }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

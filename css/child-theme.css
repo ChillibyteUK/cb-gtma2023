@@ -23156,6 +23156,7 @@ footer .footer__logo {
 }
 
 .hero {
+  margin-top: -2rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -23165,6 +23166,11 @@ footer .footer__logo {
   align-items: end;
   position: relative;
   isolation: isolate;
+}
+@media (min-width: 768px) {
+  .hero {
+    margin-top: calc(var(--h-top-desktop) + 2rem);
+  }
 }
 .hero .overlay {
   position: absolute;
