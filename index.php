@@ -29,12 +29,13 @@ foreach($cats as $c) {
     }
 }
 
-echo '<p>Sector News</p>';
+echo '<p>';
 foreach($cats as $c) {
     if (in_array($c->name, $sectors)) {
         echo '<a class="me-2 mb-2 filter-button" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
     }
 }
+echo '</p>';
 
 /*
 ?>
