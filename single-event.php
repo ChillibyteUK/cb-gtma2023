@@ -20,6 +20,15 @@ if (function_exists('yoast_breadcrumb')) {
         <div class="row g-4 pb-4">
             <div class="col-lg-9 order-2 event__content">
                 <article>
+                <?php
+                if (get_field('event_type') == 'GTMA Event') {
+                    ?>
+                    <div class="event__gtma">
+                        A GTMA EVENT <i class="fa-solid fa-star"></i>
+                    </div>
+                        <?php
+                    }
+                    ?>
                     <h1 class="event__title"><?=get_the_title()?></h1>
                     <div class="event__date">
                     <?php
