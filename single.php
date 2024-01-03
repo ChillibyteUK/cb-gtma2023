@@ -72,9 +72,9 @@ foreach ($blocks as $block) {
     }
 ?>
                     <div class="sidebar__cta">
-                        <div class="h5">Something here about joining GTMA?</div>
-                        <p>Not only is it a good spot to upsell, it'll fill in this space when there are no
-                            quicklinks/headings</p>
+                        <div class="h5">Join The GTMA</div>
+                        <p>We connect UK manufacturing supply chain firms, offering support services for networking, marketing, and lead generation with top-tier manufacturers and OEMs.</p>
+                        <a href="/membership/" class="btn btn-white">Find out more</a>
                     </div>
                 </aside>
             </div>
