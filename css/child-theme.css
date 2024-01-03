@@ -23891,6 +23891,9 @@ footer .footer__logo {
 .supplier__tags {
   font-size: var(--fs-200);
 }
+.supplier__tags a {
+  font-weight: var(--fw-400);
+}
 .supplier__socials {
   display: flex;
   flex-wrap: wrap;
