@@ -23449,7 +23449,7 @@ footer .footer__logo {
 .join_cta {
   padding-block: 5rem;
   background-image: url("../img/join-bg.png");
-  background-size: contain;
+  background-size: auto 100%;
   background-position: top right;
   background-repeat: no-repeat;
   background-color: var(--col-red-400);
