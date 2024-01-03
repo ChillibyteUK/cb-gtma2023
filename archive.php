@@ -22,23 +22,31 @@ $term = get_queried_object();
             <?php
             $cats = get_terms(array('taxonomy'=>'category', 'hide_empty' => true));
 
-            echo '<a class="filter-button active" href="/news/">All News</a>';
+            echo '<a class="filter-button" href="/news/">All News</a>';
             $sectorlist = get_terms(array('taxonomy' => 'sectors', 'hide_empty' => false));
             $sectors = wp_list_pluck($sectorlist, 'name');
             
             foreach($cats as $c) {
+                $active = '';
                 if ($c->slug == 'news') {
                     continue;
-                }            
+                }
                 if (!in_array($c->name, $sectors)) {
-                    echo '<a class="filter-button" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
+                    if ($term->name == $c->name) {
+                        $active = 'active'
+                    }
+                    echo '<a class="filter-button ' . $active . '" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
                 }
             }
             
             echo '<p>';
             foreach($cats as $c) {
+                $active = '';
                 if (in_array($c->name, $sectors)) {
-                    echo '<a class="filter-button" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
+                    if ($term->name == $c->name) {
+                        $active = 'active'
+                    }
+                    echo '<a class="filter-button ' . $active . '" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
                 }
             }
             echo '</p>';
