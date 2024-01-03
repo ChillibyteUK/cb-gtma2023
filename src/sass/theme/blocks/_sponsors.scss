@@ -26,6 +26,8 @@
     &__logo {
         align-self: center;
         justify-self: center;
-        max-height: 90px;
+        img {
+            max-height: 90px;
+        }
     }
 }

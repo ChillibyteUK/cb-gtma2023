@@ -23613,6 +23613,8 @@ footer .footer__logo {
 .sponsor__logo {
   align-self: center;
   justify-self: center;
+}
+.sponsor__logo img {
   max-height: 90px;
 }
 
