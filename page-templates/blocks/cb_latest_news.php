@@ -4,7 +4,8 @@ $q = new WP_Query(array(
     'posts_per_page' => 3
 ));
 ?>
-<div class="container-xl py-5">
+<section class="latest_news bg-grey py-5">
+<div class="container-xl">
     <h2>Latest News from GTMA</h2>
     <div class="row w-100">
     <?php
