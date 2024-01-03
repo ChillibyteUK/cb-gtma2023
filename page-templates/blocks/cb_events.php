@@ -94,7 +94,6 @@ while ($q->have_posts()) {
     </div>
     <div>
         <?php
-        cbdump(get_field('event_type',get_the_ID()));
         if (get_field('event_type',get_the_ID()) == 'GTMA Event') {
             ?>
         <div class="event-archive__gtma">

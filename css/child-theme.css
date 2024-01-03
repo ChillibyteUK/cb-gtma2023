@@ -24084,6 +24084,7 @@ footer .footer__logo {
   border-bottom: 6px solid white;
   padding: 1rem 2rem;
   display: flex;
+  justify-content: space-between;
   gap: 1rem;
 }
 .event-archive__gtma {
