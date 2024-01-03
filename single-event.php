@@ -77,7 +77,7 @@ foreach ($blocks as $block) {
             <div class="col-lg-3 order-1">
                 <aside class="sidebar">
                     <div class="sidebar__cta">
-                        <div class="h5">Upcoming Events</div>
+                        <div class="h5 px-3 py-2">Upcoming Events</div>
                         <div class="sidebar__inner">
                         <?php
                                 $q = new WP_Query(array(
