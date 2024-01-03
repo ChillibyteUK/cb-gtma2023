@@ -116,7 +116,7 @@ wp_head();
     <?php do_action('wp_body_open'); ?>
     <div id="wrapper-navbar" class="fixed-top">
         <nav id="navbar" class="navbar navbar-expand-lg d-block p-0 pt-2 pt-lg-0" aria-labelledby="main-nav-label">
-            <div class="container-xl">
+            <div class="container-xl px-0 px-lg-4">
                 <div class="d-flex w-100 w-lg-auto justify-content-between align-items-center px-2">
                     <a href="/" class="navbar-brand" rel="home"></a>
                     <button class="navbar-toggler input-button" id="navToggle" data-bs-toggle="collapse"
@@ -136,7 +136,7 @@ wp_head();
 'theme_location'  => 'primary_nav',
 'container_class' => 'px-0 p-lg-0 collapse navbar-collapse navbars',
 'container_id'    => 'primaryNav',
-'menu_class'      => 'navbar-nav justify-content-between w-100',
+'menu_class'      => 'navbar-nav justify-content-between w-100 px-4 px-lg-0 gap-1 gap-lg-0 pb-2 pb-lg-0',
 'fallback_cb'     => '',
 'menu_id'         => 'main-menu',
 'depth'           => 2,
