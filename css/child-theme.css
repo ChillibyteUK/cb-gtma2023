@@ -24119,6 +24119,10 @@ a:hover {
   color: var(--col-dark);
 }
 
+main a:not([class]) {
+  font-weight: var(--fw-600);
+}
+
 a.noline {
   text-decoration: none;
 }
