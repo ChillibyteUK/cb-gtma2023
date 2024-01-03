@@ -166,6 +166,12 @@ add_filter(
     }
 );
 
+// Remove tags support from posts
+function myprefix_unregister_tags() {
+    unregister_taxonomy_for_object_type('post_tag', 'post');
+}
+add_action('init', 'myprefix_unregister_tags');
+
 // remove discussion metabox
 function cc_gutenberg_register_files()
 {
