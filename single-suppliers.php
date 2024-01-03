@@ -232,7 +232,8 @@ if ($category) {
                 <?php
                 } // end full profile (!basic) output
 ?>
-                <div class="" id="contact">
+<a id="contact" class="anchor"></a>
+                <div class="">
                     <h3>Contact <?=strip_crud( get_the_title() )?></h3>
                     <?php
                     $supplier_email = str_replace(' ','',get_field('contact_email'));

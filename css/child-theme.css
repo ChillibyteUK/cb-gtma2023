@@ -23892,7 +23892,7 @@ footer .footer__logo {
   font-size: var(--fs-200);
 }
 .supplier__tags a {
-  font-weight: var(--fw-400);
+  font-weight: var(--fw-400) !important;
 }
 .supplier__socials {
   display: flex;

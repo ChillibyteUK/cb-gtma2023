@@ -109,7 +109,7 @@
     &__tags {
         font-size: var(--fs-200);
         a {
-            font-weight: var(--fw-400);
+            font-weight: var(--fw-400) !important;
         }
     }
 
