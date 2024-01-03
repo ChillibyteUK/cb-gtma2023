@@ -33,7 +33,7 @@ $term = get_queried_object();
                 }
                 if (!in_array($c->name, $sectors)) {
                     if ($term->name == $c->name) {
-                        $active = 'active'
+                        $active = 'active';
                     }
                     echo '<a class="filter-button ' . $active . '" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
                 }
@@ -44,7 +44,7 @@ $term = get_queried_object();
                 $active = '';
                 if (in_array($c->name, $sectors)) {
                     if ($term->name == $c->name) {
-                        $active = 'active'
+                        $active = 'active';
                     }
                     echo '<a class="filter-button ' . $active . '" href="/news/category/' . $c->slug . '/">' . $c->name . '</a>';
                 }
