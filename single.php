@@ -74,7 +74,7 @@ foreach ($blocks as $block) {
                     <div class="sidebar__cta">
                         <div class="h5">Join The GTMA</div>
                         <p>We connect UK manufacturing supply chain firms, offering support services for networking, marketing, and lead generation with top-tier manufacturers and OEMs.</p>
-                        <a href="/membership/" class="btn btn-white">Find out more</a>
+                        <a href="/membership/" class="btn btn-white text-dark d-block">Find out more</a>
                     </div>
                 </aside>
             </div>
