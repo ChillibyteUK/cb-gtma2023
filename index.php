@@ -24,7 +24,7 @@ $sectorlist = get_terms(array('taxonomy' => 'sectors', 'hide_empty' => false));
 $sectors = wp_list_pluck($sectorlist, 'name');
 
 foreach($cats as $c) {
-    if ($c->name == 'GTMA News') {
+    if ($c->slug == 'news') {
         continue;
     }
     if (!in_array($c->name, $sectors)) {
