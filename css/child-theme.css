@@ -23592,11 +23592,18 @@ footer .footer__logo {
   display: block;
   color: var(--col-light);
 }
+.sponsor__card:hover {
+  color: var(--col-light);
+}
 .sponsor__title {
   border-bottom: 1px solid var(--col-light);
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: var(--fs-100);
+}
+.sponsor__title span {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-600);
 }
 .sponsor__inner {
   display: grid;
@@ -23606,6 +23613,7 @@ footer .footer__logo {
 .sponsor__logo {
   align-self: center;
   justify-self: center;
+  max-height: 90px;
 }
 
 .two_col_feature__card {

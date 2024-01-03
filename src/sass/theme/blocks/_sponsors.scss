@@ -4,12 +4,19 @@
         padding: 1rem !important;
         display: block;
         color: var(--col-light);
+        &:hover {
+            color: var(--col-light);
+        }
     }
     &__title {
         border-bottom: 1px solid var(--col-light);
         margin-bottom: 0.5rem;
         padding-bottom: 0.5rem;
         font-size: var(--fs-100);
+        span {
+            font-size: var(--fs-400);
+            font-weight: var(--fw-600);
+        }
     }
     &__inner {
         display: grid;
@@ -19,5 +26,6 @@
     &__logo {
         align-self: center;
         justify-self: center;
+        max-height: 90px;
     }
 }
