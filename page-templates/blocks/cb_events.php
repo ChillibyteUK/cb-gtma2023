@@ -94,7 +94,7 @@ while ($q->have_posts()) {
     </div>
     <div>
         <?php
-        if (get_field('event_type') == 'GTMA Event') {
+        if (get_field('event_type',get_the_ID()) == 'GTMA Event') {
             ?>
         <div class="event-archive__gtma">
             GTMA Event <i class="fa-solid fa-star"></i>
