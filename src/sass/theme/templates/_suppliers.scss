@@ -168,7 +168,7 @@
     &__card {
         display: block;
         width: 100%;
-        border-bottom: 1px solid steelblue;
+        border-bottom: 1px solid var(--col-blue-400);
         padding: 1rem;
         transition: background-color var(--transition);
         &:hover {

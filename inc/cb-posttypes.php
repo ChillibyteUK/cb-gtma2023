@@ -32,7 +32,7 @@ function cb_register_post_types()
         "query_var" => true,
         "supports" => [ "title",  "editor" ],
         "show_in_graphql" => false,
-        "exclude_from_search" => true
+        "exclude_from_search" => false
     ];
 
     register_post_type("suppliers", $args);
@@ -66,7 +66,7 @@ function cb_register_post_types()
         "query_var" => true,
         "supports" => [ "title", "editor" ],
         "show_in_graphql" => false,
-        "exclude_from_search" => true
+        "exclude_from_search" => false
     ];
 
     register_post_type("scs", $args);
@@ -99,7 +99,7 @@ function cb_register_post_types()
         "query_var" => true,
         "supports" => [ "title", "editor", "thumbnail" ],
         "show_in_graphql" => false,
-        "exclude_from_search" => true
+        "exclude_from_search" => false
     ];
 
     register_post_type("event", $args);

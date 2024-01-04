@@ -1,0 +1,45 @@
+.search {
+    &__card {
+        display: grid;
+        @media(min-width:768px) {
+            grid-template-columns: 110px auto;
+        }
+        gap: 1rem;
+        width: 100%;
+        border-bottom: 1px solid var(--col-blue-400);
+        padding: 1rem;
+        transition: background-color var(--transition);
+        &:hover {
+            background-color: var(--col-grey);
+        }
+    }
+    &__type {
+        span {
+            background-color: var(--col-red-400);
+            color: white;
+            font-weight: var(--fw-600);
+            font-size: var(--fs-200);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--border0);
+        }
+    }
+    &__inner {
+
+    }
+    &__meta {
+        font-size: var(--fs-200);
+    }
+    &__terms {
+        display: flex;
+        gap: 0.25rem;
+        flex-wrap: wrap;
+        span {
+            font-size: var(--fs-100);
+            font-weight: var(--fw-600);
+            background-color: var(--col-grey-600);
+            color: var(--col-dark);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--border0);
+        }
+    }
+}

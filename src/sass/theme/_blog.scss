@@ -146,15 +146,16 @@
     }
     li {
         padding: 0.5rem 1rem;
-        border-left: 1px solid var(--col-highlight-400);
+        border-left: 1px solid var(--col-grey);
         border-right: none;
         background-color: white;
-        color: var(--col-primary-400);
+        color: var(--col-dark);
         a:hover {
-            color: var(--col-primary-400);
+            color: var(--col-red-400);
         }
         &.active {
-            background-color: var(--col-highlight-400);
+            background-color: var(--col-blue-400);
+            color: white;
             a {
                 cursor: default;
                 font-weight: 600;
@@ -168,7 +169,7 @@
         &:last-of-type {
             border-top-right-radius: 0.25rem;
             border-bottom-right-radius: 0.25rem;
-            border-right: 1px solid var(--col-highlight-400);
+            // border-right: 1px solid var(--col-blue-400);
         }
     }
 
