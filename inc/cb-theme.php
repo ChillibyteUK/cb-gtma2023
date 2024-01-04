@@ -255,6 +255,11 @@ function strip_crud($title)
     return $result;
 }
 
+add_action('wp_head', function(){
+    $url = get_stylesheet_directory_uri() . '/img/favicon.png';
+    echo '<link rel="icon" href="' . esc_url($url) . '" type="image/x-icon" />' . PHP_EOL;
+});
+
 
 // black thumbnails - fix alpha channel
 /**

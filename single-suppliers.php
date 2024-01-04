@@ -22,66 +22,6 @@ $after;
 $navitems = array();
 
 ?>
-    <style>
-        .stickynav {
-            background-color: var(--col-grey);
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            position: sticky;
-            top: var(--h-top);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            z-index: 1000;
-            border: 1px solid white;
-            border-bottom: 0;
-        }
-
-        @media (min-width:992px) {
-            .stickynav {
-                top: var(--h-top-desktop);
-            }
-        }
-
-        .stickynav a {
-            font-size: var(--fs-100);
-            font-weight: var(--fw-600);
-            text-transform: uppercase;
-            color: var(--col-dark);
-            display: inline-block;
-            border: 1px solid var(--col-dark);
-            padding: 0.25rem 0.5rem;
-            transition: var(--transition);
-        }
-
-        .stickynav a:hover {
-            background-color: var(--col-blue-200);
-            color: white;
-        }
-
-        .stickynav a:not(:last-of-type) {
-            border-right: 1px solid var(--col-dark);
-            padding-right: 0.5rem;
-        }
-
-        .supplier__featured {
-            background-color: var(--col-red-400);
-            color: var(--col-light);
-            padding: 0.5rem 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .accordion-button {
-            color: black !important;
-            background-color: white !important;
-        }
-
-        .accordion-collapse>div {
-            padding-inline: 2rem;
-        }
-    </style>
-
     <div class="container-xl">
         <div class="row g-4 pb-4">
             <div class="col-lg-9 supplier__content">
@@ -263,17 +203,31 @@ if ($category) {
                         <dl>
                             <?php
                             if (get_field('contact_phone')) {
+                                echo "<dt>Telephone</dt>";
+                                if (get_field('profile') != 'Basic') {
                                 ?>
-                            <dt>Telephone</dt>
                             <dd><a
                                     href="tel:<?=parse_phone(get_field('contact_phone'))?>"><?=get_field('contact_phone')?></a>
 
                                 <?php
+                                }
+                                else {
+                                    ?>
+                            <dd><?=get_field('contact_phone')?>
+                                                                <?php
+                                }
                                 if (get_field('contact_phone_2')) {
+                                    if (get_field('profile') != 'Basic') {
                                     ?>
                                 <br><a
                                     href="tel:<?=parse_phone(get_field('contact_phone_2'))?>"><?=get_field('contact_phone_2')?></a>
                                 <?php
+                                    }
+                                    else {
+                                        ?>
+                                <br><?=get_field('contact_phone_2')?>
+                                        <?php
+                                    }
                                 }
                                 ?>
                             </dd>
@@ -297,7 +251,7 @@ while(have_rows('contacts')) {
                         </dl>
                     </section>
                     <?php
-                        if (get_field('supplier_website')) {
+                        if (get_field('supplier_website') && get_field('profile') != 'Basic') {
                             ?>
                     <a href="<?=get_field('supplier_website')?>"
                         class="supplier__website mb-2" target="_blank"><i class="fa-solid fa-link"></i> <span>Visit
@@ -308,7 +262,7 @@ while(have_rows('contacts')) {
                     <a href="#contact" class="supplier__contact mb-2"><i class="fa-solid fa-angles-right"></i>
                         <span>Contact Supplier</span></a>
                     <?php
-if (get_field('supplier_socials')) {
+if (get_field('supplier_socials') && get_field('profile') != 'Basic') {
     echo '<section class="supplier__socials">';
     $socials = get_field('supplier_socials');
     if ($socials['vimeo_url'] ?? null) {

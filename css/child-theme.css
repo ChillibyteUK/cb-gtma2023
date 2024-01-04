@@ -23778,6 +23778,57 @@ footer .footer__logo {
   clear: both;
 }
 
+.supplier .stickynav {
+  background-color: var(--col-grey);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--h-top);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  z-index: 1000;
+  border: 1px solid white;
+  border-bottom: 0;
+}
+@media (min-width: 992px) {
+  .supplier .stickynav {
+    top: var(--h-top-desktop);
+  }
+}
+.supplier .stickynav a {
+  font-size: var(--fs-100);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  color: var(--col-dark);
+  display: inline-block;
+  border: 1px solid var(--col-dark);
+  padding: 0.25rem 0.5rem;
+  transition: var(--transition);
+}
+.supplier .stickynav a:hover {
+  background-color: var(--col-blue-200);
+  color: white;
+}
+.supplier .stickynav a:not(:last-of-type) {
+  border-right: 1px solid var(--col-dark);
+  padding-right: 0.5rem;
+}
+.supplier .supplier__featured {
+  background-color: var(--col-red-400);
+  color: var(--col-light);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+.supplier .accordion-button {
+  color: black !important;
+  background-color: white !important;
+}
+.supplier .accordion-collapse > div {
+  padding-inline: 2rem;
+}
 .supplier__content {
   margin-top: 2rem;
 }
