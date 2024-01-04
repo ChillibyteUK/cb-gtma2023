@@ -83,11 +83,16 @@ $q = new WP_Query(array(
     'post_type' => 'suppliers',
     'posts_per_page' => -1,
     'meta_query' => array(
+        'relation' => 'OR',
         array(
             'key' => 'profile',
             'value' => 'Featured',
             'compare' => '!='
         ),
+        array(
+            'key' => 'profile',
+            'compare' => 'NOT EXISTS'
+        )
     ),
     'orderby' => 'rand',
     'tax_query' => array(
@@ -99,6 +104,7 @@ $q = new WP_Query(array(
         )
     )
 ));
+
 
 while ($q->have_posts()) {
     $q->the_post();
