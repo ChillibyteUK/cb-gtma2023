@@ -23088,6 +23088,13 @@ footer .footer__logo {
   color: var(--col-primary-400);
 }
 
+.blog .blog_card__content {
+  min-height: 58px;
+}
+.blog .blog_card__title {
+  font-size: var(--fs-200);
+}
+
 .form-control, .gform_wrapper.gravity-theme input[type=text],
 .gform_wrapper.gravity-theme input[type=email],
 .gform_wrapper.gravity-theme input[type=tel],
@@ -24062,6 +24069,9 @@ footer .footer__logo {
 }
 .sidebar .form .btn-search {
   background-color: var(--col-blue-400);
+}
+.sidebar .btn, .sidebar .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-notices-wrapper .woocommerce-message .sidebar a.button, .sidebar .woocommerce-info a.button, .woocommerce-info .sidebar a.button, .sidebar body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .sidebar button {
+  min-width: 100%;
 }
 
 .search__card {

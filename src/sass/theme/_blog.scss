@@ -180,3 +180,11 @@
     }
 
 }
+.blog {
+    .blog_card__content {
+        min-height: 58px;
+    }
+    .blog_card__title {
+        font-size: var(--fs-200);
+    }
+}
