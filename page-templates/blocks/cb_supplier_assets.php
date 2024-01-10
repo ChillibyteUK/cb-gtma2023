@@ -38,7 +38,7 @@ $type = get_field('type');
             <img class="video-btn" type="button"
                 src="https://img.youtube.com/vi/<?=$vidID?>/hqdefault.jpg"
                 data-bs-toggle="modal" data-bs-target="#videoModal"
-                data-src="https://www.youtube-nocookie.com/embed/<?=$vidID?>?rel=0"
+                data-src="https://www.youtube-nocookie.com/embed/<?=$vidID?>"
                 data-start="<?=$start?>">
         </div>
         <?php
@@ -98,7 +98,7 @@ $type = get_field('type');
                 $videoStart = $(this).data("start");
             });
             $('#videoModal').on('shown.bs.modal', function(e) {
-                $src = $videoSrc + "?" + $videoStart + "autoplay=1&amp;modestbranding=1&amp;showinfo=0";
+                $src = $videoSrc + "?" + $videoStart + "rel=0&amp;autoplay=1&amp;modestbranding=1&amp;showinfo=0";
                 $("#videoPlayer").attr('src', $src);
             });
             $('#videoModal').on('hide.bs.modal', function(e) {
