@@ -24079,6 +24079,12 @@ footer .footer__logo {
 .sidebar .form .btn-search {
   background-color: var(--col-blue-400);
 }
+.sidebar .form .btn-search::after {
+  margin-left: 0;
+  content: "\f002";
+  font-family: var(--ff-fa);
+  margin-left: 0.5rem;
+}
 .sidebar .btn, .sidebar .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-notices-wrapper .woocommerce-message .sidebar a.button, .sidebar .woocommerce-info a.button, .woocommerce-info .sidebar a.button, .sidebar body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer .sidebar button {
   min-width: 100%;
 }

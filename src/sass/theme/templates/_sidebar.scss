@@ -47,6 +47,12 @@
         display: flex;
         .btn-search {
             background-color: var(--col-blue-400);
+            &::after {
+                margin-left: 0;
+                content: "\f002";
+                font-family: var(--ff-fa);
+                margin-left: 0.5rem;
+            }
         }
     }
 
