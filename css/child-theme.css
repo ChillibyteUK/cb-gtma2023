@@ -23902,6 +23902,9 @@ footer .footer__logo {
 }
 .supplier__sidebar .form .btn-search::after {
   margin-left: 0;
+  content: "\f002";
+  font-family: var(--ff-fa);
+  margin-left: 0.5rem;
 }
 .supplier__detail {
   background-color: var(--col-grey);

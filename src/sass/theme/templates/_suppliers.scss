@@ -87,6 +87,9 @@
                 padding-inline: 1rem;
                 &::after {
                     margin-left: 0;
+                    content: "\f002";
+                    font-family: var(--ff-fa);
+                    margin-left: 0.5rem;
                 }
             }
         }
