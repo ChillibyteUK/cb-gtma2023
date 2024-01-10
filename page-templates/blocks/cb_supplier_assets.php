@@ -38,7 +38,7 @@ $type = get_field('type');
             <img class="video-btn" type="button"
                 src="https://img.youtube.com/vi/<?=$vidID?>/hqdefault.jpg"
                 data-bs-toggle="modal" data-bs-target="#videoModal"
-                data-src="https://www.youtube-nocookie.com/embed/<?=$vidID?>"
+                data-src="https://www.youtube-nocookie.com/embed/<?=$vidID?>?rel=0"
                 data-start="<?=$start?>">
         </div>
         <?php
