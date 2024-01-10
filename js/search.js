@@ -115,6 +115,9 @@ $(document).ready(function() {
   function executeSearch(source, term) {
     var exactMatch = false;
 
+    $('#go-spinner').show();
+    $('#go-text').hide();
+
     for (var i = 0; i < termList.length; i++) {
       if (termList[i].term === term) {
         exactMatch = true;

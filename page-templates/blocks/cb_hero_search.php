@@ -9,7 +9,10 @@ $img = get_stylesheet_directory_uri() . '/img/search-hero.jpg';
             <div class="hero-search__title mb-3">Search for Products &amp; Services</div>
             <div class="form">
                 <input class="form-control" type="text" id="searchInput" autocomplete="off">
-                <button id="go" class="btn-search">Search</button>
+                <button id="go" class="btn-search">
+                    <span id="go-text">Search</span>
+                    <img id="go-spinner" src="<?=get_stylesheet_directory_uri()?>/images/loading.gif" alt="Loading..." style="display: none;" width=16 height=16>
+                </button>
                 <input type="hidden" name="source" id="sourceInput">
             </div>
         </div>

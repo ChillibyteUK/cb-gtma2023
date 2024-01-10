@@ -23233,11 +23233,17 @@ footer .footer__logo {
   font-weight: var(--fw-600);
   position: relative;
   transition: background-color var(--transition);
+  width: 175px;
+  display: inline-block;
 }
-.btn-search::after {
+.btn-search #go-text::after {
   content: "\f002";
   font-family: var(--ff-fa);
   margin-left: 0.5rem;
+}
+.btn-search #go-spinner {
+  width: 16px;
+  height: 16px;
 }
 .btn-search:hover {
   background-color: var(--col-red-300);

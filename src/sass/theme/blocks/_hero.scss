@@ -81,10 +81,16 @@
     font-weight: var(--fw-600);
     position: relative;
     transition: background-color var(--transition);
-    &::after {
+    width: 175px;
+    display: inline-block;
+    #go-text::after {
         content: "\f002";
         font-family: var(--ff-fa);
         margin-left: 0.5rem;
+    }
+    #go-spinner {
+        width: 16px;
+        height: 16px;
     }
     &:hover {
         background-color: var(--col-red-300);
