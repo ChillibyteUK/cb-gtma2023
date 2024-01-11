@@ -46,11 +46,12 @@ $navitems = array();
                         </p>
                         <?php
                     }
+                    $alt_text = get_post_meta(get_field('supplier_logo',get_the_ID()), '_wp_attachment_image_alt', true) ?: strip_crud(get_the_title());
                     ?>
                     </div>
                     <div class="col-md-4 order-1 order-md-2 d-flex justify-content-center align-items-center">
                         <img src="<?=wp_get_attachment_image_url(get_field('supplier_logo'), 'full')?>"
-                            alt="<?=strip_crud(get_the_title())?>" class="supplier__logo">
+                            alt="<?=$alt_text?>" class="supplier__logo">
                     </div>
                 </div>
                 <div class="stickynav" id="navholder"></div>
