@@ -22,13 +22,13 @@ $(document).ready(function() {
         const suppliers = item.supplier;
         const tags = item.tag;
 
-        termList.push(...categories.map(term => ({
-          term,
-          source: 'category'
-        })));
         termList.push(...suppliers.map(term => ({
           term,
           source: 'supplier'
+        })));
+        termList.push(...categories.map(term => ({
+          term,
+          source: 'category'
         })));
         termList.push(...tags.map(term => ({
           term,
