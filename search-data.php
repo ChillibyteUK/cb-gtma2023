@@ -42,8 +42,8 @@ foreach ($type as $p) {
 
 
 $json = array();
-$json['category'] = $types;
 $json['supplier'] = $suppliers;
+$json['category'] = $types;
 $json['tag'] = $tags;
 
 header('Content-Type: application/json; charset=utf-8');
