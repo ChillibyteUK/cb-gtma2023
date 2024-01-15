@@ -41,4 +41,3 @@ if ($suppliers->have_posts()) {
         <?=$buttons?>
     </div>
 </section>
-<?php
