@@ -57,7 +57,7 @@ $(document).ready(function() {
                 term => term
                 .source ===
                 source)
-              .slice(0, 6)
+              .slice(0, 99)
             );
           });
 
