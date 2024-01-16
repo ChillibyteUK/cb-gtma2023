@@ -24,12 +24,13 @@ if (function_exists('yoast_breadcrumb')) {
                 <article>
                     <h1 class="blog__title"><?=get_the_title()?></h1>
                     <?php
-                    if ($img) {
+/*                    if ($img) {
                         ?>
                     <img src="<?=$img?>" alt="" class="blog__image">
                         <?php
                     }
-                    
+*/
+
         $count = estimate_reading_time_in_minutes(get_the_content(), 200, true, true);
 echo $count;
 
