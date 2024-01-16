@@ -35,12 +35,9 @@ if ($suppliers->have_posts()) {
     $buttons .= '<a href="#suppliers" class="btn-wide">Suppliers</a>';
 }
 
-if ($buttons != '') {
 ?>
 <section class="sector_subnav mb-4">
     <div class="container-xl">
         <?=$buttons?>
     </div>
 </section>
-<?php
-}
