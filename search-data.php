@@ -3,17 +3,17 @@
 $path = preg_replace('/wp-content(?!.*wp-content).*/', '', __DIR__);
 require_once($path . 'wp-load.php');
 
-$supp = get_posts(array(
-    'post_type' => 'suppliers',
-    'numberposts' => -1
-));
+// $supp = get_posts(array(
+//     'post_type' => 'suppliers',
+//     'numberposts' => -1
+// ));
 
-$suppliers = array();
+// $suppliers = array();
 
-foreach ($supp as $p) {
-    $t = strip_crud($p->post_title);
-    $suppliers[] = $t;
-}
+// foreach ($supp as $p) {
+//     $t = strip_crud($p->post_title);
+//     $suppliers[] = $t;
+// }
 
 
 $tag = get_terms(array(
@@ -42,7 +42,7 @@ foreach ($type as $p) {
 
 
 $json = array();
-$json['supplier'] = $suppliers;
+// $json['supplier'] = $suppliers;
 $json['category'] = $types;
 $json['tag'] = $tags;
 

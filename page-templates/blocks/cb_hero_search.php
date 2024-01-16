@@ -20,6 +20,7 @@ $img = get_stylesheet_directory_uri() . '/img/search-hero.jpg';
 </header>
 <?php
 add_action('wp_footer', function () {
+    /*
     ?>
 <script>
     <?php
@@ -37,6 +38,8 @@ $supp = get_posts(array(
     ?>
     var slugList = [ <?=json_encode($suppliers)?> ];
 </script>
+*/
+?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="<?=get_stylesheet_directory_uri()?>/js/search.js"></script>

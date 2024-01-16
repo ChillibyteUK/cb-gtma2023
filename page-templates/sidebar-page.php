@@ -74,7 +74,7 @@ if ($class == 'partner') {
                         </div>
                     </div>
                     <div class="sidebar__search mb-2">
-                        <div class="h5 mb-3">Search Suppliers</div>
+                        <div class="h5 mb-3">Search Products & Services</div>
                         <div class="sidebar__inner">
                             <div class="form">
                                 <input class="form-control" type="text" id="searchInput" autocomplete="off">
