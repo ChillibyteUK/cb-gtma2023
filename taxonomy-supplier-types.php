@@ -4,14 +4,17 @@ defined('ABSPATH') || exit;
 get_header();
 $cat_name = get_queried_object()->name;
 $cat_id = get_queried_object()->term_id;
+$c = 0;
 ?>
 <main id="main" class="supplier-archive">
-    <section class="suppliers py-5">
+    <section class="suppliers pb-5">
         <div class="container-xl">
             <h1><?=$cat_name?></h1>
             <?=term_description()?>
 
-            <div class="filters py-4">
+            <div class="my-4"><em><span id="count"></span> suppliers found.</em></div>
+
+            <div class="filters pb-4">
                 <label for="counties">Filter by county:</label>
                 <select name="counties" id="counties" class="form-select">
                     <option value="*">All</option>
@@ -71,7 +74,8 @@ while ($q->have_posts()) {
                         <?=wp_trim_words(get_the_content(), 30)?>
                     </p>
                 </a>
-                <?php
+    <?php
+    $c++;
 }
 
 $q = new WP_Query(array(
@@ -123,7 +127,8 @@ while ($q->have_posts()) {
                         <?=wp_trim_words(get_the_content(), 30)?>
                     </p>
                 </a>
-                <?php
+    <?php
+    $c++;
 }
 ?>
             </div>
@@ -148,6 +153,8 @@ $json = json_encode($counties);
             selectElement.appendChild(optionElement);
         }
     }
+
+    document.getElementById('count').innerHTML = '<?=$c?>';
 </script>
 <?php
 add_action('wp_footer', function () {

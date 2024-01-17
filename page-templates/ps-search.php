@@ -29,7 +29,7 @@ if ( $terms ) {
     $totalSuppliers = 0;
     $totalTerms = 0;
     ?>
-    <h2><?=sprintf('GTMA Categories Matching: %s', '<span>' . $safe_url . '</span>')?></h2>
+    <h2>Products &amp; Services</h2>
     <div id="counts"></div>
     <section class="suppliers pb-5 pt-4 ">
     <div class="container-xl px-5 py-4 bg-grey-200">
@@ -137,7 +137,7 @@ if ( $terms ) {
     ));
     if ($of->have_posts() || $o->have_posts()) {
         ?>
-        <h2 class="mt-4"><?=sprintf('GTMA Suppliers Matching: %s', '<span>' . $safe_url . '</span>')?></h2>
+        <h2 class="mt-4">Suppliers</h2>
         <?php
         $c = 0;
         echo '<div class="mb-4" id="suppCounts"></div>';
