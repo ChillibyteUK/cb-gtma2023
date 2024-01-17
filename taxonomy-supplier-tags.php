@@ -200,7 +200,7 @@ $sibs = new WP_Query(array(
                     </div>
                 </div>
             </div>
-        </div> <!-- .col ->
+        </div> <!-- .col -->
     </div>
 </main>
 <?php

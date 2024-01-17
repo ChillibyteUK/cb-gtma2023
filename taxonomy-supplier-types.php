@@ -196,7 +196,7 @@ $sibs = new WP_Query(array(
                     </div>
                 </div>
             </div>
-        </div> <!-- .col ->
+        </div> <!-- .col -->
     </div> <!-- .container-xl -->
 </main>
 <?php
