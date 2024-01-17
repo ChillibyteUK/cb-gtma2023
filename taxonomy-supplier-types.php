@@ -7,8 +7,10 @@ $cat_id = get_queried_object()->term_id;
 $c = 0;
 ?>
 <main id="main" class="supplier-archive">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-md-9">
     <section class="suppliers pb-5">
-        <div class="container-xl">
             <h1><?=$cat_name?></h1>
             <?=term_description()?>
 
@@ -131,9 +133,71 @@ while ($q->have_posts()) {
     $c++;
 }
 ?>
+        </section>
+        </div><!-- .col -->
+        <div class="col-md-3">
+            <div class="sidebar pb-4">
+                <div class="sidebar__red mb-2">
+                    <div class="h5">Membership</div>
+                    <div class="sidebar__inner">
+                        <?php
+            // $parent = 362;
+            $parent = get_page_by_path('membership');
+$sibs = new WP_Query(array(
+    'post_type'      => 'page',
+    'posts_per_page' => -1,
+    'post_parent'    => $parent->ID,
+    'order'          => 'ASC',
+    'orderby'        => 'title'
+));
+?>
+                        <ul>
+                            <li><a class=""
+                                    href="<?=get_the_permalink($parent)?>"><?=get_the_title($parent)?></a>
+                            </li>
+                            <?php
+                            while($sibs->have_posts()) {
+                                $sibs->the_post();
+                                ?>
+                            <li><a class="" href="<?=get_the_permalink()?>"><?=get_the_title()?></a>
+                            </li>
+                            <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar__blue mb-2">
+                    <div class="h5">Member Services</div>
+                    <div class="sidebar__inner">
+                        <p class="mb-2">Here are some of the services available to members</p>
+                        <?php
+                        $parent = 134;
+                        $sibs = new WP_Query(array(
+                            'post_type'      => 'page',
+                            'posts_per_page' => -1,
+                            'post_parent'    => $parent,
+                            'order'          => 'ASC',
+                            'orderby'        => 'title'
+                        ));
+                        ?>
+                        <ul>
+                            <?php
+                            while($sibs->have_posts()) {
+                                $sibs->the_post();
+                                ?>
+                            <li><a class=""
+                                    href="<?=get_the_permalink()?>"><?=get_the_title()?></a>
+                            </li>
+                            <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </div> <!-- .col ->
+    </div> <!-- .container-xl -->
 </main>
 <?php
 ksort($counties);
