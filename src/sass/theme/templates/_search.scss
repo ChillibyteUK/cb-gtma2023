@@ -11,6 +11,9 @@
         transition: background-color var(--transition);
         &:hover {
             background-color: var(--col-grey);
+            .search__inner {
+                color: var(--col-red-400);
+            }
         }
     }
     &__type {
@@ -24,7 +27,10 @@
         }
     }
     &__inner {
-
+        color: var(--col-dark);
+        h2 {
+            font-weight: var(--fw-600);
+        }
     }
     &__meta {
         font-size: var(--fs-200);

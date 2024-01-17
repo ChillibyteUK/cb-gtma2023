@@ -18,6 +18,8 @@ get_header();
 if ( have_posts() ) {
     ?>
             <h1><?=sprintf('Search Results for: %s', '<span>' . get_search_query() . '</span>')?></h1>
+
+
     <?php
     while ( have_posts() ) {
         the_post();

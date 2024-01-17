@@ -3,14 +3,12 @@ $(document).ready(function() {
   let source = '';
   const termList = [];
 
-  function submitOnEnter(event) {
-    if (event.keyCode === 13) { // 13 is the Enter key
-        event.preventDefault(); // Prevent default Enter behaviour (submitting)
-        
-        // Place your form submission logic here
-        document.getElementById("myForm").submit();
+  $('#searchInput').keypress(function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        doSearch();
     }
-  }
+  });
 
   function slugify(str) {
     return String(str)
@@ -28,13 +26,8 @@ $(document).ready(function() {
     function(data) {
       data.forEach(item => {
         const categories = item.category;
-        // const suppliers = item.supplier;
         const tags = item.tag;
 
-        // termList.push(...suppliers.map(term => ({
-        //   term,
-        //   source: 'supplier'
-        // })));
         termList.push(...categories.map(term => ({
           term,
           source: 'category'
@@ -95,24 +88,17 @@ $(document).ready(function() {
           regex, '<strong>$1</strong>');
         return $('<li>')
           .append($('<div>').html(
-            // `${item.source}: ${highlightedTerm}`
             `${highlightedTerm}`
           ))
           .appendTo(ul);
       };
   });
 
-  // function getSlugByKey(companyName) {
-  //   for (var i = 0; i < slugList.length; i++) {
-  //     var companyObj = slugList[i];
-  //     if (companyObj.hasOwnProperty(companyName)) {
-  //       return companyObj[companyName];
-  //     }
-  //   }
-  //   return null;
-  // }
-
   $('#go').click(function() {
+    doSearch();
+  });
+
+  function doSearch() {
     const inputTerm = $('#searchInput').val();
     if (inputTerm !== '') {
       term = inputTerm;
@@ -120,7 +106,7 @@ $(document).ready(function() {
     } else {
       executeSearch('', term);
     }
-  });
+  }
 
   function executeSearch(source, term) {
     var exactMatch = false;
@@ -143,13 +129,9 @@ $(document).ready(function() {
       } else if (source !== '' && source === 'category') {
         url = '/types/' + slugify(term) + '/';
       } else {
-        // var slug = getSlugByKey(term);
         if (slug == null) {
           url = '/types/' + slugify(term) + '/';
         }
-        // else {
-        //   url = '/suppliers/' + slug + '/';
-        // }
       }
       window.location.href = url;
     } else {

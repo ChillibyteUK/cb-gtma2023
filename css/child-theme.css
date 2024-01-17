@@ -23566,6 +23566,7 @@ footer .footer__logo {
   -webkit-padding-start: 1rem;
   padding-inline-start: 1rem;
   list-style-type: square;
+  margin-bottom: 0;
 }
 
 .sector_subnav {
@@ -24105,6 +24106,9 @@ footer .footer__logo {
 .search__card:hover {
   background-color: var(--col-grey);
 }
+.search__card:hover .search__inner {
+  color: var(--col-red-400);
+}
 .search__type span {
   background-color: var(--col-red-400);
   color: white;
@@ -24112,6 +24116,12 @@ footer .footer__logo {
   font-size: var(--fs-200);
   padding: 0.25rem 0.5rem;
   border-radius: var(--border0);
+}
+.search__inner {
+  color: var(--col-dark);
+}
+.search__inner h2, .search__inner .h2 {
+  font-weight: var(--fw-600);
 }
 .search__meta {
   font-size: var(--fs-200);
