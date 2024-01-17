@@ -57,8 +57,9 @@ if ( $terms ) {
 else {
     // get_template_part( 'loop-templates/content', 'none' );
     ?>
-    <h1><?=sprintf('Nothing Found: %s', '<span>' . $safe_url . '</span>')?></h1>
-    <p>Try a full site search: <a href="/?s=<?=$safe_url?>">Search</a></p>
+    <h1><?=sprintf('No Products or Services matching %s found.', '<span>' . $safe_url . '</span>')?></h1>
+    <div class="pt-4 pb-2 h3">Looking for a Supplier? Try a full site search</div>
+    <div class="pb-4"><a href="/?s=<?=$safe_url?>" class="btn-search text-center">Search <i class="fa-solid fa-magnifying-glass"></i></a></p>
     <?php
 }
 ?>
