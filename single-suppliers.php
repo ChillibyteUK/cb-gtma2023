@@ -46,43 +46,43 @@ $navitems = array();
                         </p>
                         <?php
                     }
-                    $alt_text = get_post_meta(get_field('supplier_logo',get_the_ID()), '_wp_attachment_image_alt', true) ?: strip_crud(get_the_title());
-                    ?>
+                    $alt_text = get_post_meta(get_field('supplier_logo', get_the_ID()), '_wp_attachment_image_alt', true) ?: strip_crud(get_the_title());
+?>
                     </div>
                     <div class="col-md-4 order-1 order-md-2 d-flex justify-content-center align-items-center">
                         <img src="<?=wp_get_attachment_image_url(get_field('supplier_logo'), 'full')?>"
-                            alt="<?=$alt_text?>" class="supplier__logo">
+                            alt="<?=$alt_text?>"
+                            class="supplier__logo">
                     </div>
                 </div>
                 <div class="stickynav" id="navholder"></div>
                 <?php
                 if (get_field('profile') == 'Basic') {
-                    echo apply_filters('the_content',get_field('basic_profile'));
+                    echo apply_filters('the_content', get_field('basic_profile'));
                     ?>
-<div class="mb-4 bg-grey-200">
-<h2 class="fs-400 px-4 pt-4 pb-3">Supplier Specialities</h2>
-<div class="bg-grey-100 p-4">
-<ul class="supplier__tags cols-lg-3">
-<?php
+                <div class="mb-4 bg-grey-200">
+                    <h2 class="fs-400 px-4 pt-4 pb-3">Supplier Specialities</h2>
+                    <div class="bg-grey-100 p-4">
+                        <ul class="supplier__tags cols-lg-3">
+                            <?php
 $terms = wp_get_post_terms(get_the_ID(), 'supplier-types');
-foreach ($terms as $term) {
-    // Output the term name and link (if needed)
-    echo '<li><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
-}
-?>
-</ul>
-</div>
-</div>
-                    <?php
-                }
-                else {
-foreach ($blocks as $block) {
-    if ($block['blockName'] == 'acf/cb-supplier-assets') {
-        continue;
-    }
-    echo render_block($block);
-}
-?>
+                    foreach ($terms as $term) {
+                        // Output the term name and link (if needed)
+                        echo '<li><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
+                    }
+                    ?>
+                        </ul>
+                    </div>
+                </div>
+                <?php
+                } else {
+                    foreach ($blocks as $block) {
+                        if ($block['blockName'] == 'acf/cb-supplier-assets') {
+                            continue;
+                        }
+                        echo render_block($block);
+                    }
+                    ?>
                 <div class="accordion mb-4" id="assets">
                     <?php
 foreach ($blocks as $block) {
@@ -116,12 +116,12 @@ foreach ($blocks as $block) {
     }
 }
 
-$acc = get_the_terms(get_the_ID(), 'accreditations');
+                    $acc = get_the_terms(get_the_ID(), 'accreditations');
 
-if ($acc) {
-    echo '<a id="accreditations" class="anchor"></a>';
-    $navitems[] = 'Accreditations';
-    ?>
+                    if ($acc) {
+                        echo '<a id="accreditations" class="anchor"></a>';
+                        $navitems[] = 'Accreditations';
+                        ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="h_accreditations">
                             <button class="accordion-button collapsed" type="button" id="b_accreditations"
@@ -131,23 +131,50 @@ if ($acc) {
                             <div class="p-4">
                                 <ul class="supplier__tags cols-lg-3">
                                     <?php
-                    foreach ($acc as $a) {
-                        echo '<li><a href="/accreditations/' . $a->slug . '/">' . $a->name . '</a></li>';
-                    }
-    ?>
+                                        foreach ($acc as $a) {
+                                            echo '<li><a href="/accreditations/' . $a->slug . '/">' . $a->name . '</a></li>';
+                                        }
+                        ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <?php
-}
+                    }
 
+                    $terms = wp_get_post_terms(get_the_ID(), 'supplier-types');
+                    if ($terms) {
+                        echo '<a id="supplier-specialities" class="anchor"></a>';
+                        $navitems[] = 'Supplier Specialities';
+                        ?>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="h_supplier-specialities">
+                            <button class="accordion-button collapsed" type="button" id="b_supplier-specialities"
+                                data-bs-toggle="collapse" data-bs-target="#c_supplier-specialities">Supplier
+                                Specialities</button>
+                        </h2>
+                        <div class="accordion-collapse collapse" id="c_supplier-specialities" data-bs-parent="#assets">
+                            <div class="p-4">
+                                <ul class="supplier__tags cols-lg-3">
+                                    <?php
+$terms = wp_get_post_terms(get_the_ID(), 'supplier-types');
+                        foreach ($terms as $term) {
+                            // Output the term name and link (if needed)
+                            echo '<li><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></li>';
+                        }
+                        ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                    }
 
-$category = get_the_terms(get_the_ID(), 'supplier-tags');
-if ($category) {
-    echo '<a id="products--services" class="anchor"></a>';
-    $navitems[] = 'Products & Services';
-    ?>
+                    $category = get_the_terms(get_the_ID(), 'supplier-tags');
+                    if ($category) {
+                        echo '<a id="products--services" class="anchor"></a>';
+                        $navitems[] = 'Products & Services';
+                        ?>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="h_products--services">
                             <button class="accordion-button collapsed" type="button" id="b_products--services"
@@ -158,38 +185,39 @@ if ($category) {
                             <div class="p-4">
                                 <ul class="supplier__tags cols-lg-3">
                                     <?php
-                    foreach ($category as $c) {
-                        echo '<li><a href="/tags/' . $c->slug . '/">' . $c->name . '</a></li>';
-                    }
-    ?>
+                                        foreach ($category as $c) {
+                                            echo '<li><a href="/tags/' . $c->slug . '/">' . $c->name . '</a></li>';
+                                        }
+                        ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <?php
-}
-?>
+                    }
+                    ?>
                 </div>
                 <?php
                 } // end full profile (!basic) output
 ?>
-<a id="contact" class="anchor"></a>
+                <a id="contact" class="anchor"></a>
                 <div class="">
-                    <h3>Contact <?=strip_crud( get_the_title() )?></h3>
+                    <h3>Contact <?=strip_crud(get_the_title())?>
+                    </h3>
                     <?php
-                    $supplier_email = str_replace(' ','',get_field('contact_email'));
-                    $supplier_name = urlencode( strip_crud( get_the_title() ) );
-                    echo do_shortcode(
-                        '[gravityform id="' . 
-                        get_field( 'supplier_contact_form_id', 'options' ) .
-                        '" field_values="email=' .
-                        $supplier_email .
-                        '&name=' .
-                        $supplier_name .
-                        '" title="false"]'
-                    );
+                    $supplier_email = str_replace(' ', '', get_field('contact_email'));
+$supplier_name = urlencode(strip_crud(get_the_title()));
+echo do_shortcode(
+    '[gravityform id="' .
+    get_field('supplier_contact_form_id', 'options') .
+    '" field_values="email=' .
+    $supplier_email .
+    '&name=' .
+    $supplier_name .
+    '" title="false"]'
+);
                     
-                    ?>
+?>
                 </div>
             </div>
             <div class="col-lg-3">
@@ -203,37 +231,35 @@ if ($category) {
                         <h3>Contact Details</h3>
                         <dl>
                             <?php
-                            if (get_field('contact_phone')) {
-                                echo "<dt>Telephone</dt>";
-                                if (get_field('profile') != 'Basic') {
-                                ?>
+        if (get_field('contact_phone')) {
+            echo "<dt>Telephone</dt>";
+            if (get_field('profile') != 'Basic') {
+                ?>
                             <dd><a
                                     href="tel:<?=parse_phone(get_field('contact_phone'))?>"><?=get_field('contact_phone')?></a>
 
                                 <?php
-                                }
-                                else {
-                                    ?>
+            } else {
+                ?>
                             <dd><?=get_field('contact_phone')?>
-                                                                <?php
-                                }
-                                if (get_field('contact_phone_2')) {
-                                    if (get_field('profile') != 'Basic') {
-                                    ?>
+                                <?php
+            }
+            if (get_field('contact_phone_2')) {
+                if (get_field('profile') != 'Basic') {
+                    ?>
                                 <br><a
                                     href="tel:<?=parse_phone(get_field('contact_phone_2'))?>"><?=get_field('contact_phone_2')?></a>
                                 <?php
-                                    }
-                                    else {
-                                        ?>
+                } else {
+                    ?>
                                 <br><?=get_field('contact_phone_2')?>
-                                        <?php
-                                    }
-                                }
-                                ?>
+                                <?php
+                }
+            }
+            ?>
                             </dd>
                             <?php
-                            }
+        }
 ?>
                             <dt>Address</dt>
                             <dd><?=get_field('address')?>
