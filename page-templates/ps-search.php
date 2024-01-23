@@ -252,6 +252,12 @@ else {
 
     if ($o->have_posts() || $of->have_posts()) {
         echo '<div class="mb-4">But we have found these suppliers...</div>';
+        if ($o->have_posts()) {
+            echo '<pre>Found basic</pre>';
+        }
+        if ($of->have_posts()) {
+            echo '<pre>Found featured</pre>';
+        }
         echo '<div id="suppliers" class="mb-4">';
 
         if ($of->have_posts()) {
