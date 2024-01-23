@@ -108,7 +108,7 @@ wp_head();
             ]
         }
     </script>
-
+    <script data-cfasync='false' type='text/javascript' defer='' async='' src='https://t.wowanalytics.co.uk/Scripts/ssl/dd6ce444-7a72-42f8-9fd1-c70a12400458.js'></script>
 </head>
 
 <body <?php body_class(); ?>
