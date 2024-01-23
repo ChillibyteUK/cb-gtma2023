@@ -276,6 +276,7 @@ else {
                 </a>
                 <?php
             }
+            wp_reset_postdata();
 
         }
         if ($o->have_posts()) {
@@ -299,6 +300,7 @@ else {
                 </a>
                 <?php
             }
+            wp_reset_postdata();
         }
         echo '</div>';
     }
