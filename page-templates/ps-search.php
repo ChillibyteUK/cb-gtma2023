@@ -252,17 +252,11 @@ else {
 
     if ($o->have_posts() || $of->have_posts()) {
         echo '<div class="mb-4">But we have found these suppliers...</div>';
-        if ($o->have_posts()) {
-            echo '<pre>Found basic</pre>';
-        }
-        if ($of->have_posts()) {
-            echo '<pre>Found featured</pre>';
-        }
         echo '<div id="suppliers" class="mb-4">';
 
         if ($of->have_posts()) {
-            while ($o->have_posts()) {
-                $o->the_post();
+            while ($of->have_posts()) {
+                $of->the_post();
                 $type = get_the_terms(get_the_ID(), 'types');
                 $types = implode(', ', wp_list_pluck($type, 'name'));
                 ?>
