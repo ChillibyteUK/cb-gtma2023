@@ -156,7 +156,7 @@ add_filter(
         if (is_singular('event')) {
             $t = get_the_category($post->ID);
             $breadcrumb[] = array(
-                'url' => '/events/',
+                'url' => get_site_url() . '/events/',
                 'text' => 'Events',
             );
 
