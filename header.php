@@ -118,7 +118,7 @@ wp_head();
         <nav id="navbar" class="navbar navbar-expand-lg d-block p-0 pt-2 pt-lg-0" aria-labelledby="main-nav-label">
             <div class="container-xl px-0 px-lg-4">
                 <div class="d-flex w-100 w-lg-auto justify-content-between align-items-center px-2">
-                    <a href="/" class="navbar-brand" rel="home"></a>
+                    <a href="/" class="navbar-brand" rel="home" title="HOME"></a>
                     <button class="navbar-toggler input-button text-white" id="navToggle" data-bs-toggle="collapse"
                         data-bs-target=".navbars" type="button" aria-label="Navigation"><i
                             class="fa fa-navicon"></i></button>
