@@ -115,6 +115,15 @@ function custom_post_type_canonical( $canonical ) {
     return $canonical;
 }
 
+add_filter( 'wpseo_next_rel_link', 'remove_next_rel_link_on_suppliers' );
+
+function remove_next_rel_link_on_suppliers() {
+    if (is_post_type_archive('suppliers') || is_singular('suppliers')) {
+        return false;
+    }
+    return true;
+}
+
 /*
 
 // ************* Remove default Posts type if no blog *************
