@@ -106,6 +106,14 @@ function cb_register_post_types()
 }
 add_action('init', 'cb_register_post_types');
 
+add_filter( 'wpseo_canonical', 'custom_post_type_canonical', 10, 1 );
+
+function custom_post_type_canonical( $canonical ) {
+    if ( is_post_type_archive( 'suppliers' ) ) { // Replace 'suppliers' with your custom post type
+        return 'https://www.gtma.co.uk/suppliers/'; // The desired canonical URL
+    }
+    return $canonical;
+}
 
 /*
 
