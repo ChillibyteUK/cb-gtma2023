@@ -50,9 +50,15 @@ $navitems = array();
 ?>
                     </div>
                     <div class="col-md-4 order-1 order-md-2 d-flex justify-content-center align-items-center">
+                        <?php
+                        if (get_field('supplier_logo') ?? null) {
+                            ?>
                         <img src="<?=wp_get_attachment_image_url(get_field('supplier_logo'), 'full')?>"
                             alt="<?=$alt_text?>"
                             class="supplier__logo">
+                        <?php
+                        }
+?>
                     </div>
                 </div>
                 <div class="stickynav" id="navholder"></div>
@@ -216,7 +222,7 @@ echo do_shortcode(
     $supplier_name .
     '" title="false"]'
 );
-                    
+
 ?>
                 </div>
             </div>
