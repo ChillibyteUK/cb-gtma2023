@@ -16,6 +16,8 @@ $safe_url = urlencode($unsafe_url);
 <main id="main" class="search">
     <section class="pb-5">
         <div class="container-xl">
+            <pre><?=var_dump($safe_display_url)?></pre>
+            <pre><?=var_dump($safe_url)?></pre>
             <h1 class="pb-4"><?=sprintf('Search results for: %s', '<span>' . $safe_display_url . '</span>')?></h1>
 <?php
 $args = array(
@@ -109,7 +111,7 @@ if ( $terms ) {
         'post_type' => 'suppliers',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
-        'search_prod_title' => $safe_url, // Your search term
+        'search_prod_title' => $safe_display_url, // Your search term
         'meta_query' => array(
             array(
                 'key' => 'profile',
@@ -122,7 +124,7 @@ if ( $terms ) {
         'post_type' => 'suppliers',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
-        'search_prod_title' => $safe_url, // Your search term
+        'search_prod_title' => $safe_display_url, // Your search term
         'meta_query' => array(
             'relation' => 'OR',
             array(
