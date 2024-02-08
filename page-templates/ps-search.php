@@ -225,7 +225,7 @@ else {
         'post_type' => 'suppliers',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
-        'search_prod_title' => "$safe_url", // Your search term
+        'search_prod_title' => "$safe_display_url", // Your search term
         'meta_query' => array(
             array(
                 'key' => 'profile',
@@ -238,7 +238,7 @@ else {
         'post_type' => 'suppliers',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
-        'search_prod_title' => "$safe_url", // Your search term
+        'search_prod_title' => "$safe_display_url", // Your search term
         'meta_query' => array(
             'relation' => 'OR',
             array(
