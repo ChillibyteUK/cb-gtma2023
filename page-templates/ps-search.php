@@ -217,13 +217,13 @@ if ( $terms ) {
 else {
     // get_template_part( 'loop-templates/content', 'none' );
     ?>
-    <h2><?=sprintf('No Products or Services matching %s found.', '<span>' . $safe_url . '</span>')?></h2>
+    <h2><?=sprintf('No Products or Services matching %s found.', '<span>' . $safe_display_url . '</span>')?></h2>
     <?php
     $of = new WP_Query(array(
         'post_type' => 'suppliers',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
-        'search_prod_title' => $safe_url, // Your search term
+        'search_prod_title' => $safe_display_url, // Your search term
         'meta_query' => array(
             array(
                 'key' => 'profile',
@@ -236,7 +236,7 @@ else {
         'post_type' => 'suppliers',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
-        'search_prod_title' => $safe_url, // Your search term
+        'search_prod_title' => $safe_display_url, // Your search term
         'meta_query' => array(
             'relation' => 'OR',
             array(
