@@ -8,7 +8,7 @@ get_header();
 global $wp;
 
 $unsafe_url = $_GET['q'];
-// $safe_url = filter_var($unsafe_url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$safe_display_url = filter_var($unsafe_url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $safe_url = urlencode($unsafe_url);
 
 
@@ -16,7 +16,7 @@ $safe_url = urlencode($unsafe_url);
 <main id="main" class="search">
     <section class="pb-5">
         <div class="container-xl">
-            <h1 class="pb-4"><?=sprintf('Search results for: %s', '<span>' . $safe_url . '</span>')?></h1>
+            <h1 class="pb-4"><?=sprintf('Search results for: %s', '<span>' . $safe_display_url . '</span>')?></h1>
 <?php
 $args = array(
     'taxonomy' => array('supplier-types', 'supplier-tags'),
