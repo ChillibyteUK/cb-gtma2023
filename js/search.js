@@ -101,7 +101,7 @@ $(document).ready(function() {
   function doSearch() {
     const inputTerm = $('#searchInput').val();
     if (inputTerm !== '') {
-      term = inputTerm;
+      term = encodeURIComponent(inputTerm);
       executeSearch(source, term);
     } else {
       executeSearch('', term);
