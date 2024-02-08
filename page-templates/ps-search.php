@@ -8,7 +8,8 @@ get_header();
 global $wp;
 
 $unsafe_url = $_GET['q'];
-$safe_url = filter_var($unsafe_url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+// $safe_url = filter_var($unsafe_url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+$safe_url = urlencode($unsafe_url);
 
 
 ?>
