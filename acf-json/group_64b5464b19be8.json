@@ -103,7 +103,8 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "relevanssi_exclude": 0,
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -121,10 +122,11 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "75",
                         "class": "",
                         "id": ""
                     },
+                    "relevanssi_exclude": 0,
                     "default_value": "",
                     "maxlength": "",
                     "placeholder": "",
@@ -142,10 +144,11 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
+                    "relevanssi_exclude": 0,
                     "choices": {
                         "YouTube": "YouTube",
                         "Vimeo": "Vimeo"
@@ -156,6 +159,28 @@
                     "other_choice": 0,
                     "layout": "horizontal",
                     "save_other_choice": 0,
+                    "parent_repeater": "field_64b54b3a7b382"
+                },
+                {
+                    "key": "field_65c5060980434",
+                    "label": "Caption",
+                    "name": "caption",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "relevanssi_exclude": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
                     "parent_repeater": "field_64b54b3a7b382"
                 }
             ]
@@ -317,5 +342,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699283018
+    "modified": 1707410988
 }

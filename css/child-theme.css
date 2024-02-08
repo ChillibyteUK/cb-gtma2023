@@ -23302,6 +23302,11 @@ footer .footer__logo {
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
+.assets__video_caption {
+  padding: 0.5rem;
+  background-color: var(--col-grey);
+  font-size: var(--fs-200);
+}
 .assets__photo_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

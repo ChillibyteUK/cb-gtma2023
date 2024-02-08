@@ -40,6 +40,15 @@ $type = get_field('type');
                 data-bs-toggle="modal" data-bs-target="#videoModal"
                 data-src="https://www.youtube-nocookie.com/embed/<?=$vidID?>"
                 data-start="<?=$start?>">
+            <?php
+            if (get_sub_field('caption')) {
+                ?>
+                <div class="assets__video_caption">
+                    <?=get_sub_field('caption')?>
+                </div>
+                <?php
+            }
+            ?>
         </div>
         <?php
                 }
@@ -51,6 +60,15 @@ $type = get_field('type');
                 src="<?=$data?>" data-bs-toggle="modal"
                 data-bs-target="#videoModalVim"
                 data-src="https://player.vimeo.com/video/<?=$vid?>?byline=0&autoplay=1&portrait=0&app_id=58479">
+                <?php
+            if (get_sub_field('caption')) {
+                ?>
+                <div class="assets__video_caption">
+                    <?=get_sub_field('caption')?>
+                </div>
+                <?php
+            }
+            ?>
         </div>
         <?php
                 }
