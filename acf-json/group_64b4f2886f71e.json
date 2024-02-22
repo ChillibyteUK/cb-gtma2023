@@ -3,60 +3,6 @@
     "title": "CPT Supplier",
     "fields": [
         {
-            "key": "field_6571c6d313e43",
-            "label": "Profile Level",
-            "name": "profile",
-            "aria-label": "",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "Featured": "Featured",
-                "Full Profile": "Full Profile",
-                "Basic": "Basic"
-            },
-            "default_value": "Full Profile",
-            "return_format": "value",
-            "allow_null": 0,
-            "other_choice": 0,
-            "layout": "horizontal",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_6571e4949c9cd",
-            "label": "Basic Profile",
-            "name": "basic_profile",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "Displayed instead of the rest of the content if Profile Level is set to 'Basic'",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6571c6d313e43",
-                        "operator": "==",
-                        "value": "Basic"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
             "key": "field_64b4f288dc8e0",
             "label": "Supplier Logo",
             "name": "supplier_logo",
@@ -97,6 +43,27 @@
             },
             "default_value": "",
             "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65d7785b3e0a3",
+            "label": "Sponsor Banner Content",
+            "name": "sponsor_banner_content",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "default_value": "",
+            "maxlength": 120,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -277,6 +244,31 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_64b4f2ebdc8e6",
+            "label": "Is Featured?",
+            "name": "is_featured",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Yes": "Yes",
+                "No": "No"
+            },
+            "default_value": "No",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
         },
         {
             "key": "field_64b4f2f9dc8e7",
@@ -500,5 +492,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701962991
+    "modified": 1708620795
 }

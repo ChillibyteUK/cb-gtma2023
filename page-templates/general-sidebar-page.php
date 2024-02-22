@@ -29,8 +29,25 @@ foreach ($blocks as $block) {
 if ($hasHero === false) {
     echo '<h1>' . get_the_title() . '</h1>';
 }
+
+$banner = array();
+
+foreach ($blocks as $block) {
+    if ($block['blockName'] == 'acf/cb-sponsor-banner') {
+        if ( $block['attrs']['data']['aspect'] == 'Banner') {
+            echo render_block($block);
+        }
+        elseif ( $block['attrs']['data']['aspect'] == 'Skyscraper') {
+            $banner = $block;
+        }
+    }
+    else {
+        echo apply_filters( 'the_content', render_block( $block ) );
+    }
+}
+
+// echo apply_filters('the_content', get_the_content());
 ?>
-                <?=apply_filters('the_content', get_the_content())?>
             </div>
             <div class="col-md-3">
                 <div class="sidebar pb-4">
@@ -106,6 +123,11 @@ $sibs = new WP_Query(array(
                             </div>
                         </div>
                     </div>
+                    <?php
+if ($banner ?? null) {
+    echo render_block($banner);
+}
+                    ?>
                 </div>
             </div>
         </div>

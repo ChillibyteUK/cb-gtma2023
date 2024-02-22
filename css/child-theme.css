@@ -23608,16 +23608,14 @@ footer .footer__logo {
 }
 
 .sponsor__card {
-  background-color: var(--col-blue-400);
+  background-color: var(--col-light);
   padding: 1rem !important;
   display: block;
-  color: var(--col-light);
-}
-.sponsor__card:hover {
-  color: var(--col-light);
+  color: var(--col-dark);
+  border: 3px solid var(--col-red-400);
 }
 .sponsor__title {
-  border-bottom: 1px solid var(--col-light);
+  border-bottom: 1px solid var(--col-red-400);
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: var(--fs-100);
@@ -23626,10 +23624,18 @@ footer .footer__logo {
   font-size: var(--fs-400);
   font-weight: var(--fw-600);
 }
+.sponsor__title br {
+  display: none;
+}
 .sponsor__inner {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1rem;
+}
+.sponsor__words {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-600);
+  line-height: 1.2;
 }
 .sponsor__logo {
   align-self: center;
@@ -23637,6 +23643,19 @@ footer .footer__logo {
 }
 .sponsor__logo img {
   max-height: 90px;
+}
+
+.sidebar .sponsor {
+  margin-top: 0.5rem;
+}
+.sidebar .sponsor a {
+  color: var(--col-dark);
+}
+.sidebar .sponsor__title br {
+  display: block;
+}
+.sidebar .sponsor__inner {
+  grid-template-columns: 1fr;
 }
 
 .two_col_feature__card {

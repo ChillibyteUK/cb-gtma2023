@@ -21,6 +21,32 @@
             "esc_html": 0
         },
         {
+            "key": "field_65d77afe5a88d",
+            "label": "Aspect",
+            "name": "aspect",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "relevanssi_exclude": 0,
+            "choices": {
+                "Banner": "Banner",
+                "Skyscraper": "Skyscraper"
+            },
+            "default_value": "Banner",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_65267048efb15",
             "label": "Supplier",
             "name": "supplier",
@@ -83,5 +109,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697018329
+    "modified": 1708622468
 }

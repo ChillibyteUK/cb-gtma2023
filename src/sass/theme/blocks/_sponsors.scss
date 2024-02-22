@@ -1,15 +1,13 @@
 .sponsor {
     &__card {
-        background-color: var(--col-blue-400);
+        background-color: var(--col-light);
         padding: 1rem !important;
         display: block;
-        color: var(--col-light);
-        &:hover {
-            color: var(--col-light);
-        }
+        color: var(--col-dark);
+        border: 3px solid var(--col-red-400);
     }
     &__title {
-        border-bottom: 1px solid var(--col-light);
+        border-bottom: 1px solid var(--col-red-400);
         margin-bottom: 0.5rem;
         padding-bottom: 0.5rem;
         font-size: var(--fs-100);
@@ -17,17 +15,42 @@
             font-size: var(--fs-400);
             font-weight: var(--fw-600);
         }
+        br {
+            display: none;
+        }
     }
     &__inner {
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 1rem;
     }
+    &__words {
+        font-size: var(--fs-500);
+        font-weight: var(--fw-600);
+        line-height: 1.2;
+    }
     &__logo {
         align-self: center;
         justify-self: center;
         img {
             max-height: 90px;
+        }
+    }
+}
+
+.sidebar {
+    .sponsor {
+        margin-top: 0.5rem;
+        a {
+            color: var(--col-dark);
+        }
+        &__title {
+            br {
+                display: block;
+            }
+        }
+        &__inner {
+            grid-template-columns: 1fr;
         }
     }
 }
