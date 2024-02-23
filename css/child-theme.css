@@ -23651,6 +23651,9 @@ footer .footer__logo {
 .sidebar .sponsor a {
   color: var(--col-dark);
 }
+.sidebar .sponsor__title {
+  text-align: center;
+}
 .sidebar .sponsor__title br {
   display: block;
 }
