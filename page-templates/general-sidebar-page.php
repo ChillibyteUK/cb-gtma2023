@@ -34,15 +34,14 @@ $banner = array();
 
 foreach ($blocks as $block) {
     if ($block['blockName'] == 'acf/cb-sponsor-banner') {
-        if ( $block['attrs']['data']['aspect'] == 'Banner') {
+        if ($block['attrs']['data']['aspect'] == 'Banner') {
             echo render_block($block);
-        }
-        elseif ( $block['attrs']['data']['aspect'] == 'Skyscraper') {
+        } elseif ($block['attrs']['data']['aspect'] == 'Skyscraper') {
             $banner = $block;
         }
-    }
-    else {
-        echo apply_filters( 'the_content', render_block( $block ) );
+    } else {
+        // echo apply_filters( 'the_content', render_block( $block ) );
+        echo render_block($block);
     }
 }
 
@@ -127,7 +126,7 @@ $sibs = new WP_Query(array(
 if ($banner ?? null) {
     echo render_block($banner);
 }
-                    ?>
+?>
                 </div>
             </div>
         </div>
