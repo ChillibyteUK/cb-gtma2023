@@ -13,7 +13,6 @@ $current_url = home_url(add_query_arg(array(), $wp->request)) . '/';
 $content = get_the_content();
 $blocks = parse_blocks($content);
 ?>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <main id="main" class="<?=$class?>">
     <?php
 $hasHero = false;
@@ -21,6 +20,9 @@ foreach ($blocks as $block) {
     // echo $block['blockName'];
     if ($block['blockName'] == 'acf/cb-hero') {
         $hasHero = true;
+        echo render_block($block);
+    }
+    if ($block['blockName'] == 'acf/cb-sector-subnav') {
         echo render_block($block);
     }
 }
@@ -36,7 +38,7 @@ if ($hasHero === false) {
 $banner = array();
 
 foreach ($blocks as $block) {
-    if ($block['blockName'] == 'acf/cb-hero') {
+    if ($block['blockName'] == 'acf/cb-hero' || $block['blockName'] == 'acf/cb-sector-subnav') {
         continue;
     } elseif ($block['blockName'] == 'acf/cb-sponsor-banner') {
         if ($block['attrs']['data']['aspect'] == 'Banner') {
