@@ -103,7 +103,7 @@ function cb_register_taxes()
     $args = [
         "label" => "Brochure Index",
         "labels" => [
-            "name" => "Brochure Indices",
+            "name" => "Brochure Index",
             "singular_name" => "Brochure Index",
         ],
         "public" => true,
