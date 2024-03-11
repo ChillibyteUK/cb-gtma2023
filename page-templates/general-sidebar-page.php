@@ -40,8 +40,8 @@ foreach ($blocks as $block) {
             $banner = $block;
         }
     } else {
-        // echo apply_filters( 'the_content', render_block( $block ) );
-        echo render_block($block);
+        echo apply_filters('the_content', render_block($block));
+        // echo render_block($block);
     }
 }
 
