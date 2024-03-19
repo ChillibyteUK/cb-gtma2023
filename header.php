@@ -79,6 +79,7 @@ if (get_field('bing_site_verification', 'options')) {
 }
 
 wp_head();
+if (is_front_page()) {
 ?>
 
     <script type="application/ld+json">
@@ -108,7 +109,19 @@ wp_head();
             ]
         }
     </script>
+<?php
+}
+?>
     <script data-cfasync='false' type='text/javascript' defer='' async='' src='https://t.wowanalytics.co.uk/Scripts/ssl/dd6ce444-7a72-42f8-9fd1-c70a12400458.js'></script>
+    <!-- Snitcher analytics code -->
+<script>
+    !function(s,n,i,t,c,h){s.SnitchObject=i;s[i]||(s[i]=function(){
+    (s[i].q=s[i].q||[]).push(arguments)});s[i].l=+new Date;c=n.createElement(t);
+    h=n.getElementsByTagName(t)[0];c.src='//snid.snitcher.com/8425782.js';
+    h.parentNode.insertBefore(c,h)}(window,document,'snid','script');
+        
+    snid('verify', '8425782');
+</script>
 </head>
 
 <body <?php body_class(); ?>
