@@ -43,7 +43,8 @@ foreach ($blocks as $block) {
             $sidebar[$heading] = $id;
         }
     }
-    echo render_block($block);
+    //echo render_block($block);
+    echo apply_filters('the_content', render_block($block));
 }
 ?>
                 </article>
