@@ -1,6 +1,16 @@
 <?php
-
 require_once($_SERVER['DOCUMENT_ROOT'] . "/wp-load.php");
+
+$filename = "tags-by-id_" . date("Y-m-d\TH:i:s\Z") . ".csv";
+header('Content-Type: text/csv; charset=utf-8');
+header('Content-Disposition: attachment; filename="' . $filename . '"');
+$output = fopen('php://output', 'w');
+fprintf($output, chr(0xEF).chr(0xBB).chr(0xBF));
+
+$column_headers = ['Tag ID', 'Tag Name', 'Tag Slug'];
+
+$column_headers = array_map('html_entity_decode', $column_headers);
+fputcsv($output, $column_headers);
 
 $terms = get_terms(array(
     'taxonomy' => 'supplier-tag',
@@ -8,20 +18,6 @@ $terms = get_terms(array(
 ));
 
 if (!empty($terms) && !is_wp_error($terms)) {
-    // Prepare a file path and name with current Zulu time
-    $date = gmdate('Y-m-d\TH:i:s\Z');
-    $filename = "tags-by-id_{$date}.csv";
-    $filepath = wp_upload_dir()['basedir'] . '/' . $filename;  // Ensure the upload directory is writable
-
-    // Open file handle to write
-    $handle = fopen($filepath, 'w');
-    if ($handle === false) {
-        die('Failed to create file.');
-    }
-
-    // Add CSV headers
-    fputcsv($handle, ['Tag ID', 'Tag Name', 'Tag Slug']);
-
     // Loop through each term and add to CSV
     foreach ($terms as $term) {
         fputcsv($handle, [$term->term_id, $term->name, $term->slug]);
@@ -29,16 +25,7 @@ if (!empty($terms) && !is_wp_error($terms)) {
 
     // Close the file handle
     fclose($handle);
-
-    // Output success message or handle file serving depending on context
-    echo "CSV file created successfully: $filename";
+    exit();
 } else {
     echo "No terms found or an error occurred.";
-}
-
-if (file_exists($filepath)) {
-    header('Content-Type: text/csv');
-    header('Content-Disposition: attachment; filename="' . basename($filepath) . '"');
-    readfile($filepath);
-    exit;
 }
