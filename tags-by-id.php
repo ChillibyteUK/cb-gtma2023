@@ -13,18 +13,18 @@ $column_headers = array_map('html_entity_decode', $column_headers);
 fputcsv($output, $column_headers);
 
 $terms = get_terms(array(
-    'taxonomy' => 'supplier-tag',
+    'taxonomy' => 'supplier-tags',
     'hide_empty' => false,
 ));
 
 if (!empty($terms) && !is_wp_error($terms)) {
     // Loop through each term and add to CSV
     foreach ($terms as $term) {
-        fputcsv($handle, [$term->term_id, $term->name, $term->slug]);
+        fputcsv($output, [$term->term_id, $term->name, $term->slug]);
     }
 
-    // Close the file handle
-    fclose($handle);
+    // Close the file output
+    fclose($output);
     exit();
 } else {
     echo "No terms found or an error occurred.";
