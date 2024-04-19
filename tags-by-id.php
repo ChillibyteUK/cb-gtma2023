@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../wp-load.php';
+require_once($_SERVER['DOCUMENT_ROOT'] . "/wp-load.php");
 
 $terms = get_terms(array(
     'taxonomy' => 'supplier-tag',
