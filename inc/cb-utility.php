@@ -105,6 +105,18 @@ add_shortcode('social_icons', function(){
     target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
 <?php
     }
+    if ($social['pinterest_url'] ?? null) {
+        ?>
+<a href="<?=$social['pinterest_url']?>"
+    target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+<?php
+    }
+    if ($social['instagram_url'] ?? null) {
+        ?>
+<a href="<?=$social['instagram_url']?>"
+    target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<?php
+    }
     if ($social['facebook_url'] ?? null) {
         ?>
 <a href="<?=$social['facebook_url']?>"
