@@ -43,7 +43,7 @@ foreach ($type as $p) {
 
 
 $json = array();
-// $json['supplier'] = $suppliers;
+$json['supplier'] = $suppliers;
 $json['category'] = $types;
 $json['tag'] = $tags;
 
