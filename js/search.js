@@ -27,6 +27,7 @@ $(document).ready(function() {
       data.forEach(item => {
         const categories = item.category;
         const tags = item.tag;
+        const supplier = item.supplier;
 
         termList.push(...categories.map(term => ({
           term,
@@ -35,6 +36,10 @@ $(document).ready(function() {
         termList.push(...tags.map(term => ({
           term,
           source: 'tag'
+        })));
+        termList.push(...supplier.map(term => ({
+          term,
+          source: 'supplier'
         })));
       });
 
@@ -128,6 +133,8 @@ $(document).ready(function() {
         url = '/tags/' + slugify(term) + '/';
       } else if (source !== '' && source === 'category') {
         url = '/types/' + slugify(term) + '/';
+      } else if (source !== '' && source === 'supplier') {
+        url = '/suppliers/' + slugify(term) + '/';
       } else {
         if (slug == null) {
           url = '/types/' + slugify(term) + '/';
