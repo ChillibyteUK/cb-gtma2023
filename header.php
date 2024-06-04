@@ -141,6 +141,8 @@ if (is_front_page()) {
                         <div class="topNav__word">Providing Solutions Throughout the Engineering Supply Chain</div>
                         <div class="topNav__social">
                             <?=do_shortcode('[social_icons]')?>
+                            <a href="https://www.pinterest.co.uk/gtma0380/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+                            <a href="https://www.instagram.com/supportingukmanufacturing/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                         </div>
                     </div>
                     <?php
