@@ -64,24 +64,27 @@ while ($q->have_posts()) {
         $county_class = acf_slugify($county);
     }
     ?>
-                <a class="suppliers__card <?=$county_class?>"
+                <a class="suppliers__card suppliers__featured <?=$county_class?>"
                     href="<?=get_the_permalink()?>">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <h2 class="fs-5 d-inline">
-                                <?=strip_crud(get_the_title())?>
-                            </h2>
-                            <?php
-                        if ($county) {
-                            echo ' - ' . $county;
-                        }
-    ?>
+                    <?=wp_get_attachment_image(get_field('supplier_logo',get_the_ID()), 'full', false, array('class'=>'suppliers__logo'))?>
+                    <div class="suppliers__content">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h2 class="fs-5 d-inline">
+                                    <?=strip_crud(get_the_title())?>
+                                </h2>
+                                <?php
+                            if ($county) {
+                                echo ' - ' . $county;
+                            }
+        ?>
+                            </div>
+                            <div class="featured-badge">Featured <i class="fa-solid fa-star"></i></div>
                         </div>
-                        <div class="featured-badge">Featured <i class="fa-solid fa-star"></i></div>
+                        <p class="mt-2 fs-200">
+                            <?=wp_trim_words(get_the_content(), 30)?>
+                        </p>
                     </div>
-                    <p class="mt-2 fs-200">
-                        <?=wp_trim_words(get_the_content(), 30)?>
-                    </p>
                 </a>
     <?php
     $c++;
@@ -125,14 +128,14 @@ while ($q->have_posts()) {
     ?>
     <a class="suppliers__card <?=$county_class?>"
         href="<?=get_the_permalink()?>">
-    <h2 class="fs-5 d-inline">
-        <?=strip_crud(get_the_title())?>
-    </h2>
-    <?php
-    if ($county) {
-        echo ' - ' . $county;
-    }
-    ?>
+        <h2 class="fs-5 d-inline">
+            <?=strip_crud(get_the_title())?>
+        </h2>
+        <?php
+        if ($county) {
+            echo ' - ' . $county;
+        }
+        ?>
         <p class="mt-2 fs-200">
             <?=wp_trim_words(get_the_content(), 30)?>
         </p>

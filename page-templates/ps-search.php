@@ -160,19 +160,22 @@ if ( $terms ) {
                     $featured = '<div class="featured-badge">Featured <i class="fa-solid fa-star"></i></div>';
                 }
                 ?>
-                <a class="suppliers__card"
+                <a class="suppliers__card suppliers__featured"
                     href="<?=get_the_permalink()?>">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <h2 class="fs-5 d-inline">
-                                <?=strip_crud(get_the_title())?>
-                            </h2>
+                    <?=wp_get_attachment_image(get_field('supplier_logo',get_the_ID()), 'full', false, array('class'=>'suppliers__logo'))?>
+                    <div class="suppliers__content">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h2 class="fs-5 d-inline">
+                                    <?=strip_crud(get_the_title())?>
+                                </h2>
+                            </div>
+                            <div class="featured-badge">Featured <i class="fa-solid fa-star"></i></div>
                         </div>
-                        <?=$featured?>
+                        <p class="mt-2 fs-200">
+                            <?=wp_trim_words(get_the_content(), 30)?>
+                        </p>
                     </div>
-                    <p class="mt-2 fs-200">
-                        <?=wp_trim_words(get_the_content(), 30)?>
-                    </p>
                 </a>
                 <?php
                 $c++;

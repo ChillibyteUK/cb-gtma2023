@@ -24061,13 +24061,27 @@ footer .footer__logo {
 
 .suppliers__card {
   display: block;
-  width: 100%;
   border-bottom: 1px solid var(--col-blue-400);
   padding: 1rem;
   transition: background-color var(--transition);
 }
 .suppliers__card:hover {
   background-color: var(--col-grey);
+}
+.suppliers__featured {
+  display: grid;
+  grid-template-columns: 150px auto;
+  width: 100%;
+  gap: 1rem;
+}
+.suppliers__logo {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: center;
+  object-position: center;
+  margin-block: auto;
 }
 
 .featured-badge {
