@@ -10,10 +10,12 @@ defined('ABSPATH') || exit;
             <?=wp_nav_menu(array('theme_location' => 'footer_menu1'))?>
         </div>
         <div class="footer__menu pb-4">
-            <h4 class="footer__menu_title">Affiliates</h4>
-            <?=wp_nav_menu(array('theme_location' => 'footer_menu2'))?>
+            <h4 class="footer__menu_title">Suppliers</h4>
+            <?=wp_nav_menu(array('theme_location' => 'footer_menu4'))?>
         </div>
         <div class="footer__menu pb-4">
+            <h4 class="footer__menu_title">Affiliates</h4>
+            <?=wp_nav_menu(array('theme_location' => 'footer_menu2'))?>
             <h4 class="footer__menu_title">Partnerships</h4>
             <?=wp_nav_menu(array('theme_location' => 'footer_menu3'))?>
         </div>

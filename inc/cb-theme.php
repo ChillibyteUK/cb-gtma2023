@@ -66,16 +66,10 @@ function widgets_init()
 
     register_nav_menus(array(
         'primary_nav' => __('Primary Nav', 'cb-gtma2023'),
-    ));
-
-    register_nav_menus(array(
         'footer_menu1' => __('Footer Menu 1', 'cb-gtma2023'),
-    ));
-    register_nav_menus(array(
         'footer_menu2' => __('Footer Menu 2', 'cb-gtma2023'),
-    ));
-    register_nav_menus(array(
         'footer_menu3' => __('Footer Menu 3', 'cb-gtma2023'),
+        'footer_menu4' => __('Footer Menu 4', 'cb-gtma2023'),
     ));
 
     unregister_sidebar('hero');
