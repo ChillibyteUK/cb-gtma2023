@@ -7,6 +7,13 @@ get_header();
 
 ?>
 <main id="main">
+    <div class="container-xl">
+        <?php
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+        }
+        ?>
+    </div>
     <?php
     the_post();    
     the_content(); 
