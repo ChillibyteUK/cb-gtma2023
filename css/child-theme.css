@@ -24070,9 +24070,13 @@ footer .footer__logo {
 }
 .suppliers__featured {
   display: grid;
-  grid-template-columns: 150px auto;
   width: 100%;
   gap: 1rem;
+}
+@media (min-width: 992px) {
+  .suppliers__featured {
+    grid-template-columns: 150px auto;
+  }
 }
 .suppliers__logo {
   width: 100%;

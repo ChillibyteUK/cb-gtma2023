@@ -68,7 +68,7 @@ while ($q->have_posts()) {
                     href="<?=get_the_permalink()?>">
                     <?=wp_get_attachment_image(get_field('supplier_logo',get_the_ID()), 'full', false, array('class'=>'suppliers__logo'))?>
                     <div class="suppliers__content">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-wrap gap-2 justify-content-between">
                             <div>
                                 <h2 class="fs-5 d-inline">
                                     <?=strip_crud(get_the_title())?>
