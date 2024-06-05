@@ -157,6 +157,15 @@ add_filter(
             array_splice($links, 1, -2, $breadcrumb);
         }
 
+        if (is_singular('suppliers')) {
+            foreach ($links as &$link) {
+                if (strpos($link['url'], '/supplier/') !== false) {
+                    $link['url'] = '/suppliers/';
+                    $link['text'] = 'Suppliers';
+                }
+            }
+        }
+
         if (is_archive(array('supplier-types'))) {
             $breadcrumb[] = array(
                 'url' => '/types/',
