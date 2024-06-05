@@ -11,10 +11,10 @@ $q = new WP_Query(array(
     <?php
     $n = 1;
 while ($q->have_posts()) {
+    $q->the_post();
     if ($n > 3) {
         continue;
     }
-    $q->the_post();
     $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
     if (!$img) {
         $img = get_stylesheet_directory_uri() . '/img/default-blog.png';
