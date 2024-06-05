@@ -168,7 +168,7 @@ add_filter(
 
         if (is_archive(array('supplier-types'))) {
             $breadcrumb[] = array(
-                'url' => '/types/',
+                'url' => '/suppliers/',
                 'text' => 'Suppliers',
             );
             array_splice($links, 1, -2, $breadcrumb);
