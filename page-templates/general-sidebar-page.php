@@ -16,6 +16,11 @@ $blocks = parse_blocks($content);
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <main id="main" class="<?=$class?>">
     <div class="container-xl">
+        <?php
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+        }
+        ?>
         <div class="row">
             <div class="col-md-9">
                 <?php
