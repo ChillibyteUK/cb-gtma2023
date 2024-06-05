@@ -34,7 +34,7 @@ while ($q->have_posts()) {
 
     ?>
 <div
-                class="news__item col-lg-4 col-md-6 p-0 <?=$catclass?>"><?=$n?>
+                class="news__item col-lg-4 col-md-6 p-0 <?=$catclass?>">
                 <a href="<?=get_the_permalink(get_the_ID())?>">
                     <div class="news__card card--<?=$flashcat?>">
                         <div class="news__image_container">
