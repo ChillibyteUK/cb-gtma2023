@@ -7,6 +7,11 @@ get_header();
 <main id="main" class="scs-archive">
     <section class="scs">
         <div class="container-xl">
+            <?php
+            if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+            }
+            ?>
             <h1>Supply Chain Solutions</h1>
             <div><?=get_field('scs_intro','options')?></div>
             <?php

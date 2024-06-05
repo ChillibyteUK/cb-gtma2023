@@ -7,6 +7,11 @@ get_header();
 <main id="main" class="supplier-archive">
 <div class="container-xl">
     <div class="container-xl">
+        <?php
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+        }
+        ?>
         <div class="row">
             <div class="col-md-9">
                 <section class="suppliers">

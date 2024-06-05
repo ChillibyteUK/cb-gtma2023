@@ -23,6 +23,11 @@ $navitems = array();
 
 ?>
     <div class="container-xl">
+        <?php
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+        }
+        ?>
         <div class="row g-4 pb-4">
             <div class="col-lg-9 supplier__content">
                 <?php

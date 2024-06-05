@@ -8,6 +8,11 @@ $cat_id = get_queried_object()->term_id;
 <main id="main" class="supplier-archive">
     <section class="suppliers py-5">
         <div class="container-xl">
+            <?php
+            if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+            }
+            ?>
             <div>Suppliers with:</div>
             <h1><?=$cat_name?></h1>
             <?php

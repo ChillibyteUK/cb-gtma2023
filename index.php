@@ -9,6 +9,11 @@ get_header();
 ?>
 <main id="main">
     <div class="container-xl pb-4">
+        <?php
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+        }
+        ?>
         <div class="mb-4">
             <h1 class="mb-4">
                 <?=get_the_title($page_for_posts)?>

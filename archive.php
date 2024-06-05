@@ -12,6 +12,11 @@ $term = get_queried_object();
 
     <section class="suppliers">
         <div class="container-xl py-5">
+            <?php
+            if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+            }
+            ?>
             <div class="mb-4">
                 <h1 class="mb-4">
                     <?=$term->name?>
