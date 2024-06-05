@@ -154,7 +154,7 @@ add_filter(
                 'text' => 'Events',
             );
 
-            array_splice($links, 0, -2, $breadcrumb);
+            array_splice($links, 0, -1, $breadcrumb);
         }
         return $links;
     }
