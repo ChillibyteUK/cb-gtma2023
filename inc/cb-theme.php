@@ -154,8 +154,17 @@ add_filter(
                 'text' => 'Events',
             );
 
-            array_splice($links, 0, -1, $breadcrumb);
+            array_splice($links, 1, -2, $breadcrumb);
         }
+
+        if (is_archive(array('supplier-types'))) {
+            $breadcrumb[] = array(
+                'url' => '/types/',
+                'text' => 'Suppliers',
+            );
+            array_splice($links, 1, -2, $breadcrumb);
+        }
+   
         return $links;
     }
 );

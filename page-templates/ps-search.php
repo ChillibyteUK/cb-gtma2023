@@ -17,6 +17,11 @@ $safe_url = urlencode($unsafe_url);
 <main id="main" class="search">
     <section class="pb-5">
         <div class="container-xl">
+        <?php
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+        }
+        ?>
             <h1 class="pb-4"><?=sprintf('Search results for: %s', '<span>' . $safe_display_url . '</span>')?></h1>
 <?php
 $args = array(
