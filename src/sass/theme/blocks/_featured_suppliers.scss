@@ -1,0 +1,22 @@
+.featured_suppliers {
+    .swiper-wrapper {
+        margin-bottom: 2rem;
+    }
+    &__card {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        height: 100%;
+    }
+    &__logo {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        object-fit: contain;
+        padding: 0.5rem;
+    }
+    &__title {
+        background-color: var(--col-blue);
+        color: white;
+        font-weight: var(--fw-600);
+        padding: 0.5rem;
+    }
+}
