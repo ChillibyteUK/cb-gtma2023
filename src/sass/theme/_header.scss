@@ -77,6 +77,10 @@
             }
         }
     }
+
+    .two-col-list > ul.dropdown-menu {
+        columns: 2;
+    }
 }
 
 // #wrapper-navbar {

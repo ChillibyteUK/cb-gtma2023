@@ -22783,6 +22783,10 @@ strong, b {
 #wrapper-navbar .dropdown-menu a:hover {
   color: var(--col-red-400) !important;
 }
+#wrapper-navbar .two-col-list > ul.dropdown-menu {
+  -moz-columns: 2;
+  columns: 2;
+}
 
 footer {
   background-color: var(--col-grey);
