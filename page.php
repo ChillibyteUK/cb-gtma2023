@@ -7,6 +7,9 @@ get_header();
 
 ?>
 <main id="main">
+    <?php
+    if (!is_front_page()) {
+        ?>
     <div class="container-xl">
         <?php
         if ( function_exists('yoast_breadcrumb') ) {
@@ -14,7 +17,9 @@ get_header();
         }
         ?>
     </div>
-    <?php
+        <?php
+    }
+    
     the_post();    
     the_content(); 
     ?>
