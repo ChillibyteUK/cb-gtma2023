@@ -15,6 +15,13 @@ $blocks = parse_blocks($content);
 ?>
 <main id="main" class="<?=$class?>">
     <?php
+        if ( function_exists('yoast_breadcrumb') ) {
+            echo '<div class="container-xl">';
+            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+            echo '</div>';
+        }
+    ?>
+    <?php
 $hasHero = false;
 foreach ($blocks as $block) {
     // echo $block['blockName'];
@@ -28,6 +35,7 @@ foreach ($blocks as $block) {
 }
 ?>
     <div class="container-xl">
+
         <div class="row">
             <div class="col-md-9">
                 <?php

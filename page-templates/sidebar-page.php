@@ -30,6 +30,11 @@ if ($parent == $services->ID) {
 ?>
 <main id="main" class="<?=$class?>">
     <div class="container-xl">
+        <?php
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+        }
+        ?>
         <div class="row">
             <div class="col-md-9">
                 <h1><?=get_the_title()?></h1>
