@@ -9,6 +9,7 @@ $q = new WP_Query(array(
     <h2>Latest News from GTMA</h2>
     <div class="row w-100">
     <?php
+    $n = 1;
 while ($q->have_posts()) {
     $q->the_post();
     $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
@@ -30,7 +31,7 @@ while ($q->have_posts()) {
 
     ?>
 <div
-                class="news__item col-lg-4 col-md-6 p-0 <?=$catclass?>">
+                class="news__item col-lg-4 col-md-6 p-0 <?=$catclass?>"><!-- <?=$n?> -->
                 <a href="<?=get_the_permalink(get_the_ID())?>">
                     <div class="news__card card--<?=$flashcat?>">
                         <div class="news__image_container">
@@ -52,6 +53,7 @@ while ($q->have_posts()) {
                 </a>
             </div>
     <?php
+    $n++;
 }
 wp_reset_postdata();
     ?>
