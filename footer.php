@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
         </div>
         <div class="footer__menu pb-4" style="max-width:380px">
             <h4 class="footer__menu_title">Suppliers</h4>
-            <?=wp_nav_menu(array('theme_location' => 'footer_menu4','menu_class' => 'cols-lg-2'))?>
+            <?=wp_nav_menu(array('theme_location' => 'footer_menu4','menu_class' => 'menu cols-lg-2'))?>
         </div>
         <div class="footer__menu pb-4">
             <h4 class="footer__menu_title">Affiliates</h4>
