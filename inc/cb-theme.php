@@ -160,7 +160,7 @@ add_filter(
         if (is_singular('suppliers')) {
             foreach ($links as &$link) {
                 if (strpos($link['url'], '/supplier/') !== false) {
-                    $link['url'] = '/suppliers/';
+                    $link['url'] = get_site_url() . '/suppliers/';
                     $link['text'] = 'Suppliers';
                 }
             }
@@ -168,7 +168,7 @@ add_filter(
 
         if (is_archive(array('supplier-types'))) {
             $breadcrumb[] = array(
-                'url' => '/suppliers/',
+                'url' => get_site_url() . '/suppliers/',
                 'text' => 'Suppliers',
             );
             array_splice($links, 1, -2, $breadcrumb);
