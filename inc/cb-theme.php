@@ -166,7 +166,7 @@ add_filter(
             }
         }
 
-        if (is_archive(array('supplier-types'))) {
+        if (is_tax(array('supplier-types'))) {
             $breadcrumb[] = array(
                 'url' => get_site_url() . '/suppliers/',
                 'text' => 'Suppliers',
@@ -179,7 +179,8 @@ add_filter(
 );
 
 // Remove tags support from posts
-function myprefix_unregister_tags() {
+function myprefix_unregister_tags()
+{
     unregister_taxonomy_for_object_type('post_tag', 'post');
 }
 add_action('init', 'myprefix_unregister_tags');
@@ -267,23 +268,24 @@ function strip_crud($title)
     return $result;
 }
 
-add_action('wp_head', function(){
+add_action('wp_head', function () {
     $url = get_stylesheet_directory_uri() . '/img/favicon.png';
     echo '<link rel="icon" href="' . esc_url($url) . '" type="image/x-icon" />' . PHP_EOL;
 });
 
 // supplier where like clause
-function filter_posts_where( $where, $wp_query ) {
+function filter_posts_where($where, $wp_query)
+{
     global $wpdb;
 
-    if ( $search_term = $wp_query->get( 'search_prod_title' ) ) {
+    if ($search_term = $wp_query->get('search_prod_title')) {
         /* Use $wpdb->prepare() to safely include $search_term in the query */
-        $where .= ' AND ' . $wpdb->posts . '.post_title LIKE ' . $wpdb->prepare( '%s', '%' . $wpdb->esc_like( $search_term ) . '%' );
+        $where .= ' AND ' . $wpdb->posts . '.post_title LIKE ' . $wpdb->prepare('%s', '%' . $wpdb->esc_like($search_term) . '%');
     }
 
     return $where;
 }
-add_filter( 'posts_where', 'filter_posts_where', 10, 2 );
+add_filter('posts_where', 'filter_posts_where', 10, 2);
 
 
 // black thumbnails - fix alpha channel
