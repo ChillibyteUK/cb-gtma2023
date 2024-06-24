@@ -11,8 +11,6 @@ $unsafe_url = $_GET['q'];
 // $safe_display_url = filter_var($unsafe_url, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $safe_display_url = urldecode($unsafe_url);
 $safe_url = urlencode($unsafe_url);
-
-
 ?>
 <main id="main" class="search">
     <section class="pb-5">
@@ -26,12 +24,12 @@ $safe_url = urlencode($unsafe_url);
 <?php
 $args = array(
     'taxonomy' => array('supplier-types', 'supplier-tags'),
-    'name__like' => $safe_url,
+    'name__like' => esc_attr($safe_display_url),
     'hide_empty' => false, // Set to true if you only want terms with associated posts
 );
 
 $terms = get_terms($args);
-
+                
 if ( $terms ) {
     $totalSuppliers = 0;
     $totalTerms = 0;
@@ -324,4 +322,3 @@ else {
 </main>
 <?php
 get_footer();
-?>
