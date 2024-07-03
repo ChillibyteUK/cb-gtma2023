@@ -42,7 +42,7 @@ defined('ABSPATH') || exit;
 <div class="colophon py-3">
     <div class="container-xl d-flex justify-content-between align-items-center">
         <div>&copy; <?=date('Y')?>
-            Gauge and Tool Makers Association (GTMA Ltd) Registered in England, no. 00375508<br>
+            Gauge and Tool Makers Association Registered in England, no. 00375508<br>
             <?=get_field('contact_address', 'options')?>
         </div>
         <a href="https://www.chillibyte.co.uk/" rel="nofollow noopener" target="_blank" class="cb"
