@@ -40,7 +40,7 @@ function cb_register_taxes()
         ],
         "public" => true,
         "publicly_queryable" => true,
-        "hierarchical" => false,
+        "hierarchical" => true,
         "show_ui" => true,
         "update_count_callback" => '_update_post_term_count',
         "show_in_menu" => true,
