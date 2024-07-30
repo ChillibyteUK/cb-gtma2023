@@ -108,3 +108,24 @@ function understrap_child_customize_controls_js()
     );
 }
 add_action('customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js');
+
+add_shortcode( 'list_tags', 'list_tags' );
+function list_tags() {
+ob_start();
+
+$taxonomies = get_terms( array(
+    'taxonomy' => 'supplier-tags',
+    'hide_empty' => false
+) );
+
+if ( !empty($taxonomies) ) :
+    $output = '<div class="container-xl"><ul>';
+    foreach( $taxonomies as $category ) {
+        $output.='<li><a href="/tags/' . $category->slug . '/">' . $category->name . '</a></li>'; 
+    }
+    $output.='</ul></div>';
+    echo $output;
+endif;
+
+return ob_get_clean();
+}
