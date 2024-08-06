@@ -15,6 +15,7 @@ $img = get_stylesheet_directory_uri() . '/img/search-hero.jpg';
                 </button>
                 <input type="hidden" name="source" id="sourceInput">
             </div>
+            <div><a class="text-white fw-5" href="/supplier-categories/">View all Categories</a></div>
         </div>
     </div>
 </header>
