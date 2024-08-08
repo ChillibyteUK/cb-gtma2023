@@ -22,7 +22,8 @@ $(document).ready(function() {
       .replace(/-+/g, '-');
   }
 
-  $.getJSON('/wp-content/themes/cb-gtma2023/search-data.php?id=' + Date.now(),
+  $.ajaxSetup({ cache: false });
+  $.getJSON('/wp-content/themes/cb-gtma2023/search-data.php?id=',
     function(data) {
       data.forEach(item => {
         const categories = item.category;
