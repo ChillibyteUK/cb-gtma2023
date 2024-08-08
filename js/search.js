@@ -22,7 +22,7 @@ $(document).ready(function() {
       .replace(/-+/g, '-');
   }
 
-  $.getJSON('/wp-content/themes/cb-gtma2023/search-data.php',
+  $.getJSON('/wp-content/themes/cb-gtma2023/search-data.php?id=' . time(),
     function(data) {
       data.forEach(item => {
         const categories = item.category;
