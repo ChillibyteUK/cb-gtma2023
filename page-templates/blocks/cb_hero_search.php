@@ -43,7 +43,7 @@ $supp = get_posts(array(
 ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="<?=get_stylesheet_directory_uri()?>/js/search.js?v=2"></script>
+<script src="<?=get_stylesheet_directory_uri()?>/js/search.js?v=3"></script>
 <?php
 }, 9999);
 ?>
