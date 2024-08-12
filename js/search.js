@@ -23,7 +23,7 @@ $(document).ready(function() {
   }
 
   $.ajaxSetup({ cache: false });
-  $.getJSON('/wp-content/themes/cb-gtma2023/search-data.php?id=',
+  $.getJSON('/wp-content/themes/cb-gtma2023/search-data.php',
     function(data) {
       data.forEach(item => {
         const categories = item.category;
@@ -135,7 +135,8 @@ $(document).ready(function() {
       } else if (source !== '' && source === 'category') {
         url = '/types/' + slugify(term) + '/';
       } else if (source !== '' && source === 'supplier') {
-        url = '/suppliers/' + slugify(term) + '/';
+        //url = '/suppliers/' + slugify(term) + '/';
+        url = '/wp-content/themes/cb-gtma2023/supplier-find.php?name=' + encodeURIComponent(term);
       } else {
         if (slug == null) {
           url = '/types/' + slugify(term) + '/';
