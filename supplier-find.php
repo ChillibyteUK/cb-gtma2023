@@ -5,7 +5,7 @@ $args = array(
     'post_type' => 'suppliers',
     'post_status' => 'publish',
     'posts_per_page' => 1,
-    'title' => $_GET['name']
+    's' => $_GET['name']
 );
 
 $query = new WP_Query($args);
