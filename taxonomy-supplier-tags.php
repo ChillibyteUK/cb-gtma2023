@@ -2,6 +2,7 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 get_header();
+$term = get_queried_object();
 $cat_name = get_queried_object()->name;
 $cat_id = get_queried_object()->term_id;
 $c = 0;
@@ -146,6 +147,7 @@ while ($q->have_posts()) {
 ?>
     </div>
     </section>
+    <div class="mb-5"><?=get_field('secondary_description',$term)?></div>
         </div>
         <div class="col-md-3">
             <div class="sidebar pb-4">
