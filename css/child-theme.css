@@ -22886,8 +22886,8 @@ footer .footer__logo {
 }
 
 .btn-blue, body .gform_wrapper .gform_footer button {
-  background-color: var(--col-blue-400);
-  color: white;
+  background-color: var(--col-blue-400) !important;
+  color: white !important;
 }
 .btn-blue::after, body .gform_wrapper .gform_footer button::after {
   content: "";
@@ -22896,7 +22896,7 @@ footer .footer__logo {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: hsl(var(--hsl-col-blue-400)/0.2);
+  background-color: hsl(var(--hsl-col-blue-400)/0.2) !important;
   z-index: -1;
   transition: transform var(--transition);
   transform: scalex(0);
@@ -22907,8 +22907,8 @@ footer .footer__logo {
 }
 
 .btn-red {
-  background-color: var(--col-red-400);
-  color: white;
+  background-color: var(--col-red-400) !important;
+  color: white !important;
 }
 .btn-red::after {
   content: "";
@@ -22917,7 +22917,7 @@ footer .footer__logo {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: hsl(var(--hsl-col-red-400)/0.2);
+  background-color: hsl(var(--hsl-col-red-400)/0.2) !important;
   z-index: -1;
   transition: transform var(--transition);
   transform: scalex(0);
