@@ -22685,6 +22685,11 @@ strong, b {
   color: var(--col-blue-400) !important;
 }
 
+.bg-red,
+.has-red-background-color {
+  background-color: var(--col-red-400) !important;
+}
+
 .text-red,
 .has-red-color {
   color: var(--col-red-400);
@@ -22898,6 +22903,27 @@ footer .footer__logo {
   transform-origin: center;
 }
 .btn-blue:hover::after, body .gform_wrapper .gform_footer button:hover::after {
+  transform: scalex(1);
+}
+
+.btn-red {
+  background-color: var(--col-red-400);
+  color: white;
+}
+.btn-red::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(var(--hsl-col-red-400)/0.2);
+  z-index: -1;
+  transition: transform var(--transition);
+  transform: scalex(0);
+  transform-origin: center;
+}
+.btn-red:hover::after {
   transform: scalex(1);
 }
 
