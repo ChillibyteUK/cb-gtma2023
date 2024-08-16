@@ -1,7 +1,7 @@
 <?php
 $l = get_field('link');
 
-var_dump($block);
+// var_dump($block);
 
 $background_color = !empty($block['backgroundColor']) ? $block['backgroundColor'] : '';
 $text_color = !empty($block['textColor']) ? $block['textColor'] : '';
