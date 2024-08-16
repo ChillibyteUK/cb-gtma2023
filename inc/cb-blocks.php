@@ -220,7 +220,6 @@ function acf_blocks()
                 'mode' => false,
                 'color' => array(
                     'background' => true,
-                    'text' => true,
                 ),
             ),
         ));

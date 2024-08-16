@@ -22849,7 +22849,7 @@ footer .footer__logo {
 .btn, body .gform_wrapper .gform_footer button, .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button {
   cursor: pointer;
   display: inline-block;
-  text-decoration: none;
+  text-decoration: none !important;
   padding: 0.75rem 1.5rem;
   margin-top: 1rem;
   font-weight: var(--fw-900);
