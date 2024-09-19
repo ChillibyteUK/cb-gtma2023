@@ -1,6 +1,11 @@
 <?php
 require_once('../../../wp-config.php');
 
+function encodeURIComponent($str) {
+    $revert = array('%21'=>'!', '%2A'=>'*', '%27'=>"'", '%28'=>'(', '%29'=>')');
+    return strtr(rawurlencode($str), $revert);
+}
+
 $args = array(
     'post_type' => 'suppliers',
     'post_status' => 'publish',
