@@ -4,7 +4,7 @@ require_once('../../../wp-config.php');
 function get_post_by_name(string $name, string $post_type = "post") {
     $query = new WP_Query([
         "post_type" => $post_type,
-        "name" => $name
+        "title" => $name
     ]);
 
     return $query->have_posts() ? reset($query->posts) : null;
