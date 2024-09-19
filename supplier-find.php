@@ -1,6 +1,11 @@
 <?php
 require_once('../../../wp-config.php');
 
+
+$search = get_post_by_name(urldecode($_GET['name']), "suppliers");
+print_r($search);
+exit;
+
 $args = array(
     'post_type' => 'suppliers',
     'post_status' => 'publish',
@@ -25,3 +30,14 @@ if ($query->have_posts()) {
 }
 
 wp_reset_postdata(); // Reset the query
+
+
+
+function get_post_by_name(string $name, string $post_type = "post") {
+    $query = new WP_Query([
+        "post_type" => $post_type,
+        "name" => $name
+    ]);
+
+    return $query->have_posts() ? reset($query->posts) : null;
+}
