@@ -3,7 +3,11 @@ require_once('../../../wp-config.php');
 
 
 $search = get_post_by_name(urldecode($_GET['name']), "suppliers");
-print_r($search);
+if ( $search->ID ) {
+    echo "YES" . $search->ID;
+} else {
+    echo "NO" . $search->ID;
+}
 exit;
 
 $args = array(
