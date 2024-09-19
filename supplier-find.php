@@ -11,15 +11,10 @@ function get_post_by_name(string $name, string $post_type = "post") {
 }
 
 $search = get_post_by_name(urldecode($_GET['name']), "suppliers");
-
-echo urldecode($_GET['name']);
-
-print_r($search);
-
 if ( $search->ID ) {
-    //header("Location: " . get_the_permalink($search->ID));
+    header("Location: " . get_the_permalink($search->ID));
     die();
 } else {
-    //header("Location: /404/");
+    header("Location: /404/");
     die();
 }
