@@ -10,7 +10,7 @@ function get_post_by_name(string $name, string $post_type = "post") {
     return $query->have_posts() ? reset($query->posts) : null;
 }
 
-$search = get_post_by_name(urldecode($_GET['name']), "suppliers");
+$search = get_post_by_name(esc_attr($_GET['name']), "suppliers");
 if ( $search->ID ) {
     header("Location: " . get_the_permalink($search->ID));
     die();
