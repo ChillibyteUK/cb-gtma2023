@@ -13,14 +13,15 @@ $query = new WP_Query($args);
 if ($query->have_posts()) {
     while ($query->have_posts()) {
         $query->the_post();
-        header("Location: " . get_the_permalink());
-		die();
+        echo "Found:<br>" . encodeURIComponent($_GET['name']) . "<br>" . get_the_permalink();
+        //header("Location: " . get_the_permalink());
+		//die();
     }
 } else {
-    // Page not found
-    //echo "Issue for:<br>" . encodeURIComponent($_GET['name']);
-    header("Location: /404/");
-	die();
+    //Page not found
+    echo "Issue for:<br>" . encodeURIComponent($_GET['name']);
+    //header("Location: /404/");
+	//die();
 }
 
 wp_reset_postdata(); // Reset the query
