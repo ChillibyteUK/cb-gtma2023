@@ -5,14 +5,16 @@ require_once($path . 'wp-load.php');
 
 $supp = get_posts(array(
     'post_type' => 'suppliers',
-    'numberposts' => -1
+    'numberposts' => -1,
 ));
 
 $suppliers = array();
 
 foreach ($supp as $p) {
-    $t = strip_crud($p->post_title);
+    //$t = strip_crud($p->post_title);
+    $t = $p->post_title;
     $t = str_replace("&amp;","&",$t);
+    $t = trim($t);
     $suppliers[] = $t;
 }
 
@@ -40,7 +42,6 @@ $types = array();
 foreach ($type as $p) {
     $types[] = $p->name;
 }
-
 
 $json = array();
 $json['supplier'] = $suppliers;
