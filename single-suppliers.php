@@ -231,7 +231,7 @@ echo do_shortcode(
 ?>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 mt-0">
                 <aside class="supplier__sidebar">
                     <div class="form mb-2">
                         <input class="form-control" type="text" id="searchInput" autocomplete="off">
