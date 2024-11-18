@@ -21,10 +21,13 @@ defined('ABSPATH') || exit;
         </div>
         <div class="footer__menu pb-4">
             <h4 class="footer__menu_title">Certifications</h4>
+            <?php
+            $image_alt = get_post_meta(get_field('qas_iso_img'), '_wp_attachment_image_alt', true);
+            ?>
             <a href="<?=get_field('qas_iso', 'options')?>"
                 target="_blank"><img
                     src="<?=wp_get_attachment_image_url(get_field('qas_iso_img','options'),'large')?>"
-                    alt="" class="w-75"></a>
+                    alt="<?=$image_alt?>" class="w-75"></a>
         </div>
         <?php
         /*
