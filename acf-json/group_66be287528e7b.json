@@ -62,7 +62,7 @@
             "taxonomy": "",
             "return_format": "id",
             "multiple": 0,
-            "allow_null": 0,
+            "allow_null": 1,
             "allow_in_bindings": 0,
             "bidirectional": 0,
             "ui": 1,
