@@ -21,9 +21,9 @@ $c = 0;
                     <?= term_description() ?>
 
                     <?php
-                    $sponsor = get_field('supplier') ?? null;
+                    $sponsor = get_field('supplier', $term) ?? null;
                     if ($sponsor) {
-                        $until = get_field('display_until') ?: '20380119';
+                        $until = get_field('display_until', $term) ?: '20380119';
                         $today = date('Ymd');
                         if ($until >= $today) {
                     ?>
