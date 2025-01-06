@@ -34,7 +34,7 @@
             "aria-label": "",
             "type": "date_picker",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
@@ -43,7 +43,8 @@
             },
             "display_format": "d\/m\/Y",
             "return_format": "Ymd",
-            "first_day": 1
+            "first_day": 1,
+            "allow_in_bindings": 1
         },
         {
             "key": "field_6567597131001",
@@ -81,6 +82,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 0,
-    "modified": 1704297394
+    "show_in_rest": 0
 }
