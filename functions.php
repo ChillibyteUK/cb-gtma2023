@@ -134,3 +134,22 @@ function wpb_remove_schedule_delete() {
     remove_action( 'wp_scheduled_delete', 'wp_scheduled_delete' );
 }
 add_action( 'init', 'wpb_remove_schedule_delete' );
+
+add_filter( 'wpseo_robots', 'noindex_empty_supplier_tags', 10, 2 );
+
+function noindex_empty_supplier_tags( $robots, $context ) {
+    if (
+        is_tax( 'supplier-tags' ) && 
+        isset( $context->term ) && 
+        $context->term instanceof WP_Term
+    ) {
+        $term_id = $context->term->term_id;
+        $post_count = $context->term->count;
+
+        if ( $post_count === 0 ) {
+            return 'noindex, follow';
+        }
+    }
+
+    return $robots;
+}
