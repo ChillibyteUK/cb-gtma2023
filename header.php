@@ -88,8 +88,8 @@ if (is_front_page()) {
             "@type": "Organization",
             "name": "GTMA",
             "url": " https://www.gtma.co.uk/",
-            "logo": "https://www.gtma.co.uk/wp-content/themes/cb-gtma2023/img/gtma-logo.png",
-            "image": "https://www.gtma.co.uk/wp-content/themes/cb-gtma2023/img/gtma-logo.png",
+            "logo": "https://www.gtma.co.uk/wp-content/themes/cb-gtma2023/img/gtma-logo.svg",
+            "image": "https://www.gtma.co.uk/wp-content/themes/cb-gtma2023/img/gtma-logo.svg",
             "description": "GTMA is an established UK trade association. Visit the Supplier Directory to find engineering companies, toolmakers, tool manufacturers & service providers.",
             "address": {
                 "@type": "PostalAddress",
