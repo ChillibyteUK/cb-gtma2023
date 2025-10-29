@@ -35,12 +35,14 @@ $q = new WP_Query(array(
 ));
 while ($q->have_posts()) {
     $q->the_post();
+    $thumb_id = get_post_thumbnail_id(get_the_ID());
     $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
+    $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true); // Get alt text
     $title = get_the_title();
     ?>
             <a class="services__card"
                 href="<?=get_the_permalink()?>">
-                <img src="<?=$img?>" alt="">
+                <img src="<?=$img?>" alt="<?php echo $alt; ?>">
                 <div class="services__title">
                     <?=$title?>
                 </div>
