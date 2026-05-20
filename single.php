@@ -18,6 +18,7 @@ $img = get_the_post_thumbnail_url( get_the_ID(), 'full' ) ?? null;
 	$sidebar  = array();
 	$after    = false;
 	$the_date = get_the_date( 'jS F, Y' );
+	$count = estimate_reading_time_in_minutes( get_the_content(), 200, true, true );
 	?>
     <section class="breadcrumbs container-xl">
         <?php
@@ -31,9 +32,11 @@ $img = get_the_post_thumbnail_url( get_the_ID(), 'full' ) ?? null;
             <div class="col-lg-9 order-2 blog__content">
                 <article>
                     <h1 class="blog__title"><?= esc_html( get_the_title() ); ?></h1>
-					<div class="blog__date"><?= $the_date ?></div>
+					<div class="blog__meta d-flex gap-3 mb-4 fs-200" style="color: var(--col-grey-600);">
+						<span><i class="fa-regular fa-calendar"></i> <?= esc_html( $the_date ); ?></span>
+						<span><i class="fa-regular fa-clock"></i> <?= esc_html( $the_date ); ?></span>
+					</div>
                     <?php
-        			$count = estimate_reading_time_in_minutes( get_the_content(), 200, true, true );
 					echo wp_kses_post( $count );
 
 					foreach ( $blocks as $block ) {
