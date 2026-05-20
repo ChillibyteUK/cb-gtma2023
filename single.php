@@ -34,11 +34,9 @@ $img = get_the_post_thumbnail_url( get_the_ID(), 'full' ) ?? null;
                     <h1 class="blog__title"><?= esc_html( get_the_title() ); ?></h1>
 					<div class="blog__meta d-flex gap-3 mb-4 fs-200" style="color: var(--col-grey-600);">
 						<span><i class="fa-regular fa-calendar"></i> <?= esc_html( $the_date ); ?></span>
-						<span><i class="fa-regular fa-clock"></i> <?= esc_html( $the_date ); ?></span>
+						<span><i class="fa-regular fa-clock"></i> <?= esc_html( wp_strip_all_tags( $count ) ); ?></span>
 					</div>
                     <?php
-					echo wp_kses_post( $count );
-
 					foreach ( $blocks as $block ) {
 						if ( 'core/heading' === $block['blockName'] ) {
 							if ( ! array_key_exists( 'level', $block['attrs'] ) ) {
