@@ -44,7 +44,7 @@ if (get_field('show_preamble')) {
                     $tagline = get_field('tagline', 'sectors_' . $term->term_id);
                     ?>
                     
-                    <a class="services__card" href="<?php echo esc_url(get_term_link($term)); ?>">
+                    <a class="services__card" href="/sectors/<?=$term->slug?>/">
                         <?php if ($img) : ?>
                             <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($alt); ?>">
                         <?php endif; ?>
