@@ -158,3 +158,21 @@ function my_remove_schedule_delete() {
     remove_action( 'wp_scheduled_delete', 'wp_scheduled_delete' );
 }
 add_action( 'init', 'my_remove_schedule_delete' );
+
+function stats_bar( $atts ){
+    ob_start();
+?>
+<section class="py-5 bg-primary cb-stats-counter">
+    <div class="container-xl">
+        <div class="row align-items-center">
+            <div class="col-md-3 text-light fs-5 lh-sm text-center text-md-start mb-3 mb-md-0">The <b>GTMA</b> network, in numbers</div>
+            <div class="col-md-3 fw-bold lh-1 text-center mb-3 mb-md-0"><?=do_shortcode("[countup start='0' separator='' grouping='true' suffix='+' prefix='' easing='true']200[/countup]")?><span class="area text-light d-block">MEMBERS</span></div>
+            <div class="col-md-3 fw-bold lh-1 text-center mb-3 mb-md-0"><?=do_shortcode("[countup start='0' separator='' grouping='true' suffix='' prefix='' easing='true']1300[/countup]")?><span class="area text-light d-block">SPECIALISMS</span></div>
+            <div class="col-md-3 fw-bold lh-1 text-center mb-3 mb-md-0"><?=do_shortcode("[countup start='0' separator='' grouping='true' suffix='+' prefix='' easing='true']17[/countup]")?><span class="area text-light d-block">SECTORS</span></div>
+        </div>
+    </div>
+</section>
+<?php
+    return ob_get_clean();
+}
+add_shortcode('stats_bar', 'stats_bar');
