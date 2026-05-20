@@ -39,12 +39,21 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
-            'name'				=> 'cb_services',
-            'title'				=> __('CB Services'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_services.php',
-            'mode'	=> 'edit',
+            'name'              => 'cb_services',
+            'title'             => __('CB Services'),
+            'category'          => 'layout',
+            'icon'              => 'cover-image',
+            'render_template'   => 'page-templates/blocks/cb_services.php',
+            'mode'  => 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'cb_sectors',
+            'title'             => __('CB Sectors'),
+            'category'          => 'layout',
+            'icon'              => 'cover-image',
+            'render_template'   => 'page-templates/blocks/cb_sectors.php',
+            'mode'  => 'edit',
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(

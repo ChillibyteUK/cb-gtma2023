@@ -6,9 +6,15 @@ $q = new WP_Query(array(
     'posts_per_page' => -1,
     'tax_query' => array(
         array(
-        'taxonomy' => 'category',
-        'field' => 'slug',
-        'terms' => array($sector->slug)
+            'taxonomy' => 'category',
+            'field'    => 'slug',
+            'terms'    => array($sector->slug)
+        )
+    ),
+    'date_query' => array(
+        array(
+            'after' => '12 months ago',
+            'inclusive' => true,
         )
     )
 ));
