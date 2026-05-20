@@ -1,78 +1,79 @@
 <?php
-// Exit if accessed directly.
-defined('ABSPATH') || exit;
+/**
+ * The template for displaying all single posts
+ *
+ * @package cb-gtma2023
+ */
+
+defined( 'ABSPATH' ) || exit;
+
 get_header();
-$img = get_the_post_thumbnail_url(get_the_ID(), 'full') ?? null;
+$img = get_the_post_thumbnail_url( get_the_ID(), 'full' ) ?? null;
+
 ?>
 <main id="main" class="blog">
     <?php
-    $content = get_the_content();
-$blocks = parse_blocks($content);
-$sidebar = array();
-$after;
-?>
+    $content  = get_the_content();
+	$blocks   = parse_blocks( $content );
+	$sidebar  = array();
+	$after    = false;
+	$the_date = get_the_date( 'jS F, Y' );
+	?>
     <section class="breadcrumbs container-xl">
         <?php
-if (function_exists('yoast_breadcrumb')) {
-    yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
-}
-?>
+		if ( function_exists( 'yoast_breadcrumb' ) ) {
+			yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
+		}
+		?>
     </section>
     <div class="container-xl">
         <div class="row g-4 pb-4">
             <div class="col-lg-9 order-2 blog__content">
                 <article>
-                    <h1 class="blog__title"><?=get_the_title()?></h1>
+                    <h1 class="blog__title"><?= esc_html( get_the_title() ); ?></h1>
+					<div class="blog__date"><?= $the_date ?></div>
                     <?php
-/*                    if ($img) {
-                        ?>
-                    <img src="<?=$img?>" alt="" class="blog__image">
-                        <?php
-                    }
-*/
+        			$count = estimate_reading_time_in_minutes( get_the_content(), 200, true, true );
+					echo wp_kses_post( $count );
 
-        $count = estimate_reading_time_in_minutes(get_the_content(), 200, true, true);
-echo $count;
-
-foreach ($blocks as $block) {
-    if ($block['blockName'] == 'core/heading') {
-        if (!array_key_exists('level', $block['attrs'])) {
-            $heading = strip_tags($block['innerHTML']);
-            $id = acf_slugify($heading);
-            echo '<a id="' . $id . '" class="anchor"></a>';
-            $sidebar[$heading] = $id;
-        }
-    }
-    //echo render_block($block);
-    echo apply_filters('the_content', render_block($block));
-}
-?>
+					foreach ( $blocks as $block ) {
+						if ( 'core/heading' === $block['blockName'] ) {
+							if ( ! array_key_exists( 'level', $block['attrs'] ) ) {
+								$heading = wp_strip_all_tags( $block['innerHTML'] );
+								$id      = sanitize_title( $heading );
+								echo '<a id="' . esc_attr( $id ) . '" class="anchor"></a>';
+								$sidebar[ $heading ] = $id;
+							}
+						}
+						echo apply_filters( 'the_content', render_block( $block ) );
+					}
+					?>
                 </article>
             </div>
             <div class="col-lg-3 order-1">
                 <aside class="sidebar">
                     <?php
-    if ($sidebar) {
-        ?>
+    				if ( $sidebar ) {
+        				?>
                     <div class="quicklinks">
                         <div class="h5 d-none d-lg-block">Quick Links</div>
                         <div class="h5 d-lg-none" data-bs-toggle="collapse" href="#links" role="button">Quick Links
                         </div>
                         <div class="collapse d-lg-block" id="links">
                             <?php
-                foreach ($sidebar as $heading => $id) {
-                    ?>
+							foreach ( $sidebar as $heading => $id ) {
+								?>
                             <li><a
-                                    href="#<?=$id?>"><?=$heading?></a>
+                                    href="#<?= esc_attr( $id ); ?>"><?= esc_html( $heading ); ?></a>
                             </li>
-                            <?php
-                }
-        ?>
+                            	<?php
+                			}
+        					?>
                         </div>
                     </div>
-                    <?php
-    }
-?>
+                    	<?php
+    				}
+					?>
                     <div class="sidebar__cta">
                         <div class="h5">Join The GTMA</div>
                         <p>We connect UK manufacturing supply chain firms, offering support services for networking, marketing, and lead generation with top-tier manufacturers and OEMs.</p>
@@ -85,36 +86,37 @@ foreach ($blocks as $block) {
             <h3>Other News</h3>
             <div class="row g-4">
                 <?php
-        $cats = get_the_category();
-$ids = wp_list_pluck($cats, 'term_id');
-$r = new WP_Query(array(
-    'category__in' => $ids,
-    'posts_per_page' => 4,
-    'post__not_in' => array(get_the_ID())
-));
-while ($r->have_posts()) {
-    $r->the_post();
-    $img = get_the_post_thumbnail_url(get_the_ID(), 'large') ?: get_stylesheet_directory_uri() . '/img/default-blog.png';
-    ?>
+        		$cats = get_the_category();
+				$ids  = wp_list_pluck( $cats, 'term_id' );
+
+				$r = new WP_Query(
+					array(
+						'category__in'   => $ids,
+						'posts_per_page' => 4,
+						'post__not_in'   => array( get_the_ID() ),
+					)
+				);
+				while ( $r->have_posts() ) {
+    				$r->the_post();
+    				$img = get_the_post_thumbnail_url( get_the_ID(), 'large' ) ? get_the_post_thumbnail_url( get_the_ID(), 'large' ) : get_stylesheet_directory_uri() . '/img/default-blog.png';
+				    ?>
                 <div class="col-md-6 col-xl-3">
                     <a class="blog_card"
-                        href="<?=get_the_permalink()?>">
-                        <img src="<?=$img?>"
-                            alt="" class="blog_card__image">
+                        href="<?= esc_url( get_the_permalink() ); ?>">
+                        <img src="<?= esc_url( $img ); ?>" alt="" class="blog_card__image">
                         <div class="blog_card__content">
                             <h3 class="blog_card__title">
-                                <?=get_the_title()?>
+                                <?= esc_html( get_the_title() ); ?>
                             </h3>
                         </div>
                     </a>
                 </div>
-                <?php
-}
-?>
+                	<?php
+				}
+				?>
             </div>
         </section>
     </div>
 </main>
 <?php
 get_footer();
-?>
