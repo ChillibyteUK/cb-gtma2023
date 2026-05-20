@@ -4,6 +4,6 @@
         <div class="content mb-4">
             <?=get_field('content')?>
         </div>
-        <a class="btn btn-white" href="/membership/">find out more</a>
+        <a class="btn btn-white" href="/membership/">find out about membership</a>
     </div>
 </section>
