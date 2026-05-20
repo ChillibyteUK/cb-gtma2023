@@ -6,7 +6,8 @@ $img = get_stylesheet_directory_uri() . '/img/search-hero.jpg';
 <header class="hero-search" style="background-image:url(<?=$img?>)">
     <div class="hero-search__grid">
         <div class="hero-search__inner">
-            <div class="hero-search__title mb-3">Search for Products &amp; Services</div>
+            <div class="hero-search__title mb-2">Search for Products &amp; Services</div>
+            <div class="text-light mb-3">Search from 1200+ manufacturing products &amp; services</div>
             <div class="form">
                 <input class="form-control" type="text" id="searchInput" autocomplete="off">
                 <button id="go" class="btn-search">
