@@ -174,6 +174,82 @@ $c = 0;
 
                 </section>
                 <div class="mb-5"><?= get_field('secondary_description', $term) ?></div>
+
+
+
+<?php
+$faqs = get_field('faqs', $term);
+
+if ($faqs) :
+    $accordion_id = 'sectorFaqsAccordion';
+    $schema_faqs = [];
+?>
+    <section class="sector-faqs mb-5">
+        <h2 class="mb-4">FAQs</h2>
+
+        <div class="accordion" id="<?php echo esc_attr($accordion_id); ?>">
+            <?php foreach ($faqs as $index => $faq) :
+                $question = $faq['question'] ?? '';
+                $answer   = $faq['answer'] ?? '';
+
+                if (!$question || !$answer) {
+                    continue;
+                }
+
+                $item_id = 'faq-' . $index;
+                $heading_id = 'faq-heading-' . $index;
+                $collapse_id = 'faq-collapse-' . $index;
+
+                $schema_faqs[] = [
+                    '@type' => 'Question',
+                    'name' => wp_strip_all_tags($question),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => wp_strip_all_tags($answer),
+                    ],
+                ];
+            ?>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="<?php echo esc_attr($heading_id); ?>">
+                        <button class="accordion-button <?php echo $index === 0 ? '' : 'collapsed'; ?>"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#<?php echo esc_attr($collapse_id); ?>"
+                                aria-expanded="<?php echo $index === 0 ? 'true' : 'false'; ?>"
+                                aria-controls="<?php echo esc_attr($collapse_id); ?>">
+                            <?php echo esc_html($question); ?>
+                        </button>
+                    </h3>
+
+                    <div id="<?php echo esc_attr($collapse_id); ?>"
+                         class="accordion-collapse collapse <?php echo $index === 0 ? 'show' : ''; ?>"
+                         aria-labelledby="<?php echo esc_attr($heading_id); ?>"
+                         data-bs-parent="#<?php echo esc_attr($accordion_id); ?>">
+                        <div class="accordion-body">
+                            <?php echo wp_kses_post($answer); ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+    <?php if (!empty($schema_faqs)) : ?>
+        <script type="application/ld+json">
+            <?php
+            echo wp_json_encode([
+                '@context' => 'https://schema.org',
+                '@type'    => 'FAQPage',
+                'mainEntity' => $schema_faqs,
+            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+            ?>
+        </script>
+    <?php endif; ?>
+
+<?php endif; ?>
+
+
+                
             </div><!-- .col -->
             <div class="col-md-3">
                 <div class="sidebar pb-4">

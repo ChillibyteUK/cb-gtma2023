@@ -174,12 +174,21 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
-            'name'				=> 'cb_single_testimonial',
-            'title'				=> __('CB Single Testimonial'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_single_testimonial.php',
-            'mode'	=> 'edit',
+            'name'              => 'cb_single_testimonial',
+            'title'             => __('CB Single Testimonial'),
+            'category'          => 'layout',
+            'icon'              => 'cover-image',
+            'render_template'   => 'page-templates/blocks/cb_single_testimonial.php',
+            'mode'  => 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'cb_multi_testimonial',
+            'title'             => __('CB Multi Testimonial'),
+            'category'          => 'layout',
+            'icon'              => 'cover-image',
+            'render_template'   => 'page-templates/blocks/cb_multi_testimonial.php',
+            'mode'  => 'edit',
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
