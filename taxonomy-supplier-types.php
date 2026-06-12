@@ -185,7 +185,7 @@ if ($faqs) :
     $schema_faqs = [];
 ?>
     <section class="sector-faqs mb-5">
-        <h2 class="mb-4">FAQs</h2>
+        <h2 class="mb-4"><?= $cat_name ?> FAQs</h2>
 
         <div class="accordion" id="<?php echo esc_attr($accordion_id); ?>">
             <?php foreach ($faqs as $index => $faq) :
