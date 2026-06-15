@@ -120,12 +120,21 @@ function acf_blocks()
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
-            'name'				=> 'cb_contact',
-            'title'				=> __('CB Contact'),
-            'category'			=> 'layout',
-            'icon'				=> 'cover-image',
-            'render_template'	=> 'page-templates/blocks/cb_contact.php',
-            'mode'	=> 'edit',
+            'name'              => 'cb_contact',
+            'title'             => __('CB Contact'),
+            'category'          => 'layout',
+            'icon'              => 'cover-image',
+            'render_template'   => 'page-templates/blocks/cb_contact.php',
+            'mode'  => 'edit',
+            'supports' => array('mode' => false),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'cb_contact_home',
+            'title'             => __('CB Contact Home'),
+            'category'          => 'layout',
+            'icon'              => 'cover-image',
+            'render_template'   => 'page-templates/blocks/cb_contact-home.php',
+            'mode'  => 'edit',
             'supports' => array('mode' => false),
         ));
         acf_register_block_type(array(
